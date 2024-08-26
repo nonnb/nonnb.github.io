@@ -9,5 +9,5 @@
   - [Main Windows](<Main-Windows>)
   - [Preferences](<Preferences.html>)
     - [Commands](GUI/Preferences/Commands.md)
-    - [User Interface Preferences](<GUI/Preferences/User-Interface.md>)
+    - [User Interface Preferences](GUI/Preferences/User-Interface.md)
     - [Tools](<Tools>)

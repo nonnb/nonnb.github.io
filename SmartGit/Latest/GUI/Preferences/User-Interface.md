@@ -21,16 +21,24 @@ Once a theme has been selected, it is also possible to override individual theme
  **Advanced Users Only**: It is possible to provide custom `.theme` files, in addition to the standard Light and Dark mode themes. Refer to [Theme Customization](<../Advanced Settings/Theme-Customization.md>) for details.
 
 ### Startup Window
+
 This option allows selection of the initial Window view when SmartGit starts up. Refer to [Main Windows Documentation](../Main-Windows)  for further details.
 
 ### On Startup
-**TODO**
+
+The *On Startup* option determines which windows SmartGit will open automatically on startup. This includes the option to re-open the last-used repositories and whether to open each repository in the respective last-used window views.
+
+### Double-Clicking Local File
+
+This setting controls what happens when a file is double-clicked, with the choice of either toggling the 'staging' status of the file, or opening the file.
 
 ### File Name Matches
-**TODO**
+
+This setting controls whether SmartGit should behave in a case-sensitive, insensitive or 'Smart' manner.
 
 ### Date and Time Format
-**TODO**
+
+The Date and Time format options control the display of all dates and times in SmartGit. An example of how the chosen format will appear is displayed underneath the options.
 
 ### Restore all Confirmation Dialogs
 
