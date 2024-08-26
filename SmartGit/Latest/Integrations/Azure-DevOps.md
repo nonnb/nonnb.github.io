@@ -17,11 +17,11 @@ have to confirm by **Accept**.
 
 Once you have confirmed this page, you will be redirected to
 *syntevo.com*, where the generated access code will be displayed.
-Copy&paste this code into SmartGit's **Generate API Token** dialog and
+Copy&paste this code into SmartGit's **Generate Token** dialog and
 invoke **Authenticate**. The code will be used to create an *application
 access token* which will be used to populate the **Token** field.
 
-By default, **Use OAuth token for repository authentication** will be selected. This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your GitHub repository. Using the OAuth-token has following advantages:
+By default, **Use OAuth token for repository authentication** will be selected. This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your Azure DevOps repository. Using the OAuth-token has following advantages:
 
 * its scope is more limited than plain password or possibly more powerful personal access tokens
 * it will not require to create/enter a second set of credentials to SmartGit
@@ -35,14 +35,28 @@ Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 > 
 > ![](attachments/53215478/53215479.png)
 
+### Re-setup OAuth
 
+Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version of SmartGit will request additional scopes.
+Usually, it's sufficient to just open **Preferences**, section **Authentication**, open the **Azure DevOps** hosting provider and invoke **Generate Token** there.
+If this does not solve your problem, take following steps to rerun the *OAuth* setup from scratch:
+
+1.  In SmartGit:
+    1.  get rid of all Azure DevOps-related credentials from **Preferences**, section **Authentication**
+    2.  get rid of the Azure DevOps hosting provider from **Preferences**, section **Hosting Providers**
+2.  In Azure DevOps, open your [profile](https://aex.dev.azure.com/me?mkt=en-US#) from the top-right corner:
+    1.  Select "Manage Authorizations" there:
+        ![](attachments/azure-app-revoke.png)
+    2.  Invoke **Revoke** for **SmartGit**
+3.  In SmartGit, rerun through the *OAuth* setup again:
+    1.  open **Preferences**, section **Hosting Providers**
+    2.  **Add** a new **Azure DevOps** hosting provider, as described above
 
 ### Setup with Multiple Accounts
 
 If you have multiple Azure DevOps accounts, you can run through the
 above procedure for each of your accounts. This requires to login for
-every account in your web browser before invoking **Generate API
-Token**.
+every account in your web browser before invoking **Generate Token**.
 
 To have the **OAuth** token to work for multiple accounts, Git has to request credentials per-repository. To check if the proper configuration is already set, invoke:
 

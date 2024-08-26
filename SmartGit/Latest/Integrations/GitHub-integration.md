@@ -5,7 +5,7 @@ SmartGit integrates GitHub workflows in various places, provided that the connec
 ### Setup
 
 To set up the GitHub integration, go to **Preferences**, section **Hosting Providers** and click the **Add** button.
-In the **Add Hosting Provider** dialog, have **GitHub** selected and invoke **Generate API token**.
+In the **Add Hosting Provider** dialog, have **GitHub** selected and invoke **Generate Token**.
 This should open up your default web browser where you will have to confirm by **Authorize Application**.
 Be sure to also **Grant Access** to all of your organizations, otherwise the corresponding organization repositories won't show up/can't be accessed.
 
@@ -111,7 +111,7 @@ More behavior of the GitHub integration can be customized by [Low-Level Properti
 ### Re-setup OAuth
 
 Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version of SmartGit will request additional scopes.
-Usually, it's sufficient to just open **Preferences**, section **Authentication**, open the **GitHub** hosting provider and invoke **Generate API token** there.
+Usually, it's sufficient to just open **Preferences**, section **Authentication**, open the **GitHub** hosting provider and invoke **Generate Token** there.
 If this does not solve your problem, take following steps to rerun the *OAuth* setup from scratch:
 
 1.  In SmartGit:
@@ -127,22 +127,22 @@ If this does not solve your problem, take following steps to rerun the *OAuth* s
 
 ## Possible Problems & Solutions
 
-### Authenticating with two or more accounts
+### Authentication fails with 403: 'Although you appear to have the correct authorization credentials...'
 
-#### Info
-> SmartGit currently does not support having two **Hosting Providers** configured for "github.com", hence for the extended integration discussed above, you have to decide for one of your accounts.
-> It's however possible to access repositories of multiple GitHub accounts, as explained below.
-
-If you want to authenticate to your GitHub repositories, using two or more accounts, open **Preferences**, section **Hosting Providers**, open the GitHub hosting provider there and deselect **Use OAuth token for repository authentication**.
-When pulling/pushing a GitHub repository for the next time, SmartGit will ask you for **Username** and **Password**.
-For the **Username**, just enter the appropriate GitHub account name, for the **Password** it's recommended to generate a new *Personal Access Token* in your GitHub account settings (the **repo** scope needs to be selected).
-
-Depending on your Git configuration, Git might request credentials only *per-domain* instead of *per-repository*.
-If so, try to reconfigure:
+Up to (including) version 23.1, specific organization configurations may result in authorization problems like:
 
 ```
-git config --global credential.github.com.useHttpPath true
+Although you appear to have the correct authorization credentials, the ... organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/
 ```
+
+This problem is caused by:
+* being a *public* member of a GitHub organization
+* which has OAuth access restrictions configured (at least for SmartGit)
+
+It may be resolved in two ways:
+* go to SmartGit **Preferences**, **Low-Level Properties** and set `json.graphQL.ignoreErrorsIfDataIsPresent` and `json.graphQL.ignoreNullArrayElements` to `true`; or
+* ask your organization Administrator to change your membership (at `https://github.com/orgs/<org>/people`) from **Public** to **Private**.
+
 
 ### Private repositories do not show up/403 when trying to access an organization repository
 
