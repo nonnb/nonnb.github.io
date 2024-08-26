@@ -5,53 +5,59 @@ redirect_from:
 ---
 # Preferences
 
+Accessing preferences in SmartGit allows you to customize the software to suit your workflow and personal preferences better. To access the preferences, navigate to **Edit \| Preferences**. This will open a dialog where you can adjust various settings, such as repositories, tools, and user-interface options. 
+
+> [!NOTE]
+> Some highlighted options require an application restart to be applied.
+
+![Preferences dialog](../../images/Preferences-dialog.png)
+
+**Tip:** Use the ‘Search’ function to change the theme of SmartGit e.g., type in "Theme", and then choose between the available themes, like Dark or Light, to match your preferred visual style.
+
 ## Commands
-**TODO** Move Commands to its own article and link from here.
 
-This page shows options which influence the executed Git (and Hg)
-commands.
-
-### Commit
-**TODO** Document the options under Commit.
-
-### Push
-
-Only select the **Allow modifying pushed commits (e.g. forced-push)** if
-you are sure you know Git well enough to understand the consequences of
-forced push.
-
-### Refresh
-
-With **Detect Renames** enabled, SmartGit will detect renames of
-*added*/*removed* and optionally also *untracked*/*missing* file pairs.
-
-### Clone
-
-**TODO** Document the 'credential helper' configuration option. If needed, linked to the Repository/Clone article. The 'info' icon on the UI has a lot of tooltip info need to repeat and expand on here.
-
-### Checkout
-**TODO** Document the 'warn about submodule configuration changes' option.
+The Commands section allows configuration of common git command behavior.
+Refer to [Commands](Commands.md) for details.
 
 ## Standard Window
 
-**TODO** Document the difference in behaviour with these two radio options. Link to the `../Main Windows` article.
+This setting controls the level of detail and the complexity in the appearance of the Standard Window.
+
+**TODO** I've toggled and restarted SmartGit but can't see any visual difference in the Standard Window.
 
 ## Log and Working Tree window
 
+### Commit View
+
+This option configures the staging behavior when no files have been staged in the Commit View.
+- *Ask* will prompt you how to proceed (Default)
+- *Commit all except untracked files* will stage changes made to tracked files.
+- *Commit all including untracked files* will stage changes to modified files, and will also stage any untracked files.
+
+### Commit Dialog
+
+### Push
+
+The Push settings allow for automatic tracking of new branches, and control over pushing of tags.
+
+### Stash
+
 Select **Automatically save stash on common commands** to have SmartGit retry the execution of a Git command, if this failed and the working tree contains local changes.
+Select **Include untracked files** to include untracked files during a stash.
+
+### Refresh
 
 Select **Distinguish between content and EOL-only changes** to have
 SmartGit distinguish between content and EOL-only changes, in addition
-to the plain *modified* state which Git reports (in either case, files
-which Git considers as *modified* will be reported). The EOL-change
-information will be displayed in the **Files** table **State** If you do
-not want Git to care about EOLs at all (that's usually the case if you
-are on Windows), you might want to use
+to the plain *modified* state reported by Git (in either case, files
+that Git considers as *modified* will be reported). 
+
+The EOL-change information will be displayed in the **Files** table **State** 
+If you do not want Git to care about EOLs at all (that's usually the case if you are on Windows), you might want to use
 [core.autocrlf](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
 or [text and eol attributes](https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html).
 
-**TODO** Change to `info` markup
-### Info
+> [!INFO] 
 > If you encounter problems with auto-stashing, because SmartGit does not ask anymore, you may try to **Restore all confirmation dialogs** in section **User Interface**.
 
 ### Log

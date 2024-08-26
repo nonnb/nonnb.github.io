@@ -7,6 +7,7 @@
       - [Clone](<Clone>)
 - Using the SmartGit Application
   - [Main Windows](<Main-Windows>)
-  - [Preferences](<Preferences>)
+  - [Preferences](<Preferences.html>)
+    - [Commands](GUI/Preferences/Commands.md)
+    - [User Interface Preferences](<GUI/Preferences/User-Interface.md>)
     - [Tools](<Tools>)
-    - [User Interface Preferences](<GUI/Preferences/User Interface>)
