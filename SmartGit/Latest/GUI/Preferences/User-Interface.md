@@ -68,3 +68,7 @@ Values between 8 and 12 are recommended, depending on the resolution of your scr
 
 Click on a visual text element with the Right Mouse button to configure the Color used for that element.
 If you are not satisfied with the color setting, you can choose `Reset to default` to return the element to the default theme value.
+
+## Spell Checker
+
+**TODO** Add Brief paragraph

@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /SmartGit/Latest/Git Concepts/Git-Concepts.html
+  - /SmartGit/Latest/GitConcepts/Git-Concepts.html
 ---
