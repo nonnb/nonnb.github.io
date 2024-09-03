@@ -1,8 +1,11 @@
 # Revert
 
-The Revert command allows you to 'undo' certain commits (from whatever
-branch) in the current branch.
+The Revert command allows you to 'undo' unwanted commits (from any branch) in the current branch.
 
+Note: `git revert` creates a new commit which undoes the effects of the 'undone' commits. It does NOT reset the *head* of the affected branch back to the previous commit.
+See also:
+- git push --force
+- Rebasing + Squash Commits
 
 
 ``` text

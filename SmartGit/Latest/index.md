@@ -4,6 +4,10 @@
 
 - [Git Concepts](Git-Concepts)
   - [Submodules](GitConcepts/Submodules.md)
+  - [Branches](Branches)
+  - [Commits](Commits)
+  - [Git for SVN users](GitConcepts/Git-for-SVN-users.md)
+  - [The Index](The-Index)
 - Using the SmartGit Application
   -   [Git Commands](Git-Commands)
     - [Working with Repositories](Repository-Related)

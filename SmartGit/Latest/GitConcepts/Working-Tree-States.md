@@ -1,7 +1,11 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Working-Tree-States
+  - /SmartGit/Latest/Working-Tree-States.html
+---
 # Working Tree States
 
-There are some particular situations where commits cannot be performed,
-for instance when a merge has failed due to a conflict. In this case,
-there are two ways to finish the merge: Either by resolving the
-conflict, staging the file changes and performing the commit on the
-working tree root, or by reverting the whole working tree.
+There are certain situations where commits cannot be performed, such as when a merge fails due to a conflict. 
+In this case, there are two ways to complete the merge: 
+- Either by resolving the conflict, staging the file changes, and committing on the working tree root.
+- By reverting the entire working tree.
