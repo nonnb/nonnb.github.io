@@ -21,6 +21,8 @@ You can also elect to create a local branch which does not track a remote branch
 After Cloning, Git will checkout the default local branch into your Working Tree - this is usually *main* (or *master* in older repositories).
 
 ## Working with Branches
+**TODO** Discuss with Syntevo - it's extremely difficult to explain the checkout options without either a SmartGit screenshot (in which case this is part of the GUI, no longer a concept), or via the git bash command line, as I've done below.
+
 The `checkout` command is used to switch between branches in Git.
 
 For existing local branches, checkout will simply switch the Working Tree to the branch selected, e.g.
