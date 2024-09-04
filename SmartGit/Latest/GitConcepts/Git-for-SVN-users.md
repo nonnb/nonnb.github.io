@@ -13,7 +13,7 @@ Just like the working copy in SVN, the Git Working Tree is the directory where y
 ## Cloning, Checkout, Commiting and Pushing in Git
 
 Although the outcomes are similar in both Git and SVN (i.e. adding new commits to a branch on a remote server), in Git, there are some conceptual differences that you'll need to be aware of:
-- In Git, you [Clone](Clone.md) a repository from a remote server. This is somewhat similar to checking out an SVN branch onto your local system for the first time.
+- In Git, you [Clone](Clone.md) a repository from a remote server. This is somewhat similar to checking out an SVN branch from a remote server onto your local system for the first time.
 - In Git, you use Checkout to switch between branches in your local repository. This is somewhat similar to using the `switch` command in SVN, although note that Git changes branch on your local repository.
 - In SVN, using 'commit' will publish your local changes to the remote server. In Git, this activity is broken down into smaller, distinct steps:
   - [Staging](The-Index.md) - this is a Git process where you decide WHICH of the changes you've made in your Working Tree that you'd like to be added to the next commit. Unless you stage the files that you've changed, added or deleted, these will be left out of the next commit.
