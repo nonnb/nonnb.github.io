@@ -25,8 +25,8 @@ Git offers several advantages over traditional Centralized Version Control Syste
 
 Although every repository usage is unique, some common activities will occur at some point in the lifetime of on most repositories:
 
-- A repository owner (e.g., a team lead or senior developer) will create a new, empty repository on a Git Server such as GitHub, GitLab, BitBucket, or Azure DevOps **TODO** Links.
-- Access to the repository will be configured (e.g., private or public access, identifying users who may read and contribute to the repository). The repository can then be cloned locally.
+- A repository owner (e.g., a team lead or senior developer) will create a new, empty repository on a Git Server such as GitHub, GitLab, BitBucket, or Azure DevOps **TODO** Links. We'll refer to this remote repository as `origin`.
+- Access to the `origin` repository will be configured (e.g., private or public access, identifying users who may read and contribute to the repository). The `origin` repository can then be cloned locally.
 - The repository owner will identify the default branch in the repository (usually called `main`, or historically `master`) and will often protect the default branch from direct changes. Contributors are expected to push changes to another branch in the same repository or a fork of the repository and issue a Pull Request for review and approval.
 - It is common for the initial commit(s) in a repository to include:
   - A `README.md` file providing a brief outline of the repository's purpose.
@@ -37,7 +37,7 @@ Although every repository usage is unique, some common activities will occur at 
   - Using an established branching process such as GitFlow or GitHub Flow.
   - Determining naming standards for new branches (e.g., branch names might contain the headline name of an Agile story or contain a ticket number referencing an item in a project management tool).
   - Setting minimum quality standards (e.g., any automated tests, documentation, and code review tasks) required by contributors before a Pull Request can be issued to add new commits into the default branch.
-- Each user or team member contributing to the repository (Contributor) can now clone the repository to their local computers. This will create a Working Directory containing all the files in the default branch, and an internal `.git` folder. **Do NOT add or edit any files in the `.git` folder** - this is used internally by Git to manage your local repository.
+- Each user or team member contributing to the repository (Contributor) can now clone the repository to their local computers. This will create a Working Tree containing all the files in the default branch, and an internal `.git` folder. **Do NOT add or edit any files in the `.git` folder** - this is used internally by Git to manage your local repository.
 - Contributors will identify the next deliverable piece of work they will work on and create a new branch for this work, following any branch naming rules identified for the repository.
 - Contributors will use their favorite tools and Integrated Development Environments (IDEs) to develop new software versions, documentation, designs, or other types of content in the Working Directory. This will result in changes to existing files tracked by Git, and adding new files not yet known to Git.
 - Once Contributors are satisfied that this piece of work is complete, a typical sequence is to:
@@ -48,6 +48,7 @@ Although every repository usage is unique, some common activities will occur at 
   - Other contributors in the repository will be notified of the Pull Request and can review the changes made in the commit. They may either agree to accept the changes (by merging or rebasing them into the target branch) or request that the Contributor make changes to the source branch before it is accepted.
   - Another common reason branches cannot be merged is due to a merge conflict. For example, another Contributor may have added a commit to the target branch that conflicts with the changes made in the source branch. In this case, someone will need to resolve the conflict, creating an additional commit to resolve the conflict. This resolving commit must then be pushed to the source branch.
   - Once the review is accepted, an authorized user of the repository will complete the Pull Request, which will add the changes made in the source branch to the target branch.
+  - Other users who have Cloned the `origin` repository can now [pull from the remote repository](Synchronizing-with-Remote-Repositories.md#pull) to get your latest pushed changes.
 
 And that's it - the basics of working with Git!
 
