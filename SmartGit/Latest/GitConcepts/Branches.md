@@ -2,7 +2,7 @@
 
 Branches are used by Git to store an independent series of commits in a repository.
 
-In Git, you can create as many Branches in a repository as you like, e.g., it is common to create branches when fixing bugs for a previous release of a software project, while simultaneously developing new features for the next project version.
+In Git, you can create as many Branches in a repository as needed, e.g., it is common to create branches when fixing bugs for a previous release of a software project, while simultaneously developing new features for the next project version.
 
 Git distinguishes between two kinds of branches: 
 - *Local branches* - these are branches in your local repository. If you have not pushed this branch to a remote repository, the branch will only be visible on your local computer.
