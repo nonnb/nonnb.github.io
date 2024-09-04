@@ -34,8 +34,12 @@ Although every repository usage is unique, there are some common activities whic
   - The inital commit may also include a baseline version of the software, documenation, or other artifacts being developed which require version control.
 - For software projects, the team will often set ground rules for the software development processes to be used on the repository, e.g.
   - using an established branching process such as GitFlow or GitHub Flow
-  - determine the naming standards for new branches (e.g. branch names might contain the headline name of a Story, or 'Ticket' number referencing an Agile software tool's 
+  - determine the naming standards for new branches (e.g. branch names might contain the headline name of an Agile Story, or contain a Ticket number referencing an item in a project management tool)
   - setting minimum quality standards (e.g. any automated tests, documentation, and code review tasks) required by contributors before a Pull Request can be issued to add new commits into the default branch.
+- Each user / team member contributing to the repository (Contributor) can now Clone the repository to their local computers. This will create a Working Directory containing all of the files in the default branch, as well an internal `.git` folder. Do NOT add or edit any files in the `.git` folder - this is used internally by git to manage your local repository.
+- Contributors will identify what the next deliverable piece of work they will work on, and create a new branch for this work, in accordance with any branch naming rules identified for the repository.
+- Contributors will use their favorite tools to develop new versions of software, documentation, designs, or other types of content, in the Working Directory. This will result in changes to existing files tracked by Git, but also adding new files not yet known to Git.
+- Once Contributors are satisfied that this piece of work is complete
 
 ## Table of Common Terms used in Git
 
@@ -58,7 +62,7 @@ Although every repository usage is unique, there are some common activities whic
 | Cherry-Pick | Cherry picking (`git cherry-pick`) is an advanced feature that pulls a specific, existing commit into the current branch. Although cherry-picking can help pick specific features off side branches into a new release, extreme caution is needed to ensure all dependent commits are cherry-picked in sequentially. |
 | [Working Tree](Working-Tree-States.md) | The working tree is the folder on your local system where you can change files in a repository and then stage and commit these changes. |
 | Commit Hash | A Commit Hash (also known as a commit Id) is a unqiue SHA-1 hash of the contents of a commit, which will be invariably be unique (unless the commit data, including timestamps and metadata are all identical). |
-| Bare Repository | A Bare Repository is a Git repository without a Working Tree. Usually, you will want a working directory, so Bare Repositories are generally only of interest to hosting providers like GitHub. |
+| Bare Repository | A Bare Repository is a Git repository without a Working Tree. Usually, you will want a working directory, so Bare Repositories are generally only of interest to hosting providers like GitHub. *Note: A Bare Repository is not the same as an empty repository.* |
 | Secure Shell (SSH) | SSH is an encrypted network protocol historically used to authenticate and communicate between local and remote repositories.  **TODO** See SSH |
 | HTTPS | HyperText Transfer Protocol Secure is an alternative protocol that Git can use to connect local and remote repositories.|
 | Credential Manager | A Git Credential Manager is a secure tool that assists in retaining a user's credentials as required to access remote repositories. Credential Managers simply provide HTTPS access to remote repositories so that users aren't prompted for authentication on each git command.|
