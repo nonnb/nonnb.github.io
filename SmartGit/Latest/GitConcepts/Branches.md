@@ -42,8 +42,11 @@ In addition to checking out existing remote branches, Git also allows you to cre
 `git checkout -b NewFeature ce1067054f`
 
 Where `ce1067054f` is the SHA hash of the commit that you would like the `NewFeature` local branch to be created from.
-*Tip* : After a creating a new release, it is good practice to tag the commit which produced that release with an identifier for that release.
-This will allow you to create bug fix commits for that release, by creating a fix branch from the tag.
+#### Tip
+>
+> After a creating a new release, it is good practice to tag the commit which produced that release with an identifier for that release.
+This will make it easier to identify where to branch from when creating bug fix commits for that release.
+>
 
 When you push changes from your local branch to the origin repository,
 these changes will be propagated to the tracked (remote) branch as well.
@@ -58,10 +61,8 @@ Merge command is the Rebase command.
 
 #### Tip
 >
->
 >The method to be used by Pull (either *Merge* or *Rebase*) can be
 >configured in **Repository\|Settings** on the **Pull** tab.
->
 >
 
 ## Branches are just pointers to commits
