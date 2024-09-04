@@ -1,4 +1,4 @@
-## Git for Subversion Users
+# Git for Subversion Users
 
 If you are familiar with traditional, Centralized Version Control System such as Subversion (SVN), there are some conceptual differences that you'll need to understand in order to adapt to the basic flow in Git.
 
