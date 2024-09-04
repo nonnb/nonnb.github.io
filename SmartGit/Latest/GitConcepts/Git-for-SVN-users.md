@@ -6,7 +6,7 @@ If you are familiar with traditional, Centralized Version Control System such as
 
 Subversion (SVN) requires the use of "working copies" of a remote (server) repository, each of which corresponds to exactly one repository (SVN working copies will contain the entire repository, or just parts of it).
 
-In Git, the equivalent of a `working copy` is the [Working Tree](Working-Tree-States.md), one of the most important features your local repository (remember, in a Distributed Version Control System like Git, there isn't a single, central repository - by Cloning a remote repository, you get a copy of the repository).
+In Git, the equivalent of a `working copy` is the [Working Tree](Working-Tree-States.md), one of the major features of your local repository (remember, in a Distributed Version Control System like Git, there isn't a single, central repository - by Cloning a remote repository, you get a copy of the repository).
 
 Just like the working copy in SVN, the Git Working Tree is the directory where you can edit files, build and test software, before commiting changes. 
 
