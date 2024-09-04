@@ -67,6 +67,10 @@ Merge command is the Rebase command.
 
 ## Branches are just pointers to commits
 
+**TODO** Simplify this wording. The HEAD is the pointer stored in the local repository representing 'what' has been checked out in the Working Tree. 
+This can be branch, or to a specific commit (in which case the state is referred to as detached HEAD).
+
+
 Every branch is simply a named pointer to a commit. A special unique
 pointer for every repository is the *HEAD* which points to the commit
 the working tree state currently corresponds to. The HEAD cannot only
