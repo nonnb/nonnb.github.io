@@ -4,12 +4,11 @@ Branches can be used to store independent series of commits in the
 repository, e.g., to fix bugs for a released software project while
 simultaneously developing new features for the next project version.
 
-Git distinguishes between two kinds of branches: *local branches* and
-*remote branches*. In the local repository, you can create as many local
-branches as you like. Remote branches, on the other hand, are local
-branches of the origin repository. In other words: Cloning a remote
-repository clones all its local branches which are then stored in your
-local repository as remote branches. You can't work directly on remote
+Git distinguishes between two kinds of branches: 
+- *local branches* - these are branches in your local repository. If you have not pushed this branch to a remote repository, the branch will only be visible on your local computer.
+- *Remote branches* - these are branches stored on the remote. These branches will be visible to everyone with access to the remote repository, and remote branches will become available on your local repository when you Clone a remote repository. You can't work directly on remote branches, instead, you will need to clone the remote repository, which will allow you to switch to a local branch which tracks the remote branch.
+
+When you [Clone](Clone.md) a remote repository, all remote branches will become available local repository as remote branches. You can't work directly on remote
 branches, but have to create local branches, which are 'linked' to the
 remote branches. The local branch is called *tracking branch*, and the
 corresponding remote branch *tracked branch*. Local branches can be
