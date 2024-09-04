@@ -54,6 +54,8 @@ And that's it - the basics of working with Git!
 
 ## Table of Common Terms used in Git
 
+**TODO** Sort the table alphabetically once done.
+
 | Term  | Definition |
 | ------------- | ------------- |
 | Init  | (`git init`) is the command to create a new repository. You generally have the option of creating new repositories either on the remote, or locally. If you create the repository locally with a Git Init, you will need to connect to an empty remote repository to push your first commit(s) in your local repository to the remote. |
