@@ -17,6 +17,7 @@ Git has several advantages over classical Centralized Version Control Systems (C
 - Commits can be created in the local repository and then Pushed to the remote repository when you are ready.
 - Git has a streamlined mechanism for reviewing requests to bring new commits on a feature or hotfix branch into an existing branch, called a Pull Request (PR).
 - It is much easier to switch between branches in Git than with CVCS systems.
+- Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
 
 ## Table of Common Terms used in Git
 
@@ -27,9 +28,10 @@ Git has several advantages over classical Centralized Version Control Systems (C
 | Pull Request  | A Pull Request (PR) is a request issued to merge changes made on one branch (e.g., changes made on a feature branch) into another branch (e.g., into a main or release branch). Pull Requests allow an ideal opportunity for code reviews |
 | [Branch](Branches.md)  | A Branch is a named reference to a particular commit in a repository. When new commits are added to a branch, the branch will now point to the later commit. |
 | Checkout | Checkout (`git checkout`) is the Git command to switch between or create new branches. |
-| Staging | Staging is the process of identifying the files that have been changed (added, edited, or deleted) in your Working Tree and are to be included in the next commit. Git tracks staged files in the Git [index](The-Index.md). |
-| [Commit](Commits.md) | Commits (`git commit`) is a unit or record of changes made to the files in a repository. A branch thus consists of a sequence of commits. |
-| Local Repository | The local repository is a (clone of a) repository stored on your local system (in the `.git` folder). You should not make changes to the local repository directly. Instead, changing files in the Working Tree would be best. |
+| Tracking Branch | When you checkout a remote branch to your local repository, the local branch will *track* the remote repository and branch where it originated. As time progresses, this will allow you to merge changes to the tracked branch made by others, into your local branch.  |
+| Staging | Staging is the process of identifying the files that have been changed (added, edited, or deleted) in your Working Tree and which are to be included in the next commit. Git tracks staged files in the Git [index](The-Index.md). If you forget to stage a change or newly added file, it will be omitted from the commit!|
+| [Commit](Commits.md) | Commits (`git commit`) is a unit or record of changes made to the files in a repository. So a branch consists of a sequence of commits. |
+| Local Repository | The local repository is a (clone of a) repository stored on your local system (in the `.git` folder). You should not make changes to the local repository directly. Instead, you make changes to files in your Working Tree. |
 | Remote Repository | The repository from which your local repository copy has been cloned. The remote is often referred to as `origin` by convention. |
 | Rebase | Rebasing (git rebase) provides an alternative to merging two branches by creating or appending equivalent commits representing the changes made in the source branch to the target branch. This removes the appearance of branching from the commit history. In visualization tools, rebased commits appear as a linear sequence of commits on the branch. |
 | Squash Commits | Git allows creating a new, single, consolidated commit from a series of smaller commits, essentially the ‘rewriting’ history in a branch. This can be useful for removing an unnecessarily ‘noisy’ commit history from your repository; however, it has the downside of losing some of the audit trails of when and who made changes. |
@@ -45,32 +47,4 @@ Git has several advantages over classical Centralized Version Control Systems (C
 | Large File Storage | Git LFS is an extension that stores large binary files (BLOBs) separately from your repositories. This is useful because Git cannot track 'differences' between binary files in the same way it can with text files such as source code or wiki documents. Adding BLOBs directly to your Git repository can bloat the storage required and impact performance of commands between local and remote repositories.|
 | [Submodules](Submodules.md) | Submodules allow a common repository (e.g., a library project) to be referenced by one or more 'parent' repositories. This enables the reuse of common code without maintaining separate copies of the common repository. |
 
-**TODO** - Below still needs to be amended.
-
-## Repository, Working Tree, Commit
-
-First, we must introduce some Git-specific terms that may have different meanings in other version control systems, such as Subversion.
-
-Classical centralized version control systems such as Subversion (SVN) have so-called \`working copies', each corresponding to exactly
-one repository. SVN working copies can correspond to the entire repository or parts of it. In Git, on the other hand, you always
-deal with (local) repositories. Git's *working tree* is the directory where you can edit files and is part of a repository. So-called *bare
-repositories*, used on servers as central repositories, don't have a working tree.
-
-#### Example
->
->
->
->Let's assume you have all your project-related files in a directory
->`D:\my-project`. This directory represents the repository, that
->consists of the working tree (containing all files to edit) and the
->attached repository meta data that is located in the
->`D:\my-project\.git` directory.
->
->
-
-## Typical Project Life Cycle
-
-As with all version control systems, a central repository typically contains the project files. 
-You need to *clone* the *remote* central repository to create a local repository. Then, the local repository is connected to the remote repository, that, from the local repository’s point of view, is referred to as the *origin*. The cloning step is analogous to the initial SVN checkout for getting a local working copy.
-
-Having created the local repository containing all project files from the *origin*, you can now make changes to the files in the working tree and *commit* these changes. They will only be stored in your local repository, so you don’t need access to a remote repository when committing. After you have committed a couple of changes, you can [push them to the remote repository](Synchronizing-with-Remote-Repositories.md#push). Other users with clones of the origin repository can [pull from the remote repository](Synchronizing-with-Remote-Repositories.md#pull) to get your pushed changes.
+Please read our article, [Git for SVN Users](Git-for-SVN-users.md), if you are new to Git, but are familiar with version control systems such as Subversion.
