@@ -1,6 +1,10 @@
 ## Repository, Working Tree, Commit
 
-Classical centralized version control systems such as Subversion (SVN) have so-called `working copies', each of which corresponds to exactly one repository. SVN working copies can correspond to the entire repository or just to parts of it. In Git, on the other hand, you always deal with (local) repositories. Git's working tree is the directory where you can edit files and it is part of a repository. So-called bare repositories, used on servers as central repositories, don't have a working tree.
+Traditional centralized version control systems such as Subversion (SVN) require the use of `working copies' of a remote (server) repository, each of which corresponds to exactly one repository (SVN working copies will contain the entire repository, or just to parts of it).
+
+In Git, the equivalent of a `working copy` is the Working Tree, which is part of your local repository (remember, in a Distributed Version Control System like Git, there isn't a single, central repository).
+
+Git's working tree is the directory where you can edit files and it is part of a repository.
 
 
 ### Example
