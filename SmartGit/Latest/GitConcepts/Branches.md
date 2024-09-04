@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Branches
+  - /SmartGit/Latest/Branches.html
+---
 # Branches
 
 Branches are used by Git to store an independent series of commits in a repository.
