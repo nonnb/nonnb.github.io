@@ -39,7 +39,7 @@ will create a local branch `NewFeature` which tracks the upstream `origin/main`.
 
 In addition to checking out existing remote branches, Git also allows you to create new local branches from an existing commit hash, or tag, e.g.
 
-   git checkout -b NewFeature ce1067054f
+`git checkout -b NewFeature ce1067054f`
 
 Where `ce1067054f` is the SHA hash of the commit that you would like the `NewFeature` local branch to be created from.
 *Tip* : After a creating a new release, it is good practice to tag the commit which produced that release with an identifier for that release.
