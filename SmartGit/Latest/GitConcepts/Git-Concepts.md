@@ -22,7 +22,7 @@ Git has several advantages over classical Centralized Version Control Systems (C
 
 | Term  | Definition |
 | ------------- | ------------- |
-| Init  | (`git init`) is the command to create a new repository locally. You must connect to an empty remote repository to push changes in your local repository to the remote. |
+| Init  | (`git init`) is the command to create a new repository. You generally have the option of creating new repositories either on the remote, or locally. If you create the repository locally with a Git Init, you will need to connect to an empty remote repository to push your first commit(s) in your local repository to the remote. |
 | Clone  | Cloning (`git clone`) is the command used to create a local copy of an existing repository. |
 | Pull Request  | A Pull Request (PR) is a request issued to merge changes made on one branch (e.g., changes made on a feature branch) into another branch (e.g., into a main or release branch). Pull Requests allow an ideal opportunity for code reviews |
 | [Branch](Branches.md)  | A Branch is a named reference to a particular commit in a repository. When new commits are added to a branch, the branch will now point to the later commit. |
