@@ -21,12 +21,21 @@ Git has several advantages over classical Centralized Version Control Systems (C
 - It is much easier to switch between branches in Git than with CVCS systems.
 - Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
 
-## A typical lifecycle for a team using GitHub
+## A typical repository lifecycle for a team using Git
+Although every repository usage is unique, there are some common activities which will occur at some point in the lifetime of on most repositories:
 
-- Your team lead or a senior will create a new, empty repository on a Git Server. This will 
-
-
-
+- A repository owner (e.g. a team lead or senior developer) will create a new, empty repository on a Git Server.
+- Access to the repository will be configured (e.g. private or public access, and identify user who may read, and who may contribute, to the repository). The repository can then be cloned locally.
+- The repository owner will identify the default branch in the repository (usually called `main`, or historically `master`), and will often protect the default branch from direct changes (instead, contributors are expected should push changes to another branch in the same repository, or a fork of the repository, and issue a Pull Request which can then be reviewed and approved).
+- It is common for the initial commit(s) in a repository to include:
+  - A `README.md` file, providing a brief outline of the purpose of the repository
+  - A `.gitignore` file, which tells git which files in the Working Directory should NOT be checked into the repository (in software development, compiled and executable files and 3rd party library binary files are generally excluded)
+  - For a software project, file(s) can be added which are used by your chosen DevOps Tool's build and release pipelines, which will allow continuous integration (CI) and continuous deployment (CD) practices, such as automatically triggering new builds when changes are made to a branch, or creating and deploying new releases when branches are merged into the default branch. This will require additional configuration outside of the repository.
+  - The inital commit may also include a baseline version of the software, documenation, or other artifacts being developed which require version control.
+- For software projects, the team will often set ground rules for the software development processes to be used on the repository, e.g.
+  - using an established branching process such as GitFlow or GitHub Flow
+  - determine the naming standards for new branches (e.g. branch names might contain the headline name of a Story, or 'Ticket' number referencing an Agile software tool's 
+  - setting minimum quality standards (e.g. any automated tests, documentation, and code review tasks) required by contributors before a Pull Request can be issued to add new commits into the default branch.
 
 ## Table of Common Terms used in Git
 
