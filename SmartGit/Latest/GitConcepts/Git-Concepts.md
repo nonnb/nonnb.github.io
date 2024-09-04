@@ -21,7 +21,8 @@ Git has several advantages over classical Centralized Version Control Systems (C
 - It is much easier to switch between branches in Git than with CVCS systems.
 - Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories to multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
 
-## A typical repository lifecycle for a team using Git
+## A typical repository lifecycle when using Git
+
 Although every repository usage is unique, there are some common activities which will occur at some point in the lifetime of on most repositories:
 
 - A repository owner (e.g. a team lead or senior developer) will create a new, empty repository on a Git Server such as GitHub, GitLab, BitBucket Azure DevOps **TODO** Links.
@@ -38,8 +39,18 @@ Although every repository usage is unique, there are some common activities whic
   - setting minimum quality standards (e.g. any automated tests, documentation, and code review tasks) required by contributors before a Pull Request can be issued to add new commits into the default branch.
 - Each user / team member contributing to the repository (Contributor) can now Clone the repository to their local computers. This will create a Working Directory containing all of the files in the default branch, as well an internal `.git` folder. Do NOT add or edit any files in the `.git` folder - this is used internally by git to manage your local repository.
 - Contributors will identify what the next deliverable piece of work they will work on, and create a new branch for this work, in accordance with any branch naming rules identified for the repository.
-- Contributors will use their favorite tools to develop new versions of software, documentation, designs, or other types of content, in the Working Directory. This will result in changes to existing files tracked by Git, but also adding new files not yet known to Git.
-- Once Contributors are satisfied that this piece of work is complete
+- Contributors will use their favorite tools and Integrated Development Environments (IDEs) to develop new versions of software, documentation, designs, or other types of content, in the Working Directory. This will result in changes to existing files tracked by Git, but also adding new files not yet known to Git.
+- Once Contributors are satisfied that this piece of work is complete, a typical sequence is to:
+  - Stage the next commit, ensuring that all modified, new, and deleted files are included in the next commit (the Git Index)
+  - Commit the staged changes, providing a commit message describing the changes (and possibly identifying the story, feature or ticket associated with this work). Git will add audit information of the user creating the commit, add the timestamp, and calculate the new commit's hash.
+  - The Contributor will now push the new commit(s) back to the remote repository. By default, Git will push the changes to the tracked branch, however the contributor can elect to push to a different branch on the remote, or to create a new branch on the remote. By convention, it is a good idea to keep the branch naming consistent between the remote and the local repository, to prevent any confusion or mistakes.
+  - The Contributor can now create a pull request on the remote between the newly-pushed branch (source branch), and the target branch (e.g. into the default branch, such as `main`).
+  - Other contributors in the repository will be notified of the Pull Request, and can now review the changes made in the commit, and either agree to accept the changes (by merging or rebasing the changes into the target branch), or requesting that the Contributor make changes to the source branch before it is accepted.
+  - Another common reason why branches cannot be merged is due to a merge conflict, for example, another Contributor has added a commit to the target branch which conflicts with the changes made in the source branch. In this case, someone will need to resolve the conflict, which will then create an additional commit to resolve the conflict. This resolving commit must then be pushed to the source branch.
+  - Once the review is accepted, an authorised user of the repository will then Complete the Pull Request, which will then add the changes made in the source branch into the target branch.
+
+And that's it - the basics of working with Git!
+
 
 ## Table of Common Terms used in Git
 
@@ -62,6 +73,7 @@ Although every repository usage is unique, there are some common activities whic
 | Cherry-Pick | Cherry picking (`git cherry-pick`) is an advanced feature that pulls a specific, existing commit into the current branch. Although cherry-picking can help pick specific features off side branches into a new release, extreme caution is needed to ensure all dependent commits are cherry-picked in sequentially. |
 | [Working Tree](Working-Tree-States.md) | The working tree is the folder on your local system where you can change files in a repository and then stage and commit these changes. |
 | Commit Hash | A Commit Hash (also known as a commit Id) is a unqiue SHA-1 hash of the contents of a commit, which will be invariably be unique (unless the commit data, including timestamps and metadata are all identical). |
+| Merge Conflict | A merge conflict occurs when changes are made by different Contributors, on different commits, to the same file, and Git is unable to automaticaly resolve the conflict. This will prevent two branches from being merged together until the conflict has been resolved, and a new commit created on one of the conflicting branches which resolves the conflict.|
 | Bare Repository | A Bare Repository is a Git repository without a Working Tree. Usually, you will want a working directory, so Bare Repositories are generally only of interest to hosting providers like GitHub. *Note: A Bare Repository is not the same as an empty repository.* |
 | Secure Shell (SSH) | SSH is an encrypted network protocol historically used to authenticate and communicate between local and remote repositories.  **TODO** See SSH |
 | HTTPS | HyperText Transfer Protocol Secure is an alternative protocol that Git can use to connect local and remote repositories.|
