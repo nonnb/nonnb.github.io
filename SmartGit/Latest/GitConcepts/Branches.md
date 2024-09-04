@@ -1,6 +1,6 @@
 # Branches
 
-Branches are used by Git to store independent series of commits in a repository.
+Branches are used by Git to store an independent series of commits in a repository.
 
 In Git, you can create as many Branches in a repository as you like, e.g., it is common to create branches when fixing bugs for a previous release of a software project, while simultaneously developing new features for the next project version.
 
