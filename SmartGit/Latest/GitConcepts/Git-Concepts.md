@@ -19,7 +19,7 @@ Git has several advantages over classical Centralized Version Control Systems (C
 - Commits can be created in the local repository and then Pushed to the remote repository when you are ready.
 - Git has a streamlined mechanism for reviewing requests to bring new commits on a feature or hotfix branch into an existing branch, called a Pull Request (PR).
 - It is much easier to switch between branches in Git than with CVCS systems.
-- Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
+- Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories to multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
 
 ## A typical repository lifecycle for a team using Git
 Although every repository usage is unique, there are some common activities which will occur at some point in the lifetime of on most repositories:
