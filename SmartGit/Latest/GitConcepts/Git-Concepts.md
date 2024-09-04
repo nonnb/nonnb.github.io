@@ -32,26 +32,26 @@ Although every repository usage is unique, some common activities will occur at 
   - A `README.md` file providing a brief outline of the repository's purpose.
   - A `.gitignore` file that tells Git which files in the Working Directory should NOT be checked into the repository (in software development, compiled and executable files and 3rd party library binaries are generally excluded).
   - For a software project, files used by your chosen DevOps Tool's build and release pipelines, that enable continuous integration (CI) and continuous deployment (CD) practices. This includes automatically triggering new builds when changes are made to a branch or creating and deploying new releases when branches are merged into the default branch. Additional configuration outside of the repository will be required.
-  - The inital commit may also include a baseline version of the software, documenation, or other artifacts being developed which require version control.
-- For software projects, the team will often set ground rules for the software development processes to be used on the repository, e.g.
-  - using an established branching process such as GitFlow or GitHub Flow
-  - determine the naming standards for new branches (e.g. branch names might contain the headline name of an Agile Story, or contain a Ticket number referencing an item in a project management tool)
-  - setting minimum quality standards (e.g. any automated tests, documentation, and code review tasks) required by contributors before a Pull Request can be issued to add new commits into the default branch.
-- Each user / team member contributing to the repository (Contributor) can now Clone the repository to their local computers. This will create a Working Directory containing all of the files in the default branch, as well an internal `.git` folder. Do NOT add or edit any files in the `.git` folder - this is used internally by git to manage your local repository.
-- Contributors will identify what the next deliverable piece of work they will work on, and create a new branch for this work, in accordance with any branch naming rules identified for the repository.
-- Contributors will use their favorite tools and Integrated Development Environments (IDEs) to develop new versions of software, documentation, designs, or other types of content, in the Working Directory. This will result in changes to existing files tracked by Git, but also adding new files not yet known to Git.
+  - The inital commit may also include a baseline version of the software, documenation, or other artifacts being developed that require version control.
+- For software projects, the team will often set ground rules for the software development processes used in the repository, such as:
+  - Using an established branching process such as GitFlow or GitHub Flow.
+  - Determining naming standards for new branches (e.g., branch names might contain the headline name of an Agile story or contain a ticket number referencing an item in a project management tool).
+  - Setting minimum quality standards (e.g., any automated tests, documentation, and code review tasks) required by contributors before a Pull Request can be issued to add new commits into the default branch.
+- Each user or team member contributing to the repository (Contributor) can now clone the repository to their local computers. This will create a Working Directory containing all the files in the default branch, and an internal `.git` folder. **Do NOT add or edit any files in the `.git` folder** - this is used internally by Git to manage your local repository.
+- Contributors will identify the next deliverable piece of work they will work on and create a new branch for this work, following any branch naming rules identified for the repository.
+- Contributors will use their favorite tools and Integrated Development Environments (IDEs) to develop new software versions, documentation, designs, or other types of content in the Working Directory. This will result in changes to existing files tracked by Git, and adding new files not yet known to Git.
 - Once Contributors are satisfied that this piece of work is complete, a typical sequence is to:
   - Stage the next commit, ensuring that all modified, new, and deleted files are included in the next commit (the Git Index)
   - Commit the staged changes, providing a commit message describing the changes (and possibly identifying the story, feature or ticket associated with this work). Git will add audit information of the user creating the commit, add the timestamp, and calculate the new commit's hash.
-  - The Contributor will now push the new commit(s) back to the remote repository. By default, Git will push the changes to the tracked branch, however the contributor can elect to push to a different branch on the remote, or to create a new branch on the remote. By convention, it is a good idea to keep the branch naming consistent between the remote and the local repository, to prevent any confusion or mistakes.
-  - The Contributor can now create a pull request on the remote between the newly-pushed branch (source branch), and the target branch (e.g. into the default branch, such as `main`).
-  - Other contributors in the repository will be notified of the Pull Request, and can now review the changes made in the commit, and either agree to accept the changes (by merging or rebasing the changes into the target branch), or requesting that the Contributor make changes to the source branch before it is accepted.
-  - Another common reason why branches cannot be merged is due to a merge conflict, for example, another Contributor has added a commit to the target branch which conflicts with the changes made in the source branch. In this case, someone will need to resolve the conflict, which will then create an additional commit to resolve the conflict. This resolving commit must then be pushed to the source branch.
-  - Once the review is accepted, an authorised user of the repository will then Complete the Pull Request, which will then add the changes made in the source branch into the target branch.
+  - The Contributor will push the new commit(s) back to the remote repository. By default, Git will push the changes to the tracked branch; however the contributor can choose to push to a different branch on the remote or create a new branch on the remote. By convention, it is advisable to keep the branch naming consistent between the remote and the local repository to prevent confusion or mistakes.
+  - The Contributor can now create a pull request on the remote repository between the newly-pushed branch (source branch) and the target branch (e.g., the default branch, such as `main`).
+  - Other contributors in the repository will be notified of the Pull Request and can review the changes made in the commit. They may either agree to accept the changes (by merging or rebasing them into the target branch) or request that the Contributor make changes to the source branch before it is accepted.
+  - Another common reason branches cannot be merged is due to a merge conflict. For example, another Contributor may have added a commit to the target branch that conflicts with the changes made in the source branch. In this case, someone will need to resolve the conflict, creating an additional commit to resolve the conflict. This resolving commit must then be pushed to the source branch.
+  - Once the review is accepted, an authorized user of the repository will complete the Pull Request, which will add the changes made in the source branch to the target branch.
 
 And that's it - the basics of working with Git!
 
-In order to make working with Git easier, it is strongly recommended that you make use [SmartGit](**TODO**) to simplify working with Git repositories.
+To make working with Git easier, it is strongly recommended that use [SmartGit](**TODO**) to simplify working with Git repositories.
 
 
 ## Table of Common Terms used in Git
