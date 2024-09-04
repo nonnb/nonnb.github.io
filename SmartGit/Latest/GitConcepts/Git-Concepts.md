@@ -7,6 +7,8 @@ redirect_from:
 
 This section aims to help you get started with Git and gives you an understanding of the fundamental concepts of the Git version control system.
 
+Please read our article, [Git for SVN Users](Git-for-SVN-users.md), if you are new to Git, but are familiar with version control systems such as Subversion.
+
 ## Distributed Version Control Systems
 
 Unlike previous centralized version control systems such as Subversion (SVN), Visual Source Safe (VSS), or Concurrent Versions System (CVS), Git is a Distributed
@@ -18,6 +20,13 @@ Git has several advantages over classical Centralized Version Control Systems (C
 - Git has a streamlined mechanism for reviewing requests to bring new commits on a feature or hotfix branch into an existing branch, called a Pull Request (PR).
 - It is much easier to switch between branches in Git than with CVCS systems.
 - Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
+
+## A typical lifecycle for a team using GitHub
+
+- Your team lead or a senior will create a new, empty repository on a Git Server. This will 
+
+
+
 
 ## Table of Common Terms used in Git
 
@@ -46,5 +55,3 @@ Git has several advantages over classical Centralized Version Control Systems (C
 | Credential Manager | A Git Credential Manager is a secure tool that assists in retaining a user's credentials as required to access remote repositories. Credential Managers simply provide HTTPS access to remote repositories so that users aren't prompted for authentication on each git command.|
 | Large File Storage | Git LFS is an extension that stores large binary files (BLOBs) separately from your repositories. This is useful because Git cannot track 'differences' between binary files in the same way it can with text files such as source code or wiki documents. Adding BLOBs directly to your Git repository can bloat the storage required and impact performance of commands between local and remote repositories.|
 | [Submodules](Submodules.md) | Submodules allow a common repository (e.g., a library project) to be referenced by one or more 'parent' repositories. This enables the reuse of common code without maintaining separate copies of the common repository. |
-
-Please read our article, [Git for SVN Users](Git-for-SVN-users.md), if you are new to Git, but are familiar with version control systems such as Subversion.
