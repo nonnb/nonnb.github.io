@@ -15,7 +15,7 @@ Version Control System (DVCS).
 Git has several advantages over classical centralized version control systems, such as:
 - Users will get their own copy of a source repository (through a Cloning process) on their local computer, allowing version control even when offline.
 - Commits can be created in the local repository and then Pushed to the remote repository when you are ready.
-- Git has a streamlined mechanism for reviewing requests to bring new commits into an existing branch, called a Pull Request (PR).
+- Git has a streamlined mechanism for reviewing requests to bring new commits on a feature or hotfix branch into an existing branch, called a Pull Request (PR).
 - It is much easier to switch between branches in Git than with CVCS systems.
 
 ## Table of Common Terms used in Git
