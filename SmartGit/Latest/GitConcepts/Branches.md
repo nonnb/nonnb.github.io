@@ -19,9 +19,9 @@ When you use `git clone` to [Clone](Clone.md) a remote repository, all remote br
 
 Remote-tracking branches will have the name of the remote prepended, e.g. `origin/main`.
 
-When you checkout from a remote tracking branch (e.g. `git checkout origin/main -b main`) when checking out a local branch, Git will link the local branch to the remote-tracking branch (known as the 'upstream' for the local branch), so that when you `push`, Git will know to push the commits to the original remote branch (unless you specify otherwise), and if you `pull`, Git will know which remote branch to monitor for new commits.
+When you checkout from a remote tracking branch (e.g. `git checkout origin/main -b main`), Git will link the local branch to the remote-tracking branch (known as the 'upstream' for the local branch), so that when you `push`, Git will know to push the commits to the original remote branch (unless you specify otherwise), and if you `pull`, Git will know which remote branch to monitor for new commits.
 
-You can also elect to create a local branch which does not track a remote branch (`git checkout -b mybranch`), which means you'll take manual ownership of merging remote changes into your local branch, or providing a target remote branch when pushing.
+You can also elect to create a local branch which does not track a remote branch (`git checkout -b mybranch`), which means you'll need to provide additional the source branch to Git when merging remote changes into your local branch, and providing a target remote branch when pushing.
 
 After Cloning, Git will checkout the default local branch into your Working Tree - this is usually *main* (or *master* in older repositories).
 
