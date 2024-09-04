@@ -24,7 +24,7 @@ Git has several advantages over classical Centralized Version Control Systems (C
 ## A typical repository lifecycle for a team using Git
 Although every repository usage is unique, there are some common activities which will occur at some point in the lifetime of on most repositories:
 
-- A repository owner (e.g. a team lead or senior developer) will create a new, empty repository on a Git Server.
+- A repository owner (e.g. a team lead or senior developer) will create a new, empty repository on a Git Server such as GitHub, GitLab, BitBucket Azure DevOps **TODO** Links.
 - Access to the repository will be configured (e.g. private or public access, and identify user who may read, and who may contribute, to the repository). The repository can then be cloned locally.
 - The repository owner will identify the default branch in the repository (usually called `main`, or historically `master`), and will often protect the default branch from direct changes (instead, contributors are expected should push changes to another branch in the same repository, or a fork of the repository, and issue a Pull Request which can then be reviewed and approved).
 - It is common for the initial commit(s) in a repository to include:
