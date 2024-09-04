@@ -9,7 +9,7 @@ This section aims to help you get started with Git and gives you an understandin
 
 ## Distributed Version Control Systems
 
-Unlike previous centralized version control systems such as Subversion (SVN), Visual Source Safe (VSS), or Concurrent Version Control (CVS), Git is a Distributed
+Unlike previous centralized version control systems such as Subversion (SVN), Visual Source Safe (VSS), or Concurrent Versions System (CVS), Git is a Distributed
 Version Control System (DVCS).
 
 Git has several advantages over classical centralized version control systems, such as:
