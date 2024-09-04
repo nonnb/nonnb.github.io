@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Working-Tree-States
+  - /SmartGit/Latest/Working-Tree-States.html
+---
 # Working Tree States
 
 There are certain situations where commits cannot be performed, such as when a merge fails due to a conflict. 
