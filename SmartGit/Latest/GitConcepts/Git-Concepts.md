@@ -51,6 +51,8 @@ Although every repository usage is unique, there are some common activities whic
 
 And that's it - the basics of working with Git!
 
+In order to make working with Git easier, it is strongly recommended that you make use [SmartGit](**TODO**) to simplify working with Git repositories.
+
 
 ## Table of Common Terms used in Git
 
