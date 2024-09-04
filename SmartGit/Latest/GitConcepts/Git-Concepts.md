@@ -12,7 +12,7 @@ This section aims to help you get started with Git and gives you an understandin
 Unlike previous centralized version control systems such as Subversion (SVN), Visual Source Safe (VSS), or Concurrent Versions System (CVS), Git is a Distributed
 Version Control System (DVCS).
 
-Git has several advantages over classical centralized version control systems, such as:
+Git has several advantages over classical Centralized Version Control Systems (CVCS), such as:
 - Users will get their own copy of a source repository (through a Cloning process) on their local computer, allowing version control even when offline.
 - Commits can be created in the local repository and then Pushed to the remote repository when you are ready.
 - Git has a streamlined mechanism for reviewing requests to bring new commits on a feature or hotfix branch into an existing branch, called a Pull Request (PR).
