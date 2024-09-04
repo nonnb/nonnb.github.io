@@ -1,11 +1,11 @@
 # The Index
 
-The *Index* is an intermediate cache for preparing a commit. With
-SmartGit, you can make heavy use of the Index, or ignore its presence
-completely - it's all up to you.
+The *Index* is an intermediate cache for preparing a commit, by identifying which file changes (including new and deleted files) that you'd like to include on your next commit. 
+
+With SmartGit, you have the option to see the details of the Index, or if you prefer simplicity, SmartGit can automatically manage the Index for you, allowing you to ignore the presence of the Index completely - it's all up to you.
 
 The **Stage** command allows you to save a file's content from your
-working tree in the Index. If you stage a file that was previously
+working tree into the Index. If you stage a file that was previously
 version-controlled, but is now missing in the working tree, it will be
 marked for removal. If you select a file that
 has Index changes, invoking **Commit** will give you the option to
