@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Commits
+  - /SmartGit/Latest/Commits.html
+---
 # Commits
 
 A *commit* is a set of file changes, which is then stored in a repository along with a commit message.
