@@ -7,23 +7,23 @@ redirect_from:
 
 This section aims to help you get started with Git and gives you an understanding of the fundamental concepts of the Git version control system.
 
-Please read our article, [Git for SVN Users](Git-for-SVN-users.md), if you are new to Git, but are familiar with version control systems such as Subversion.
+If you are new to Git but are familiar with version control systems such as Subversion, please read our article [Git for SVN Users](Git-for-SVN-users.md).
 
 ## Distributed Version Control Systems
 
 Unlike previous centralized version control systems such as Subversion (SVN), Visual Source Safe (VSS), or Concurrent Versions System (CVS), Git is a Distributed
 Version Control System (DVCS).
 
-Git has several advantages over classical Centralized Version Control Systems (CVCS), such as:
-- Users will get their own copy of a source repository (through a Cloning process) on their local computer, allowing version control even when offline.
+Git offers several advantages over traditional Centralized Version Control Systems (CVCS), such as:
+- Users receive their own copy of a source repository (through a cloning process) on their local computer, allowing for version control even when offline.
 - Commits can be created in the local repository and then Pushed to the remote repository when you are ready.
 - Git has a streamlined mechanism for reviewing requests to bring new commits on a feature or hotfix branch into an existing branch, called a Pull Request (PR).
-- It is much easier to switch between branches in Git than with CVCS systems.
-- Whereas CVCS version control systems are centred around one central repository, Git allows you to attach your repositories to multiple remotes at the same time, allowing you greater flexibility as to how you share or merge your code.
+- Switching between branches in Git is much easier than in CVCS systems.
+- While CVCS version control systems are centered around one central repository, Git allows you to connect your repositories to multiple remotes simultaneously, providing greater flexibility in how you share or merge your code.
 
 ## A typical repository lifecycle when using Git
 
-Although every repository usage is unique, there are some common activities which will occur at some point in the lifetime of on most repositories:
+Although every repository usage is unique, some common activities will occur at some point in the lifetime of on most repositories:
 
 - A repository owner (e.g. a team lead or senior developer) will create a new, empty repository on a Git Server such as GitHub, GitLab, BitBucket Azure DevOps **TODO** Links.
 - Access to the repository will be configured (e.g. private or public access, and identify user who may read, and who may contribute, to the repository). The repository can then be cloned locally.
