@@ -79,7 +79,7 @@ This can be branch, or to a specific commit (in which case the state is referred
 
 Every branch is simply a named pointer to a commit. A special, unique pointer in every repository is the *HEAD*, which points to the commit corresponding to the working tree's current state. *HEAD* can point to a commit or a local branch, which points to a commit.  
 Committing changes creates a new commit on top of the commit
-or local branch that HEAD points to. If *HEAD* points to a local
+or local branch that *HEAD* points to. If *HEAD* points to a local
 branch, the branch pointer will move forward to the new commit, and
 *HEAD* will indirectly point to the new commit. If *HEAD*
 points to a commit, it will move forward to the new commit itself.
