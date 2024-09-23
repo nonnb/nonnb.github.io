@@ -1,4 +1,4 @@
-# Using the Conflict Solver to resolve merge conflicts
+# Using the SmartGit Conflict Solver to resolve merge conflicts
 
 SmartGit comes with a Conflict Solver tool which allows merge conflict resolution using a standard Three Way merge approach.
 
