@@ -1,15 +1,17 @@
 # Using the SmartGit Conflict Solver to resolve merge conflicts
 
-SmartGit comes with a Conflict Solver tool which allows merge conflict resolution using the standard Three-Way merge approach.
+SmartGit comes with a Conflict Solver tool that allows merge conflict resolution using the standard *Three-Way* merge approach.
 
-For details on how Git manages merge conflicts, and the meaning of `ours`, `theirs`, `common` and `base` files, please refer to the [Git manual](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging).
+For details on how Git manages merge conflicts, and the meaning of `ours`, `theirs`, `common`, and `base` files, refer to the [Git manual](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging).
 
 - The **left pane** shows the local branch commit version of the file (`ours` :2)
-- The **center pane** shows the current conflicted Working Tree version of the file, including any merge confict markers which may be present. 
-  You can use the `Base Changes` command to view the original version of the file (Common Base :1)
-- The **right pane** shows the merge source version of the file (`theirs` :3)
+- The **center pane** shows the file's current conflicted Working Tree version, including the merge conflict markers.  
+  You can use the **`Base Changes`** command to view the original version of the file (Common Base :1)
+- The **right pane** shows the merged source version of the file (`theirs` :3)
 
 ![SmartGit Conflict Solver tool](../../../images/Tools-SmartGit-ConflictSolver.png)
+
+### SmartGit Conflict Solver Tool
 
 The following commands are available in the SmartGit conflict resolver (commands are available as buttons, and in the Drop Down menu):
 - **Base Changes** - opens a window which shows the original Common Base version of the file (:1) instead of the current Working Tree file (i.e. shows the original version before either `ours` or `theirs` changes were made to the file). 
