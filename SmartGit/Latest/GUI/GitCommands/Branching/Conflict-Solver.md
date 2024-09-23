@@ -18,7 +18,7 @@ The following commands are available in the SmartGit conflict resolver (commands
 - **Take Left** - Replaces the conflict with only the left (`our`) change and discards the right (`their`) change (command is only available in the Left + Working Tree panes)
 - **Take Right** - Replaces the conflict with only the right (`their`) change and discards the left (`our`) change (command is only available in the Working Tree + Right panes)
 - **Take Right, Left** - Replaces the conflict with both left and right changes, firstly `their` change, then `our` change (command is only available in the Working Tree pane)
-- **Left + Marge** - This hides the right (`theirs`) window pane
+- **Left + Merge** - This hides the right (`theirs`) window pane
 - **All** - This shows all three panes (`ours`, `working tree`, and `theirs`)
 - **Right + Merge** - This hides the left (`ours`) window pane.
 - **Merge Below** - This moves the `working tree` pane to the bottom - this is useful for merging files with long lines.
