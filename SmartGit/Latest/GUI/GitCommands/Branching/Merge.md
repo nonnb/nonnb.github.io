@@ -67,18 +67,16 @@ and, if possible, **Fast-Forward**.
 
 -  If you choose **Create Merge-Commit**, SmartGit will perform the merge
 and create a merge commit, assuming no merge conflicts exist.
--  If there are merge conflicts, or if you choose **Merge to Working Tree**,
-SmartGit will perform the merge, but leave the working tree in a
-*merging* state, so that you can manually resolve merge conflicts and
-review the changes to be made. See [Resolving Conflicts](#resolving-conflicts) for further information on how to deal
-with merge conflicts.
+-  If you choose **Merge to Working Tree**, SmartGit will perform the merge but leave the working tree in a *merging*
+state so you can manually resolve merge conflicts and review changes. 
+See the section on [Resolving Conflicts](#resolving-conflicts) for further information.
 
 ### Squash Merge
 
-A squash merge works like a normal merge, except that replaces all new commits on a branch with a single new commit representing ALL changes. 
-A squash merge is useful for merging changes from local (feature) branches where you don't want all of your feature branch commits to be pushed into the remote repository (e.g. it may have taken several commits before all bugs had been resolved and code review feedback may have resulted in further commits to the feature branch).
+A squash merge works like a normal merge, except that replaces all new commits on the branch with a single new commit representing all changes. 
+A squash merge helps merge changes from local (feature) branches when you don't want all of your feature branch commits pushed into the remote repository (e.g., multiple commits may have been made during bug fixes or code review feedback).
 
-Note : Squash merges may lose some historic information about who, and when, committed changes were made on the feature branch.
+**Note:** Squash merges may lose some historical information about who and when changes were made on the feature branch.
 
 ``` text
                             o [> master] (changes from a-branch)
@@ -90,43 +88,37 @@ o [> master]                o
 ```
 
 On the **Commit** dialog, you can choose between a normal merge (merge
-commit) and a squash merge (simple commit). Thus, to perform a squash
-merge you have to choose **Merge to Working Tree** when initiating the
-merge, as otherwise you won't see the **Commit** dialog.
+commit) and a squash merge (simple commit). To perform a squash
+merge, select **Merge to Working Tree** when initiating the
+merge; otherwise, you won't see the **Commit** dialog.
 
 ### Merge versus Rebase
 
 A Git-specific alternative to merging is *rebasing* (see
 [Rebase](Rebase.md)), which can be used to keep the history linear.
-For example, if a user has made local commits and performs a pull with
-merge, a merge commit with two parent commits - the user's last commit
-and the last commit from the tracked branch - is created. When using
-rebase instead of merge, Git applies the local commits on top of the
-commits from the tracked branch, thus avoiding a merge commit.
+For example, if a user has made local commits and performs a pull with merge, 
+a merge commit with two parent commits—the user's last and last commit from the tracked branch—is created. 
+When using rebase instead of merge, Git applies the local commits on top of the
+commits from the tracked branch, avoiding a merge commit.
 
 ## Resolving Conflicts
 
 When a merge, [cherry-pick](Cherry-Pick.md), [revert](Revert.md) or [rebase](Rebase.md) command fails due to
-conflicting changes, SmartGit stops the operation and leaves the working
-tree in a conflicted state, so that you can either abort the command,
-or resolve the conflicts and continue with the command. This section
-explains how you can do that with SmartGit. Generally, the following
-options are available:
+conflicting changes, SmartGit stops the operation and leaves the working tree conflicted. 
+This allows you to either abort the command, resolve the conflicts, or continue the operation.
+The following options are available in SmartGit:
 
--   **Resolve dialog** If you select a file containing conflicts and
-    then invoke **Local** **\|Resolve** in the menu of SmartGit's main
-    window, you can set the file's contents to either of the two
-    conflicting versions, i.e. \`Ours' or \`Theirs'. Optionally, you may
-    also choose not to stage the resetting of the file contents, meaning
-    that the conflict marker on that file won't be removed.
--   **Conflict Solver** Selecting a file containing conflicts and
-    invoking **Query** **\|Conflict Solver** will open the configured Conflict Solver, a three-way diff tool allowing you to view the changes between the two conflicting versions. Please see [Conflict Solver](Conflict-Solver.md) for details on resolving conflicts with the SmartGit Conflict Solver.
--   **Discard command** To abort the merge, cherry-pick, revert or
+-   **Resolve dialog:** Select a file containing conflicts and 
+    invoke **Local** **\|Resolve** from SmartGit's main window menu.
+    You can set the file's contents to either of the two
+    conflicting versions (i.e., \`Ours' or \`Theirs'). Optionally, you may choose not to stage the resolution, meaning the conflict marker on the file won't be removed.
+-   **Conflict Solver:** Select a file containing conflicts and
+    invoke **Query** **\|Conflict Solver** which opens a three-way diff tool for viewing changes between the conflicting versions.
+    See [Conflict Solver](Conflict-Solver.md) for details on resolving conflicts using this tool.
+-   **Discard command:** To abort the merge, cherry-pick, revert or
     rebase, select the repository in the **Repositories** view and
     invoke **Branch \|Abort** or **Local** **\|Discard**.
 
-Lastly, if all conflicts have been resolved, you can continue with the
-merge, cherry-pick or rebase by selecting the repository in the
-**Repositories** view and invoking **Local** **\|Commit**. If you are
-rebasing, the Commit toolbar button has changed its name to
+After resolving all conflicts, you can continue with the merge, cherry-pick, or rebase by selecting the repository in the 
+**Repositories** view and invoking **Local** **\|Commit**. If you are rebasing, the Commit toolbar button will have changed to
 **Continue**.
