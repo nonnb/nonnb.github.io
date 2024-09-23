@@ -28,10 +28,10 @@ o [> master]                o \
 
 ### Fast-forward Merge
 
-If the current branch is completely included in the branch to be merged
-with (i.e. the latter is simply a couple of commits ahead), then no
-additional merge commits need be created. Instead, the branch pointer of the
-current branch can be moved forward to match the branch pointer of the other
+If the current branch is fully contained within the branch to be merged
+(i.e., the latter is simply a few commits ahead), no
+additional commits are necessary. Instead, the branch pointer of the
+current branch is moved forward to match the branch pointer of the other
 branch, as shown below:
 
 
@@ -45,30 +45,29 @@ o [> master]                  o
 
 
 
-In SmartGit, there are several places from which you can initiate a
-merge:
+### Merge in SmartGit
 
--   **Menu and toolbar** On the Working tree window, select **Branch\|Merge** to open the **Merge** dialog, where you can select the
+In SmartGit, there are several ways to initiate a merge:
+
+-   **Menu and toolbar:** In the Working Tree window, select **Branch\|Merge** to open the **Merge** dialog, where you can choose the
     branch to be merged into the current branch. Depending on your
     toolbar settings, you can also open this dialog via the **Merge**
     button on the toolbar.
--   **Branches view** In the **Branches** view (available both on the
+-   **Branches view:** In the **Branches** view (available in both the
     Working tree and the Log window), you can right-click on a branch and
     select **Merge** to merge the selected branch into the current
     branch.
--   **Log Graph** On the Log graph of the **Log** window, you can
-    perform a merge by right-clicking on a commit (usually the one where
-    the branch to be merged with points to) and selecting **Merge** from
+-   **Log Graph:** In the Log graph of the **Log** window, right-click on a commit (usually the one where
+    the branch to be merged points to) and selecting **Merge** from
     the context-menu.
 
-Regardless of how you invoked the Merge command, you will be given the
-choice between **Create Merge-Commit** and **Merge to Working Tree**,
-and optionally also **Fast-Forward** if a fast-forward merge is
-possible.
+Regardless of how you invoke the Merge command, you will be given a
+choice between **Create Merge-Commit**, **Merge to Working Tree**,
+and, if possible, **Fast-Forward**.
 
-If you choose **Create Merge-Commit**, SmartGit will perform the merge
-and create a merge commit, assuming there are no merge conflicts. If
-there are merge conflicts, or if you choose **Merge to Working Tree**,
+-  If you choose **Create Merge-Commit**, SmartGit will perform the merge
+and create a merge commit, assuming no merge conflicts exist.
+-  If there are merge conflicts, or if you choose **Merge to Working Tree**,
 SmartGit will perform the merge, but leave the working tree in a
 *merging* state, so that you can manually resolve merge conflicts and
 review the changes to be made. See [Resolving Conflicts](#resolving-conflicts) for further information on how to deal
