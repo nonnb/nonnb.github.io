@@ -7,7 +7,7 @@ SmartGit comes with a Conflict Solver tool which allows merge conflict resolutio
   You can use the `Base Changes` command to view the original version of the file (Common Base)
 - The **right pane** shows the merge source version of the file (`theirs`)
 
-TODO - Image [Tools-SmartGit-ConflictSolver.png]
+![SmartGit Conflict Solver tool](../../../images/Tools-SmartGit-ConflictSolver.png)
 
 The following commands are available in the SmartGit conflict resolver (commands are available as buttons, and in the Drop Down menu):
 - **Base Changes** - opens a window which shows the original Common Base version of the file (:1) instead of the current Working Tree file (i.e. shows the original version before either `ours` or `theirs` changes were made to the file). 
