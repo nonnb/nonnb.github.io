@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Merge
+  - /SmartGit/Latest/Merge.html
+---
+
 # Merge
 
 ### 'Normal' Merge
