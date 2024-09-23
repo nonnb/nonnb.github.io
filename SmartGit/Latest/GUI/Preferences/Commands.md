@@ -144,11 +144,11 @@ Please refer to the official [Git config pages](https://git-scm.com/docs/git-con
 
 ## Authentication
 
-SmartGit supports both SSH and HTTPS authentication to remotes.
+SmartGit supports both SSH and HTTPS authentication to Git remotes.
 
 ### SSH Client selection
 
-These SSH options are only important if you use SSH to authenticate with remotes.
+The SSH options are only used if you use SSH to authenticate with remotes.
 
 - *Use system SSH client* will use your existing system  SSH client, and you will be responsible for managing keys on the local and remote server (e.g., as stored in the `~/.ssh` folder). This is the recommended setting if you have an existing SSH setup and are comfortable with managing SSH keys and passwords. SmartGit will automatically re-use the system SSH credentials in this configuration.
 
@@ -180,7 +180,7 @@ to re-request credentials if you connect to the repository again.
 - The *Master Password* for the password store can be set, reset, or changed through the **Change Master Password** dialog. It is highly recommended that you provide a master password to protect your remote credentials. Setting the new password to an empty (blank) string has the same effect as removing the master password.
 
 > [!NOTE]
-> If you have forgotten the master password, you can use the **Change Master Password \| Set new master password** option,
+> If you have forgotten the master password, you can use the command **Edit \| Preferences \| Commands \| Authentication \| Change Master Password \| Set new master password**,
 > without providing the existing password.
 > However, this will cause all stored passwords to be discarded, and you will again be prompted for credentials when dealing with each repository.
 
