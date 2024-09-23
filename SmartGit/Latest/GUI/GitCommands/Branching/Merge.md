@@ -1,11 +1,17 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Merge
+  - /SmartGit/Latest/Merge.html
+---
+
 # Merge
 
 ### 'Normal' Merge
 
 In case of a normal merge, a merge commit with at least two parent
-commits (i.e., the last from the current branch and the last from the
-merged branch) is created. See the following figure, where `>` indicates
-where the HEAD is pointing to:
+commits (i.e., the last commit from the current branch and the last commit from the
+merged branch) is created. See the following figure, where `>` HEAD pointer indicates
+a merge commit to bring changes in `a-branch` into the `master` branch:
 
 
 
@@ -24,8 +30,8 @@ o [> master]                o \
 
 If the current branch is completely included in the branch to be merged
 with (i.e. the latter is simply a couple of commits ahead), then no
-extra merge commits is created. Instead, the branch pointer of the
-current branch is moved forward to match the branch pointer of the other
+additional merge commits need be created. Instead, the branch pointer of the
+current branch can be moved forward to match the branch pointer of the other
 branch, as shown below:
 
 
@@ -70,13 +76,10 @@ with merge conflicts.
 
 ### Squash Merge
 
-The squash merge works like a normal merge, except that it discards the
-information about where the changes came from. Hence it only allows you
-to create normal commits. The squash merge is useful for merging changes
-from local (feature) branches where you don't want all of your feature
-branch commits to be pushed into the remote repository.
+A squash merge works like a normal merge, except that replaces all new commits on a branch with a single new commit representing ALL changes. 
+A squash merge is useful for merging changes from local (feature) branches where you don't want all of your feature branch commits to be pushed into the remote repository (e.g. it may have taken several commits before all bugs had been resolved and code review feedback may have resulted in further commits to the feature branch).
 
-
+Note : Squash merges may lose some historic information about who, and when, committed changes were made on the feature branch.
 
 ``` text
                             o [> master] (changes from a-branch)
@@ -87,12 +90,10 @@ o [> master]                o
 .  .                        .  .
 ```
 
-
-
 On the **Commit** dialog, you can choose between a normal merge (merge
 commit) and a squash merge (simple commit). Thus, to perform a squash
 merge you have to choose **Merge to Working Tree** when initiating the
-merge, since otherwise you won't see the **Commit** dialog.
+merge, as otherwise you won't see the **Commit** dialog.
 
 ### Merge versus Rebase
 
@@ -106,11 +107,10 @@ commits from the tracked branch, thus avoiding a merge commit.
 
 ## Resolving Conflicts
 
-When a merge, a [cherry-pick](Cherry-Pick.md) (or
-its counterpart, the [revert](Revert.md)) or a [rebase](Rebase.md) fails due to
+When a merge, [cherry-pick](Cherry-Pick.md), [revert](Revert.md) or [rebase](Rebase.md) command fails due to
 conflicting changes, SmartGit stops the operation and leaves the working
-tree in a conflicted state, so that you can either abort the operation,
-or resolve the conflicts and continue with the operation. This section
+tree in a conflicted state, so that you can either abort the command,
+or resolve the conflicts and continue with the command. This section
 explains how you can do that with SmartGit. Generally, the following
 options are available:
 
@@ -121,13 +121,7 @@ options are available:
     also choose not to stage the resetting of the file contents, meaning
     that the conflict marker on that file won't be removed.
 -   **Conflict Solver** Selecting a file containing conflicts and
-    invoking **Query** **\|Conflict Solver** will open the Conflict
-    Solver, a three-way diff between the two conflicting versions (left
-    and right editor) and a third version (center editor) that contains
-    the conflicting hunks from both sides, along with conflict markers.
-    You can directly edit the text in the center editor, and you can
-    move changes from the left and right side into the center by
-    clicking on the arrow and \`x' buttons between the editors.
+    invoking **Query** **\|Conflict Solver** will open the configured Conflict Solver, a three-way diff tool allowing you to view the changes between the two conflicting versions. Please see [Conflict Solver](Conflict-Solver.md) for details on resolving conflicts with the SmartGit Conflict Solver.
 -   **Discard command** To abort the merge, cherry-pick, revert or
     rebase, select the repository in the **Repositories** view and
     invoke **Branch \|Abort** or **Local** **\|Discard**.
