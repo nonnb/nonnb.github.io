@@ -1,6 +1,6 @@
 # Using the SmartGit Conflict Solver to resolve merge conflicts
 
-SmartGit comes with a Conflict Solver tool which allows merge conflict resolution using a standard Three Way merge approach.
+SmartGit comes with a Conflict Solver tool which allows merge conflict resolution using the standard Three-Way merge approach.
 
 - The **left pane** shows the local branch commit version of the file (`ours`)
 - The **center pane** shows the current conflicted Working Tree version of the file, including the merge confict markers. 
@@ -25,4 +25,4 @@ The following commands are available in the SmartGit conflict resolver (commands
 - **Close** - Closes the Conflict Solver. If you haven't saved changes, you will be prompted to do so. The Conflict Solver will warn you if there are any unresolved conflicts remaining in the Working tree file.
 
 If you have a preference for another 3 way merge tool for resolving merge conflicts, you can substitute the SmartGit Conflict Solver with another standalone tool.
-TODO link Refer to [Preferences | Tools](../../Preferences/Tools.md#conflict-solvers) for instructions on how to switch to another Conflict Resolver tool.
+Please refer to [Preferences | Tools](../../Preferences/Tools.md#conflict-solvers) for instructions on how to do this.
