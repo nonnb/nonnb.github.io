@@ -36,7 +36,7 @@ gitGraph BT:
   checkout feature
   commit message: "Normal commit on feature"
   checkout main
-  merge feature message: "Merge Commit"
+  merge feature id: "Merge Commit"
 </div>
 
 Each commit is identified by its unique *SHA*-ID, and Git allows
