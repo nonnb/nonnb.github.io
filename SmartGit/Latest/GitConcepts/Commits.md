@@ -28,15 +28,15 @@ Therefore:
      'commitLabelFontSize': '1.1em'
    } } }%%
 gitGraph BT:
-  commit id: "Initial Commit on main"
-  commit id: "Normal commit on main which has been branched"
+  commit message: "Initial Commit on main"
+  commit message: "Normal commit on main which has been branched"
   branch feature
   checkout main
-  commit id: "Normal commit on main"
+  commit message: "Normal commit on main"
   checkout feature
-  commit id: "Normal commit on feature"
+  commit message: "Normal commit on feature"
   checkout main
-  merge feature id: "Merge Commit"
+  merge feature message: "Merge Commit"
 </div>
 
 Each commit is identified by its unique *SHA*-ID, and Git allows
