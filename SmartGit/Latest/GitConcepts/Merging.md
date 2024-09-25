@@ -8,7 +8,7 @@ Examples of merging include:
 
 SmartGit supports all git merge types - please refer to [Merging in SmartGit for further information](/SmartGit/Latest/Merge) for details.
 
-## 'Normal' Merge
+## 'Normal' Merge Commit
 
 A common merging technique is the `merge` commit, where two or more parent commits (i.e., the last commit from the current branch and the last commit from the merged branch) are merged by creating a new 'merge' commit.
 A merge commit will be created when merging with `git merge --no-ff`, or when a fast-forward merge is not possible.
