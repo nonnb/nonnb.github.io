@@ -10,7 +10,7 @@ SmartGit supports all Git merge types. Please refer to [Merging in SmartGit for 
 
 ## 'Normal' Merge Commit
 
-A common merging technique is the **`merge` commit**, where two or more parent commits (i.e., the last commit from the current branch and the last commit from the merged branch) are combined by creating a new 'merge' commit.
+A common merging technique is the **`merge`** commit, where two or more parent commits (i.e., the last commit from the current branch and the last commit from the merged branch) are combined by creating a new 'merge' commit.
 A merge commit is created when merging with `git merge --no-ff` or when a fast-forward merge is not possible.
 
 In the following example, we will merge the `a-branch` into `master` (`>` indicates the HEAD pointer on the master branch):
