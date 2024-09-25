@@ -8,7 +8,7 @@ redirect_from:
 SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways,
 both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
 
-<div class="mermaid">
+
 ```mermaid
   graph TD;
       A-->B;
@@ -16,6 +16,8 @@ both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
       B-->D;
       C-->D;
 ```
+<div class="mermaid">
+  
 </div>
 
 ## Quick rearranging and squashing
