@@ -21,6 +21,18 @@ Therefore:
 - Normal commits have exactly one parent commit.
 - *Merge commits* have two or more parent commits.
 
+``` text
+o ... a merge commit
+| \
+|  o ... a normal commit
+|  |
+o  | ... another normal commit
+| /
+o  ... yet another normal commit which has been branched
+|
+o ... the initial commit
+```
+
 <div class="mermaid">
 %%{init: { 'logLevel': 'debug', 'theme': 'default', 
   'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
