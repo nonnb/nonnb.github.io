@@ -1,10 +1,12 @@
 # Merging
 
-Merging branches is an essential and common operation within any Git repository, allowing for changes between two or more branches to be combined.
+Merging of branches is an essential and common operation within any Git repository, allowing for changes between two or more branches to be combined.
 
 Examples of merging include:
 - When changes made in feature branches are now complete, and are ready to be merged into a main branch such as `master`
 - When fixes have been made to a previous release, and the fixes need to be merged back into a feature branch which is currently under development
+
+SmartGit supports all git merge types - please refer to [Merging in SmartGit for further information](/SmartGit/Latest/Merge) for details.
 
 ## 'Normal' Merge
 
