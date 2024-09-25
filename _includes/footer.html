@@ -36,13 +36,7 @@
         </div>
     </div>
 </div>
-<script src="https://unpkg.com/browse/mermaid@11.2.1/dist/mermaid.min.js"></script>
-<script>
-  $(document).ready(function () {
-    mermaid.initialize({
-      startOnLoad:true,
-      theme: "default",
-    });
-    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-  });
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
 </script>
