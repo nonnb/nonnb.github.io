@@ -21,8 +21,14 @@ Therefore:
 - Normal commits have exactly one parent commit.
 - *Merge commits* have two or more parent commits.
 
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}} }%%
+<div class="mermaid"></div>
+
+``` mermaid  
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
 gitGraph BT:
   commit id: "Initial Commit on main"
   commit id: "Normal commit on main which has been branched"
@@ -33,7 +39,7 @@ gitGraph BT:
   commit id: "Normal commit on feature"
   checkout main
   merge feature id: "Merge Commit"
-</div>
+```
 
 Each commit is identified by its unique *SHA*-ID, and Git allows
 *checking out* every commit using its SHA. However, with SmartGit you
