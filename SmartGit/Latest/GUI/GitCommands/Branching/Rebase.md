@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Rebase
+  - /SmartGit/Latest/Rebase.html
+---
+
 # Rebasing in SmartGit
 In SmartGit, there are several places from which you can initiate a rebase:
 
