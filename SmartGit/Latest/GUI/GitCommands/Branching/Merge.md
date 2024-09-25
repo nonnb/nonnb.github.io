@@ -6,7 +6,7 @@ redirect_from:
 
 # Merging in SmartGit
 
-For an overview of general merging techniques in Git, please refer to [Merge](GitConcepts/Merge.md)
+For an overview of general merging techniques in Git, please refer to [Merge](../../../GitConcepts/Merge.md)
 
 In SmartGit, there are several ways to initiate a merge:
 
