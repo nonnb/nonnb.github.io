@@ -33,12 +33,12 @@ Notes:
 ## Fast-forward Merge
 
 If the current branch is fully contained within the branch to be merged (i.e., the latter is simply a few commits ahead), no
-additional commits are necessary. 
+additional commits are necessary, and a `fast-forward` merge can be performed. 
 
-Unless configured otherwise, by default, git will attempt a fast forward merge where possible. 
-The `--ff-only` switch will cause the merge to fail if a fast-forward merge is not possible.
+Unless configured otherwise, by default, git will attempt a fast forward merge when possible. 
+A fast forward merge can be forced with the `--ff-only` switch, however the merge will fail if a fast-forward merge is not possible (e.g. because both the current and merge branches contain new commits).
 
-Instead, the branch pointer of the current branch is moved forward to match the branch pointer of the other
+After a successful fast-forward merge, the branch pointer of the current branch is moved forward to match the branch pointer of the merge
 branch, as shown below:
 
 **TODO** Need to improve this diagram. Need to show the feature branch, and then the commits added linearly onto master.
@@ -57,7 +57,7 @@ Notes:
 ## Squash Merge
 
 A squash merge works like a normal merge, except that all the new commits on the merge branch will be replaced by a single new commit representing all changes.
-e.g. A squash merge helps keep the remote repository clean, as it will result in the appearance of a single commit representing changes made on a feature branch on the trunk branch.
+A squash merge helps to keep a remote repository clean, as it will result in the appearance of a single commit representing changes made on a feature branch on the trunk branch.
 
 ``` text
                             o [> master] (changes from a-branch)
