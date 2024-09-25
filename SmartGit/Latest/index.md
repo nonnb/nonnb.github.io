@@ -9,6 +9,7 @@
   - [Git for SVN users](GitConcepts/Git-for-SVN-users.md)
   - [The Index](The-Index)
   - [Merging](GitConcepts/Merging.md)
+  - [Rebasing](GitConcepts/Rebasing.md)
 - Using the SmartGit Application **TODO (GUI)
   -   [Git Commands](Git-Commands)
     - [Working with Repositories](Repository-Related)
