@@ -4,48 +4,9 @@ redirect_from:
   - /SmartGit/Latest/Merge.html
 ---
 
-# Merge
+# Merging in SmartGit
 
-### 'Normal' Merge
-
-In case of a normal merge, a merge commit with at least two parent
-commits (i.e., the last commit from the current branch and the last commit from the
-merged branch) is created. See the following figure, where `>` HEAD pointer indicates
-a merge commit to bring changes in `a-branch` into the `master` branch:
-
-
-
-``` text
-                            o [> master]
-                            |\
-o [> master]                o \
-|                  ==>      |  |
-|  o [a-branch]             |  o [a-branch]
-.  .                        .  .
-```
-
-
-
-### Fast-forward Merge
-
-If the current branch is fully contained within the branch to be merged
-(i.e., the latter is simply a few commits ahead), no
-additional commits are necessary. Instead, the branch pointer of the
-current branch is moved forward to match the branch pointer of the other
-branch, as shown below:
-
-
-
-``` text
-o [origin/master]             o [> master][origin/master]
-|                     ==>     |
-o [> master]                  o
-.                             .
-```
-
-
-
-### Merge in SmartGit
+For an overview of general merging techniques in Git, please refer to [Merge](GitConcepts/Merge.md)
 
 In SmartGit, there are several ways to initiate a merge:
 
@@ -70,36 +31,6 @@ and create a merge commit, assuming no merge conflicts exist.
 -  If you choose **Merge to Working Tree**, SmartGit will perform the merge but leave the working tree in a *merging*
 state so you can manually resolve merge conflicts and review changes. 
 See the section on [Resolving Conflicts](#resolving-conflicts) for further information.
-
-### Squash Merge
-
-A squash merge works like a normal merge, except that replaces all new commits on the branch with a single new commit representing all changes. 
-A squash merge helps merge changes from local (feature) branches when you don't want all of your feature branch commits pushed into the remote repository (e.g., multiple commits may have been made during bug fixes or code review feedback).
-
-**Note:** Squash merges may lose some historical information about who and when changes were made on the feature branch.
-
-``` text
-                            o [> master] (changes from a-branch)
-                            |
-o [> master]                o
-|                  ==>      |
-|  o [a-branch]             |  o [a-branch]
-.  .                        .  .
-```
-
-On the **Commit** dialog, you can choose between a normal merge (merge
-commit) and a squash merge (simple commit). To perform a squash
-merge, select **Merge to Working Tree** when initiating the
-merge; otherwise, you won't see the **Commit** dialog.
-
-### Merge versus Rebase
-
-A Git-specific alternative to merging is *rebasing* (see
-[Rebase](Rebase.md)), which can be used to keep the history linear.
-For example, if a user has made local commits and performs a pull with merge, 
-a merge commit with two parent commits—the user's last and last commit from the tracked branch—is created. 
-When using rebase instead of merge, Git applies the local commits on top of the
-commits from the tracked branch, avoiding a merge commit.
 
 ## Resolving Conflicts
 
