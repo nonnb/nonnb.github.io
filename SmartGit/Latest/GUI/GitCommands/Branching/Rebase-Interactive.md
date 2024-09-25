@@ -1,7 +1,7 @@
 # Interactive Rebase
 
-SmartGit packages the Git interactive rebase functionality (`git rebase -i`) in simple as well as elaborate ways,
-both in the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
+SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways,
+both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
 
 ## Quick rearranging and squashing
 
