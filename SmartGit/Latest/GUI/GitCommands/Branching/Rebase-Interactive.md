@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Rebase-Interactive
+  - /SmartGit/Latest/Rebase-Interactive.html
+---
 # Interactive Rebase
 
 SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways,
