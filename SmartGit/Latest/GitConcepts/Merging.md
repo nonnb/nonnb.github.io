@@ -1,21 +1,21 @@
 # Merging
 
-Merging of branches is an essential and common operation within any Git repository, allowing for changes between two or more branches to be combined.
+Merging of branches is an essential and common operation within any Git repository, allowing changes in two or more branches to be combined.
 
-Examples of merging include:
-- When changes made in feature branches are now complete, and are ready to be merged into a main branch such as `master`
-- When fixes have been made to a previous release, and the fixes need to be merged back into a feature branch which is currently under development
+**Examples of merging include:**
+- When changes made in feature branches are complete and ready to be merged into a main branch, such as `master`.
+- When fixes have been made to a previous release and need to be merged back into a feature branch that is currently under development.
 
-SmartGit supports all git merge types - please refer to [Merging in SmartGit for further information](/SmartGit/Latest/Merge) for details.
+SmartGit supports all Git merge types. Please refer to [Merging in SmartGit for further information](/SmartGit/Latest/Merge) for further details.
 
 ## 'Normal' Merge Commit
 
-A common merging technique is the `merge` commit, where two or more parent commits (i.e., the last commit from the current branch and the last commit from the merged branch) are merged by creating a new 'merge' commit.
-A merge commit will be created when merging with `git merge --no-ff`, or when a fast-forward merge is not possible.
+A common merging technique is the **`merge` commit**, where two or more parent commits (i.e., the last commit from the current branch and the last commit from the merged branch) are combined by creating a new 'merge' commit.
+A merge commit is created when merging with `git merge --no-ff` or when a fast-forward merge is not possible.
 
 In the following example, we will merge the `a-branch` into `master` (`>` indicates the HEAD pointer on the master branch):
-- before the merge (left)
-- after the merge (right), where a merge commit has been created to bring the changes in `a-branch` into the `master` branch:
+- Before the merge (left)
+- After the merge (right), where a merge commit has been created to bring the changes in `a-branch` into the `master` branch:
 
 ``` text
                             o [> master]
@@ -26,17 +26,17 @@ o [> master]                o \
 .  .                        .  .
 ```
 
-Notes:
-- When using merge commits, the full history of the feature branch is retained, and this can be visually represented by tools such as SmartGit.
-- If conflicts are encountered during the merge as a result of both current and merged branches changing, then the conflicts must be resolved by using a tool such as the [SmartGit Conflict Solver](../GUI/GitCommands/Branching/Conflict-Solver.md) before the merge commit can be completed.
+**Notes:**
+- When using merge commits, the full history of the feature branch is retained, which can be visually represented by tools such as SmartGit.
+- •	If conflicts arise during the merge due to the changing current and merged branches, these conflicts must be resolved using a tool such as the [SmartGit Conflict Solver](../GUI/GitCommands/Branching/Conflict-Solver.md) before the merge commit can be completed.
 
 ## Fast-forward Merge
 
 If the current branch is fully contained within the branch to be merged (i.e., the latter is simply a few commits ahead), no
 additional commits are necessary, and a `fast-forward` merge can be performed. 
 
-Unless configured otherwise, by default, git will attempt a fast forward merge when possible. 
-A fast forward merge can be forced with the `--ff-only` switch, however the merge will fail if a fast-forward merge is not possible (e.g. because both the current and merge branches contain new commits).
+Unless configured otherwise, Git will attempt a fast forward merge by default when possible. 
+A fast-forward merge can be forced with the `--ff-only` switch; however, the merge will fail if a fast-forward merge is not possible (e.g., if both the current and merge branches contain new commits).
 
 After a successful fast-forward merge, the branch pointer of the current branch is moved forward to match the branch pointer of the merge
 branch, as shown below:
@@ -50,14 +50,14 @@ o [> master]                  o
 .                             .
 ```
 
-Notes:
+**Notes:**
 - Unlike Merge Commits, fast-forward merges create no additional commits in the repository
 - Commits applied through fast-forward merges appear linearly in the target branch's history.
 
 ## Squash Merge
 
-A squash merge works like a normal merge, except that all the new commits on the merge branch will be replaced by a single new commit representing all changes.
-A squash merge helps to keep a remote repository clean, as it will result in the appearance of a single commit representing changes made on a feature branch on the trunk branch.
+A **squash merge** works like a normal merge, except that all the new commits on the merge branch will be combined into a single new commit representing all changes.
+A squash merge helps to keep a remote repository clean, by producing a single commit representing all the changes made on a feature branch, which is then merged into the trunk branch.
 
 ``` text
                             o [> master] (changes from a-branch)
@@ -68,31 +68,32 @@ o [> master]                o
 .  .                        .  .
 ```
 
-Note:
-- Squash merges are useful for reducing commmit history 'noise' when it has taken multiple commits to complete a feature
-  (e.g. bug fixes or code review feedback has resulted in multiple commits on a feature branch prior to merging into a trunk branch such as `master`)
-- Squash merges may lose some historical information about who and when changes were made on the feature branch.
+**Note:**
+- Squash merges help reduce commmit history 'noise' when multiple commits are made to complete a feature
+  (e.g., bug fixes or code review feedback has resulted in multiple commits on a feature branch before merging into a trunk branch such as `master`).
+- Squash merges may lose historical information about who and when changes were made to the feature branch.
 
 
 ## Merge versus Rebase
+
 **TODO** - Move to GitConcepts/Rebase.md?
 
-A Git-specific alternative to merging is *rebasing* (see [Rebase](Rebase.md)), which can be used to keep the history of a branch linear.
-Interactive rebasing is an advanced feature which allows any number of commits in the commit history of a branch to be modified, including:
+A Git-specific alternative to merging is **rebasing** (see *[Rebase](Rebase.md)*), which can be used to keep a branch's histor linear.
+Interactive rebasing is an advanced feature that allows any number of commits in a branch's commit history to be modified, including:
 
-- **picking** - including the commit in the rewritten commit history
-- **squashing** - as with a squash commit, multiple commits are rewritten as one single commit
-- **editing** - changing the content of a previuous commit
-- **dropping** - i.e. removing a commit from the history
-- **rewording** a commit message
+- **Picking:** Including the commit in the rewritten commit history.
+- **Squashing:** As with a squash commit, multiple commits are rewritten as one single commit.
+- **Editing:** Changing the content of a previous commit.
+- **Dropping:** Removing a commit from the history.
+- **Rewording:** Modifying a commit message.
 
-In addition to rebasing, SmartGit provides even more advanced branch cleanup features, including:
-- **splitting** a commit out into multiple commits
-- easing the **reordering** of commits
+In addition to rebasing, SmartGit offers advanced branch cleanup features, such as:
+- **Splitting** a commit out into multiple commits.
+- Easing the **reordering** of commits.
 
-Please refer to [History Cleaning Tools](GitCommands/CleanupTools.md) for details.
+Please refer to *[History Cleaning Tools](GitCommands/CleanupTools.md)* for more details.
 
 **TODO** check this content (was original) seems out of place.
 For example, if a user has made local commits and performs a pull with merge, a merge commit with two parent commits—the user's last
-and last commit from the tracked branch—is created. 
+and the last commit from the tracked branch—is created. 
 When using rebase instead of merge, Git applies the local commits on top of the commits from the tracked branch, avoiding a merge commit.
