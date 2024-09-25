@@ -8,6 +8,14 @@ redirect_from:
 SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways,
 both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
 
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
 ## Quick rearranging and squashing
 
 Depending on the type of commit(s) selected, you can invoke various
