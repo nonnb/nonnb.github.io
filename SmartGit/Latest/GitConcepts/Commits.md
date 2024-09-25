@@ -66,6 +66,18 @@ o B
 o A
 ```
 
+<div class="mermaid">
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
+gitGraph BT:
+  commit id: "A"
+  commit id: "B"
+  commit id: "[HEAD master][origin/master] C"
+</div>
+
 Committing a set of changes results in commit `D`, which is a child of
 `C`. **`master`** now points to `D`, meaning it is one commit ahead of the
 tracked branch **`origin/master`**:
@@ -79,6 +91,19 @@ o B
 |
 o A
 ```
+
+<div class="mermaid">
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
+gitGraph BT:
+  commit id: "A"
+  commit id: "B"
+  commit id: "[origin/master] C"
+  commit id: "[HEAD master] D"
+</div>
 
 As a result of a Push, Git sends commit `D` to the origin
 repository, moving **`master`** to the new commit `D`. Because a remote
@@ -94,6 +119,19 @@ o B
 |
 o A
 ```
+
+<div class="mermaid">
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
+gitGraph BT:
+  commit id: "A"
+  commit id: "B"
+  commit id: "C"
+  commit id: "[HEAD master][origin/master] D"
+</div>
 
 Let's assume someone else has modified the remote repository
 and committed `E`, a child of `D`. This means the **`master`** in
@@ -113,6 +151,20 @@ o B
 o A
 ```
 
+<div class="mermaid">
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
+gitGraph BT:
+  commit id: "A"
+  commit id: "B"
+  commit id: "C"
+  commit id: "[HEAD master] D"
+  commit id: "[origin/master] E"
+</div>
+
 Finally, we will now merge our local **`master`** with its tracking branch
 **`origin/master`**. Because there are no new local commits, this will
 simply move **`master`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merge.md#fast-forward-merge)).
@@ -129,4 +181,16 @@ o B
 o A
 ```
 
-
+<div class="mermaid">
+%%{init: { 'logLevel': 'debug', 'theme': 'default', 
+  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
+  'themeVariables': {
+     'commitLabelFontSize': '1.1em'
+   } } }%%
+gitGraph BT:
+  commit id: "A"
+  commit id: "B"
+  commit id: "C"
+  commit id: "D"
+  commit id: "[HEAD master][origin/master] E"
+</div>
