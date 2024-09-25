@@ -28,7 +28,7 @@ o [> master]                o \
 
 Notes:
 - When using merge commits, the full history of the feature branch is retained, and this can be visually represented by tools such as SmartGit.
-- If conflicts are encountered during the merge as a result of both current and merged branches changing, then the conflicts must be resolved by using a tool like the [Conflict Solver](Conflict-Solver.md) before the merge commit can be completed.
+- If conflicts are encountered during the merge as a result of both current and merged branches changing, then the conflicts must be resolved by using a tool such as the [SmartGit Conflict Solver](../GUI/GitCommands/Branching/Conflict-Solver.md) before the merge commit can be completed.
 
 ## Fast-forward Merge
 
