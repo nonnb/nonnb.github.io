@@ -5,7 +5,7 @@ redirect_from:
 ---
 # Interactive Rebase
 
-SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways,
+SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways through its user interface,
 both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
 
 ## Quick rearranging and squashing
@@ -14,10 +14,10 @@ Depending on the type of commit(s) selected, you can invoke various
 operations from the context menu, most notably, you can easily rewrite
 the history:
 
-- To squash adjacent commits, select them and invoke **Squash Commits** and provide the new commit message.
-- To reorder commits, just use drag and drop.
-- To coalesce two (not necessarily adjacent) commits *with the same commit message*, drag one of the commits onto the other one.
-- To change the commit message, select the commit and invoke **Edit Commit Message**.
+- To squash adjacent commits in a branch, select the commits to be squashed, and invoke **Squash Commits** and provide an updated commit message.
+- To reorder commits, just drag the commit and drop it at required position and select the **Move Commit** option.
+- To coalesce two (not necessarily adjacent) commits, drag one of the commits onto the other one, and provide a consolidated *commit message*.
+- To change the commit message, select the commit and invoke the **Edit Message** option.
 - To change the author, select the commit and invoke **Edit Author**.
 
 ### Modify
