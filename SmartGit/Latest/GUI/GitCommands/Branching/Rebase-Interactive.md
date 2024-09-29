@@ -5,8 +5,15 @@ redirect_from:
 ---
 # Interactive Rebase
 
+Smartgit provides a comprehensive set of tools to keep your repository's history clean and structured.
+
 SmartGit packages the interactive rebase functionality of Git (`git rebase -i`) in simple yet powerful ways through its user interface,
-both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md):
+both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md).
+
+**Note:**
+During many of the rebasing operations, your Working Directory will be left in a `Rebasing state`
+Once done with rebasing, you will need to commit and complete the rebasing operation.
+Please refer to [Working Tree States](/SmartGit/Latest/GitConcepts/Working-Tree-States.md) for further information.
 
 ## Quick rearranging and squashing
 
@@ -14,7 +21,7 @@ Depending on the type of commit(s) selected, you can invoke various
 operations from the context menu, most notably, you can easily rewrite
 the history:
 
-- To squash adjacent commits in a branch, select the commits to be squashed, and invoke **Squash Commits** and provide an updated commit message.
+- To squash adjacent commits in a branch, select the commits to be squashed, and invoke **Squash...** option, and provide an updated commit message.
 - To reorder commits, just drag the commit and drop it at required position and select the **Move Commit** option.
 - To coalesce two (not necessarily adjacent) commits, drag one of the commits onto the other one, and provide a consolidated *commit message*.
 - To change the commit message, select the commit and invoke the **Edit Message** option.
@@ -24,7 +31,7 @@ the history:
 
 To modify (or amend) a commit, select the commit and invoke **Modify** from the context menu.
 This will start an interactive rebase and stop after the selected commit.
-Perform the modification, then **Commit** (optionally using **Amend**).
+Perform the required modification to the files your Working Directory, then **Commit** (optionally using **Amend**).
 Finally, click **Step** (in the banner) to let the rebase advance only to the next commit which then can be modified again.
 Or click **Continue** (in the banner) to let the rebase run through completely.
 To abort the Modify command and go back to the previous state, click **Abort**.
@@ -42,12 +49,14 @@ You may continue or let SmartGit put the missing changes into the Index.
 
 ## Using the interactive rebase editor
 
-As stated above, you can perform various operations immediately, e.g. reordering commits by drag and drop.
-If you have to make multiple changes at once you should rather use the Interactive Rebase.
+As mentioned above, you can perform various operations immediately, e.g. reordering commits by drag and drop.
+However, if you need to make multiple changes at once, you should instead use the Interactive Rebase feature.
 
 To start the interactive rebase command, select the first commit that should be changed and invoke **Rebase Interactive From** from the context menu.
+
 In the *Interactive Rebase* dialog you will be able to squash commits, reorder using drag and drop, edit commit messages, but these operations will only be executed when clicking the **Rebase** button.
-In case of conflicts, the rebase will stop (like a normal rebase, too).
+
+In case of conflicts, the rebase operation will stop (in the same way a normal rebase would).
 After solving the conflicts, click the **Continue** banner button.
 To abort the interactive rebase and go back to the previous state, use the **Abort** button.
 
