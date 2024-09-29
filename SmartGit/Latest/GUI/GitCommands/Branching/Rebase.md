@@ -16,6 +16,46 @@ In SmartGit, there are several places from which you can initiate a rebase:
 Just like a merge, a rebase may fail due to merge conflicts.
 If that happens, SmartGit will leave the working tree in *rebasing* state, allowing you to either manually resolve the conflicts or to **Abort** the rebase.
 
+## Rebasing ONTO
+
+**Rebase Onto** operations can be performed from the **Log** window.
+
+Consider following example where the `quickfix2` branch should not start at the `quickfix1` branch, but rather on the `main` branch:
+
+**TODO** the below diagram is linear, so suggest either show `main`, `quickfix1` and `quickfix2` as actual branches, or refer to `quickfix1` as a tag or commit.
+
+``` text
+      q2b (quickfix2)
+      |
+      q2a
+    /
+    q1b (quickfix1)
+    |
+   q1a
+ /
+ x (main)
+ |
+...
+```
+
+To achieve this, drag the `q2a` commit onto the `x (main)` commit and you will get the desired result:
+
+``` text
+q2b (quickfix2)
+ |
+q2a
+ |
+ |  q1b (quickfix1)
+ |   |
+ |  q1b
+ | /
+ x (main)
+ |
+...
+```
+
+
+
 ## Resolving Conflicts
 
 Git rebase conflicts are different to other kinds of merge conflicts, because *left* and *right* files are swapped: when rebasing branch `A` to `B`, Git will first checkout `B`, then applies all commits from `A`.
