@@ -33,24 +33,6 @@ o  ... yet another normal commit which has been branched
 o ... the initial commit
 ```
 
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'default', 
-  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
-  'themeVariables': {
-     'commitLabelFontSize': '1.1em'
-   } } }%%
-gitGraph BT:
-  commit id: "Initial Commit on main"
-  commit id: "Normal commit on main which has been branched"
-  branch feature
-  checkout main
-  commit id: "Normal commit on main"
-  checkout feature
-  commit id: "Normal commit on feature"
-  checkout main
-  merge feature id: "Merge Commit"
-</div>
-
 Each commit is identified by its unique *SHA*-ID, and Git allows
 *checking out* every commit using its SHA. However, with SmartGit you
 can visually select the commits to check out instead of entering 
@@ -77,18 +59,6 @@ o B
 |
 o A
 ```
-
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'default', 
-  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
-  'themeVariables': {
-     'commitLabelFontSize': '1.1em'
-   } } }%%
-gitGraph BT:
-  commit id: "A"
-  commit id: "B"
-  commit id: "[HEAD master][origin/master] C"
-</div>
 
 Committing a set of changes results in commit `D`, which is a child of
 `C`. **`master`** now points to `D`, meaning it is one commit ahead of the
@@ -132,19 +102,6 @@ o B
 o A
 ```
 
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'default', 
-  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
-  'themeVariables': {
-     'commitLabelFontSize': '1.1em'
-   } } }%%
-gitGraph BT:
-  commit id: "A"
-  commit id: "B"
-  commit id: "C"
-  commit id: "[HEAD master][origin/master] D"
-</div>
-
 Let's assume someone else has modified the remote repository
 and committed `E`, a child of `D`. This means the **`master`** in
 the origin repository now points to `E`. When fetching from the origin
@@ -163,20 +120,6 @@ o B
 o A
 ```
 
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'default', 
-  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
-  'themeVariables': {
-     'commitLabelFontSize': '1.1em'
-   } } }%%
-gitGraph BT:
-  commit id: "A"
-  commit id: "B"
-  commit id: "C"
-  commit id: "[HEAD master] D"
-  commit id: "[origin/master] E"
-</div>
-
 Finally, we will now merge our local **`master`** with its tracking branch
 **`origin/master`**. Because there are no new local commits, this will
 simply move **`master`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merge.md#fast-forward-merge)).
@@ -192,17 +135,3 @@ o B
 |
 o A
 ```
-
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'default', 
-  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
-  'themeVariables': {
-     'commitLabelFontSize': '1.1em'
-   } } }%%
-gitGraph BT:
-  commit id: "A"
-  commit id: "B"
-  commit id: "C"
-  commit id: "D"
-  commit id: "[HEAD master][origin/master] E"
-</div>
