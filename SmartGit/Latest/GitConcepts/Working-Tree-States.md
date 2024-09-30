@@ -35,5 +35,5 @@ SmartGit automatically detects when the Working Tree is in a Rebase state and gu
 
 Typically, your Working Tree directory represents a checked-out branch, and any further commits from the Working Tree will be appended to the branch, moving the branch HEAD forward to point to the new commit.
 
-However, you can also check out the Working Tree to point to a specific commit. In this case, the Working Tree will be in a **Detached HEAD** state. For more information on recovering from a Detached HEAD state, refer to the documentation on [Branching](Branches.md#branches-are-just-pointers-to-commits). 
+However, you can also check out the Working Tree to point to a specific commit. The Working Tree will be in a **Detached HEAD** state in this case. For more information on recovering from a Detached HEAD state, refer to the documentation on [Branching](Branches.md#branches-are-just-pointers-to-commits). 
 
