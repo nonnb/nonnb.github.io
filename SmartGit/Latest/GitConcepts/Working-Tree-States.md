@@ -28,3 +28,10 @@ During an interactive rebase, git will require additional user input in order to
 - Once you're done with amending a commit during an 'Edit' operation during a rebase, you'll need to prompt git to continue with the rebase.
 
 SmartGit automatically detects when the Working Tree is in Rebase status and will guide you through the interactive rebase process.
+
+## Named Branch vs Detached Head
+
+In general, your Working Tree directory will represent a branch that you have checked out and are working on, and any further commits that you make from the Working Tree will be appended to the branch, and the branch HEAD will move forward to point to the new commit.
+
+However, it is also possible to checkout the Working Tree to point to the repository status at a specific commit, in which case the Working Tree will be in a **Detached HEAD** status. Please refer to [Branching](Branches.md#branches-are-just-pointers-to-commits) for further information, e.g. as how to recover from a **Detached HEAD** status.
+
