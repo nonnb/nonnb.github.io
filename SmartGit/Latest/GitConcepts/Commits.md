@@ -74,19 +74,6 @@ o B
 o A
 ```
 
-<div class="mermaid">
-%%{init: { 'logLevel': 'debug', 'theme': 'default', 
-  'gitGraph': {'rotateCommitLabel': false, 'mainBranchName': 'main'}, 
-  'themeVariables': {
-     'commitLabelFontSize': '1.1em'
-   } } }%%
-gitGraph BT:
-  commit id: "A"
-  commit id: "B"
-  commit id: "[origin/master] C"
-  commit id: "[HEAD master] D"
-</div>
-
 As a result of a Push, Git sends commit `D` to the origin
 repository, moving **`master`** to the new commit `D`. Because a remote
 branch always refers to a branch in the remote repository,
