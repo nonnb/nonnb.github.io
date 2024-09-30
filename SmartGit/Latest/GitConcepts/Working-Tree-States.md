@@ -8,7 +8,7 @@ redirect_from:
 In general, the git Working Tree will be in a clean status, and you will be able to issue standard git commands such as checking out different branches, staging changes, and creating new commits.
 
 However, there are certain situations where commits cannot be completed, such as when a merge or rebase fails due to a conflict, or during an interactive rebase.
-This will leave git in an intermediate state where additional manual intervention is required (e.g. requiring you to resolve any merge conflicts, or to provide information for an interactive rebase).
+This will leave git in an intermediate state where additional manual intervention is required (e.g. requiring you to resolve any merge conflicts, or to provide information or perform modification activities during an interactive rebase).
 
 ## Merge Conflicts (Merging status)
 
