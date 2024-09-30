@@ -92,6 +92,7 @@ In addition to rebasing, SmartGit offers advanced branch cleanup features, such 
 Please refer to [SmartGits Interactive Rebase features](../GUI/GitCommands/Branching/Rebase-Interactive.md) for more details.
 
 **Example**
+
 If a user has added new commits on a local branch which tracks a remote repository branch which subsequently also has new commits, the user can either perform:
 - a pull with merge, which will create a merge commit with **two parent** commits
   1. Being the the user's last commit on the local branch
