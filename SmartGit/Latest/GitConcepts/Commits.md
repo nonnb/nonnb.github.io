@@ -47,13 +47,13 @@ because no other commits descend from them.
 The following example shows how commits, branches, pushing, fetching, and
 (basic) merging interact.
 
-Let's assume we have commits `A`, `B`, and `C`. Both **`master`** and
-**`origin/master`** point to `C`, and **`HEAD`** points to **`master`**. In
-other words. the working tree has been switched to the branch **master**.
+Let's assume we have commits `A`, `B`, and `C`. Both **`main`** and
+**`origin/main`** point to `C`, and **`HEAD`** points to **`main`**. In
+other words. the working tree has been switched to the branch **main**.
 This looks as follows:
 
 ``` text
-o [> master][origin/master] C
+o [> main][origin/main] C
 |
 o B
 |
@@ -61,13 +61,13 @@ o A
 ```
 
 Committing a set of changes results in commit `D`, which is a child of
-`C`. **`master`** now points to `D`, meaning it is one commit ahead of the
-tracked branch **`origin/master`**:
+`C`. **`main`** now points to `D`, meaning it is one commit ahead of the
+tracked branch **`origin/main`**:
 
 ``` text
-o [> master] D
+o [> main] D
 |
-o [origin/master] C
+o [origin/main] C
 |
 o B
 |
@@ -75,12 +75,12 @@ o A
 ```
 
 As a result of a Push, Git sends commit `D` to the origin
-repository, moving **`master`** to the new commit `D`. Because a remote
+repository, moving **`main`** to the new commit `D`. Because a remote
 branch always refers to a branch in the remote repository,
-**`origin/master`** of our repository will also be set to commit `D`:
+**`origin/main`** of our repository will also be set to commit `D`:
 
 ``` text
-o [> master][origin/master] D
+o [> main][origin/main] D
 |
 o C
 |
@@ -90,15 +90,15 @@ o A
 ```
 
 Let's assume someone else has modified the remote repository
-and committed `E`, a child of `D`. This means the **`master`** in
+and committed `E`, a child of `D`. This means the **`main`** in
 the origin repository now points to `E`. When fetching from the origin
 repository, we will receive commit `E`, and our repository's
-**`origin/master`** will be moved to `E`:
+**`origin/main`** will be moved to `E`:
 
 ``` text
-o [origin/master] E
+o [origin/main] E
 |
-o [> master] D
+o [> main] D
 |
 o C
 |
@@ -107,12 +107,12 @@ o B
 o A
 ```
 
-Finally, we will now merge our local **`master`** with its tracking branch
-**`origin/master`**. Because there are no new local commits, this will
-simply move **`master`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merging.md#fast-forward-merge)).
+Finally, we will now merge our local **`main`** with its tracking branch
+**`origin/main`**. Because there are no new local commits, this will
+simply move **`main`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merging.md#fast-forward-merge)).
 
 ``` text
-o [> master][origin/master] E
+o [> main][origin/main] E
 |
 o D
 |
