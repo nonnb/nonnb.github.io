@@ -23,7 +23,7 @@ When you checkout from a remote-tracking branch (e.g., `git checkout origin/main
 
 You can also choose to create a local branch that does not track a remote branch (e.g., `git checkout -b mybranch`). In this case, you must specify the source branch when merging remote changes into your local branch and provide a target remote branch when pushing.
 
-After Cloning, Git will check out the default local branch in your Working Tree, which is usually the *main* (or *master* in older repositories).
+After Cloning, Git will check out the default local branch in your Working Tree, which is usually the *main* (or *main* in older repositories).
 
 ## Working with Branches
 Once you've cloned a repository to your local system, the `checkout` command switches between branches or creates new branches in Git.
