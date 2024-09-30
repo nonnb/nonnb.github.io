@@ -13,7 +13,7 @@ both from the [Log Graph](Log.md) and the [Journal View](Journal-View.md).
 **Note:**
 During many of the rebasing operations, your Working Directory will be left in a `Rebasing state`
 Once done with rebasing, you will need to commit and complete the rebasing operation.
-Please refer to [Working Tree States](/SmartGit/Latest/GitConcepts/Working-Tree-States.md) for further information.
+Please refer to [Working Tree States](/SmartGit/Latest/GitConcepts/Working-Tree-States.md). for further information.
 
 ## Quick rearranging and squashing
 
