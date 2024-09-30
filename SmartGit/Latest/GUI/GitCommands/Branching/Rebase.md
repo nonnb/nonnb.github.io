@@ -5,13 +5,14 @@ redirect_from:
 ---
 
 # Rebasing in SmartGit
-In SmartGit, there are several places from which you can initiate a rebase:
+In SmartGit, there are several ways to initiate a rebase:
 
--   **Menu and toolbar** On the Working tree window, select **Branch\|Rebase** to open the **Rebase** dialog, where you can select the branch to rebase the HEAD onto, or the branch to rebase onto the HEAD, respectively.
+-   **Menu and toolbar:** On the Working tree window, select **Branch\|Rebase** to open the **Rebase** dialog, where you can select the branch to rebase the HEAD onto, or the branch to rebase onto the HEAD, respectively.
     Depending on your toolbar settings, you can also open this dialog using the **Rebase* toolbar button.
--   **Branches view** In the **Branches** view, you can right-click on a branch and select **Rebase** to rebase your current HEAD onto the selected branch.
--   **Log Graph** On the Log graph of the **Log** window, you can perform a rebase by right-clicking on a commit and selecting **Rebase** from the context-menu.
--   **Log Graph** In the Log graph of the **Log** window, you can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
+-   **Branches view:** In the **Branches** view, you can right-click on a branch and select **Rebase** to rebase your current HEAD onto the selected branch.
+-   On the **Log Graph** of the **Log** window, you can use either of these approaches:
+  -  **Option 1:** You can perform a rebase by right-clicking on a commit and selecting **Rebase** from the context-menu. 
+  -  **Option 2:** You can drag and drop commits or refs and then select to rebase in the occurring dialog after the drop.
 
 Just like a merge, a rebase may fail due to merge conflicts.
 If that happens, SmartGit will leave the working tree in *rebasing* state, allowing you to either manually resolve the conflicts or to **Abort** the rebase.
