@@ -76,8 +76,6 @@ o [> master]                o
 
 ## Merge versus Rebase
 
-**TODO** - Move to GitConcepts/Rebase.md?
-
 A Git-specific alternative to merging is **rebasing** (see *[Rebase](Rebase.md)*), which can be used to keep a branch's histor linear.
 Interactive rebasing is an advanced feature that allows any number of commits in a branch's commit history to be modified, including:
 
@@ -91,9 +89,11 @@ In addition to rebasing, SmartGit offers advanced branch cleanup features, such 
 - **Splitting** a commit out into multiple commits.
 - Easing the **reordering** of commits.
 
-Please refer to *[History Cleaning Tools](GitCommands/CleanupTools.md)* for more details.
+Please refer to [SmartGits Interactive Rebase features](../GUI/GitCommands/Branching/Rebase-Interactive.md) for more details.
 
-**TODO** check this content (was original) seems out of place.
-For example, if a user has made local commits and performs a pull with merge, a merge commit with two parent commits—the user's last
-and the last commit from the tracked branch—is created. 
-When using rebase instead of merge, Git applies the local commits on top of the commits from the tracked branch, avoiding a merge commit.
+**Example**
+If a user has added new commits on a local branch which tracks a remote repository branch which subsequently also has new commits, the user can either perform:
+- a pull with merge, which will create a merge commit with **two parent** commits
+  1. Being the the user's last commit on the local branch
+  2. The last commit from the remote tracked branch
+- OR, if using rebase instead of merge, Git applies the local commits on top of the commits from the tracked branch, avoiding a merge commit. A new commit has will be created representing the changes the user has made on the local branch.
