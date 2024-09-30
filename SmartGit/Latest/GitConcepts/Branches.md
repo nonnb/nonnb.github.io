@@ -70,7 +70,7 @@ Merge command is the Rebase command.
 
 ## Branches are just pointers to commits
 
-Every branch is simply a pointer to a commit with a 'friendly' name that you provide (`main`, `feature-2`, etc.). A special, unique pointer in every repository is the *HEAD*, which points to the commit corresponding to the working tree's current state. *HEAD* can point to a commit or a local branch.
+Every branch is simply a pointer to a commit with a 'friendly' name that you provide (e.g. `main`, `feature-2`, etc.). A special, unique pointer in every repository is the *HEAD*, which points to the commit corresponding to the working tree's current state. *HEAD* can point to a commit or a local branch.
 
 When working on a branch, when you stage and commit changes, a  new commit is created, which will `remember` the previous (parent) commit, from which it was based. 
 
@@ -104,3 +104,11 @@ Although we generally recommend that you make changes when working on a named br
 And then stage and commit the changes you've made to the `NewBranch` branch.
 
 You can then use tools such as [Merge](Merging.md), cherry-pick, or [Rebase](Rebasing.md) to absorb these changes into another branch.
+
+## Merge Commits have multiple parent commits
+
+A [Merge commit](Merging.md#normal-merge-commit) differs from a normal commit, in that a merge commit will refer to two or more parent commits, representing the 
+- previous commit on the current / local branch
+- the latest commit on each of the branches which are being merged
+
+For example, when a branch `feature-a` is merged into `main` through a merge pull request, a new commit is added to `main` which will trace a parent commit from both the last commits in `feature-a` and `main`.
