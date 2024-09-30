@@ -122,7 +122,7 @@ o A
 
 Finally, we will now merge our local **`master`** with its tracking branch
 **`origin/master`**. Because there are no new local commits, this will
-simply move **`master`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merge.md#fast-forward-merge)).
+simply move **`master`** *fast-forward* to the commit `E` (see [Fast-forward Merge](Merging.md#fast-forward-merge)).
 
 ``` text
 o [> master][origin/master] E
