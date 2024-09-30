@@ -3,13 +3,14 @@
 **TODO** - Complete tree or derive tree automatically from file system
 
 - [Git Concepts](Git-Concepts)
-  - [Submodules](GitConcepts/Submodules.md)
   - [Branches](Branches)
   - [Commits](Commits)
   - [Git for SVN users](GitConcepts/Git-for-SVN-users.md)
-  - [The Index](The-Index)
   - [Merging](GitConcepts/Merging.md)
   - [Rebasing](GitConcepts/Rebasing.md)
+  - [Submodules](GitConcepts/Submodules.md)
+  - [The Index](The-Index)
+  - [Working Tree States](GitConcepts/Working-Tree-States.md)
 - Using the SmartGit Application **TODO (GUI)
   -   [Git Commands](Git-Commands)
     - [Working with Repositories](Repository-Related)
