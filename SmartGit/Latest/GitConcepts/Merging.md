@@ -3,7 +3,7 @@
 Merging branches is an essential and common operation within any Git repository, allowing changes in two or more branches to be combined.
 
 **Examples of merging include:**
-- When changes made in feature branches are complete and ready to be merged into a main branch, such as `master`.
+- When changes made in feature branches are complete and ready to be merged into a main branch, such as `main`.
 - When fixes have been made to a previous release and need to be merged back into a feature branch currently under development.
 
 SmartGit supports all Git merge types. Please refer to [Merging in SmartGit for further information](/SmartGit/Latest/Merge) for further details.
@@ -18,9 +18,9 @@ In the following example, we will merge the `a-branch` into `main` (`>` indicate
 - **After the merge (right)**, where a merge commit has been created to bring the changes in `a-branch` into the `main` branch:
 
 ``` text
-                            o [> master]
+                            o [> main]
                             |\
-o [> master]                o \
+o [> main]                o \
 |                  ==>      |  |
 |  o [a-branch]             |  o [a-branch]
 .  .                        .  .
@@ -44,9 +44,9 @@ branch, as shown below:
 **TODO** Need to improve this diagram. Need to show the feature branch, and then the commits added linearly onto main.
 
 ``` text
-o [origin/master]             o [> master][origin/master]
+o [origin/main]             o [> main][origin/main]
 |                     ==>     |
-o [> master]                  o
+o [> main]                  o
 .                             .
 ```
 
@@ -60,9 +60,9 @@ A **squash merge** works like a normal merge, except that all the new commits on
 A squash merge helps to keep a remote repository clean by producing a single commit representing all the changes made on a feature branch, which is then merged into the trunk branch.
 
 ``` text
-                            o [> master] (changes from a-branch)
+                            o [> main] (changes from a-branch)
                             |
-o [> master]                o
+o [> main]                o
 |                  ==>      |
 |  o [a-branch]             |  o [a-branch]
 .  .                        .  .
@@ -70,7 +70,7 @@ o [> master]                o
 
 **Note:**
 - Squash merges help reduce commmit history 'noise' when multiple commits are made to complete a feature
-  (e.g., bug fixes or code review feedback has resulted in multiple commits on a feature branch before merging into a trunk branch such as `master`).
+  (e.g., bug fixes or code review feedback has resulted in multiple commits on a feature branch before merging into a trunk branch such as `main`).
 - Squash merges may lose historical information about who made specific changes and when those changes were made on the feature branch.
 
 
