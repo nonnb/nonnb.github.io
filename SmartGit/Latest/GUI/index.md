@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /SmartGit/Latest/GUI/SmartGit-GUI.html
+  - /SmartGit/Latest/GUI/SmartGit-Commands.html
 ---
