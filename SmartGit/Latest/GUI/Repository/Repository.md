@@ -37,7 +37,7 @@ Once you have a opened a repository, use **Repository\|Settings** to configure r
 
 
 ### User Tab
-On this tab you can configure your name and email address that will be used when [committing](Local-Operations-on-the-Working-Tree.md#commit)
+On this tab you can configure your name and email address that will be used when [committing](../Local-Operations-on-the-Working-Tree.md#commit)
 for this repository. 
 
 ### Fetch and Pull Tab
