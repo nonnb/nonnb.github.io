@@ -144,6 +144,10 @@ These settings will be applied as a default across all repositories.
 Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting.
 However, you can also customize these settings per-repository. Please refer to [Repossitory Settings](../Repository/Repository.md#settings) for further details.
 
+**Note:**
+
+Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository\|Edit Git Config** Menu Option and then select the **User** or **Repository** option respectively.
+
 ## Authentication
 
 SmartGit supports both SSH and HTTPS authentication to Git remotes.
