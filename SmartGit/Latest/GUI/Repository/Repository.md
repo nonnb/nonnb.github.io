@@ -14,7 +14,7 @@ To open multiple repositories at once, select / highlight each repository (e.g. 
 Repositories can be arranged in groups.
 Right-click the repositories and select the target group or **New Group** from the **Move To** submenu.
 Alternatively, you can use drag-and-drop - either onto the target group or a repository inside the target group 
-(see [autoscroll](Tips-and-Tricks.md#autoscrolling-while-drag-and-drop)).
+(see [autoscroll](../Tips-and-Tricks.md#autoscrolling-while-drag-and-drop)).
 
 Repositories can be marked as favorite using the **Mark as Favorite** (**Unmark as Favorite**). 
 Favorite repositories are indicated with an asterisk after the name, and are sorted before non-favorite repositories. 
