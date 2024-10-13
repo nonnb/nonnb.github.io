@@ -79,7 +79,7 @@ If the Files view option **Show Skipped Files** is selected, *Skipped* files wil
 ## Commit
 The Commit command (**Local\|Commit**) is used for creating a new commit from staged changes in the local repository.
 
-If the working tree is in *merging* or *rebasing* state (see [Merge](Merge.md) and [Rebase](Rebase.md)), you can only commit the entire working tree.
+If the working tree is in *merging* or *rebasing* state (see [Merge](Branching/Merge.md) and [Rebase](Branching/Rebase.md)), you can only commit the entire working tree.
 
 Otherwise, you can select the files to commit.
 Previously tracked, but now missing files will be removed from the repository, and untracked new files will be added. 
