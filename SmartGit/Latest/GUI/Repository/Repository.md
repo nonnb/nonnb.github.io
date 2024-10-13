@@ -31,13 +31,14 @@ If the specified directory is not yet a Git repository, you have the option to i
 
 Once you have a opened a repository, use **Repository\|Settings** to configure repository-specific settings for this repository.
 
-**Note:** To change the same repository settings as a default across ALL repositories, please use [**Edit\|Preferences\|Commands\|Git Config**](../Preferences/Commands.md#git-config).
+**Note:** 
+- To change the same repository settings as a default across ALL repositories, please use [**Edit\|Preferences\|Commands\|Git Config**](../Preferences/Commands.md#git-config).
+- You have the option of editing the `gitconfig` by updating your `.gitconfig` file
+
 
 ### User Tab
 On this tab you can configure your name and email address that will be used when [committing](Local-Operations-on-the-Working-Tree.md#commit)
 for this repository. 
-
-To change the global settings, select **Remember as default** - this will then be applied for your work in all repositories, by updating your `.gitconfig` file.
 
 ### Fetch and Pull Tab
 This tab allows configuring of options related to the [Pull command](../Synchronizing-with-Remote-Repositories.md#pull):
