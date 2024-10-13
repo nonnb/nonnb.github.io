@@ -40,7 +40,7 @@ for this repository.
 To change the global settings, select **Remember as default** - this will then be applied for your work in all repositories, by updating your `.gitconfig` file.
 
 ### Fetch and Pull Tab
-This tab allows configuring of options related to the [Pull command](Synchronizing-with-Remote-Repositories.md#pull):
+This tab allows configuring of options related to the [Pull command](../Synchronizing-with-Remote-Repositories.md#pull):
 
 - Specify whether to Merge or Rebase remote changes when Pulling a remote repository
 - Whether to prune obsolete remote tracked branches
