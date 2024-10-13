@@ -12,7 +12,7 @@ Git's [Index](../GitConcepts/The-Index.md) tracks which changes in the Working T
 SmartGit provides following facilities to modify this selection:
 
 -   **Stage and Unstage commands** allow you to add and remove all changes made to a file to and from the Index, respectively.
--   **Changes view** allows you to add or remove only `hunks' (i.e. parts of the file) to and from the Index (`git add -i`)
+-   **Changes View** allows you to add or remove only `hunks` (i.e. parts of the file) to and from the Index (`git add -i`)
 -   **Index Editor** allows you to directly edit the contents of the Index for a certain file, thereby adding or removing arbitrary
     content to and from the Index.
 
