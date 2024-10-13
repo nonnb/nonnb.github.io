@@ -29,6 +29,8 @@
     - [Revert](Revert)
     - [Manipulating Branches and Tags](Manipulating-branches-tags)
     - [Conflict Solver](GUI/Branching/Conflict-Solver.md)
+  - [Working with Repositories](Repository-Related)
+    - [Clone](Clone)
   - [Main Windows](Main-Windows)
   - [Preferences](Preferences)
     - [Commands](GUI/Preferences/Commands.md)
