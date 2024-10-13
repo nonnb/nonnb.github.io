@@ -31,6 +31,7 @@
     - [Conflict Solver](GUI/Branching/Conflict-Solver.md)
   - [Working with Repositories](Repository-Related)
     - [Clone](Clone)
+  - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree)
   - [Main Windows](Main-Windows)
   - [Preferences](Preferences)
     - [Commands](GUI/Preferences/Commands.md)
