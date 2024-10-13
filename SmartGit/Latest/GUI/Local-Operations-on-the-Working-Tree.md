@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Local-Operations-on-the-Working-Tree
+  - /SmartGit/Latest/Local-Operations-on-the-Working-Tree.html
+---
 # Local Operations on the Working Tree
 
 ## Stage, Unstage, and the Index Editor
