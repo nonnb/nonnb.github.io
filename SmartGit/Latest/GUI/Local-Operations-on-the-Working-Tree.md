@@ -20,7 +20,7 @@ Depending on whether a file is already tracked or not:
 - If you invoke Stage on an untracked (new) file, e.g. via **Local\|Stage**, that file will be scheduled for addition to the repository.
 - If Stage is invoked on an already-tracked file, changes made to the file will be scheduled for the next commit any changes made to the file, including its removal.
 
-Conversely, the Unstage command (**Local\|Stage**) will remove the selected file from in the Index, and any changes will not be part of the next commit.
+Conversely, the Unstage command (**Local\|Unstage**) will remove the selected file from in the Index, and any changes will not be part of the next commit.
 
 Similarly, staging and unstaging hunks from the **Changes** view will schedule or un-schedule parts of these files which have been changed, for the next commit.
 
