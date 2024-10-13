@@ -99,7 +99,11 @@ You can also checkout a previous commit **without** creating a new branch by pro
 
 Since no branch has been specified in this case, Git refers to the Working Tree status as a **detached HEAD**.
 
-Although it's generally recommended to make changes on a named branch, if you accidentally make changes while in a detached HEAD status and wish to keep them, you can create a new branch from the current HEAD status:
+**Note**:
+
+- Detached HEAD status should be regarded as a 'readonly' view of a commit in the repository. When making changes and adding commits, it is recommended to use a named branch.
+- Commits added while in detached HEAD are prone to being garbage collected, if you switch branches before adding a branch or tag to label the commits.
+- However, if you accidentally make changes / add new commits while in a detached HEAD status, BEFORE switching to another branch, you can create a new branch from the current HEAD status:
 
 `git checkout -b NewBranch`
 
