@@ -17,9 +17,6 @@
   - [GitFlow](Git-Flow)
   - [GitFlow Light](Git-Flow-Light)
 - [Using the SmartGit Application](GUI)
-  - [Working with Repositories](Repository-Related)
-    - [Clone](Clone)
-    - [Submodules](Submodules)
   - Working with Branches **TODO
     - [Check Out](Check-Out)
     - [Merge](Merge)
@@ -31,6 +28,7 @@
     - [Conflict Solver](GUI/Branching/Conflict-Solver.md)
   - [Working with Repositories](Repository-Related)
     - [Clone](Clone)
+    - [Submodules](Submodules)
   - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree)
   - [Main Windows](Main-Windows)
   - [Preferences](Preferences)
