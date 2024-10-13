@@ -51,7 +51,7 @@ If the Files view option **Show Ignored Files** is selected, ignored files will 
 >as SmartGit will not even scan into these directories for performance reasons.
 >
 
-When you mark a file in SmartGit as \`ignored', an entry will be added to the `.gitignore` file in the same directory.
+When you mark a file in SmartGit as `ignored`, an entry will be added to the `.gitignore` file in the same directory.
 The `.gitignore` file will be added to the repository if it isn't already present. 
 With the SmartGit Ignore command you can only ignore files in the current directory.
 To use more advanced Git ignore options, you may need to edit the `.gitignore` file(s) by hand, which will allow advanced patterns, such as entire folders, and files matching wild card patterns to be ignored.
