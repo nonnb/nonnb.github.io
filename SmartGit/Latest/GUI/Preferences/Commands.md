@@ -139,8 +139,10 @@ To use any of the recent Git capabilities listed below, the following are the mi
 
 ## Git Config
 
-This handy tab-set allows you to edit your `.gitconfig` file, which controls a number of standard git settings.
+This tab-set allows you to edit your `.gitconfig` file, which controls a number of standard git settings.
+These settings will be applied as a default across all repositories.
 Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting.
+However, you can also customize these settings per-repository. Please refer to [Repossitory Settings](../Repository/Repository.md#settings) for further details.
 
 ## Authentication
 
