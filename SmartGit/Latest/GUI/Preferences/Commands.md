@@ -146,7 +146,7 @@ However, you can also customize these settings per-repository. Please refer to [
 
 **Note:**
 
-Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository\|Edit Git Config** Menu Option and then select the **User** or **Repository** option respectively.
+Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository\|Edit Git Config** menu Option and then select the **User** or **Repository** option respectively.
 
 ## Authentication
 
