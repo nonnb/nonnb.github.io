@@ -7,14 +7,13 @@ redirect_from:
 
 ## Stage, Unstage, and the Index Editor
 
-Git's [Index](../GitConcepts/The-Index.md) tracks which changes in the Working Tree have been selected to be included in the next commit. 
+Git's [Index](../GitConcepts/The-Index.md) tracks which changes in the Working Tree have been selected for inclusion in the next commit. 
 
-SmartGit provides following facilities to modify this selection:
+SmartGit provides the following options to modify this selection:
 
--   **Stage and Unstage commands** allow you to add and remove all changes made to a file to and from the Index, respectively.
--   **Changes View** allows you to add or remove only `hunks` (i.e. parts of the file) to and from the Index (`git add -i`)
--   **Index Editor** allows you to directly edit the contents of the Index for a certain file, thereby adding or removing arbitrary
-    content to and from the Index.
+-  **Stage and Unstage commands** allow you to add or remove all changes made to a file to and from the Index.
+-  The **Changes View** lets you  add or remove only `hunks` (i.e., parts of a file) to or from the Index (`git add -i`).
+-  The **Index Editor** allows direct editing of the contents of the Index for a specific file, letting you add or remove arbitrary content to and from the Index.
 
 Depending on whether a file is already tracked or not:
 - If you invoke Stage on an untracked (new) file, e.g. via **Local\|Stage**, that file will be scheduled for addition to the repository.
