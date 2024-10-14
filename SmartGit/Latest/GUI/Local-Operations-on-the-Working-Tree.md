@@ -15,84 +15,66 @@ SmartGit provides the following options to modify this selection:
 -  The **Changes View** lets you  add or remove only `hunks` (i.e., parts of a file) to or from the Index (`git add -i`).
 -  The **Index Editor** allows direct editing of the contents of the Index for a specific file, letting you add or remove arbitrary content to and from the Index.
 
-Depending on whether a file is already tracked or not:
-- If you invoke Stage on an untracked (new) file, e.g. via **Local\|Stage**, that file will be scheduled for addition to the repository.
-- If Stage is invoked on an already-tracked file, changes made to the file will be scheduled for the next commit any changes made to the file, including its removal.
+Depending on whether a file is tracked or untracked:
+- If you use **Stage** on an untracked (new) file (e.g., via *Local \| Stage*), it will be scheduled for addition to the repository.
+- If **Stage** is used on an already-tracked file, changes will be scheduled for the next commit, including any modifications or deletions.
 
-Conversely, the Unstage command (**Local\|Unstage**) will remove the selected file from in the Index, and any changes will not be part of the next commit.
+Conversely, the **Unstage** command (via *Local \| Unstage*) will remove the selected file from in the Index, so its changes will not be part of the next commit.
 
-Similarly, staging and unstaging hunks from the **Changes** view will schedule or un-schedule parts of these files which have been changed, for the next commit.
+Staging and unstaging hunks from the **Changes View** will schedule or unschedule parts of modified files for the next commit.
 
-If you select a file and invoke the Index Editor, e.g. via **Local\|Index Editor**, the Index Editor window will appear.
+If you select a file and invoke the **Index Editor** (e.g., via *Local \| Index Editor*), the window will display a three-way diff view, showing:
+- The file's state in the Repository
+- The Index
+- The Working Tree
 
-The Index Editor is a three-way diff view on the selected file, where the three editors represent:
-- the file's state in the Repository
-- the Index
-- the Working Tree
-
-You can edit the file contents in the Index and the Working Tree (but not the version in the Repository, obviously), and move changes between these two editors by clicking on the arrow and \`x' buttons to move changes between the views.
-
-Lastly, to commit staged changes, select the working tree root in the **Repositories** view and invoke the [Commit](#commit) command (see below).
+You can edit the file's contents in the Index and the Working Tree but not in the repository version. Use the arrow and \`x` buttons to move changes between views. 
+Select the working tree root in the **Repositories View** to commit staged changes and invoke the **[Commit](#commit)** command (see below).
 
 ## Ignore
 
-The **Local\|Ignore** command indicates that the selected untracked files should be marked as `ignored`.
+The **Local \| Ignore** command marks selected untracked files as `ignored`, which is useful for preventing files like compiled output, binary, debugging, and runtime log files from being added to the repository. Ignored files will no longer appear as 'untracked', reducing visual clutter and the risk of unintentionally adding them. If the option **Show Ignored Files** is selected, ignored files will still be displayed.
 
-`Ignore` is useful for preventing files in the local Working Tree, such as compiled output, binary, debugging, and runtime log files, that should not be added to the repository.
-Ignoring a file will prevent it from showing up as \`untracked' in future, which reduces visual clutter and reduces the chance of unwanted files being added to the repository. 
-If the Files view option **Show Ignored Files** is selected, ignored files will be shown.
+#### Note:
 
-#### Note
+SmartGit only displays ignored files in versioned directories. Ignored files or sub-directories within ignored directories are not shown for performance reasons.
 >
->
->**Show Ignored Files** will only display ignored files in versioned directories.
->Ignored files or sub-directories in ignored directories won't show up,
->as SmartGit will not even scan into these directories for performance reasons.
->
-
-When you mark a file in SmartGit as `ignored`, an entry will be added to the `.gitignore` file in the same directory.
-The `.gitignore` file will be added to the repository if it isn't already present. 
-With the SmartGit Ignore command you can only ignore files in the current directory.
+When a file is maked as ignored in SmartGit, an entry is added to the `.gitignore` file in the same directory. The `.gitignore` file will be added to the repository if it isn't present. 
 To use more advanced Git ignore options, you may need to edit the `.gitignore` file(s) by hand, which will allow advanced patterns, such as entire folders, and files matching wild card patterns to be ignored.
 
 #### Tip
-> To understand by which configuration an *ignored* file is becoming
-> ignored, use **Local\|Edit Ignore File**.
+> To understand why a file is *ignored*, use **Local\|Edit Ignore File**.
 
 ## Assume Unchanged
 
-Invoke **Local\|Toggle 'Assume Unchanged'** (`assume-unchanged`) on a selection of modified files to ignore any local modifications to the file (e.g. if a developer should never change this file).
-Files which are `assumed unchanged` won't be detected as modified afterwards and hence won't be included in the next commit.
+Invoke **Local \| Toggle 'Assume Unchanged'** (`assume-unchanged`) on selected modified files to prevent their local changes from being deleted. 
+These files will no longer appear modified or included in the next commit.
 
-To turn a file back into *Modified* state, use **Toggle 'Assume Unchanged'** on an *Assume-Unchanged* file again. 
-If the **Files** view option **Show Assume-Unchanged Files** is selected, *Assume-Unchanged* files will be shown.
+To reverse this, toggle the command again. Those files will be displayed if the **Files View** option **Show Assume-Unchanged Files** is selected.
 
 ## Skipped
 
-Invoke **Local\|Toggle 'Skip Worktree'** (`--skip-worktree`) on a selection of files to skip them from being added to the *Index*. 
-This is similar to [Assume Unchanged](#assume-unchanged) , but in general more persistent in case of commands like **Reset**.
+The **Local \| Toggle 'Skip Worktree'** (`--skip-worktree`) command skips selected files from being added to the *Index*. 
+This is similar to [Assume Unchanged](#assume-unchanged) but more persistent especially for commands like **Reset**.
 
-To get a file back into the Index, use **Toggle 'Skip Worktree'** on a *Skipped* file again. 
-If the Files view option **Show Skipped Files** is selected, *Skipped* files will be shown.
+Use the toggle command again to bring a file back into the *Index*. Skipped files can be displayed by enabling **Show Skipped Files** in the **Files View**.
 
 ## Commit
-The Commit command (**Local\|Commit**) is used for creating a new commit from staged changes in the local repository.
 
-If the working tree is in *merging* or *rebasing* state (see [Merge](Branching/Merge.md) and [Rebase](Branching/Rebase.md)), you can only commit the entire working tree.
+The **Commit** command (*Local \| Commit*) creates a new commit from staged changes in the local repository.
 
-Otherwise, you can select the files to commit.
-Previously tracked, but now missing files will be removed from the repository, and untracked new files will be added. 
-This behavior can be changed in the Preferences, section **Commands**.
+If the Working Tree is in a *merging* or *rebasing* state (see [Merge](Branching/Merge.md) and [Rebase](Branching/Rebase.md)), you can only commit the entire working tree. Otherwise, you can select specific files to commit.
+Missing previously tracked files will be removed from the repository, and new untracked files will be added. This behavior can be adjusted in the **Preferences** under the **Commands** section.
 
-If you have [staged changes in the Index](#stage-unstage-and-the-index-editor), you can commit them by selecting at least one file with Index changes or by selecting the working tree root before invoking the Commit command.
+If you have [staged changes in the Index](#stage-unstage-and-the-index-editor), you can commit them by selecting at least one file with Index changes or selecting the working tree root before invoking the Commit command.
 
-While entering the commit message, you can use *\<Ctrl>+\<Space>*-keystroke to auto-complete file names or file paths.
+While entering the commit message, use *\<Ctrl>+\<Space>*-keystroke to auto-complete file names or file paths.
 
-Use **Select from Log** to pick a commit message or SHA ID from the Log.
-By default, SmartGit will 'guide' you to write commit messages in a standardized format, which will not exceed certain line lengths. 
-You can disable this line length guide in **Edit\|Preferences**.
+Use **Select from Log** to choose a commit message or SHA ID from the Log.
+By default, SmartGit 'guides' you in writing commit messages in a standardized format with limited line lengths. 
+You can disable this line length guide in **Edit \| Preferences**.
 
-If **Amend last commit** is selected, you can amend the previous commit and combine it with the current commit, e.g. to add a forgotten file. 
+If **Amend last commit** is selected, you can combine the current changes with the previous commit, such as adding a forgotten file. 
 By default, this option is only available for commits not yet pushed.
 You can enable this option for already pushed commits in Preferences, section **Commands**.
 When amending a commit, you have the option to replace, or reuse the commit message on the previous commit.
@@ -105,8 +87,7 @@ See [Merge](Branching/Merge.md) for details.
 
 #### Note
 >
->If the commit fails because Git complains "unable to auto-detect email address",
->you should set your name and email address in the [Repository Settings](Repository/Repository.md#settings) .
+>If the commit fails because Git complains "unable to auto-detect email address", you should set your name and email address in the [Repository Settings](Repository/Repository.md#settings) .
 >
 
 ## Altering Local Commits
@@ -124,24 +105,23 @@ SmartGit provides several ways to make alterations to local commits:
 
 #### Warning
 >
->Do not undo a commit which has already been pushed to a remote repository unless you know what you're doing!
->If you do this, you will need to force-push your local changes, which might
->discard other users' commits in the remote repository.
+>Do not undo a commit that has already been pushed to a remote repository unless you understand the implications.
+>This could require a force-push, potentially discarding other users' commits in the remote repository.
 >
 
 ## Discard
 
-Use **Local\|Discard** to revert the contents of the selected files either back to their [Index](The-Index.md) state, or back to their repository state (HEAD). 
+Use **Local \| Discard** to revert the contents of the selected files either back to their [Index](The-Index.md) state, or back to their repository state (HEAD). 
 If the Working Tree is in a *merging* or *rebasing* state, this command can be used on the root of the Working Tree to get out of the *merging* or *rebasing* state.
 
 ## Remove
 
-Use **Local\|Remove** to remove files from the local repository and optionally to delete them in the working tree.
+Use **Local \| Remove** to remove files from the local repository and optionally to delete them in the working tree.
 
 If the local file in the working tree is already removed, [staging](#stage-unstage-and-the-index-editor) the file deletion will have the same
 effect, however, the Remove command also allows you to remove files from the repository while keeping them locally.
 
-## Moving/Renaming Files
+## Moving / Renaming Files
 
 In general, Git's move/rename tracking happens always on-the-fly, e.g. when logging or blaming a file.
 Hence, there is no need for an explicit *move* operation: just move your files with your favorite tools (IDE,
@@ -149,19 +129,19 @@ file explorer, from command line).
 
 However, Git does possess a `git move` command for convenience which performs a normal file system move and then stages the removed and the newly added
 file to the *Index*.
-For a GUI client like SmartGit, providing such an operation is not usually necessary. But due to demand from users for the missing `move` operation, SmartGit provides **Local\|Move or Rename**.
+For a GUI client like SmartGit, providing such an operation is not usually necessary. But due to demand from users for the missing `move` operation, SmartGit provides **Local \| Move or Rename**.
 
 ## Delete
 
-Use **Local\|Delete** to delete local files (or directories) from the working tree.
+Use **Local \| Delete** to delete local files (or directories) from the working tree.
 You either may delete the files directly or move them to the trash.
 
 ## Stashes
 
 Stashes are a convenient way to put the current working tree changes or just some selected files aside and re-apply them later.
 
-Use **Local\|Stash All** to stash away all local modifications of your working tree.
-To stash away only the selected files, use **Local\|Stash Selection**. The resulting stash will show up in the **Branches** view.
+Use **Local \| Stash All** to stash away all local modifications of your working tree.
+To stash away only the selected files, use **Local \| Stash Selection**. The resulting stash will show up in the **Branches** view.
 
 
 #### Note
@@ -179,7 +159,7 @@ The **Rename Stash** command allows you to change the displayed stash message.
 
 The Git Garbage Collector usually runs in the background, however, you can choose to explicitly execute the **Run Garbage Collector** command to force the garbage collector (`git gc`) to run immediately.
 
-The Git Garbage Collector performs housekeeping tasks such as deleting commits which are no longer referenced in the repository, such as :
+The Git Garbage Collector performs housekeeping tasks such as deleting commits which are no longer referenced in the repository, such as:
 - commits which have been rebased
 - commits which have been amended and rewritten to a new commit
 - commits which have been squashed
