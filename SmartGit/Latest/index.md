@@ -29,6 +29,7 @@
   - [Working with Repositories](Repository-Related)
     - [Clone](Clone)
     - [Submodules](Submodules)
+    - [Managing Remotes](Managing-Remotes)
   - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree)
   - [Bisect](GUI/Bisect.md)
   - [Main Windows](Main-Windows)
