@@ -17,7 +17,7 @@
   - [GitFlow](Git-Flow)
   - [GitFlow Light](Git-Flow-Light)
 - [Using the SmartGit Application](GUI)
-  - Working with Branches **TODO
+  - [Working with Branches](GUI/Branch/Branching.md)
     - [Check Out](Check-Out)
     - [Merge](Merge)
     - [Rebase](Rebase)
@@ -30,6 +30,7 @@
     - [Clone](Clone)
     - [Submodules](Submodules)
   - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree)
+  - [Bisect](GUI/Bisect.md)
   - [Main Windows](Main-Windows)
   - [Preferences](Preferences)
     - [Commands](GUI/Preferences/Commands.md)
