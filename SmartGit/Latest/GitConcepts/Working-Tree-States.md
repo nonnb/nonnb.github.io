@@ -52,7 +52,7 @@ As above, you have the option to:
 
 ## Bisecting status
 
-Git [Bisect](../GUI/Branch/Bisect.md) is an interact command which requires you to iterately test whether the currently checked out commit contains an undesirable change, and then to `bisect`  this 'bad' commit and an earlier commit ('good') known to not to have contained the issue, by choosing a commit mid-way between these commits. While the unwanted commit is being identified, your Working Tree will be in a 'Bisecting' status, until you either:
+Git [Bisect](../GUI/Bisect.md) is an interact command which requires you to iterately test whether the currently checked out commit contains an undesirable change, and then to `bisect`  this 'bad' commit and an earlier commit ('good') known to not to have contained the issue, by choosing a commit mid-way between these commits. While the unwanted commit is being identified, your Working Tree will be in a 'Bisecting' status, until you either:
 - Locate the bad commit and leave the bisect operation
 - Abort the bisect operation
 
