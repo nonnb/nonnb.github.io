@@ -20,14 +20,14 @@ SmartGit will provide a visual alert as per below when the Working Tree is in on
 When a [Merge](Merge.md) or [Rebase](Rebase.md) fails due to conflicts in files that Git cannot automatically resolve, Git adds merge conflict markers to the affected files and leaves the Working Tree in a Merging state.
 
 In this case, you can complete the merge in two ways: 
-- Resolve the conflict using a tool like the [SmartGit Conflict Resolver](/SmartGit/Latest/GUI/GitCommands/Branching/Conflict-Solver.md), stage the file changes, and commit at the Working Tree root.
+- Resolve the conflict using a tool like the [SmartGit Conflict Resolver](/SmartGit/Latest/GUI/GitCommands/Branch/Conflict-Solver.md), stage the file changes, and commit at the Working Tree root.
 - Revert the entire Working Tree to its state before the merge (`git merge --abort`) or before the rebase (`git rebase --abort`).
 
 SmartGit automatically detects when the Working Tree is in Merging state and guides you through the conflict resolution process.
 
 ## Interactive Rebasing (Rebase status)
 
-During an interactive rebase, Git requires additional user input to complete the rebase. For example:
+During an [Interactive Rebase](Rebasing.md), Git requires additional user input to complete the rebase. For example:
 - Selecting which operation to perform on each commit (e.g., Pick, Squash, Fix, Drop, etc.).
 - Pausing the rebase operation if you Edit one or more commits or want to edit one or more commit messages.
   
@@ -37,18 +37,24 @@ SmartGit automatically detects when the Working Tree is in a Rebase state and gu
 
 ## Cherry Picking status
 
-As with Merge and Rebase, if a Cherry-Pick fails due to a reason such as a merge conflict, Git will leave the Working Tree in a 'Cherry-Picking' status.
+As with Merge and Rebase, if a [Cherry-Pick](Cherry-Picking.md) fails due to a reason such as a merge conflict, Git will leave the Working Tree in a 'Cherry-Picking' status.
 Again, you have the option to
 - Resolve the conflict and continue
 - Abort the cherry-pick
 
 ## Reverting status
 
-Again, as with Merge and Rebase, if a Revert operation fails due to a reason such as a merge conflict, Git will leave the Working Tree in a 'Reverting' status.
+Again, as with Merge and Rebase, if a [Revert](Reverting.md) operation fails due to a reason such as a merge conflict, Git will leave the Working Tree in a 'Reverting' status.
 
 As above, you have the option to:
 - Resolve the conflict and continue
 - Abort the Revert
+
+## Bisecting status
+
+Git [Bisect](../GUI/Branch/Bisect.md) is an interact command which requires you to iterately test whether the currently checked out commit contains an undesirable change, and then to `bisect`  this 'bad' commit and an earlier commit ('good') known to not to have contained the issue, by choosing a commit mid-way between these commits. While the unwanted commit is being identified, your Working Tree will be in a 'Bisecting' status, until you either:
+- Locate the bad commit and leave the bisect operation
+- Abort the bisect operation
 
 ## Named Branch vs. Detached HEAD
 
