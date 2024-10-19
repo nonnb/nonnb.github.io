@@ -5,9 +5,9 @@ redirect_from:
 ---
 # Managing Remotes
 
-Frequently, you will [Clone](Clone.md) a remote repository, and will always pull or push new commits and branches in your local repository only to this remote (with a default name of *origin*).
+Frequently, developers may [Clone](Clone.md) a remote repository, and will always pull or push new commits and branches in your local repository only to this remote (with a default name of *origin*).
 
-However, there are times when you will need to perform more advanced interactions with remotes, such as:
+However, there are times when you will need to perform more advanced interactions with remotes, e.g.:
 
 - If the location of the remote repository changes
 - If you wish your local repository to track multiple remote repositories
