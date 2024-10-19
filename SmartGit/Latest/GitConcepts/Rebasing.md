@@ -40,4 +40,4 @@ o   F                         o   F
 **Note**
 - the commit history of the new `main` fork will be rewritten - although the commits C', B' and A' have the same changes as the original commits C, B and A respectively, a new SHA hash will be assigned for each commit rewritten after the rebase is completed.
 
-See Also: [Rebasing in SmartGit](../GUI/Branching/Rebase.md).
+See Also: [Rebasing in SmartGit](../GUI/Branch/Rebase.md).

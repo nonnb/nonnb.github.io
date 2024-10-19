@@ -1,13 +1,16 @@
 # Using the SmartGit Conflict Solver to resolve merge conflicts
 
 SmartGit comes with a Conflict Solver tool that allows merge conflict resolution using the standard *Three-Way* merge approach.
+Merge conflicts arise when branches diverge and changes cannot be automatically resolved by git when commands such as Merge, Rebase or Cherry-Pick are executed.
 
 For details on how Git manages merge conflicts, and the meaning of `ours`, `theirs`, `common`, and `base` files, refer to the [Git manual](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging).
 
-- The **left pane** shows the local branch commit version of the file (`ours` :2)
+SmartGit's Conflict Solver window consists of the following elements:
+
+- The **left pane** shows the local branch commit version of the file (`ours`, also referred to as `:2` in git)
 - The **center pane** shows the file's current conflicted Working Tree version, including the merge conflict markers.  
-  You can use the **`Base Changes`** command to view the original version of the file (Common Base :1)
-- The **right pane** shows the merged source version of the file (`theirs` :3)
+  You can use the **`Base Changes`** command to view the original version of the file (Common Base, also referred to as `:1` in git)
+- The **right pane** shows the merged source version of the file (`theirs`, also referred to as `:3` in git)
 
 ![SmartGit Conflict Solver tool](../../images/Tools-SmartGit-ConflictSolver.png)
 

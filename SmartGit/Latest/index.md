@@ -1,8 +1,13 @@
-# Latest
+# SmartGit - Latest Version - Complete Table of Contents
 
-**TODO** - Complete tree or derive tree automatically from file system
+Welcome to SmartGit!
+
+If you're new to SmartGit, we suggest you get started on the [SmartGit User Interface Reference](GUI/SmartGit-Commands.md).
+
+Alternatively, you can follow one of the below topics:
 
 - [Git Concepts](Git-Concepts)
+  - [Common Terms](GitConcepts/CommonTerms.md)
   - [Branches](Branches)
   - [Cherry-Picking](GitConcepts/Cherry-Picking.md)
   - [Commits](Commits)
@@ -16,8 +21,19 @@
 - [Development Processes](DevelopmentProcesses)
   - [GitFlow](Git-Flow)
   - [GitFlow Light](Git-Flow-Light)
+  - [Feature Flow](DevelopmentProcesses/Feature-Flow.md)
 - [Using the SmartGit Application](GUI)
-  - Working with Branches **TODO
+  - [Main Windows in SmartGit](Main-Windows)
+    - [Working Tree Window](GUI/Working-Tree-Window.md)
+    - [Log Window](GUI/Log-Window.md)
+    - [Standard Window](GUI/Standard-Window.md)
+  - Views in SmartGit
+    - [Branches View](Branches-view)
+    - [Journal View](Journal-View)
+    - [Graph View](GUI/Graph-View.md)
+    - [Commit View](GUI/Commit-View.md)
+    - [Repository View](GUI/Repository-View.md)
+  - [Working with Branches](GUI/Branch/Branching.md)
     - [Check Out](Check-Out)
     - [Merge](Merge)
     - [Rebase](Rebase)
@@ -25,12 +41,22 @@
     - [Cherry-Pick](Cherry-Pick)
     - [Revert](Revert)
     - [Manipulating Branches and Tags](Manipulating-branches-tags)
-    - [Conflict Solver](GUI/Branching/Conflict-Solver.md)
+    - [Conflict Solver](GUI/Branch/Conflict-Solver.md)
   - [Working with Repositories](Repository-Related)
     - [Clone](Clone)
     - [Submodules](Submodules)
+    - [Subtrees](Subtrees)
+    - [Managing Remotes](Managing-Remotes)
+    - [Repositories, Directories and Files](Repositories-Directories-and-Files)
+    - [Repository Settings](Repository-Settings)
   - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree)
-  - [Main Windows](Main-Windows)
+  - Other Tools and Commands
+    - [Viewing the Git Log](Log)
+    - [Bisect](Bisect)
+    - [Blame](Blame)
+    - [Tips and Tricks](Tips-and-Tricks)
+    - [Command Line Options](Command-Line-Options)
+    - [Linking SmartGit to Issue Trackers using BugTraq](Bugtraq-links-to-issue-trackers-)
   - [Preferences](Preferences)
     - [Commands](GUI/Preferences/Commands.md)
     - [User Interface Preferences](GUI/Preferences/User-Interface.md)
@@ -39,3 +65,22 @@
     - [System Properties](System-Properties)
     - [VM Options](VM-options)
     - [Theme Customization](Theme-Customization)
+- [Installation and SmartGit File Locations](Installation-and-Files)
+  - [Company-wide installation](Company-wide-installation)
+  - [On-premise update server](On-premise-update-server)
+  - [On-premise license server](On-premise-license-server)
+- [Licensing](Licensing/Licensing.md)
+  - [Commercial-only features of SmartGit](Commercial-only-features)
+  - [SmartGit Hobby Use License](Hobby-Use-License)
+- [Integrations with other Applications and Services](Integrations/Integrations.md)
+  - [Azure DevOps](Azure-DevOps)
+  - [Bitbucket Cloud](Bitbucket-integration) and [Bitbucket and Atlassian Stash On Premises](BitBucket-Server-Atlassian-Stash-integration)
+  - [GitHub](GitHub-integration), [GitHub Actions](GitHub-Actions) and [GitHub Enterprise On Premises](GitHub-Enterprise-Integration)
+  - [GitLab](GitLab)
+  - [Gerrit](Gerrit)
+  - [JIRA](JIRA)
+  - [Jenkins](Jenkins)
+  - [TeamCity](TeamCity)
+- [Add Ons](AddOns/AddOns.md)
+  - [Distributed Reviews Add-On](Distributed-Reviews-add-on-)
+  - [Server Side Component](Server-side-component)

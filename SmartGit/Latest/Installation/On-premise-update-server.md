@@ -1,46 +1,45 @@
-# On-premise update-server
+---
+redirect_from:
+  - /SmartGit/Latest/On-premise-update-server
+  - /SmartGit/Latest/On-premise-update-server.html
+---
+# On-premise update server
 
-For a large number of installations, it may be convenient to replicate
-our way of deployment in your company.
+If you have a large number of SmartGit installations on your corporate network, it may be convenient to replicate our way of deployment in your company.
 
-Advantages of this approach:
+Advantages of an on-premise SmartGit Update Server:
 
--   light-weight updates are managed by SmartGit itself:
+-   Light-weight updates are managed by SmartGit itself:
     -   they usually don't require admin privileges
-    -   they won't disturb the user
--   less effort in deploying new versions, once the infrastructure is
-    set up
+    -   they occur in the background, and won't disturb the user
+-   Less effort in deploying new versions, once the infrastructure is set up.
+-   Internet bandwidth savings, as patches are downloaded once and cached on the update server before distribution to SmartGit end users on the network.
+-   Ensuring all developers on the network use the same version of SmartGit, easing internal support operations and increasing uniformity across the team.
+-   Avoiding the need to configure proxies or to whitelist Syntevo distribution endpoints on individual developer machines.
 
-Disadvantages of this approach:
+Disadvantages of an on-premise SmartGit Update Server:
 
--   initial effort required to set up the infrastructure
--   some updates (usually the first build of a major version) requires
-    admin privileges for SmartGit's updater to run
--   very seldom, there may be updates (usually of a major version) which
-    can't be even run by SmartGit's updater. In this case, a fresh
-    installation will be necessary. SmartGit provides notification
-    mechanisms to inform your users about such updates (the same way as
+-   Initial effort required to set up the infrastructure
+-   Some updates (usually the first build of a major version) requires admin privileges for SmartGit's updater to run
+-   Occasionally, there may be updates (usually a new major version) which can't be run by SmartGit's updater. 
+    In this case, a fresh installation may be necessary. SmartGit provides notification mechanisms to inform your users about such updates (the same way as
     we would do with our users).
 
 # Central updates repository
 
-To provide the updates to your users, a central "repository" has to be
-set up (the term "repository" is completely unrelated to a Git
-repository). The repository must be accessible either over HTTP- or
-file-protocol and must provide endpoints for:
+To provide the updates to your users, a central "repository" has to be set up (the term "repository" is completely unrelated to a Git
+repository). The repository must be accessible either over HTTP- or file-protocol and must provide endpoints for:
 
--   an "autoupdate" file
--   several control files and all files which make up the installation
--   a human-readable HTML information page
+-   An "autoupdate" file
+-   Several control files and all files which make up the installation
+-   A human-readable HTML information page
 
-From now on, let's assume that the custom update server's URL is
-`http://updateserver/smartgit` (`updateserver` may contain a port, too)
-and it offers following endpoints:
+Let's assume that the custom update server's URL is `http://updateserver/smartgit` (`updateserver` may contain a port, too)
+which offers the following endpoints:
 
--   `http://updateserver/smartgit/autoupdate` and
+-   `http://updateserver/smartgit/autoupdate`
 -   `http://updateserver/smartgit/updates`
 -   `http://updateserver/smartgit/info`
-
 
 #### Info
 > If you want to use `file://`-protocol instead of `http://`-protocol, for
@@ -50,20 +49,15 @@ and it offers following endpoints:
 > be `file://update-server/autoupdate`.
 
 
-
 ## Autoupdate file
 
-The `autoupdate` file is the entry-point for the entire update
-procedure. It will be read by SmartGit on every invocation of the check
-for new version. For a reference `autoupdate` file, refer to our main
-`autoupdate`-file at <http://www.syntevo.com/smartgit/autoupdate>.
+The `autoupdate` file is the entry-point for the entire update procedure. 
+It will be read by SmartGit on every invocation of the check for new versions. 
+For a reference `autoupdate` file, refer to our main `autoupdate`-file at <http://www.syntevo.com/smartgit/autoupdate>.
 
-The `autoupdate` file contains directions for each major version of
-SmartGit and its top-level structure looks like:
+The `autoupdate` file contains directions for each major version of SmartGit and its top-level structure looks like:
 
-
-
-``` java
+``` xml
 <updateinfo>
     <product id="syntevo.smartgit.release-X">
         ...
@@ -75,15 +69,11 @@ SmartGit and its top-level structure looks like:
 <updateinfo> 
 ```
 
-
-
 A `<product>`-element will usually contain a `<version>`-element which
 gives details on the update target version and has basically following
 structure:
 
-
-
-``` java
+``` xml
 <version>
     <major-version>...</major-version>
     <major-date>...</major-date>
@@ -96,20 +86,13 @@ structure:
 </version>
 ```
 
-
-
-You will usually want to copy these elements over from our
-main `autoupdate`-file and only adjust the `<location>`-element and the
-`<update-url>`-element to your company-internal URLs. An example
-`<version>`-element for SmartGit 17.1.2 **with adjusted paths** might
-look like:
-
-
+You will usually want to copy these elements over from our main `autoupdate`-file and only adjust the `<location>`-element and the
+`<update-url>`-element to your company-internal URLs. 
+An example `<version>`-element for SmartGit 17.1.2 **with adjusted paths** might look like:
 
 #### Example
 
-
-> ``` java
+> ``` xml
 > <version>  
 >     <major-version>17.1</major-version>  
 >     <major-date>2017-10-12</major-date>  
@@ -123,7 +106,6 @@ look like:
 >     <update-density-max>100</update-density-max>  
 > </version>
 > ```
-
 
 The important URL is `<update-url>` which specifies the URL-**prefix** for the update "control"-files.
 The `<location>`-URL is of minor importance and will just be displayed by SmartGit if an automatic upgrade is not possible (which should almost never be the case).
@@ -148,8 +130,6 @@ The "control" file specifies how the final SmartGit installation must
 look like after an update. The basic structure of a control file looks
 like:
 
-
-
 ``` java
 HEADER
 build=...
@@ -161,14 +141,8 @@ CONTENT
 <signature>
 ```
 
-
-
-You will usually want to copy the control files from our website as is
-and only adjust the `sourceRoolUrl` to your company-internal URL. An
-example Windows update control file for SmartGit 17.1.2 **with adjusted
-URL** might look like:
-
-
+You will usually want to copy the control files from our website as-is and only adjust the `sourceRoolUrl` to your company-internal URL. 
+An example Windows update control file for SmartGit 17.1.2 **with adjusted URL** might look like:
 
 #### Example
 >
@@ -178,22 +152,14 @@ URL** might look like:
 >
 >
 
-The `CONTENT` section describes exactly how the installation should look
-like and consists one line for very file which will be present in the
+The `CONTENT` section describes exactly how the installation should look like and consists one line for very file which will be present in the
 installation:
-
-
 
 ``` java
 <sha> <type> <name-on-server> <relative-path-in-installation>
 ```
 
-
-
-URLs for all files mentioned in the `CONTENT` section will be composed
-by concatenating the `sourceUrl + / + <name-on-server> + . + <sha>.`
-
-
+URLs for all files mentioned in the `CONTENT` section will be composed by concatenating the `sourceUrl + / + <name-on-server> + . + <sha>.`
 
 #### Example
 >

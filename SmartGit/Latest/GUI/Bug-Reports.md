@@ -1,3 +1,8 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Bug-Reports
+  - /SmartGit/Latest/Bug-Reports.html
+---
 # Bug Reports
 
 ## Detailed Bug Reports

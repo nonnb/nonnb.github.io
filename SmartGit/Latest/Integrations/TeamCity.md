@@ -1,12 +1,16 @@
-# TeamCity integration (only Standard window)
+---
+redirect_from:
+  - /SmartGit/Latest/TeamCity
+  - /SmartGit/Latest/TeamCity.html
+---
 
-SmartGit will display TeamCity build results in the **My History** view of
-*Standard* window, if configured.
+# TeamCity integration (Standard Window only)
+
+SmartGit will display JetBrains TeamCity build results in the **My History** view of the [*Standard Window*](../GUI/Standard-Window.md), if configured.
 
 ## Configuration
 
-The integration is configured in the repository's `.git/config`,
-using `smartgit.teamcity.`-keys:
+The integration is configured in the repository's `.git/config`, using `smartgit.teamcity.`-keys:
 
 * `url`: the root URL of your TeamCity server
 * `project`: the TeamCity project name for your Git repository

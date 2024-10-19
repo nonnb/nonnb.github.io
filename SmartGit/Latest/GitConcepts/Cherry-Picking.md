@@ -2,7 +2,7 @@
 
 The `git cherry-pick` command allows you to apply one or more  commits from any other branch in the repository to the HEAD of the current branch.
 Cherry-Picking is useful when you do **not** wish to apply **all** commits on a source branch to the current branch. 
-If you aim to merge all commits from a source branch into the current branch, you should instead use [`git merge`](Merging.md) or [`git rebase`](Rebasing.md).
+If you aim to merge all commits from a source branch into the current branch, you should instead use [Merge](Merging.md) or [Rebase](Rebasing.md).
 
 In the example below, we want to cherry-pick commit `C` from the branch `a-branch` into the HEAD of the current (target) `main` branch.
 

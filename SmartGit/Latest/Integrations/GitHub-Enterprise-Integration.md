@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/GitHub-Enterprise-Integration
+  - /SmartGit/Latest/GitHub-Enterprise-Integration.html
+---
+
 # GitHub Enterprise Integration
 
 Authenticating to a GitHub Enterprise instance is slightly different
@@ -15,7 +21,7 @@ Invoke **Generate New Token**, enter `SmartGit` for the **Token
 Description** and for **Select scopes** select the `repo` scope and
 the `read:org` scope.
 
-![](attachments/53215448/53215449.png)
+![](../attachments/53215448/53215449.png)
 
  
 

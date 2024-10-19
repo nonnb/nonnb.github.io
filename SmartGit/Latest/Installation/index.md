@@ -1,1 +1,4 @@
-I'm the Installation/index.md file
+---
+redirect_to:
+  - /SmartGit/Latest/GUI/Installation-and-Files.html
+---

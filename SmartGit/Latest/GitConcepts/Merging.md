@@ -6,11 +6,11 @@ Merging branches is an essential and common operation within any Git repository,
 - When changes made in feature branches are complete and ready to be merged into a main branch, such as `main`.
 - When fixes have been made to a previous release and need to be merged back into a feature branch currently under development.
 
-SmartGit supports all Git merge types. Please refer to [Merging in SmartGit](../GUI/Branching/Merge.md) for further details.
+SmartGit supports all Git merge types. Please refer to [Merging in SmartGit](../GUI/Branch/Merge.md) for further details.
 
 ## 'Normal' Merge Commit
 
-A common merging technique is to use the **`git merge`** comamnd, where two or more parent commits (i.e., the last commit on the current branch being merged into, and the last commit from the target branch being merged from) are combined, by creating a new 'merge' commit.
+A common merging technique is to use the `git merge` command, where two or more parent commits (i.e., the last commit on the current branch being merged into, and the last commit from the target branch being merged from) are combined, by creating a new 'merge' commit.
 A merge commit is created when merging with `git merge --no-ff`, or when a fast-forward merge is not possible.
 
 In the following example, we will merge the `a-branch` into `main` (`>` indicates the HEAD pointer on the main branch)
@@ -34,7 +34,7 @@ o B [> main]                o B \
 
 **Notes:**
 - When using merge commits, the full history of the feature branch is retained, which can be visually represented by tools such as SmartGit.
-- If conflicts arise during the merge due to the changing current and merged branches, these conflicts must be resolved using a tool such as the [SmartGit Conflict Solver](../GUI/Branching/Conflict-Solver.md) before the merge commit can be completed.
+- If conflicts arise during the merge due to the changing current and merged branches, these conflicts must be resolved using a tool such as the [SmartGit Conflict Solver](../GUI/Branch/Conflict-Solver.md) before the merge commit can be completed.
 
 ## Fast-forward Merge
 
@@ -81,7 +81,7 @@ o [> main]                  o
 
 ## Merge versus Rebase
 
-A Git-specific alternative to merging is **rebasing** (see *[Rebase](Rebasing.md)*), which can be used to keep a branch's histor linear.
+A Git-specific alternative to merging is **rebasing** (see *[Rebase](Rebasing.md)*), which can be used to keep a branch's history linear.
 Interactive rebasing is an advanced feature that allows any number of commits in a branch's commit history to be modified, including:
 
 - **Picking:** Including the commit in the rewritten commit history.
@@ -94,7 +94,7 @@ In addition to rebasing, SmartGit offers advanced branch cleanup features, such 
 - **Splitting** a commit into multiple commits.
 - **Reordering** commits easily.
 
-Please refer to [SmartGits Interactive Rebase features](../GUI/Branching/Rebase-Interactive.md) for more details.
+Please refer to [SmartGits Interactive Rebase features](../GUI/Branch/Rebase-Interactive.md) for more details.
 
 **Example**
 

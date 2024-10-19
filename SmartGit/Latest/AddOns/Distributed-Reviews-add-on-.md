@@ -1,3 +1,9 @@
+---
+redirect_from:
+  - /SmartGit/Latest/Distributed-Reviews-add-on-
+  - /SmartGit/Latest/Distributed-Reviews-add-on-.html
+---
+
 # Distributed Reviews (add-on)
 
 The *Distributed Reviews* add-on allows your team to create a *Pull
@@ -38,8 +44,7 @@ the shared repository to clone and connect to the same Review database.
 
 *Pull Requests* are used to signal that you consider a *feature branch*
 as 'ready' and request someone else to review and integrate this branch
-into the main development line (usually `master` or `develop` in case of
-[Git-Flow](Git-Flow.md)).
+into the main development line (usually `master` or `develop` in case of [Git-Flow](../DevelopmentProcesses/Git-Flow.md)).
 
 To create a Pull Request, select your *feature branch* in the
 **Branches** view and invoke **Create Pull Request** from the context
@@ -84,7 +89,7 @@ content changes in the **Changes** view.
     needs better.
 -   If the Pull Request is fine, you may **Integrate** the Pull Request
     from the **Branches** view context menu. The **Integrate** dialog is
-    similar to [Git-Flow's Finish Feature dialog](Git-Flow.md#finish-feature):
+    similar to [Git-Flow's Finish Feature dialog](../DevelopmentProcesses/Git-Flow.md#finish-feature):
     you can select how to integrate the commits and some optional cleanup tasks.
     Alternately, you may just **Approve** the Pull Request and assign it
     to someone who should finally **Integrate** the Pull Request.
@@ -342,7 +347,7 @@ To get rid of Distributed Reviews data not just for your local clone, but also f
 
 The default message which will be set for the **Integrate Pull Request**
 dialog can be customized by using a message template. The message
-template will be specified using [system property](System-Properties.md) `smartgit.reviews.integrateMessageTemplate`.
+template will be specified using [system property](../GUI/AdvancedSettings/System-Properties.md) `smartgit.reviews.integrateMessageTemplate`.
 Following variables can be used:
 
 -   `${id}:` the short pull request ID

@@ -1,12 +1,17 @@
-# Jenkins integration (only Standard window)
+---
+redirect_from:
+  - /SmartGit/Latest/Jenkins
+  - /SmartGit/Latest/Jenkins.html
+---
 
-SmartGit will display Jenkins job results in the **My History** view of
-*Standard* window, if configured. Currently, *free style projects* and *multibranch pipelines* are supported.
+# Jenkins integration (Standard Window only)
+
+SmartGit will display Jenkins job results in the **My History** view of *Standard* window, if configured.
+Currently, *free style projects* and *multibranch pipelines* are supported.
 
 ## Configuration
 
-The integration is configured in the repository's `.git/config`,
-using `smartgit.jenkins.`-keys:
+The integration is configured in the repository's `.git/config`, using `smartgit.jenkins.`-keys:
 
 * `url`: the root URL of your Jenkins server
 
