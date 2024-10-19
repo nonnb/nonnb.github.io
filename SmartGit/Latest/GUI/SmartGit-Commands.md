@@ -11,6 +11,6 @@
 
 - [Working with Repositories](Repository/Repository.md)
 - - [Managing Remotes](Repository/Managing-Remotes.md)
-- [Submodules](Repository/Submodule.md)
+- [Submodules](Repository/Submodules.md)
 - [Subtrees](Repository/Subtrees.md)
 
