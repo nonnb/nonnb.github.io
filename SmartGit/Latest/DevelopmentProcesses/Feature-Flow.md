@@ -11,6 +11,7 @@ The main differences of Feature Flow are:
 - You need to tell SmartGit which trunk ('main') branches (e.g. `main`, `develop` or `master`) that you will usually be starting new features from.
 - Feature flow will ensure that you are up to date with the selected from trunk branch before allowing you to continue.
 - If the trunk branch Require that any merge conflicts be resolved, rather than having to resolve them after the new feature has been pushed to the remote and a new pull request opened.
+- Local feature branch names are not reserved on the remote when starting features
 
 ## Configuring Feature Flow
 
@@ -33,7 +34,7 @@ You can leave the Feature Prefix blank to remove any prefix from your feature br
 Your local repository must be up to date with the remote trunk branch from which you are branching the new feature. If the remote has diverged, you will need to use a command such as pull to 
 obtain the most recent commits from your main trunk branch.
 
-After opening a repository from the Standard Window, use the **Start** button on the top banner, or select **Branch \| Configure Features**  menu option, and provide the name for the feature.
+After opening a repository from the Standard Window, use the **Start** button on the top ribbon, or select **Branch \| Configure Features**  menu option, and provide the name for the feature.
 SmartGit will append the defined Feature Prefix to your feature branch name.
 If you have not yet defined any trunk branches for this repository, SmartGit will also prompt you to identify the trunk branch(es) from which you will be creating features.
 
@@ -42,10 +43,18 @@ Working Tree as needed to implement the feature.
 
 ## Integrate
 
-Once you have completed work on the new feature in your Working Tree, use Integrate to 
-- Fetch the latest commits from the remote trunk from which you started the feature
-- Check for conflicts between the remote and your local repository
+Once you have completed work on the new feature in your Working Tree, use **Integrate** (on the top ribbon, or from **Branch \| Integrate {trunk} ** to prepare your feature to be merged into the remote trunk branch.
 
 Click the **Integrate** button on the `Local Files` perspective
+- If you have unstaged changes, SmartGit will show the `Local Files` subwindow and allow you to stage and commit your changes.
+- SmartGit will fetch the remote trunk from which you started the feature
+- If the trunk branch from which your local feature has diverged since the feature was started, SmartGit will rebase your feature commits onto the local trunk branch
+
+## Finish
+
+Use Finish to complete your feature, which will push your local feature commits onto the remote trunk from which you started the feature.
+By default, SmartGit will attempt to fast forward your feature commits onto the remote branch, however, you do have the option to create a merge commit instead, and provide a commit message for the merge commit.
+
+If your process requires a Pull Request prior to merging into the remote trunk branch, then **TODO**
 
 
