@@ -5,9 +5,11 @@ redirect_from:
 ---
 # Working Tree States
 
+The Working Tree is the folder structure into which files in your repository will be placed after a check out.
+
 In general, the Git Working Tree will be in a normal state, allowing you to issue standard Git commands to check out branches, stage changes to the index, or create new commits.
 
-However, there are situations where commits cannot be completed, such as when a merge or rebase fails due to a conflict or during an interactive rebase.
+However, there are situations where commits cannot be completed, such as when a merge or rebase fails due to a conflict, or during an interactive rebase.
 
 This leaves Git in an intermediate state, requiring manual intervention (e.g., resolving merge conflicts or providing information/performing actions during an interactive rebase).
 
@@ -17,10 +19,10 @@ SmartGit will provide a visual alert as per below when the Working Tree is in on
 
 ## Merge Conflicts (Merging status)
 
-When a [Merge](Merge.md) or [Rebase](Rebase.md) fails due to conflicts in files that Git cannot automatically resolve, Git adds merge conflict markers to the affected files and leaves the Working Tree in a Merging state.
+When a [Merge](Merging.md) or [Rebase](Rebasing.md) fails due to conflicts in files that Git cannot automatically resolve, Git adds merge conflict markers to the affected files and leaves the Working Tree in a Merging state.
 
 In this case, you can complete the merge in two ways: 
-- Resolve the conflict using a tool like the [SmartGit Conflict Resolver](/SmartGit/Latest/GUI/GitCommands/Branch/Conflict-Solver.md), stage the file changes, and commit at the Working Tree root.
+- Resolve the conflict using a tool like the [SmartGit Conflict Resolver](/SmartGit/Latest/GUI/Branch/Conflict-Solver.md), stage the file changes, and commit at the Working Tree root.
 - Revert the entire Working Tree to its state before the merge (`git merge --abort`) or before the rebase (`git rebase --abort`).
 
 SmartGit automatically detects when the Working Tree is in Merging state and guides you through the conflict resolution process.
