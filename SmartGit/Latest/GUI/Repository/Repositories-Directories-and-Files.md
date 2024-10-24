@@ -36,9 +36,9 @@ Please refer to [File States](#file-states) for the meaning of each filter icon,
 
 ### Background Color highlighting
 SmartGit will change the background color of the *File view* when files are hidden, as a reminder that files it considers important are being filtered from view:
-- $${\color{Salmon}Light red}$$ - This means commitable files (e.g. *index-only changed* or *untracked*) are being hidden by one of the *Files State* filters. 
-- $${\color{GreenYellow}Light yellow}$$ - This means that files are being name-filtered by the *File Filter* search pattern.
-- $${\color{Gray}Gray}$$ Even if unchanged files are hidden, they can be found by filtering by name - files matching by name but not by state are shown in gray.
+- Light red - This means commitable files (e.g. *index-only changed* or *untracked*) are being hidden by one of the *Files State* filters. 
+- Light yellow - This means that files are being name-filtered by the *File Filter* search pattern.
+- Gray - Even if unchanged files are hidden, they can be found by filtering by name - files matching by name but not by state are shown in gray.
 
 **Notes**
 - If files that are not intended for staging the next commit are highlighted by the* State filter*, consider adding them to `.gitignore`.
