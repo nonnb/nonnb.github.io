@@ -1,7 +1,15 @@
-# Repository \| Settings
+---
+redirect_from:
+  - /SmartGit/Latest/Repositories-Directories-and-Files
+  - /SmartGit/Latest/Repositories-Directories-and-Files.html
+---
+# Repository Settings
 
-Use this dialog to configure certain options of your repository (`<repository>/.git/config`).
-The same global options can be found in the preferences.
+After selecting a Repository, you can use the **Repository \| Settings** menu command or the Settings context menu on the highlighted repository.
+This opens a dialog to configure certain options of your repository (`<repository>/.git/config`) file.
+
+**Note:** Changes made to your repository configuration only affect the selected repository. 
+You can set option defaults globally in your in the **Edit \| Preferences \| Git Config** [settings](../Preferences/Commands.md#git-config).
 
 ## User
 
