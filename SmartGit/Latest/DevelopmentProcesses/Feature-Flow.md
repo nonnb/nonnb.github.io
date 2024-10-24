@@ -1,7 +1,5 @@
 # Feature-Flow
 
-**TODO** - Confirm the use of 'trunk branches' (versus 'main branches') as used in SmartGit. The problem now is that `main` has now replaced `master` so referring to trunk branches as 'main' branches isn't great.
-
 Feature-Flow is a SmartGit development process available only in the Standard Window.
 
 Feature Flow aims to retain the simplicity of adding new features in process such as Git-Flow Light, however Feature-Flow extends the versatility of the process
@@ -12,6 +10,10 @@ The main differences of Feature Flow are:
 - Feature flow will ensure that you are up to date with the selected from trunk branch before allowing you to continue.
 - If the trunk branch Require that any merge conflicts be resolved, rather than having to resolve them after the new feature has been pushed to the remote and a new pull request opened.
 - Local feature branch names are not reserved on the remote when starting features
+
+**Note:**
+In this article we refer to 'trunk' branches as any long-lived branch in your repository, such as `main`, `master`, `develop` or release support branches.
+On the SmartGit UI, the term 'trunk' branch and 'main' branch are used interchangeably, but note that the concept extends to **any** trunk branch, and there is no requirement to use a branch with the name *main* when using the Feature Flow process.
 
 ## Configuring Feature Flow
 
@@ -54,7 +56,5 @@ Click the **Integrate** button on the `Local Files` perspective
 
 Use Finish to complete your feature, which will push your local feature commits onto the remote trunk from which you started the feature.
 By default, SmartGit will attempt to fast forward your feature commits onto the remote branch, however, you do have the option to create a merge commit instead, and provide a commit message for the merge commit.
-
-If your process requires a Pull Request prior to merging into the remote trunk branch, then **TODO**
 
 
