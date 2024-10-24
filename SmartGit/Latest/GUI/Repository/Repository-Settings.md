@@ -9,7 +9,7 @@ After selecting a Repository, you can use the **Repository \| Settings** menu co
 This opens a dialog to configure certain options of your repository (`<repository>/.git/config`) file.
 
 **Note:** Changes made to your repository configuration only affect the selected repository. 
-You can set option defaults globally in your in the **Edit \| Preferences \| Git Config** [settings](../Preferences/Commands.md#git-config).
+You can set option defaults globally by using **Edit \| Preferences \| Git Config** [settings](../Preferences/Commands.md#git-config).
 
 ## User
 
