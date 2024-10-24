@@ -28,9 +28,11 @@ These settings allow you to configure:
 ## Push
 
 This configuration allows you to choose what happens when you attempt to push, and a referenced submodule which has changes.
-- Abort - Your push operation will abort, and you will need to resolve the submodule synchronization, e.g. by pushing the submodule commit
-- Ignore - Submodule changes will NOT be pushed to the remote. **Note**: If your changes depend on the changes you've made to your local submodule repository, other users may not be able to compile your changes.
-- Push submodules first - SmartGit will automatically push changes to the Submodule, and then push the changes to your current repository.
+- **Abort** - Your push operation will abort, and you will need to resolve the submodule synchronization, e.g. by pushing the submodule commit
+- **Ignore** - Submodule changes will NOT be pushed to the remote.
+- **Push submodules first** - SmartGit will automatically push changes to the Submodule, and then push the changes to your current repository.
+
+**Note**: If your changes depend on the changes you've made to your local submodule repository, and you choose Ignore submodule changes, other users may not be able to compile your changes.
 
 ## Signing
 
