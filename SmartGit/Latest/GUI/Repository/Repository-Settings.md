@@ -17,7 +17,7 @@ Configure your name and email address here - this is used to identify the author
 
 ## Fetch and Pull
 
-These settings allow you to configure 
+These settings allow you to configure:
 - Whether to merge fetched changes, or to rebase the local branch onto the fetched changes, when pulling updates from a tracked remote branch.
 - Whether to delete (prune) obsolete remote branches
 - How to treat Submodules when pulling:
