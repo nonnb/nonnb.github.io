@@ -16,7 +16,7 @@
 - [Development Processes](DevelopmentProcesses)
   - [GitFlow](Git-Flow)
   - [GitFlow Light](Git-Flow-Light)
-  - [Feature Flow](Development-Processes/Feature-Flow.md)
+  - [Feature Flow](DevelopmentProcesses/Feature-Flow.md)
 - [Using the SmartGit Application](GUI)
   - [Working with Branches](GUI/Branch/Branching.md)
     - [Check Out](Check-Out)
