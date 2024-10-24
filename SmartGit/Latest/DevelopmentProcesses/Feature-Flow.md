@@ -28,7 +28,7 @@ The trunk branch identified must exist at the time of setting configuration. Whe
 In addition, you can specify the Feature Prefix to be used on new features. This will default to `feature/`, which is the Git-Flow standard.
 You can leave the Feature Prefix blank to remove any prefix from your feature branch names when you start new features.
 
-[Image Here](Feature-Flow-Configuration.png)
+![Feature Flow configuration](../images/Feature-Flow-Configuration.png)
 
 ## Starting a New Feature
 
