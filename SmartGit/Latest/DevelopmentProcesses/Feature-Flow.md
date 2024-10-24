@@ -45,7 +45,7 @@ Working Tree as needed to implement the feature.
 
 ## Integrate
 
-Once you have completed work on the new feature in your Working Tree, use **Integrate** (on the top ribbon, or from **Branch \| Integrate {trunk} ** to prepare your feature to be merged into the remote trunk branch.
+Once you have completed work on the new feature in your Working Tree, use **Integrate** (on the top ribbon, or from **Branch \| Integrate <trunk>** to prepare your feature to be merged into the remote branch named `<trunk>`.
 
 Click the **Integrate** button on the `Local Files` perspective
 - If you have unstaged changes, SmartGit will show the `Local Files` subwindow and allow you to stage and commit your changes.
