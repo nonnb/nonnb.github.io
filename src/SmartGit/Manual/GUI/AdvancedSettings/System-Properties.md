@@ -37,9 +37,9 @@ The file encoding is `UTF-8`.
 
 ## Compare Window
 
-### smartgit.compare.maximumFileSize
+### changes.maximumFileSize
 
-By default, the file comparison is disabled for very large files for performance reasons. Use this setting to adjust the size (in bytes) at which a file is considered too large for the **Changes View**. The default value is approximately 1 MB.
+By default, the file comparison is disabled for very large files for performance reasons. Use this setting to adjust the size (in bytes) at which a file is considered too large for the [**Changes View**](../Changes-View.md). The default value is approximately 1 MB.
 
 When you attempt to compare a file that exceeds the `maximumFileSize` setting in the **Changes View**, SmartGit will warn:
 **File size exceeds the configured limit**. You can, however, click **Force Compare** to override the limit and perform the comparison.
