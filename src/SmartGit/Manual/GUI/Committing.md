@@ -2,43 +2,45 @@
 
 The **Commit** command creates a new [commit](../GitConcepts/Commits.md) from [staged changes](Stage-Unstage-IndexEditor.md) in the local repository.
 
-- It is recommended that the [**Commit View**](Commit-View.md) be used to create commits in most instances, as this allows new commits to be easily created.
-- Alternatively, the **Local \| Commit** command will bring up a dialog allowing additional functionality such as re-selecting a commit message from a recent previous commit.
+- Using the [**Commit View**](Commit-View.md) to create commits in most instances is recommended, as this allows new commits to be easily managed.
+- Alternatively, the **Local \| Commit** command adds a dialog with additional functionality, such as selecting a commit message from a recent previous commit.
 
 ## Commit Basics
 
-The following changes will be included in the commit:
-- If all modified files in the *Working Tree* have been [staged in the Index](Stage-Unstage-IndexEditor.md), **Commit** will create a commit consisting of these staged changes.
-- If there is a mix of staged and unstaged changes to files in the *Working Tree*, **Commit** will only commit the staged changes, and the residual changes will remain as modified files in the *Working Tree*.
-- If the *Working Tree* contains modified files, however there are no staged changes, **Commit** will ask prompt whether to to automatically stage all visible modified files and then create the new commit. This has the same result as manually selecting all modified files, staging them, and then committing.
+The following changes will be included in a commit:
+- **All staged changes**: If all modified files in the *Working Tree* are [staged in the Index](Stage-Unstage-IndexEditor.md), the **Commit** will consist of these staged changes.
+- **Staged changes only**: If there is a mix of staged and unstaged changes in the *Working Tree*, only the staged changes will be committed. The remaining changes will stay as modified files in the *Working Tree*.
+- **No staged changes**: If the *Working Tree* contains modified files, but no changes are staged, the **Commit** command will prompt you to automatically stage all visible modified files before creating the commit. This produces the same result as manually staging and committing all modified files.
 
 After the commit:
-- New files added to the index (i.e. staged) will be added to the repository.
+- Newly staged files will be added to the repository.
 - Modified files will be updated in the repository.
-- Previously tracked files which are deleted in the *Working Tree* and staged will be removed from the repository.
+- Previously tracked files were deleted in the *Working Tree* and staged and will be removed from the repository.
 
 ## Commit Messages
 
-While entering the commit message, you can use *\<Ctrl>+\<Space>*-keystroke to auto-complete file names or file paths.
-SmartGit will show a shortlist of files which are eligible for the commit - selecting a file will paste the name into the commit message.
+While entering the commit message, use the *\<Ctrl>+\<Space>*-keystroke to auto-complete file names or paths.
+SmartGit will display a shortlist of files eligible for the commit, and when selecting a file, it will paste its name into the commit message.
 
-Use **Select from Log** to choose a commit message or SHA ID from the Log. 
+- Use **Select from Log** to choose a commit message or SHA ID from the Log. 
 
 #### Tip
-> - As commit messages are often shown alongside a commit hash, it is important to keep commit messages short, and to the point, so other users of the repository can quickly scan to see what changes the commit contains.
-> - By default, SmartGit 'guides' you in writing commit messages in a standardized format with limited line lengths.
-> You can disable this line length guide in **Edit \| Preferences**.
+> - As commit messages are often displayed alongside a commit hash, keep them short and to the point, allowing other users to understand the changes in a commit quickly.
+> - By default, SmartGit 'guides' the writing of commit messages in a standardized format with limited line lengths.
+> You can disable this line length guide under **Edit \| Preferences**.
 
 ## Amending Commits
 
-If **Amend last commit** is selected, you can combine the current changes with the previous commit, e.g. to add a file which was modified but not included in the previous commit.
-By default, this option is only available for commits not yet pushed. You can enable this option for already pushed commits in Preferences, section **Commands**. When amending a commit, you have the option to replace, or reuse the commit message on the previous commit.
+If **Amend last commit** is selected, you can combine the current changes with the previous commit, such as adding a modified file excluded from the previous commit.
+By default, this option is only available for commits that have not been pushed. You can enable it for already pushed commits in **Preferences** under the **Commands** section. 
+
+When amending a commit, you have the option to replace, or reuse the commit message on the previous commit.
 
 **Note:** 
-> Amend last commit is equivalent to removing the previous commit, and replacing it with a new commit representing changes made in both commits.
-> This is why amending a commit which has already been pushed to a remote repository is not advised.
+> - Amending a commit replaces the previous commit with a new one that combines changes from both commits.
+> - Amending a pushed commit is not recommended because it effectively rewrites the commit history and my cause issues for other users.
 
-If you commit while the working tree is in *merging* state, you will have the option to create either a merge commit or a normal commit. See [Merge](Branch/Merge.md) for details.
+If you commit while the Working Tree is *merging*, you can create either a merge or a normal commit. See **[Merge](Branch/Merge.md)** for details.
 
 #### Note
 > - If the Working Tree is in a *merging* or *rebasing* state (see [Merge](Branch/Merge.md) and [Rebase](Branch/Rebase.md)), you can only commit the entire working tree.
@@ -46,16 +48,16 @@ If you commit while the working tree is in *merging* state, you will have the op
 
 ## Altering Local Commits
 
-SmartGit provides several ways to make alterations to local commits:
+SmartGit provides several options for altering local commits:
 
-- **Undo Last Commit** will undo the last commit. The contents of the last commit will be moved to the [Index](../GitConcepts/The-Index.md), so no changes will be lost.
-- **Edit Commit Message** allows you to edit the commit message of the last commit. In the **Journal** view on the working tree window or the **Graph** view of the log window, you can edit the commit message of any of the local commits by selecting the commit and invoking **Edit Commit Message** from the commit's context menu.
-- **Squash Commits** allows you to combine a range of local commits into a single commit, by selecting the commit range in the **Journal** view off the working tree window or the **Graph** view of the log window, and then invoking **Squash Commits** from the context menu of the commit range.
-- **Reorder Commits** - In the **Journal** view of the working tree window or the **Graph** view of the log window you can drag & drop a commit to another location in the list to effectively change its position.
+- **Undo Last Commit**:  Moves the content of the last commit to the [Index](../GitConcepts/The-Index.md) without losing any changes.
+- **Edit Commit Message**: Modify the commit message of the last commit or any local commit. Select the commit and invoke **Edit Commit Message** from its context menu in the **Journal** view of the Working Tree window or the **Graph** view of the Log window.
+- **Squash Commits**: Combine multiple local commits into a single commit by selecting the range of commits in the **Journal** view (off the Working Tree Window) or the **Graph** view (of the Log Window), then invoking **Squash Commits** from the context menu.
+- **Reorder Commits**: Drag and drop a commit to a different location in the **Journal** or **Graph** view to change its position.
 
 #### Warning
 
 >
->Do not undo a commit that has already been pushed to a remote repository unless you understand the implications.
-> This could require a force-push, potentially discarding other users' commits in the remote repository.
+>Avoid undoing a commit already pushed to a remote repository unless you understand the implications.
+>Undoing such commits may require a force-puss, which could discard other users' commits in the remote repository.
 >
