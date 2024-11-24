@@ -21,12 +21,25 @@ such as entire folders, and files matching wild card patterns to be ignored.
 
 ## Assume Unchanged
 
-Invoke **Local \| Toggle 'Assume Unchanged'** (`assume-unchanged`) on selected modified files to prevent their local changes from being deleted. These files will no longer appear modified or included in the next commit.
+Invoke **Local \| Toggle 'Assume Unchanged'** (`assume-unchanged`) on selected modified files in the *Working Tree* to tell git that a file should not be checked for modifications, e.g. the file won't show up in a `git status` operation, even if the local file has changed.
+This can be used on large files and slow O/S or I/O devices, where it is expensive to determine whether the file has been modified or not.
 
-To reverse this, toggle the command again. Those files will be displayed if the **Files View** option **Show Assume-Unchanged Files** is selected.
+`Assume unchanged` files will no longer appear as modified and will not be included in the next commit.
+
+To reverse this, toggle **Assume Unchanged** command again.
+
+#### Note
+> By default, SmartGit will hide files tagged with *Assume Unchanged* in the files view.
+> *Assume Unchanged* files can be displayed by enabling **Show Assume-Unchanged Files** in the hamburger `☰` menu on the **Files View**.
 
 ## Skipped
 
-The **Local \| Toggle 'Skip Worktree'** (`--skip-worktree`) command skips selected files from being added to the *Index*. This is similar to [Assume Unchanged](#assume-unchanged) but more persistent especially for commands like **Reset**.
+The **Local \| Toggle 'Skip Worktree'** (`--skip-worktree`) command prevents changes to the selected tracked files from being added to the *Index*, and bypasses the check for local *Working Tree* modifications to the file.
 
-Use the toggle command again to bring a file back into the *Index*. Skipped files can be displayed by enabling **Show Skipped Files** in the **Files View**.
+This is similar to [Assume Unchanged](#assume-unchanged) but is more persistent, especially for commands like **Reset**.
+
+Use the toggle command again to bring a file back into the *Index*.
+
+#### Note
+> By default, SmartGit will hide files tagged with *Skip Worktree* in the files view.
+> *Skipped* files can be displayed by enabling **Show Skipped Files** in the hamburger `☰` menu on the **Files View**.
