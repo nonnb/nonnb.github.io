@@ -21,7 +21,7 @@ Due to demand from users for access to the git `move` operation, SmartGit provid
 
 #### Note
 > It is recommended not to make major changes to the contents of a file in the same commit as a move / rename on the file, as this may cause git to be unable to follow the file through the rename.
->  Consider instead splitting the content changes, and the move/rename into 2 distinct commits.
+>  Consider instead splitting the content changes, and the move/rename into two distinct commits.
 
 ## Delete
 
