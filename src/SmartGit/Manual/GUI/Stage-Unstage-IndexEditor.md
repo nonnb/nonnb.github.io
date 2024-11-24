@@ -34,7 +34,7 @@ Conversely, the **Unstage** command (via *Local \| Unstage*) removes the selecte
 >- **Unstaged file**:  The **Changes View** shows differences between the **Working Tree** and the **Index**.
 >- **Staged file**: The **Changes View** shows differences between the repository's **Index** and the **HEAD** commit.
 
-Once staging is complete, you can [Commit](Committing.md) changes via the [Commit View](commit-view.md) or by selecting the Working Tree root in the **Repositories View** and invoking the **[Commit](Committing.md)** command.
+Once staging is complete, you can [Commit](Committing.md) changes via the [Commit View](Commit-View.md) or by selecting the Working Tree root in the **Repositories View** and invoking the **[Commit](Committing.md)** command.
 
 ## Advanced Staging 
 
