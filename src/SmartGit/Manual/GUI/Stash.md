@@ -25,7 +25,7 @@ To apply a stash to the current state of the *Working Tree*, right-click the sta
 ### Other Stash Commands
 
 The following commands can be executed by right-clicking on a Stash (under *Stashes* in the **Branch View**):
-- To get rid of obsolete stashes, use **Drop Stash**, however be aware that this will irretrievably get rid of the changes which are stored in the stash. 
+- To get rid of obsolete stashes, use **Drop Stash**, however be aware that this will irretrievably delete any changes which are stored in the stash. 
 - The **Rename Stash** command allows you to change the displayed stash message.
 - **Compare with HEAD** / **Compare with Selected Commit** allows you to compare the contents of the stash against the HEAD / selected commit, respectively.
 - **Copy Message** copies the stash message of the selected Stash into the OS clipboard.
