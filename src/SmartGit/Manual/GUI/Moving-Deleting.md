@@ -25,4 +25,4 @@ Due to demand from users for access to the git `move` operation, SmartGit provid
 
 ## Delete
 
-Use **Local \| Delete** to delete local files (or directories) from the working tree. You either may delete the files directly or move them to the trash.
+Use **Local \| Delete** to delete local files (or directories) from the working tree. You either may permanently delete the files directly, or move them to the trash (operating-system specific, e.g. the recycle bin on Windows).
