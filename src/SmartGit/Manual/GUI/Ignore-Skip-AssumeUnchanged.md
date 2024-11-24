@@ -2,17 +2,22 @@
 
 ## Ignore
 
-The **Local \| Ignore** command marks selected untracked files as `ignored`, which is useful for preventing files like compiled output, binary, debugging, and runtime log files from being added to the repository. Ignored files will no longer appear as 'untracked', reducing visual clutter and the risk of unintentionally adding them. If the option **Show Ignored Files** is selected, ignored files will still be displayed.
+The **Local \| Ignore** command marks selected untracked files as `ignored`, which is useful for preventing files like compiled output, binary, debugging, and runtime log files from being added to the repository. Ignored files will no longer be indicated as 'untracked', so this reduces visual clutter and the risk of unintentionally adding these files.
+If the option **Show Ignored Files** is selected, ignored files will still be displayed.
 
 #### Note:
 
-> SmartGit only displays ignored files in versioned directories. Ignored files or sub-directories within ignored directories are not shown for performance reasons.
+> SmartGit only displays ignored files in versioned directories.
+> Ignored files or sub-directories within ignored directories are not shown for performance reasons.
 
-When a file is maked as ignored in SmartGit, an entry is added to the `.gitignore` file in the same directory. The `.gitignore` file will be added to the repository if it isn't present. To use more advanced Git ignore options, you may need to edit the `.gitignore` file(s) by hand, which will allow advanced patterns, such as entire folders, and files matching wild card patterns to be ignored.
+When a file is marked as ignored in SmartGit, an entry is added to the `.gitignore` file in the same directory. 
+The `.gitignore` file will be added to the repository if it isn't present.
+To use more advanced Git ignore options, you may need to edit the `.gitignore` file(s) by hand, which will allow advanced patterns, 
+such as entire folders, and files matching wild card patterns to be ignored.
 
 #### Tip
 
-> To understand why a file is *ignored*, use **Local\|Edit Ignore File**.
+> To view a list of ignored files or to understand why a specific file is *ignored*, use **Local\|Edit Ignore File**.
 
 ## Assume Unchanged
 
