@@ -1,6 +1,6 @@
 ## Stashing
 
-Stashes are a convenient way to temporarily store the current *Working Tree* changes (either all changes, or just selected changes) aside and re-apply them later.
+Stashes are a convenient way to temporarily store the current *Working Tree* changes (either all changes, or just selected changes) aside, and then re-apply them later.
 For example, stashes are useful if you realize that you have started making changes to files in the *Working Tree* without first checking out the correct branch.
 
 ### Creating a Stash
