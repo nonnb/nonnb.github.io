@@ -70,11 +70,9 @@ Make sure that your PAT has at least following scopes assigned:
 - **gist** - read and write access to gists
 - **workflow** - allowing SmartGit to update GitHub Action Workflow files
 
-## Integrated GitHub Features
+Once a GitHub integration has been set up, the features below are available.
 
-Once a GitHub integration has been set up, the following features are available:
-
-## Clone
+### Clone
 
 When [cloning](../GUI/Repository/Clone.md) a repository, you now have the option of selecting your repository from a list, instead of entering a repository clone URL obtained from GitHub.
 SmartGit will display your own (*user*) repositories, as well as repositories of your *organization(s)* (*org*).
@@ -83,11 +81,12 @@ SmartGit will display your own (*user*) repositories, as well as repositories of
 
 ## Working Tree window
 
-The Working tree window contains a light-weight GitHub integration which indicates incoming pull requests in the title of the **Branches** view.
+The Working tree window contains a light-weight GitHub integration which shows open incoming pull requests in the title of the **Branches** view.
 
 #### Note
 
 > Detailed pull request information and operations on pull requests are only available in the **Log** (see below).
+
 
 ## Log
 
@@ -98,7 +97,8 @@ In the *Log* window of your repository, you can interact with GitHub in followin
 When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server:
 
 - **Incoming** pull requests are those which other users are requesting to pull from their repositories. They are displayed in a separate category called **Pull Requests** in the **Branches** view.
-- **Outgoing** pull requests are those which you have sent to other users/repositories, requesting them to pull your changes. They are display directly below the local (or if it does not exist), the remote branch in the **Branches** view.
+- **Outgoing** pull requests are those which you have sent to other users/repositories, requesting them to pull your changes. 
+  They are display directly below the local (or if it does not exist), the remote branch in the **Branches** view.
 
 *Incoming* pull requests, in first place, are just present on the server. SmartGit learns about them only by calling a GitHub REST API and displays the retrieved information in the **Branches**. To work with these pull requests (e.g. to review their commits, or **Merge** or **Reject** them), you first have to fetch them by invoking **Fetch** from the context menu of the pull request. This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, virtual *merge* commit between the *base* commit from which the pull request has been forked and the latest (remote) pull request commit.
 
@@ -112,6 +112,7 @@ You can invoke **Review \| Sync** to manually update the displayed information.
 Usually you will want to do that, if you know that server-side information has changed since the Log has been opened.
 
 To create a pull request, use **Create Pull Request** from the context menu of the **Branches** view.
+
 
 ### Comments
 
@@ -141,22 +142,21 @@ Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version
     1. open **Preferences**, section **Hosting Providers**
     2. **Add** a new **GitHub** hosting provider, as described above
 
-## Possible Problems & Solutions
+## Troubleshooting Possible Problems & Solutions
 
 ### Authentication fails with 403: 'Although you appear to have the correct authorization credentials...'
 
-Up to (including) version 23.1, specific organization configurations may result in authorization problems like:
+Up to (including) version 23.1, specific organization configurations may result in authorization problems such as:
 
-```
-Although you appear to have the correct authorization credentials, the ... organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited. For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/
-```
+> Although you appear to have the correct authorization credentials, the ... organization has enabled OAuth App access restrictions, meaning that data access to third-parties is limited.
+> For more information on these restrictions, including how to enable this app, visit https://docs.github.com/articles/restricting-access-to-your-organization-s-data/
 
 This problem is caused by:
 
 * being a *public* member of a GitHub organization
 * which has OAuth access restrictions configured (at least for SmartGit)
 
-It may be resolved by asking your organization Administrator to change your membership (at `https://github.com/orgs/<org>/people`) from **Public** to **Private**.
+It may be resolved by asking your organization Administrator to change your membership (at `https://github.com/orgs/<org>/people`) from **Public** to **Private**, for organization `<org>`.
 
 ### Private repositories do not show up/403 when trying to access an organization repository
 
