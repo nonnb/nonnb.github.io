@@ -76,7 +76,7 @@ Once a GitHub integration has been set up, the following features are available:
 
 ## Clone
 
-When [cloning](../GUI/Repository/Clone.md) a repository, you can select your repository from a list, instead of entering the URL. 
+When [cloning](../GUI/Repository/Clone.md) a repository, you now have the option of selecting your repository from a list, instead of entering a repository clone URL obtained from GitHub.
 SmartGit will display your own (*user*) repositories, as well as repositories of your *organization(s)* (*org*).
 
 ![](../images/GitHubIntegration-Clone.png)
