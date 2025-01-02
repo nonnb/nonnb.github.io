@@ -2,9 +2,24 @@
 
 SmartGit integrates GitHub workflows in various places, provided that the connection to *github.com* or a custom *GitHub Enterprise instance* has been configured in the Preferences.
 
-### Setup
+**TODO
+- Cloning
+- Commit Messages
+- Opening Pull Requests
+- TODO
 
-To set up the GitHub integration, go to **Preferences**, section **Hosting Providers** and click the **Add** button. In the **Add Hosting Provider** dialog, have **GitHub** selected and invoke **Generate Token**. This should open up your default web browser where you will have to confirm by **Authorize Application**. Be sure to also **Grant Access** to all of your organizations, otherwise the corresponding organization repositories won't show up/can't be accessed.
+## Setup
+
+To set up integration GitHub in SmartGit, go to **Edit \| Preferences**, section **Hosting Providers** and click the **Add** button.
+In the list of available providers, select **GitHub** to bring up a dialog allowing configuration of the GitHub account.
+
+You have two ways to generate an access token:
+- Allow SmartGit to [autogenerate and manage an OAuth token](#autogeneration-of-oauth-token) (Recommended).
+- Manually generate a [Personal Access Token (PAT)](#creating-a-github-personal-access-token) in GitHub.
+
+### Autogeneration of OAuth Token
+
+and invoke **Generate Token**. This should open up your default web browser where you will have to confirm by **Authorize Application**. Be sure to also **Grant Access** to all of your organizations, otherwise the corresponding organization repositories won't show up/can't be accessed.
 
 ![](../attachments/53215440/53215447.png)
 
@@ -29,10 +44,19 @@ Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 > If you need to rerun through the Authorization process outlined above, you have to **Revoke** access there first and start over.
 > ![](../attachments/53215440/53215443.png)
 
-#### Personal Access Tokens
+### Creating a GitHub Personal Access Token
 
-Instead of an OAuth token, you may alternatively use a personal access token which has to be created manually in your [GitHub Developer Settings](https://github.com/settings/tokens). When experimenting with tokens, try first with a *Classic Token*. Make sure that your personal access token has at least following scopes assigned:
-**repo**, **read:org**, **read:user**, **gist**, **workflow**
+Please refer to the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information on GitHub Personal Access Tokens.
+
+Instead of using an OAuth token, you may alternatively use a Personal Access Token (PAT) which has to be created manually in your [GitHub Developer Settings](https://github.com/settings/tokens), and paste this in the *Token* input. 
+When experimenting with tokens, it is suggested that you first attempt using a *Classic Token*.
+
+Make sure that your personal access token has at least following scopes assigned:
+- **repo** - i.e. public and private repositories
+- **read:org** - i.e. read access to your organization(s)
+- **read:user** - i.e. read access to your user data
+- **gist** - read and write access to gists
+- **workflow** - allowing SmartGit to update GitHub Action Workflow files
 
 ## Clone
 
