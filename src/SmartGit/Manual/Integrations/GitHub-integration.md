@@ -70,12 +70,16 @@ Make sure that your PAT has at least following scopes assigned:
 - **gist** - read and write access to gists
 - **workflow** - allowing SmartGit to update GitHub Action Workflow files
 
+## Integrated GitHub Features
+
+Once a GitHub integration has been set up, the following features are available:
+
 ## Clone
 
 When [cloning](../GUI/Repository/Clone.md) a repository, you can select your repository from a list, instead of entering the URL. 
 SmartGit will display your own (*user*) repositories, as well as repositories of your *organization(s)* (*org*).
 
-![](../images/github-clone.png)
+![](../images/GitHubIntegration-Clone.png)
 
 ## Working Tree window
 
