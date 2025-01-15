@@ -2,12 +2,6 @@
 
 SmartGit integrates GitHub workflows in various places, provided that the connection to *github.com* or a custom *GitHub Enterprise instance* has been configured in the Preferences.
 
-**TODO
-- Cloning
-- Commit Messages
-- Opening Pull Requests
-- TODO
-
 ## Setup
 
 To set up integration GitHub in SmartGit, go to **Edit \| Preferences**, section **Hosting Providers** and click the **Add** button.
