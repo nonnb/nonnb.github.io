@@ -18,18 +18,16 @@ Please refer to the applicable documentation in order to connect a SmartGit repo
 > SmartGit will automatically change terminology to adapt to the Hosting Provider connected to the repository, where applicable.
 > However, for brevity, the online documentation will use the GitHub terminology when referencing features linked to online hosting providers.
 
-| ------------------ | ------------ |-------------|---------- |
-|      GitHub        | Azure DevOps | BitBucket    | GitLab    |
-| ------------------ | ------------ |------------- | ---------- |
-| Pull Request       | Pull Request | Pull Request | Merge Request |
-| Reject PR          | Abandon PR | Decline PR | Close PR |
-| Approve PR Changes |  | Approve |  |
-| * |  | Unapprove | Revoke Approval |
+| GitHub             | Azure DevOps | BitBucket    | GitLab          |
+| ------------------ | ------------ |------------- | --------------- |
+| Pull Request       | Pull Request | Pull Request | Merge Request   |
+| Reject PR          | Abandon PR   | Decline PR   | Close PR        |
+| Approve PR Changes |              | Approve      |                 |
+| *                  |              | Unapprove    | Revoke Approval |
 
 
 ### Feature Support Matrix:
 
-| ------------------------------------- | ------ | ------------ |---------- |---------- |
 |                                       | GitHub | Azure DevOps | BitBucket | GitLab    |
 | ------------------------------------- | ------ | ------------ |---------- |---------- |
 | Navigation Links                      |   Yes  |      *       |     *     |     *     |
