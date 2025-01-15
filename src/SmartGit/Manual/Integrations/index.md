@@ -46,6 +46,8 @@ Please refer to the applicable vendor specific documentation in order to connect
 Once integration with a hosting provider has been configured, instead of pasting the remote Clone Url into SmartGit, instead, SmartGit will allow navigating to the hosting provider and showing available repositories, 
 where a repository can be selected and cloned locally.
 
+SmartGit will display your own (*user*) repositories, as well as repositories of your organization (*org*).
+
 **TODO Icon**
 
 ### Visual Indicators and Navigation
@@ -55,6 +57,12 @@ The following visual indicators and productivity aids are made available once a 
 - On the **Log Window**, the *Branches View* will show available Pull Requests on the remote repository on the hosting provider.
 
 ### Pull Request functionality
+
+When SmartGit detects changes on the hosting service, it will also refresh information on related Pull Requests from the hosting service:
+- *Incoming* pull requests are those which other users have assigned to you for review and/or merging.
+  These are displayed in a separate *Pull Requests* folder under the Branches view.
+- *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to pull your changes.
+   These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
 - On the **Log Window**, the *Branches View* will show available Pull Requests - click to open a context menu to fetch the Pull Request
 
 ## Supported Continuous Integration / Continuous Deployment services:
