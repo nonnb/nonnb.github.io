@@ -1,4 +1,4 @@
-# Cloning Integration
+# Integrated Cloning
 
 Once integration with a Hosting Provider has been configured, SmartGit's Clone command will allow navigation to browse repositories available to you on the hosting provider.
 The required repository can then be selected and cloned, without needing to copy the Clone URL from the hosting provider and paste it into SmartGit.
