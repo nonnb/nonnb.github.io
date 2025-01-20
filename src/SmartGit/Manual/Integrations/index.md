@@ -33,22 +33,14 @@ Please refer to the applicable vendor specific documentation in order to connect
 |                                       | GitHub | Azure DevOps | BitBucket | GitLab    |
 | ------------------------------------- | ------ | ------------ |---------- |---------- |
 | Navigation Links                      |   Yes  |      *       |     *     |     *     |
-| Repo Select + Clone                   |   Yes  |     Yes      |     Yes   |     Yes   |
-| Inbound and Outbound PR Notifications |   Yes  |     Yes      |     Yes   |     *     |
+| Repository Selection + Cloning        |   Yes  |     Yes      |     Yes   |     Yes   |
+| Inbound and Outbound PR Notifications |   Yes  |              |           |           |
 | Initiate Pull Request                 |   Yes  |     Yes      |     Yes   |     Yes   |
 | View, Add, Edit and Delete Comments   |   Yes  |     Yes      |     Yes   |     Yes   |
 | Approve Pull Request                  |   Yes  |     Yes      |     Yes   |     Yes   |
 | Merge Pull Request                    |   Yes  |     Yes      |     Yes   |     Yes   |
 | Close Pull Request                    |   Yes  |     Yes      |     Yes   |     Yes   |
 
-### Cloning
-
-Once integration with a hosting provider has been configured, instead of pasting the remote Clone Url into SmartGit, instead, SmartGit will allow navigating to the hosting provider and showing available repositories, 
-where a repository can be selected and cloned locally.
-
-SmartGit will display your own (*user*) repositories, as well as repositories of your organization (*org*).
-
-**TODO Icon**
 
 ### Visual Indicators and Navigation
 The following visual indicators and productivity aids are made available once a repository is cloned from a linked hosting provider:
