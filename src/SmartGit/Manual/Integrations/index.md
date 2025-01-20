@@ -1,6 +1,6 @@
 # SmartGit Integrations with other Applications and Git Hosting Services
 
-SmartGit works with most modern Git Hosting services, can integrate with several CI/CD tools, and can also be used with popular Issue Tracking systems. 
+SmartGit works with many modern Git Hosting services, and can also be used with popular Issue Tracking systems. 
 These integrations allow extended functionality in SmartGit, which can improve productivity within a team as part of a larger Software Engineering development process (often referred to as 'Dev Ops' processes)
 
 ## Supported Git Hosting services:
