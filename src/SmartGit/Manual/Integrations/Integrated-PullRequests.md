@@ -1,6 +1,6 @@
 # Integrated Pull Requests
 
-When a repository has been cloned from an [integrated Hosting Provider](index.md), when SmartGit detects changes on the hosting service, 
+If a repository has been cloned from an [integrated Hosting Provider](index.md), when SmartGit detects changes on the hosting service, 
 it will also refresh information on related Pull Requests (PRs) from the hosting service.
 
 - In the **Standard Window**, clicking on the Hosting Provider icon will check for new branches and Pull Requests on the remote.
