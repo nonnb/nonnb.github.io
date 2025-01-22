@@ -63,3 +63,10 @@ The following visual indicators and productivity aids are made available once a 
 - [Atlassian JIRA](JIRA.md) - Allows commit messages to be extracted from an open JIRA ticket
 - [Gerrit](Gerrit.md) - **TODO**
 - [Git Large File Storage](Git-LFS.md)
+
+
+## Tips
+- If you have multiple identities / logins to the same hosting provider, you can add multiple hosting provider accounts in SmartGit.
+- The default name for each Hosting Provider connection is the name the Hosting Provider (e.g. *github.com* ).
+  You can change the name under **Preferences \| Hosting Providers** by selecting the connection and clicking *Edit*.
+  
