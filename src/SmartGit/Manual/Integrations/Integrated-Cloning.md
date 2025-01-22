@@ -7,6 +7,8 @@ SmartGit will display repositories on the Hosting Provider to which it has been 
 - *user* repositories
 - *organization* (org) repositories
 
-In the below diagram, the the SmartGit user has configured integrations to multiple Hosting Providers, and a list of available repositories is displayed beneath each organizational folder:
+#### Example
+> In the below diagram, the the SmartGit user has configured integrations to multiple Hosting Providers, and has selected the *Azure DevOps* icon.
+> A list of repositories available to the user on Azure DevOps is is displayed beneath each organizational folder:
 
 ![Cloning a Repository using a connected Hosting Provider](../images/Integrations-Cloning.png)
