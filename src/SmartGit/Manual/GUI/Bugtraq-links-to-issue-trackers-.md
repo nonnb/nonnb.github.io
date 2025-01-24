@@ -1,45 +1,42 @@
 # Bugtraq (links to issue trackers)
 
-Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common Bug Tracking tools such as JIRA or GitHub issues.
+Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common web-based Bug Tracking tools such as JIRA, GitHub Issues, or Azure DevOps boards.
 
-If you have set up a *Bugtraq Configuration*, SmartGit will detect issue IDs in commit messages and display links to the issue tracker in this case. The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you). It consists of a named `bugtraq` section which basically defines a regular expression to match issue IDs in your commit message and an URL template to open when clicking at such an issue link.
+If you have set up *Bugtraq Configuration* for your repository, SmartGit will detect issue IDs embedded in commit messages and display hyperlinks allowing you to quickly open the linked issue Id in the Bug tracking tool's website.
 
-#### Example
+The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you).
 
->
->
->
->An example configuration for the *JIRA* issue tracker at URL
+The configuration file consists of a named `bugtraq` section, where a regular expression can be defined to match issue IDs in your commit messages, and a URL template used to create the clickable hyperlink to the specific linked Issue id in the website.
+
+In most web issue tracking tools, you can determine the url template by clicking on an issue, and then copying the resultant URL from the browser address bar.
+You can then substitute the specific issue id with the `%BUGID%` token as per the below examples.
+
+## Examples
+
+#### JIRA - repository linked to a single JIRA project
+> An example configuration for the *JIRA* issue tracker at URL
 > `https://host/jira` for a project called 'SG' looks like the following.
->
->
 >
 >``` text
 >[bugtraq "jira"]
 > url = https://host/jira/browse/SG-%BUGID%
-> logRegex = SG-(\\d+)                   
+> logregex = SG-(\\d+)                   
 >```
->
->
->
->The above example will make only the issue numbers as links (i.e.
-> without `SG-`). Alternatively, if you want to have the entire issue ID
-> as link (i.e. with `SG-`), you may use:
->
->
->
+
+The above example will make only the issue numbers as links (i.e. without `SG-`).
+Alternatively, if you want to have the entire issue ID as the link (i.e. with `SG-`), you may use:
+
 >``` text
 >[bugtraq "jira"]
 > url = https://host/jira/browse/%BUGID%
 > loglinkregex = SG-\\d+
 > logregex = \\d+            
 >```
->
->
->
->For multiple *JIRA* projects, a configuration could look like:
->
->
+
+#### JIRA - repository linked to a multiple JIRA projects
+
+For multiple *JIRA* projects, a configuration could look like:
+
 >
 >``` text
 >[bugtraq "jira"]
@@ -48,25 +45,20 @@ If you have set up a *Bugtraq Configuration*, SmartGit will detect issue IDs in 
 > loglinkregex = %PROJECT%-\\d+
 > logregex = \\d+            
 >```
->
->
->
->Another example configuration (e.g. for a trouble ticketing system)
-> where IDs like '#213' should be matched only at the beginning of a
-> commit message. Note that the logregex needs to be put in quotes,
-> because '#' serves as a comment character in Git configuration files.
->
->
+
+#### 
+
+> Another example configuration (e.g. for a trouble ticketing system)
+> where IDs like '#213' should be matched only at the beginning of a commit message.
+> Note that the `logregex` needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
 >
 >``` text
 >[bugtraq "otrs"]
 > url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
 > logregex = "^#[0-9]{1,5}"            
 >```
->
->
->
->
 
-The `logRegex` must contain only one matching group '()' matching the issue ID. You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching). For more details refer to the complete specification at
-<https://github.com/mstrap/bugtraq>.
+The `logregex` must contain only one matching group '()' matching the issue ID.
+You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
+
+For more details refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq>.
