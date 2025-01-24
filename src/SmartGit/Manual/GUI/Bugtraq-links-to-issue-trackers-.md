@@ -1,72 +1,131 @@
 # Bugtraq (links to issue trackers)
 
-Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common Bug Tracking tools such as JIRA or GitHub issues.
+Git Bugtraq is a [de-facto standard](https://github.com/mstrap/bugtraq) configuration file added into your Git Repository, enabling integration between tools such as SmartGit and common web-based Bug Tracking tools such as JIRA, GitHub Issues, or Azure DevOps boards.
 
-If you have set up a *Bugtraq Configuration*, SmartGit will detect issue IDs in commit messages and display links to the issue tracker in this case. The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you). It consists of a named `bugtraq` section which basically defines a regular expression to match issue IDs in your commit message and an URL template to open when clicking at such an issue link.
+If you have set up *Bugtraq Configuration* for your repository, SmartGit will detect issue IDs embedded in commit messages and display hyperlinks allowing you to quickly open the linked issue Id in the Bug tracking tool's website.
 
-#### Example
+The Bugtraq configuration is stored either in the `.gitbugtraq` file in your repository root (for all users of the repository) or in your repositories' `.git/config` (just for you).
 
->
->
->
->An example configuration for the *JIRA* issue tracker at URL
-> `https://host/jira` for a project called 'SG' looks like the following.
->
->
+The configuration file consists of a named `bugtraq` section, where a regular expression can be defined to match issue IDs in your commit messages, and a URL template used to create the clickable hyperlink to the specific linked Issue id in the website.
+
+In most web issue tracking tools, you can determine the url template by clicking on an issue, and then copying the resultant URL from the browser address bar.
+You can then substitute the specific issue id with the `%BUGID%` token as per the below examples.
+
+For more advanced parsing requirements, Bugtraq supports a multi-step regex processing pipeline to extract the BUGID from commit messages:
+
+``
+commit message -> logfilterregex -> loglinkregex -> logregex -> BUGID
+``
+
+Please refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq> for advanced configuration.
+
+Below are common setup configurations for most popular web-based issue tracking tools.
+
+#### Note
+> The `logregex` must contain only one matching group '()' matching the issue ID.
+> You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
+
+## Examples
+
+Below are some common examples with the default configurations for links to bugs in popular web-enabled issue tracking systems.
+In many of these systems it is possible to customize issue URLs, in which case you will need to extract the URL template by navigating to a sample item, and then substituting tokens such as `%BUGID%` appropriately.
+
+#### JIRA Server (On Premise) - repository linked to a single JIRA project
+
+JIRA uses project-specific prefixes for its issue identifiers.
+An example configuration for a repository linked to a single JIRA project with prefix `SG`, the *JIRA* issue tracker at URL `https://host/jira` looks like the following.
+
 >
 >``` text
->[bugtraq "jira"]
-> url = https://host/jira/browse/SG-%BUGID%
-> logRegex = SG-(\\d+)                   
+> [bugtraq "jira"]
+>   url = https://host/jira/browse/SG-%BUGID%
+>   logregex = SG-(\\d+)                   
 >```
->
->
->
->The above example will make only the issue numbers as links (i.e.
-> without `SG-`). Alternatively, if you want to have the entire issue ID
-> as link (i.e. with `SG-`), you may use:
->
->
+
+The above example will make only the issue numbers as links (i.e. without `SG-`).
+Alternatively, if you want to have the entire issue ID as the link (i.e. with `SG-`), you may use:
+
+>``` text
+> [bugtraq "jira"]
+>   url = https://host/jira/browse/%BUGID%
+>   loglinkregex = SG-\\d+
+>   logregex = \\d+            
+>```
+
+#### JIRA Server (On Premise) - repository linked to a multiple JIRA projects
+
+When your repository is linked to multiple *JIRA* projects, a configuration could look like:
+
 >
 >``` text
->[bugtraq "jira"]
-> url = https://host/jira/browse/%BUGID%
-> loglinkregex = SG-\\d+
-> logregex = \\d+            
+> [bugtraq "jira"]
+>   projects = PRJA, PRJB
+>   url = https://host/jira/browse/%PROJECT%-%BUGID%
+>   loglinkregex = %PROJECT%-\\d+
+>   logregex = \\d+            
 >```
->
->
->
->For multiple *JIRA* projects, a configuration could look like:
->
->
+
+So a commit message containing `PRJA-123` would be linked to `https://host/jira/browse/PRJA-123`, 
+and a commit message and containing `PRJB-678` would be linked to `https://host/jira/browse/PRJB-678`.
+
+#### JIRA Cloud
+
+The JIRA Cloud issue viewing URL is slightly different to the On Premises version.
+
+In the below example, we have a single project with prefix `SG` and have registered an organisation with a site name `myorg` on Jira Cloud. 
+Here we have not set up a custom domain, so the host has its default of `myorg.atlassian.net`:
+
 >
 >``` text
->[bugtraq "jira"]
-> projects = SG
-> url = https://host/jira/browse/%PROJECT%-%BUGID%
-> loglinkregex = %PROJECT%-\\d+
-> logregex = \\d+            
+> [bugtraq "jira"]
+>   url = https://myorg.atlassian.net/browse/SG-%BUGID%
+>   logregex = SG-(\\d+)                   
 >```
->
->
->
->Another example configuration (e.g. for a trouble ticketing system)
-> where IDs like '#213' should be matched only at the beginning of a
-> commit message. Note that the logregex needs to be put in quotes,
-> because '#' serves as a comment character in Git configuration files.
->
->
+
+If you have registered a custom domain with JIRA cloud, the host will change as per your network administrator's DNS entry.
+For example, if we have created a subdomain `jira.myorg.com` in the `myorg.com` company DNS and configured the custom domain in JIRA, the URL will be:
+
 >
 >``` text
->[bugtraq "otrs"]
-> url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
-> logregex = "^#[0-9]{1,5}"            
+> [bugtraq "jira"]
+>   url = https://jira.myorg.com/browse/SG-%BUGID%
+>   logregex = SG-(\\d+)                   
 >```
+
+
+#### GitHub.com issues
+
+GitHub uses numeric-only identifiers on a per-project basis. Substitute `myorg` and `myproject` for your organisation / user and project identifiers - these should be visible on the address bar when viewing your GitHub issues.
+
+e.g. for a repository linked to a single project `myproject` for company `myorg`:
+
 >
->
->
+>``` text
+> [bugtraq "GitHub Issues"]
+>   url = "https://github.com/myorg/myproject/issues/%BUGID%"
+>   logregex = \\d+
+>```
 >
 
-The `logRegex` must contain only one matching group '()' matching the issue ID. You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching). For more details refer to the complete specification at
-<https://github.com/mstrap/bugtraq>.
+#### Azure DevOps boards Workitems
+
+For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
+
+>
+>``` text
+> [bugtraq "AzDevOps Issues"]
+>   url = "https://dev.azure.com/myorg/myproject/_workitems/edit/%BUGID%"
+>   logregex = \\d+
+>```
+>
+
+#### Matching #ids (i.e. hash prefix) at the beginning of the commit message
+
+Another example configuration (e.g. for a trouble ticketing system) where IDs like '#213' should be matched only at the beginning of a commit message.
+Note that the `logregex` value needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
+>
+>``` text
+> [bugtraq "otrs"]
+>   url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
+>   logregex = "^#[0-9]{1,5}"            
+>```
