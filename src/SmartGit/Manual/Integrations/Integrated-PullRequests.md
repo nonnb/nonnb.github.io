@@ -44,11 +44,12 @@ Additional functionality is available in the **Standard Window** when a reposito
 
 - *Incoming* pull requests are those which other users have assigned to you for review and/or merging.
   These are displayed in a separate *Pull Requests* folder under the Branches view.
+  On the commit, an upward arrow icon is displayed, along side the hosting provider's PR reference identifier.
 
 ![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
 
 - *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to merge your changes.
-   These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
+  These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
 
 #### Incoming Pull Requests
 When SmartGit detects an Incoming pull request assigned to you for merge or review
