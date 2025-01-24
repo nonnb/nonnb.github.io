@@ -6,7 +6,7 @@ it will also refresh information on related Pull Requests (PRs) from the remote.
 ## Working with Pull Requests in SmartGit
 
 - In the **Standard Window** and **Log Window**, clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
-  If open PR's are present, a hyperlink will be shown taking you to the PR on the *Branches View* of the **Log Window**
+- In the **Standard Window**, if open PR's are present, a hyperlink will be shown taking you to the PR on the *Branches View* of the **Log Window**
 - On the **Log Window**, the *Branches View* will show available Pull Requests:
 
 ![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
