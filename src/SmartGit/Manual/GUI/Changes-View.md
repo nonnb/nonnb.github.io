@@ -19,7 +19,9 @@ Use the `<<` and `>>` arrow buttons to move changed *Hunks* between panes, or us
 >   Clicking **Force Compare** will override the limit temporarily for this file, and perform the comparison.
 >   The value can be changed more permanently in the [*Low Level Properties* preferences](AdvancedSettings/Low-Level-Properties.md#changesmaximumfilesize).
 
-## Additional features in Changes View in the Log Window 
+## Additional features in Changes View when Integrations are Enabled
+
+(**Log Window** only)
 
 In the **Log Window** only, when the *Virtual Merge Commit* (diamond icon) has been selected in the **Graph View**:
 - the **Changes View** will allow you to view, and add comments on the Pull Request.
