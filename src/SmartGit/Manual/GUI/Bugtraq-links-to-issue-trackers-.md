@@ -65,13 +65,27 @@ Note that the `logregex` needs to be put in quotes, because '#' serves as a comm
 >   logregex = "^#[0-9]{1,5}"            
 >```
 
+#### GitHub.com issues
+
+GitHub uses numeric-only identifiers. Substitute `myorg` and `myproject` for your organisation / user and project identifiers - these should be visible on the address bar when viewing your GitHub issues.
+
+>
+>``` text
+> [bugtraq "GitHub Issues"]
+>   url = "https://github.com/myorg/myproject/issues/%BUGID%"
+>   logregex = \\d+
+>```
+>
+
 #### Azure DevOps boards Workitems
 
-For Azure DevOps (cloud), substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
+For Azure DevOps (cloud), substitute `myorg` and `myproject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
 
 >
 >``` text
 > [bugtraq "AzDevOps Issues"]
->   url = "https://dev.azure.com/MyOrg/MyProject/_workitems/edit/%BUGID%"
+>   url = "https://dev.azure.com/myorg/myproject/_workitems/edit/%BUGID%"
 >   logregex = \\d+
 >```
+>
+
