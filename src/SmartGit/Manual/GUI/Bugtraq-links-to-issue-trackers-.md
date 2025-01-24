@@ -19,8 +19,8 @@ You can then substitute the specific issue id with the `%BUGID%` token as per th
 >
 >``` text
 > [bugtraq "jira"]
->  url = https://host/jira/browse/SG-%BUGID%
->  logregex = SG-(\\d+)                   
+>   url = https://host/jira/browse/SG-%BUGID%
+>   logregex = SG-(\\d+)                   
 >```
 
 The above example will make only the issue numbers as links (i.e. without `SG-`).
@@ -28,9 +28,9 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 
 >``` text
 > [bugtraq "jira"]
->  url = https://host/jira/browse/%BUGID%
->  loglinkregex = SG-\\d+
->  logregex = \\d+            
+>   url = https://host/jira/browse/%BUGID%
+>   loglinkregex = SG-\\d+
+>   logregex = \\d+            
 >```
 
 #### JIRA - repository linked to a multiple JIRA projects
@@ -40,10 +40,10 @@ For multiple *JIRA* projects, a configuration could look like:
 >
 >``` text
 > [bugtraq "jira"]
->  projects = SG
->  url = https://host/jira/browse/%PROJECT%-%BUGID%
->  loglinkregex = %PROJECT%-\\d+
->  logregex = \\d+            
+>   projects = SG
+>   url = https://host/jira/browse/%PROJECT%-%BUGID%
+>   loglinkregex = %PROJECT%-\\d+
+>   logregex = \\d+            
 >```
 
 #### Matching #ids (i.e. hash prefix) at the beginning of the commit message
@@ -53,8 +53,8 @@ Note that the `logregex` needs to be put in quotes, because '#' serves as a comm
 >
 >``` text
 > [bugtraq "otrs"]
->  url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
->  logregex = "^#[0-9]{1,5}"            
+>   url = "https://otrs/index.pl?Action=AgentTicketZoom;TicketID=%BUGID%"
+>   logregex = "^#[0-9]{1,5}"            
 >```
 
 ## Azure DevOps boards Workitems
@@ -64,8 +64,8 @@ Substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and proje
 >
 >``` text
 > [bugtraq "AzDevOps Issues"]
->  url = "https://dev.azure.com/MyOrg/MyProject/_workitems/edit/%BUGID%"
->  logregex = \\d+
+>   url = "https://dev.azure.com/MyOrg/MyProject/_workitems/edit/%BUGID%"
+>   logregex = \\d+
 >```
 
 #### Note
