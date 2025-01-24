@@ -10,6 +10,11 @@ The configuration file consists of a named `bugtraq` section, where a regular ex
 
 In most web issue tracking tools, you can determine the url template by clicking on an issue, and then copying the resultant URL from the browser address bar.
 You can then substitute the specific issue id with the `%BUGID%` token as per the below examples.
+For more details refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq>.
+
+#### Note
+> The `logregex` must contain only one matching group '()' matching the issue ID.
+> You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
 
 ## Examples
 
@@ -60,7 +65,7 @@ Note that the `logregex` needs to be put in quotes, because '#' serves as a comm
 >   logregex = "^#[0-9]{1,5}"            
 >```
 
-## Azure DevOps boards Workitems
+#### Azure DevOps boards Workitems
 
 For Azure DevOps (cloud), substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
 
@@ -70,9 +75,3 @@ For Azure DevOps (cloud), substitute `MyOrg` and `MyProject` for your (Url Encod
 >   url = "https://dev.azure.com/MyOrg/MyProject/_workitems/edit/%BUGID%"
 >   logregex = \\d+
 >```
-
-#### Note
-> The `logregex` must contain only one matching group '()' matching the issue ID.
-> You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
-
-For more details refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq>.
