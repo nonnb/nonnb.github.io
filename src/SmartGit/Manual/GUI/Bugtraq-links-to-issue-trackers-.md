@@ -35,16 +35,19 @@ Alternatively, if you want to have the entire issue ID as the link (i.e. with `S
 
 #### JIRA - repository linked to a multiple JIRA projects
 
-For multiple *JIRA* projects, a configuration could look like:
+When your repository is linked to multiple *JIRA* projects, a configuration could look like:
 
 >
 >``` text
 > [bugtraq "jira"]
->   projects = SG
+>   projects = PRJA, PRJB
 >   url = https://host/jira/browse/%PROJECT%-%BUGID%
 >   loglinkregex = %PROJECT%-\\d+
 >   logregex = \\d+            
 >```
+
+So a commit message containing `PRJA-123` would be linked to `https://host/jira/browse/PRJA-123`, 
+and a commit message and containing `PRJB-678` would be linked to `https://host/jira/browse/PRJB-678`.
 
 #### Matching #ids (i.e. hash prefix) at the beginning of the commit message
 
@@ -59,7 +62,7 @@ Note that the `logregex` needs to be put in quotes, because '#' serves as a comm
 
 ## Azure DevOps boards Workitems
 
-Substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
+For Azure DevOps (cloud), substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
 
 >
 >``` text
