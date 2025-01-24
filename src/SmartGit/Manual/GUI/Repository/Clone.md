@@ -7,7 +7,7 @@ In the **Repository** tab, specify the repository to clone by either:
   - `ssh://user@server:port/path` if using SSH.
   - `https://user@server:port/path` if using HTTPS.
 - If the repository is locally available on your file system, by specifying the file path.
-- If one or more [Hosting Provider integrations](../../Integrations/Integrated-Cloning.md) have been configured, use the navigation to select an available repository.
+- If one or more [Hosting Provider integrations](../../Integrations/Integrated-Cloning.md) have been configured, click on the connected Hosting Provider icon and use the navigation to select an available repository.
 
 Clicking *Next* will display the **Selection** step, where you can configure whether the repository's submodules should also be cloned.
 Typically, this option should be selected, as submodules are an integral part of the main repository you are cloning.
