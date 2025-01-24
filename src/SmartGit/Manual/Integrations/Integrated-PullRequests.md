@@ -1,11 +1,11 @@
 # Integrated Pull Requests
 
 If a repository has been cloned from an [integrated Hosting Provider](index.md), when SmartGit detects changes on the hosting service, 
-it will also refresh information on related Pull Requests (PRs) from the hosting service.
+it will also refresh information on related Pull Requests (PRs) from the remote.
 
-- In the **Standard Window**, clicking on the Hosting Provider icon will check for new branches and Pull Requests on the remote.
+- In the **Standard Window** and **Log Window**, clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
   If open PR's are present, a hyperlink will be shown taking you to the PR on the *Branches View* of the **Log Window**
-- On the **Log Window**, the *Branches View* will show available Pull Requests - you can click on the Hosting Provider Icon to refresh available *Pull Requests* on the remote.
+- On the **Log Window**, the *Branches View* will show available Pull Requests:
 
 ![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
   
