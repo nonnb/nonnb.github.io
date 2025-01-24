@@ -3,8 +3,15 @@
 If a repository has been cloned from an [integrated Hosting Provider](index.md), when SmartGit detects changes on the hosting service, 
 it will also refresh information on related Pull Requests (PRs) from the remote.
 
-## Working with Pull Requests in SmartGit
+## Creating a Pull Request
+After pushing commits to a remote branch, you can create a Pull Request between this branch and another branch on the remote by using the Hosting Provider's custom Pull Request user interface.
 
+With repository integration enabled, SmartGit provides linked shortcuts to create the Pull Request:
+- In the **Branch View** of the **Log Window**, by clicking on the pushed branch under the remote folder, OR clicking on the locally tracked branch, and selecting *Create Pull Request*.
+- In the **My History View** of the **Standard Window**, by clicking on the pushed branch, and select *Create Pull Request*.
+  If you have made commits subsequent to pushing the branch to the remote, SmartGit will prompt you to push the new commits before proceeding with creating the Pull Request.
+
+## Working with Pull Requests in SmartGit
 - In the **Standard Window** and **Log Window**, clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
 - In the **Standard Window**, if open PR's are present, a hyperlink will be shown taking you to the PR on the *Branches View* of the **Log Window**
 - On the **Log Window**, the *Branches View* will show available Pull Requests:
@@ -22,16 +29,26 @@ You can remove the local *Virtual Merge Commit* by using the *Drop Local* comman
 
 ## Reviewing a Pull Request within SmartGit
 Although it is possible to use the Hosting Provider's Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests in SmartGit.
+
 Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking on the *Virtual Merge Commit* in the *Graph View* of the **Log Window** will allow you to view the result of the PR in the *Files View* and the [*Compare View*](../GUI/Compare-View.md) as normal.
 
+In addition, when the repository is integrated to the Hosting Provider, in the **Log Window**:
+- A list of comments will be shown in the **Files View**. Selecting a comment allows you to:
+  - *Jump To* the comment, by showing the comment at the applicable location in the reviewed file in the **Compare View**.
+  - *Edit* or *Delete* a comment (if the comment was created by yourself)
+  - *Reply To* the comment. SmartGit will prompt you for a reply message.
 
 ## Additional Functionality (Currently Available on GitHub only)
 
+Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created or assigned to you, or where a review has been requested of you.
+
 - *Incoming* pull requests are those which other users have assigned to you for review and/or merging.
   These are displayed in a separate *Pull Requests* folder under the Branches view.
-- *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to pull your changes.
-   These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
 
+![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
+
+- *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to merge your changes.
+   These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
 
 #### Incoming Pull Requests
 When SmartGit detects an Incoming pull request assigned to you for merge or review
