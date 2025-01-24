@@ -46,11 +46,10 @@ For multiple *JIRA* projects, a configuration could look like:
 > logregex = \\d+            
 >```
 
-#### 
+#### Matching #ids (i.e. hash prefix) at the beginning of the commit message
 
-> Another example configuration (e.g. for a trouble ticketing system)
-> where IDs like '#213' should be matched only at the beginning of a commit message.
-> Note that the `logregex` needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
+Another example configuration (e.g. for a trouble ticketing system) where IDs like '#213' should be matched only at the beginning of a commit message.
+Note that the `logregex` needs to be put in quotes, because '#' serves as a comment character in Git configuration files.
 >
 >``` text
 >[bugtraq "otrs"]
@@ -58,7 +57,15 @@ For multiple *JIRA* projects, a configuration could look like:
 > logregex = "^#[0-9]{1,5}"            
 >```
 
-The `logregex` must contain only one matching group '()' matching the issue ID.
-You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
+## Azure DevOps boards Workitems
+
+Substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
+>[bugtraq "AzDevOps Issues"]
+> url = "https://dev.azure.com/MyOrg/MyProject/_workitems/edit/%BUGID%"
+> logregex = \\d+
+
+#### Note
+> The `logregex` must contain only one matching group '()' matching the issue ID.
+> You can use additional non-matching groups '(?:)' for other parts of your regex (or '(?i)' for case insensitive matching).
 
 For more details refer to the complete Bugtraq specification at <https://github.com/mstrap/bugtraq>.
