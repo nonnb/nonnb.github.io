@@ -60,9 +60,13 @@ Note that the `logregex` needs to be put in quotes, because '#' serves as a comm
 ## Azure DevOps boards Workitems
 
 Substitute `MyOrg` and `MyProject` for your (Url Encoded) organisation and project identifiers - these should be visible on the address bar when viewing your Azure Boards work items.
+
+>
+>``` text
 >[bugtraq "AzDevOps Issues"]
 > url = "https://dev.azure.com/MyOrg/MyProject/_workitems/edit/%BUGID%"
 > logregex = \\d+
+>```
 
 #### Note
 > The `logregex` must contain only one matching group '()' matching the issue ID.
