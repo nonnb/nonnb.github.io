@@ -21,9 +21,9 @@ Use the `<<` and `>>` arrow buttons to move changed *Hunks* between panes, or us
 
 ## Additional features in Changes View in the Log Window 
 
-In the **Log Window** only, when the *Virtual Merge Commit* (diamond icon) has been selected in the **Graph View*:
-- the *Changes View* will allow you to view, and add comments on the Pull Request.
-- Comments on the PR can be viewed and selected on the *Comments* tab of the *Files View*.
+In the **Log Window** only, when the *Virtual Merge Commit* (diamond icon) has been selected in the **Graph View**:
+- the **Changes View** will allow you to view, and add comments on the Pull Request.
+- Comments on the PR can be viewed and selected on the *Comments* tab of the **Files View**.
 
 Please refer to [Integrated Pull Requests](../Integrations/Integrated-PullRequests.md) for details.
 
