@@ -14,6 +14,7 @@ Please follow one of the below links to get started with one of the following to
     - [SmartGit Bisect](Bisect.md)
     - [SmartGit Investigate](Investigate.md)
     - [SmartGit Conflict Solver](Branch/Conflict-Solver.md)
+    - [SmartGit as Credential Helper](Credential-Helper.md)
 
 Additional Topics:
 
@@ -22,7 +23,7 @@ Additional Topics:
 - [Local Operations on the Working Tree](Local-Operations-on-the-Working-Tree.md)
 - [General Concepts in Git](../GitConcepts/index.md)
 - [Installing SmartGit](../Installation/index.md)
-- [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Installation/index.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
+- [SmartGit's Integration with Git Hosting and Issue Tracking systems](../Integrations/index.md) such as GitHub, JIRA, Azure DevOps, TeamCity and Jenkins.
 
 Also Available:
 
