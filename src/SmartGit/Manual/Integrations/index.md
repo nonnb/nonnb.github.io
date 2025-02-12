@@ -1,7 +1,7 @@
 # SmartGit Integrations with other Applications and Git Hosting Services
 
-SmartGit works with many modern Git Hosting services, and can also be used with popular Issue Tracking systems. 
-These integrations allow extended functionality in SmartGit, which can improve productivity within a team as part of a larger Software Engineering development process (often referred to as 'Dev Ops' processes)
+SmartGit integrates with many modern Git Hosting services such as GitHub, and can also be used with popular Issue Tracking systems such as JIRA.
+These integrations allow extended functionality in SmartGit, which can improve productivity within a team as part of a larger Software Engineering development process (often referred to as 'Dev Ops').
 
 ## Supported Git Hosting services:
 
@@ -49,7 +49,6 @@ The following visual indicators and productivity aids are made available once a 
 - On the **Log Window**, the *Branches View* will show available Pull Requests on the remote repository on the hosting provider.
 - In the **Standard Window**, 
 
-
 ## Supported Continuous Integration / Continuous Deployment services:
 - [GitHub Actions](GitHub-Actions)
 - [Jenkins](Jenkins.md)
@@ -64,7 +63,6 @@ The following visual indicators and productivity aids are made available once a 
 - [Atlassian JIRA](JIRA.md) - Allows commit messages to be extracted from an open JIRA ticket
 - [Gerrit](Gerrit.md) - **TODO**
 - [Git Large File Storage](Git-LFS.md)
-
 
 ## Tips
 - If you have multiple identities / logins to the same hosting provider, you can add multiple hosting provider accounts in SmartGit.
