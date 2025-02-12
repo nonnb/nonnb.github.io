@@ -36,7 +36,7 @@ This code will be used to create an *application access token* which will be use
 
 > If this redirection does not work, this may be caused by your browser's HSTS configuration.
 > To resolve this problem, remove any entries for `127.0.0.1` and try again.
-> For more details on how to do that for various browser, refer to [this blog posting](https://weblog.west-wind.com/posts/2022/Oct/24/Fix-automatic-rerouting-of-http-to-https-on-localhost-in-Web-Browsers).
+> For more details on how to do that for various browser, refer to [this blog posting](https://weblog.west-wind.com/posts/2022/Oct/24/HSTS-Fix-automatic-rerouting-of-http-to-https-on-localhost-in-Web-Browsers).
 
 By default, **Use OAuth token for repository authentication** will be selected. 
 This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your GitHub repository. 
@@ -55,10 +55,9 @@ Finally, confirm the **Add Hosting Provider** dialog using **Add**.
 
 ### Creating a GitHub Personal Access Token
 
-Please refer to the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information on GitHub Personal Access Tokens.
+Instead of using an OAuth token, you may alternatively use a GitHub Personal Access Token (PAT), which has to be created manually in your [GitHub Developer Settings](https://github.com/settings/tokens), and paste this in the *Token* input. 
 
-Instead of using an OAuth token, you may alternatively use a GitHub Personal Access Token (PAT), which has to be created manually in your [GitHub Developer Settings](https://github.com/settings/tokens), 
-and paste this in the *Token* input. 
+Please refer to the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) for information on GitHub Personal Access Tokens.
 
 When using PAT tokens, it is suggested that you first attempt using a *Classic Token*.
 
