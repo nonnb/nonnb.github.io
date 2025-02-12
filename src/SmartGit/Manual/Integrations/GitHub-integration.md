@@ -1,6 +1,6 @@
 # GitHub integration
 
-Once integration with GitHub has been [set up](Setup), SmartGit provides the following additional functionality:
+Once integration with GitHub has been [set up](#Setup), SmartGit provides the following additional functionality:
 
 - [Integrated Cloning](Integrated-Cloning.md)
 - [Integrated Pull Requests](Integrated-PullRequests.md)
