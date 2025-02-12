@@ -1,4 +1,4 @@
-# GitHub integration
+# GitHub Integration
 
 Once integration with GitHub has been [set up](#Setup), SmartGit provides the following additional functionality:
 
@@ -7,12 +7,15 @@ Once integration with GitHub has been [set up](#Setup), SmartGit provides the fo
 - [Integrated Commenting](Integrated-Commments.md)
 - [Productivity Hyperlinks](Integrated-Hyperlinks.md)
 
+In addition to integrating with GitHub's repository features, it is possible to set up [Bugtraq](Bugtraq-links-to-issue-tracking_.md) integration.
+
 ## Setup
 
 To set up integration GitHub in SmartGit, go to **Edit \| Preferences**, section **Hosting Providers** and click the **Add** button.
 In the list of available providers, select **GitHub** to bring up a dialog allowing configuration of the GitHub account.
+SmartGit then prompts for an access token.
 
-There are two ways to generate an access token:
+There are two ways to generate this access token:
 - Allow SmartGit to [autogenerate and manage an OAuth token](#autogeneration-of-oauth-token) (Recommended).
 - Manually generate a [Personal Access Token (PAT)](#creating-a-github-personal-access-token) in GitHub.
 
@@ -68,15 +71,17 @@ Make sure that your PAT has at least following scopes assigned:
 - **gist** - read and write access to gists
 - **workflow** - allowing SmartGit to update GitHub Action Workflow files
 
-Once a GitHub integration has been set up, the features below are available.
+Once you have created a PAT for requisite access in your in GitHub profile, you need to copy the PAT token and paste it into the Token input in SmartGit's **Add Hosting Provider** dialog.
 
 ### Re-setup OAuth
 
-Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version of SmartGit will request additional scopes. Usually, it's sufficient to just open **Preferences**, section **Authentication**, open the **GitHub** hosting provider and invoke **Generate Token** there. If this does not solve your problem, take following steps to rerun the *OAuth* setup from scratch:
+Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version of SmartGit will request additional scopes. 
+Usually, it is sufficient to just open **Preferences**, section **Authentication**, open the **GitHub** hosting provider and invoke **Generate Token**. 
+If this does not solve your problem, take following steps to rerun the *OAuth* setup from scratch:
 
 1. In SmartGit:
-    1. get rid of all GitHub-related credentials from **Preferences**, section **Authentication**
-    2. get rid of the GitHub hosting provider from **Preferences**, section **Hosting Providers**
+    1. remove all GitHub-related credentials from **Preferences**, section **Authentication**
+    2. remove the GitHub hosting provider from **Preferences**, section **Hosting Providers**
 2. In GitHub, open the [SmartGit application](https://github.com/settings/connections/applications/99bbba5634b1f1ef3b57) from your profile **Settings**, **Applications**, tab **Authorized OAuth Apps**:
     1. Select "SmartGit" there:
        ![](../attachments/53215440/53215441.png)
