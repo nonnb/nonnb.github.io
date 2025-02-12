@@ -28,7 +28,7 @@ With repository integration enabled, SmartGit provides linked shortcuts to creat
 You can remove the local *Virtual Merge Commit* by using the *Drop Local* command by either clicking on the Pull Request in the *Branches View*, or clicking on the diamond icon in the *Graph View*.
 
 ## Reviewing a Pull Request within SmartGit
-Although it is possible to use the Hosting Provider's Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests in SmartGit.
+In addition to using the Hosting Provider's standard Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests directly in SmartGit.
 
 Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking on the *Virtual Merge Commit* in the *Graph View* of the **Log Window** will allow you to view the result of the PR in the *Files View* and the [*Compare View*](../GUI/Compare-View.md) as normal.
 
