@@ -42,6 +42,7 @@ This code will be used to create an *application access token* which will be use
 > For more details on how to do that for various browser, refer to [this blog posting](https://weblog.west-wind.com/posts/2022/Oct/24/HSTS-Fix-automatic-rerouting-of-http-to-https-on-localhost-in-Web-Browsers).
 
 **TODO - Confirm with Marc / Daniel**
+
 By default, **Use OAuth token for repository authentication** will be selected. 
 This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your GitHub repository. 
 
@@ -50,6 +51,7 @@ Using the OAuth-token has following advantages:
 - it will not require to create/enter a second set of credentials for SmartGit
 
 Finally, confirm the **Add Hosting Provider** dialog using **Add**.
+
 **End TODO**
 
 #### Info
