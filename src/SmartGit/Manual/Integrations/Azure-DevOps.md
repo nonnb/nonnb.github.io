@@ -11,7 +11,7 @@ Once integration is configured, the following integrated functionality is availa
 - [Integrated Commenting](Integrated-Comments.md)
 - [Productivity Shortcuts](Integrated-ShortCuts.md)
 
-## Setup (Azure DevOps Services)
+## Setup
 
 Azure DevOps integration is set up under **Preferences**, section **Hosting Providers** and under the **Add** button, select **Azure DevOps**.
 
@@ -46,25 +46,29 @@ SmartGit will place the masked token in the Token input, and you can click **Add
 
 ### Re-setup OAuth
 
-Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version of SmartGit will request additional scopes. Usually, it's sufficient to just open **Preferences**, section **Authentication**, open the **Azure DevOps** hosting provider and invoke **Generate Token** there. If this does not solve your problem, take following steps to rerun the *OAuth* setup from scratch:
+Sometimes you may need to re-run the *OAuth* setup, e.g. if a more recent version of SmartGit requires additional scopes. 
+Often, it is sufficient to just open **Preferences \| Hosting Providers**, select your Azure DevOps connection, and click **Edit**.
+This will bring up the Configure Azure DevOps Account, where you can regenerate the access token using one of the methods listed under [Setup](#setup)
+
+If this does not work as intended, take following steps to rerun the *OAuth* setup from scratch:
 
 1. In SmartGit:
-    1. get rid of all Azure DevOps-related credentials from **Preferences**, section **Authentication**
-    2. get rid of the Azure DevOps hosting provider from **Preferences**, section **Hosting Providers**
+    1. Remove all Azure DevOps-related credentials from **Preferences**, section **Authentication**
+    2. Remove the Azure DevOps hosting provider from **Preferences**, section **Hosting Providers**
 2. In Azure DevOps, open your [profile](https://aex.dev.azure.com/me?mkt=en-US#) from the top-right corner:
     1. Select "Manage Authorizations":
-       ![](../attachments/azure-app-revoke.png)
+       ![Azure DevOps Authorizations](../attachments/azure-app-revoke.png)
     2. Invoke **Revoke** for **SmartGit**
-3. In SmartGit, rerun through the *OAuth* setup again:
-    1. open **Preferences**, section **Hosting Providers**
-    2. **Add** a new **Azure DevOps** hosting provider, as described above
+3. In SmartGit, rerun through the [Setup](#setup) actions again.
 
 ### Setup with Multiple Accounts
 
 If you have multiple Azure DevOps accounts, you can run through the above procedure for each of your accounts.
 This requires to login for every account in your web browser before invoking **Generate Token**.
 
-To have the **OAuth** token to work for multiple accounts, Git has to request credentials per-repository. To check if the proper configuration is already set, invoke:
+To have the **OAuth** token to work for multiple accounts, Git has to request credentials per-repository. 
+
+To check if the proper configuration is already set, invoke:
 
 ```
 git pull
@@ -80,11 +84,14 @@ Then run `git pull` again to confirm that Git will now ask for the complete repo
 
 ### Setup via Personal Access Token
 
-If OAuth is no feasible option for you, the Azure DevOps integration can alternatively be set up using a personal access token ("PAT"). Personal access tokens can be generated in the Settings area of the Azure web interface. For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization). The scopes can be limited to **Code** - **Read&Write**.
+As an alternative to OAuth, you can establish Azure DevOps integration by providing SmartGit with a Personal Access Token ("PAT").
+Personal access tokens can be generated in the Settings area of the Azure web interface. 
+For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization).
+The scopes can be limited to **Code** - **Read&Write**.
 
-![](../attachments/53215478/53215481.png)
+![Azure DevOps PAT Scopes](../attachments/53215478/53215481.png)
 
-### Setting up a custom Azure DevOps Application for SmartGit
+### Setting up a Custom Azure DevOps Application for SmartGit
 
 To get OAuth authentication working for Azure DevOps On-Premise instances or to avoid callbacks to `https://www.syntevo.com` you can set up a custom *Azure DevOps application* and configure SmartGit to use it for OAuth authentication.
 
