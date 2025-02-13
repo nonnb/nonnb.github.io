@@ -84,10 +84,6 @@ If OAuth is no feasible option for you, the Azure DevOps integration can alterna
 
 ![](../attachments/53215478/53215481.png)
 
-### Repository access using "Generate Git Credentials"
-
-If you are only interested in accessing your Azure DevOps Git repositories, but you don't need the additional *Azure DevOps Hosting Provider functionality* (e.g. managing pull requests in SmartGit), you may open the Azure website, navigate to your Azure DevOps repository, invoke **Clone** and then **Generate Git Credentials**. When SmartGit asks you for **User Name** and **Password** enter these credentials.
-
 ### Setting up a custom Azure DevOps Application for SmartGit
 
 To get OAuth authentication working for Azure DevOps On-Premise instances or to avoid callbacks to `https://www.syntevo.com` you can set up a custom *Azure DevOps application* and configure SmartGit to use it for OAuth authentication.
@@ -122,3 +118,6 @@ smartgit.azure.oauth.appCallback=https://www.syntevo.com/test-callback
 
 Note, that `clientSecret` is actually the **Client Secret** from Azure DevOps, not the **App Secret**!
 
+### Repository access using "Generate Git Credentials"
+
+If you are only interested in accessing your Azure DevOps Git repositories, but you don't need the additional *Azure DevOps Hosting Provider functionality* (e.g. managing pull requests in SmartGit), you may open the Azure website, navigate to your Azure DevOps repository, invoke **Clone** and then **Generate Git Credentials**. When SmartGit asks you for **User Name** and **Password** enter these credentials.
