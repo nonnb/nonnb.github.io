@@ -17,11 +17,12 @@ Azure DevOps integration is set up under **Preferences**, section **Hosting Prov
 
 This will the **Add Hosting Provider** dialog, prompting for an access token.
 
-There are two ways to authenticate to Azure DevOps Services to obtain an access token:
-- Letting SmartGit automatically establish connectivity via OAuth (Recommended)
-- Manually obtaining a Personal Access Token (PAT) from Azure DevOps
+There are 3 ways to authenticate to Azure DevOps Services to obtain an access token:
+- Allowing SmartGit to automatically obtain a Token via [OAuth](#setup-using-oauth) (Recommended)
+- Manually obtaining a [Personal Access Token (PAT)](#setup-via-personal-access-token) from Azure DevOps
+- Setting up a [custom Azure DevOps Application](#setting-up-a-custom-azure-devops-application-for-smartgit) for SmartGit (For advanced users only).
 
-### OAuth
+### Setup using OAuth
 
 Clicking the **Generate token** button will open a Web Browser where you will need to authenticate with Azure DevOps, and you will need to confirm that you wish to provide SmartGit with access to your Azure DevOps organisation(s).
 
@@ -60,7 +61,8 @@ Sometimes you may need to rerun the *OAuth* setup, e.g. if a more recent version
 
 ### Setup with Multiple Accounts
 
-If you have multiple Azure DevOps accounts, you can run through the above procedure for each of your accounts. This requires to login for every account in your web browser before invoking **Generate Token**.
+If you have multiple Azure DevOps accounts, you can run through the above procedure for each of your accounts.
+This requires to login for every account in your web browser before invoking **Generate Token**.
 
 To have the **OAuth** token to work for multiple accounts, Git has to request credentials per-repository. To check if the proper configuration is already set, invoke:
 
@@ -76,7 +78,7 @@ git config --global credential.dev.azure.com.useHttpPath true
 
 Then run `git pull` again to confirm that Git will now ask for the complete repository URL.
 
-### Alternative setup using a personal access token
+### Setup via Personal Access Token
 
 If OAuth is no feasible option for you, the Azure DevOps integration can alternatively be set up using a personal access token ("PAT"). Personal access tokens can be generated in the Settings area of the Azure web interface. For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization). The scopes can be limited to **Code** - **Read&Write**.
 
