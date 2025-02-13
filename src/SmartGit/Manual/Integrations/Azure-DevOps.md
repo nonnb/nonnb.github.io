@@ -1,12 +1,21 @@
 # Azure DevOps
 
-SmartGit integrates to Azure DevOps repositories 
+SmartGit provides integration with [Azure DevOps](https://learn.microsoft.com/en-us/azure/devops), including:
+- Azure DevOps Services (Cloud)
+- Azure DevOps Server (On Premises)
 
-XX
+Once integration is configured, the following integrated functionality is available from within SmartGit:
+
+- [Integrated Cloning](Integrated-Cloning.md)
+- [Integrated Pull Requests](Integrated-PullRequests.md)
+- [Integrated Commenting](Integrated-Commments.md)
+- [Productivity Shortcuts](Integrated-ShortCuts.md)
 
 ### Setup
 
-To set up the Azure DevOps integration, go to **Preferences**, section **Hosting Providers** and select **Add**. In the **Add Hosting Provider** dialog, have **Azure DevOps** selected and invoke **Generate API token**. This should open up your default web browser where you will have to confirm by **Accept**.
+To set up the Azure DevOps integration, go to **Preferences**, section **Hosting Providers** and select **Add**. In the **Add Hosting Provider** dialog, have **Azure DevOps** selected and invoke **Generate API token**. 
+
+This should open up your default web browser where you will have to confirm by **Accept**.
 
 ![](../attachments/53215478/53215480.png)
 
