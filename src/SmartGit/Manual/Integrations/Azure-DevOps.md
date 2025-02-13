@@ -86,10 +86,12 @@ Then run `git pull` again to confirm that Git will now ask for the complete repo
 
 As an alternative to OAuth, you can establish Azure DevOps integration by providing SmartGit with a Personal Access Token ("PAT").
 Personal access tokens can be generated in the Settings area of the Azure web interface. 
+
 For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization).
+
 The scopes can be limited to **Code** - **Read&Write**.
 
-![Azure DevOps PAT Scopes](../attachments/53215478/53215481.png)
+![Azure DevOps PAT Scopes](../images/Integrations-DevOps-PAT.png)
 
 ### Setting up a Custom Azure DevOps Application for SmartGit
 
