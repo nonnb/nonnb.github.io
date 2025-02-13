@@ -4,9 +4,9 @@ If a repository has been cloned from an [integrated Hosting Provider](index.md),
 it will also refresh information on related Pull Requests (PRs) from the remote.
 
 ## Creating a Pull Request
-After pushing commits to a remote branch, you can create a Pull Request between this branch and another branch on the remote by using the Hosting Provider's custom Pull Request user interface.
+After pushing commits to a remote branch, you may want to create a Pull Request on the remote by using the Hosting Provider's custom web user interface.
 
-With repository integration enabled, SmartGit provides linked shortcuts to create the Pull Request:
+With integration enabled, SmartGit provides linked shortcuts to create the Pull Request:
 - In the **Branch View** of the **Log Window**, by clicking on the pushed branch under the remote folder, OR clicking on the locally tracked branch, and selecting *Create Pull Request*.
 - In the **My History View** of the **Standard Window**, by clicking on the pushed branch, and select *Create Pull Request*.
   If you have made commits subsequent to pushing the branch to the remote, SmartGit will prompt you to push the new commits before proceeding with creating the Pull Request.
