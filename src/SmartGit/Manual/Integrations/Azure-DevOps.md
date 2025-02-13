@@ -8,7 +8,7 @@ Once integration is configured, the following integrated functionality is availa
 
 - [Integrated Cloning](Integrated-Cloning.md)
 - [Integrated Pull Requests](Integrated-PullRequests.md)
-- [Integrated Commenting](Integrated-Commments.md)
+- [Integrated Commenting](Integrated-Comments.md)
 - [Productivity Shortcuts](Integrated-ShortCuts.md)
 
 ## Setup (Azure DevOps Services)
