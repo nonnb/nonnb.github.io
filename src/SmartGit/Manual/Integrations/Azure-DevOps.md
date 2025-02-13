@@ -37,10 +37,10 @@ The code will be used to create an *application access token* which will be used
 SmartGit will place the masked token in the Token input, and you can click **Add** to complete the integration to Azure DevOps.
 
 #### Note
-> 1. If the browser does not open to Azure DevOps automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will also show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
+> - If the browser does not open to Azure DevOps automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will also show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
 > Copy the hyperlink and paste it into the browser that you use with Azure DevOps in order to resume the integration connection workflow.
 
-> 2. If above procedure fails make sure to allow **Third-party application access via OAuth** in your Azure DevOps [Organization Settings](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies).
+> - If above procedure fails make sure to allow **Third-party application access via OAuth** in your Azure DevOps [Organization Settings](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies).
 >
 > ![Enable 3rd party Application Access via OAuth in Azure DevOps](../attachments/53215478/53215479.png)
 
@@ -85,11 +85,12 @@ Then run `git pull` again to confirm that Git will now ask for the complete repo
 ### Setup via Personal Access Token
 
 As an alternative to OAuth, you can establish Azure DevOps integration by providing SmartGit with a Personal Access Token ("PAT").
-Personal access tokens can be generated in the Settings area of the Azure web interface. 
+PATs can be generated in the User Settings area of the Azure DevOps portal - please refer to Microsoft's [PAT documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 
-For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization).
-
-The scopes can be limited to **Code** - **Read&Write**.
+#### Note:
+> - For PATs to be usable by SmartGit, it's important that Organization access is set to **All accessible organizations** (even if you just have a single organization).
+> - The scopes can be limited to **Code** - **Read&Write**.
+> - PATs are valid for a maximum of 1 year. When a PAT expires, you will need to regenerate it.
 
 ![Azure DevOps PAT Scopes](../images/Integrations-DevOps-PAT.png)
 
