@@ -7,12 +7,10 @@ These integrations allow extended functionality in SmartGit, which can improve p
 
 Please refer to the applicable vendor specific documentation in order to connect a SmartGit repository to a Git hosting provider:
 
+- [GitHub](GitHub-integration.md) and [GitHub Enterprise On Premises](GitHub-Enterprise-Integration.md)
 - [Microsoft Azure DevOps](Azure-DevOps.md)
 - [Atlassian Bitbucket Cloud](Bitbucket-integration.md) and [Bitbucket and Atlassian Stash On Premises](BitBucket-Server-Atlassian-Stash-integration.md)
-- [GitHub](GitHub-integration.md) and [GitHub Enterprise On Premises](GitHub-Enterprise-Integration.md)
 - [GitLab](GitLab.md)
-
-**TODO Show icons for each vendor **
 
 #### Note on Terminology:
 
