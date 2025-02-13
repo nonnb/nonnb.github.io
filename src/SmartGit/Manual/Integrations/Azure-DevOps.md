@@ -44,7 +44,7 @@ SmartGit will place the masked token in the Token input, and you can click **Add
 >
 > ![Enable 3rd party Application Access via OAuth in Azure DevOps](../attachments/53215478/53215479.png)
 
-### Re-setup OAuth
+#### Re-setup OAuth
 
 Sometimes you may need to re-run the *OAuth* setup, e.g. if a more recent version of SmartGit requires additional scopes. 
 Often, it is sufficient to just open **Preferences \| Hosting Providers**, select your Azure DevOps connection, and click **Edit**.
@@ -61,7 +61,7 @@ If this does not work as intended, take following steps to rerun the *OAuth* set
     2. Invoke **Revoke** for **SmartGit**
 3. In SmartGit, rerun through the [Setup](#setup) actions again.
 
-### Setup with Multiple Accounts
+#### Setup with Multiple Accounts
 
 If you have multiple Azure DevOps accounts, you can run through the above procedure for each of your accounts.
 This requires to login for every account in your web browser before invoking **Generate Token**.
