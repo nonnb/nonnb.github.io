@@ -25,9 +25,11 @@ The code will be used to create an *application access token* which will be used
 Finally, confirm the **Add Hosting Provider** dialog by clicking **Add**.
 
 Once you have authorized SmartGit, it will show up in your Bitbucket **Settings**, under section **App Authorizations**.
-If you need to rerun through the Authorization process outlined above, you have to **Revoke** access to the SmartGit application and start over.
 
-![](../attachments/bitbucket-oauth-overview.png)
+![Bitbucket App Authorizations](../attachments/bitbucket-oauth-overview.png)
+
+#### Note
+> If you need to rerun through the Authorization process outlined above, you have to **Revoke** access to the SmartGit application and start over.
 
 ### Setup using App Password (only basic repository access)
 
