@@ -39,7 +39,7 @@ SmartGit will place the masked token in the Token input, and you can click **Add
 > 1. If the browser does not open to Azure DevOps automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will also show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
 > Copy the hyperlink and paste it into the browser that you use with Azure DevOps in order to resume the integration connection workflow.
 
-> 2. If above procedure fails make sure to allow **Third-party application access via OAuth** in your Organization Settings.
+> 2. If above procedure fails make sure to allow **Third-party application access via OAuth** in your Azure DevOps [Organization Settings](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies).
 >
 > ![Enable 3rd party Application Access via OAuth in Azure DevOps](../attachments/53215478/53215479.png)
 
