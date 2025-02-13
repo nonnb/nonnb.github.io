@@ -42,10 +42,10 @@ Please refer to the applicable vendor specific documentation in order to connect
 
 ### Visual Indicators and Navigation
 The following visual indicators and productivity aids are made available once a repository is cloned from a linked hosting provider:
-- An icon representing the hosting provider will appear above the *Branch View*. Clicking this icon will **TODO** seems to fetch ? Check for PRs and Comments?
+- An icon representing the hosting provider will appear above the *Branch View*. Clicking this icon will check for new Pull Requests on the hosting provider.
 - On the **Working Tree Window**, a link will appear next to the icon above the *Branches View* which will show open Pull Requests (in the navigation view)
 - On the **Log Window**, the *Branches View* will show available Pull Requests on the remote repository on the hosting provider.
-- In the **Standard Window**, 
+- In the **Standard Window**
 
 ## Supported Continuous Integration / Continuous Deployment services:
 - [GitHub Actions](GitHub-Actions)
