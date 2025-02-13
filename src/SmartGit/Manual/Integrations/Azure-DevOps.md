@@ -33,24 +33,15 @@ Use the **Copy to Clipboard** button to copy the access token to the clipboard, 
 
 The code will be used to create an *application access token* which will be used to populate the **Token** field in the Add Hosting Provider dialog.
 
-#### Note
-> If the browser did not open automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
-> Copy the hyperlink and paste it into the browser that you use with Azure DevOps
-
-
-By default, **Use OAuth token for repository authentication** will be selected. 
-This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your Azure DevOps repository. Using the OAuth-token has following advantages:
-
-- its scope is more limited than plain password or possibly more powerful personal access tokens
-- it will not require to create/enter a second set of credentials to SmartGit
-
-Finally, confirm the **Add Hosting Provider** dialog using **Add**.
+SmartGit will place the masked token in the Token input, and you can click **Add** to complete the integration to Azure DevOps.
 
 #### Note
+> 1. If the browser does not open to Azure DevOps automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will also show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
+> Copy the hyperlink and paste it into the browser that you use with Azure DevOps in order to resume the integration connection workflow.
 
-> If above procedure fails make sure to allow **Third-party application access via OAuth** in your Organization Settings.
+> 2. If above procedure fails make sure to allow **Third-party application access via OAuth** in your Organization Settings.
 >
-> ![](../attachments/53215478/53215479.png)
+> ![Enable 3rd party Application Access via OAuth in Azure DevOps](../attachments/53215478/53215479.png)
 
 ### Re-setup OAuth
 
