@@ -17,7 +17,7 @@ Azure DevOps integration is set up under **Preferences**, section **Hosting Prov
 
 This will the **Add Hosting Provider** dialog, prompting for an access token.
 
-There are 3 ways to authenticate to Azure DevOps Services to obtain an access token:
+There are 3 ways to authenticate to Azure DevOps:
 - Allowing SmartGit to automatically obtain a Token via [OAuth](#setup-using-oauth) (Recommended)
 - Manually obtaining a [Personal Access Token (PAT)](#setup-via-personal-access-token) from Azure DevOps
 - Setting up a [custom Azure DevOps Application](#setting-up-a-custom-azure-devops-application-for-smartgit) for SmartGit (For Azure DevOps Server - on prem / Advanced Users).
