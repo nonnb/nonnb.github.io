@@ -11,17 +11,30 @@ Once integration is configured, the following integrated functionality is availa
 - [Integrated Commenting](Integrated-Commments.md)
 - [Productivity Shortcuts](Integrated-ShortCuts.md)
 
-### Setup
+## Setup (Azure DevOps Services)
 
-To set up the Azure DevOps integration, go to **Preferences**, section **Hosting Providers** and select **Add**. In the **Add Hosting Provider** dialog, have **Azure DevOps** selected and invoke **Generate API token**. 
+Azure DevOps integration is set up under **Preferences**, section **Hosting Providers** and under the **Add** button, select **Azure DevOps**.
+
+This will the **Add Hosting Provider** dialog, prompting for an access token.
+
+There are two ways to authenticate to Azure DevOps Services to obtain an access token:
+- Letting SmartGit automatically establish connectivity via OAuth (Recommended)
+- Manually obtaining a Personal Access Token (PAT) from Azure DevOps
+
+### OAuth
+
+Clicking the **Generate API token** button will open a Web Browseer
 
 This should open up your default web browser where you will have to confirm by **Accept**.
 
-![](../attachments/53215478/53215480.png)
+![Azure DevOps Application](../attachments/53215478/53215480.png)
 
-Once you have confirmed this page, you will be redirected to *syntevo.com*, where the generated access code will be displayed. Copy and paste this code into SmartGit's **Generate Token** dialog and invoke **Authenticate**. The code will be used to create an *application access token* which will be used to populate the **Token** field.
+Once you have confirmed this page, you will be redirected to *syntevo.com*, where the generated access code will be displayed. 
+Copy and paste this code into SmartGit's **Generate Token** dialog and invoke **Authenticate**. 
+The code will be used to create an *application access token* which will be used to populate the **Token** field.
 
-By default, **Use OAuth token for repository authentication** will be selected. This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your Azure DevOps repository. Using the OAuth-token has following advantages:
+By default, **Use OAuth token for repository authentication** will be selected. 
+This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your Azure DevOps repository. Using the OAuth-token has following advantages:
 
 - its scope is more limited than plain password or possibly more powerful personal access tokens
 - it will not require to create/enter a second set of credentials to SmartGit
