@@ -23,15 +23,20 @@ There are two ways to authenticate to Azure DevOps Services to obtain an access 
 
 ### OAuth
 
-Clicking the **Generate API token** button will open a Web Browseer
-
-This should open up your default web browser where you will have to confirm by **Accept**.
+Clicking the **Generate token** button will open a Web Browser where you will need to authenticate with Azure DevOps, and you will need to confirm that you wish to provide SmartGit with access to your Azure DevOps organisation(s).
 
 ![Azure DevOps Application](../attachments/53215478/53215480.png)
 
-Once you have confirmed this page, you will be redirected to *syntevo.com*, where the generated access code will be displayed. 
-Copy and paste this code into SmartGit's **Generate Token** dialog and invoke **Authenticate**. 
-The code will be used to create an *application access token* which will be used to populate the **Token** field.
+Once you have confirmed this page, you will be redirected to *syntevo.com*, where the generated access code will be displayed on screen.
+
+Use the **Copy to Clipboard** button to copy the access token to the clipboard, and then paste the token into the 'Code' field in the *Add Azure DevOps Account* dialog, and click **OK**.
+
+The code will be used to create an *application access token* which will be used to populate the **Token** field in the Add Hosting Provider dialog.
+
+#### Note
+> If the browser did not open automatically, or if the browser opened to a different identity to the one you use on Azure DevOps, SmartGit will show a hyperlink which you can use to initiate the authorization process with Azure DevOps.
+> Copy the hyperlink and paste it into the browser that you use with Azure DevOps
+
 
 By default, **Use OAuth token for repository authentication** will be selected. 
 This will return the generated OAuth-token when Git asks for credentials (username + password) when connecting to your Azure DevOps repository. Using the OAuth-token has following advantages:
