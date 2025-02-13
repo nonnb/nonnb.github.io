@@ -59,6 +59,20 @@ When selecting this merge node in the Commits view, you can see the entire chang
 
 *** TODO MERGED FROM GITHUB
 
+## Working Tree window
+
+The Working tree window contains a light-weight GitHub integration which shows open incoming pull requests in the title of the **Branches** view.
+
+#### Note
+
+> Detailed pull request information and operations on pull requests are only available in the **Log** (see below).
+
+
+## Log
+
+In the *Log* window of your repository, you can interact with GitHub in following ways.
+
+
 ### Pull Requests
 
 When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server:
