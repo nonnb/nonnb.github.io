@@ -34,7 +34,7 @@ Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking 
 
 In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show a [list of comments](Integrated-Comments.md) in the PR.
 
-## Additional Standard Window Functionality (Currently Available on GitHub only)
+## Additional PR features in the Standard Window (Currently Available on GitHub only)
 
 Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created by you, or assigned to you.
 When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the *Graph View*:
@@ -49,7 +49,7 @@ When SmartGit detects that you are involved in a PR, an Icon will be shown in th
   
 ![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
 
-## Additional features in the Working Tree window
+## Additional PR features in the Working Tree window
 
 The Working tree window contains a light-weight GitHub integration at the top of the **Branches** view:
 - A *Pull Requests* link which will take you to the **Log Window**, where the PRs will be shown.
@@ -60,7 +60,7 @@ The Working tree window contains a light-weight GitHub integration at the top of
 > Detailed pull request information and operations on pull requests are only available in the **Log** (see below).
 
 
-## Log Window
+## Additional PR features in the Log Window
 
 In the *Log* window of your repository, you can interact with GitHub in following ways.
 
