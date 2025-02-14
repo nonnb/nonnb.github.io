@@ -34,7 +34,7 @@ Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking 
 
 In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show a [list of comments](Integrated-Comments.md) in the PR.
 
-## Additional Functionality (Currently Available on GitHub only)
+## Additional Standard Window Functionality (Currently Available on GitHub only)
 
 Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created by you, or assigned to you.
 When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the _Graph View:
