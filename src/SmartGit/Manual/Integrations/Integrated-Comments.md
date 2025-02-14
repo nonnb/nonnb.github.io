@@ -22,10 +22,11 @@ In the **Changes View**, clicking on a change allows you to add a comment on the
 - If you are the author of the comment, you can edit the comment by clicking on it (or clicking the comment and selecting *Edit*)
 - You may be able to delete the comment by clicking on it (or clicking the comment and selecting *Delete*), depending on your permissions on the server.
 
-## Comment Icons on Commits and Files
+## Comment Visual Indicators
 When SmartGit detects comments, the following visual indicators are present in the **Log Window**:
 - Comment 'bubble' icon alongside the *Virtual Merge Commit* in the **Graph View**
 - Comment 'bubble' icon alongside each file changed in the commit
+- When a file containing comments is selected in the **Files View** and displayed in the **Changes View**, SmartGit will display the comments at the line number where the comment was made.
 
 ## Note on types of Comments
 
