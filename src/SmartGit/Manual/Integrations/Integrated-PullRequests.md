@@ -52,25 +52,25 @@ The Working tree window contains a light-weight GitHub integration at the top of
 
 > Detailed pull request information and operations on pull requests are only available in the **Log** (see below).
 
-
 ## Additional PR features in the Log Window
 
 When integrated to a repository, *Log* window of your repository, you can interact with Pull Requests in the following ways:
 
 - Above the **Branches View**, a hosting provider specific icon will appear. Clicking on the icon will force a refresh of PR and branch information from the server.
+- To create a pull request, click on a branch and use **Create Pull Request** from the context menu of the **Branches** view.
 - On the **Log Window**, the *Branches View* will show available Pull Requests:
 
 ![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
 
-- To create a pull request, click on a branch and use **Create Pull Request** from the context menu of the **Branches** view.
 - To work with the PR on the Hosting Provider web site, click on the Pull Request to open the context menu, and select *Open in Web Browser*
-- To work with these pull requests locally in SmartGit (e.g. to review their commits, or Merge or Reject them), the commits in the PR can be fetched by invoking *Fetch* from the context menu of the pull request. 
-  This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, *Virtual Merge Commit* between the base commit from which the pull request has been forked and the latest (remote) pull request commit.
-  The virtual merge commit is represented by a diamond icon in the *Graph View* of the **Log Window**.
+- To work with these pull requests locally in SmartGit (e.g. to review their commits, or Merge or Reject them):
+  - the commits in the PR can be fetched by invoking *Fetch* from the context menu of the pull request. 
+  - This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, *Virtual Merge Commit* between the base commit from which the pull request has been forked and the latest (remote) pull request commit.
+  - The virtual merge commit is represented by a diamond icon in the *Graph View* of the **Log Window**.
 
 ![Pull Requests under the Log Window Branches View](../images/Integrations-PullRequest-VirtualMergeCommit.png)
 
-You can remove the local *Virtual Merge Commit* by using the *Drop Local* command by either clicking on the Pull Request in the *Branches View*, or clicking on the diamond icon in the *Graph View*.
+  - You can remove the local *Virtual Merge Commit* by using the *Drop Local* command by either clicking on the Pull Request in the *Branches View*, or clicking on the diamond icon in the *Graph View*.
 
 ## Reviewing a Pull Request within SmartGit
 In addition to using the Hosting Provider's standard Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests directly in SmartGit.
