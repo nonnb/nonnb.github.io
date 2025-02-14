@@ -21,5 +21,6 @@ The Log Window contains the following views:
 
 #### Tips
 > - You can view commits eligible for [garbage collection](Repository/index.md#the-garbage-collector) in SmartGit's Log by selecting the **Recyclable Commits** option in the *Branches* view of the **Log Window**.
-> - If the repository has been [Integrated](../Integrations/GitHub-integration.md) to a Git Hosting Provider, the Log Window will also show Pull Requests on the host.
+> - If the repository has been [Integrated](../Integrations/GitHub-integration.md) to a Git Hosting Provider, the Log Window will also show [Pull Requests](../Integrations/Integrated-PullRequests.md) on the host.
 > These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
+> - In addition, when the repository is integrated to a Hosting Provider, a list of comments will be shown in the Files View of the Log Window. See [Integrated Comments](../Integrations/Integrated-Comments.md) for further information.
