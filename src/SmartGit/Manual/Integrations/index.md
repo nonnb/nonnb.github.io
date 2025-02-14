@@ -37,7 +37,6 @@ Once integration is configured, the following integrated functionality becomes a
 
 |                                       | GitHub | Azure DevOps | BitBucket | GitLab    |
 | ------------------------------------- | ------ | ------------ |---------- |---------- |
-| Navigation Links                      |   Yes  |      *       |     *     |     *     |
 | Repository Selection + Cloning        |   Yes  |     Yes      |     Yes   |     Yes   |
 | Inbound and Outbound PR Notifications |   Yes  |              |           |           |
 | Initiate Pull Request                 |   Yes  |     Yes      |     Yes   |     Yes   |
