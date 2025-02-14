@@ -12,6 +12,13 @@ Please refer to the applicable vendor specific documentation in order to connect
 - [Atlassian Bitbucket Cloud](Bitbucket-integration.md) and [Bitbucket and Atlassian Stash On Premises](BitBucket-Server-Atlassian-Stash-integration.md)
 - [GitLab](GitLab.md)
 
+Once integration is configured, the following integrated functionality becomes available in SmartGit:
+
+- [Integrated Cloning](Integrated-Cloning.md)
+- [Integrated Pull Requests](Integrated-PullRequests.md)
+- [Integrated Commenting](Integrated-Comments.md)
+
+
 #### Note on Terminology:
 
 > The terminology between hosting providers differs somewhat for equivalent or similar features, as per the below table.
