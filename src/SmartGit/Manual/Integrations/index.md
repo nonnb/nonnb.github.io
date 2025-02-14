@@ -48,8 +48,7 @@ Once integration is configured, the following features become available in Smart
 
 ### Visual Indicators and Navigation
 Once a repository is cloned from a linked hosting provider, SmartGit provides the following visual indicators and productivity aids:
-- An icon representing the hosting provider appears above the *Branch View*. Clicking this icon checks for new pull requests on the hosting provider.
-- In the **Working Tree Window**, a [shortcut link and provider icon](Integrated-PullRequests.md#additional-pr-features-in-the-working-tree-window) above the *Branches View*.
+- In the **Working Tree Window**, a [shortcut link and provider icon](Integrated-PullRequests.md#additional-pr-features-in-the-working-tree-window) above the *Branches View* allows quick navigation to pull requests in the **Log Window**.
 - In the **Log Window**, the *Branches View* [shows available pull requests](Integrated-PullRequests.md#additional-pr-features-in-the-log-window) on the remote repository on the hosting provider.
   In addition, many additional [comment and review features](Integrated-Comments.md) become available.
 - In the **Standard Window**, *Incoming* and *Outgoing* pull requests [are shown](Integrated-PullRequests.md#additional-pr-features-in-the-standard-window-currently-available-for-github-only).
