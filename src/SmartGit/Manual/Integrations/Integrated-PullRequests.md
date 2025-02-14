@@ -37,7 +37,7 @@ In addition, when the repository is integrated to the Hosting Provider, the **Fi
 ## Additional Standard Window Functionality (Currently Available on GitHub only)
 
 Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created by you, or assigned to you.
-When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the _Graph View:
+When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the *Graph View*:
 
 - *Incoming* pull requests are those which other users have created and assigned to you.
   On the commit, the icon below displayed, along side the hosting provider's PR reference identifier.
@@ -60,18 +60,18 @@ The Working tree window contains a light-weight GitHub integration at the top of
 > Detailed pull request information and operations on pull requests are only available in the **Log** (see below).
 
 
-## Log
+## Log Window
 
 In the *Log* window of your repository, you can interact with GitHub in following ways.
+
+To create a pull request, use **Create Pull Request** from the context menu of the **Branches** view.
 
 
 ### Pull Requests
 
 When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server:
 
-- **Incoming** pull requests are those which other users are requesting to pull from their repositories. They are displayed in a separate category called **Pull Requests** in the **Branches** view.
-- **Outgoing** pull requests are those which you have sent to other users/repositories, requesting them to pull your changes. 
-  They are display directly below the local (or if it does not exist), the remote branch in the **Branches** view.
+## Technical note on the Synchronization between SmartGit and Pull Requests on the remote Server
 
 *Incoming* pull requests, in first place, are just present on the server. SmartGit learns about them only by calling a GitHub REST API and displays the retrieved information in the **Branches**. To work with these pull requests (e.g. to review their commits, or **Merge** or **Reject** them), you first have to fetch them by invoking **Fetch** from the context menu of the pull request. This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, virtual *merge* commit between the *base* commit from which the pull request has been forked and the latest (remote) pull request commit.
 
@@ -84,5 +84,4 @@ For a pull request which had been fetched once, there was a special *ref* create
 You can invoke **Review \| Sync** to manually update the displayed information. 
 Usually you will want to do that, if you know that server-side information has changed since the Log has been opened.
 
-To create a pull request, use **Create Pull Request** from the context menu of the **Branches** view.
 
