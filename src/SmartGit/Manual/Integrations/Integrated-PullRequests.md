@@ -32,11 +32,7 @@ In addition to using the Hosting Provider's standard Pull Request review feature
 
 Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking on the *Virtual Merge Commit* in the *Graph View* of the **Log Window** will allow you to view the result of the PR in the *Files View* and the [*Compare View*](../GUI/Compare-View.md) as normal.
 
-In addition, when the repository is integrated to the Hosting Provider, in the **Log Window**:
-- A list of comments will be shown in the **Files View**. Selecting a comment allows you to:
-  - *Jump To* the comment, by showing the comment at the applicable location in the reviewed file in the **Compare View**.
-  - *Edit* or *Delete* a comment (if the comment was created by yourself)
-  - *Reply To* the comment. SmartGit will prompt you for a reply message.
+In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show a [list of comments](Integrated-Comments.md) in the PR.
 
 ## Additional Functionality (Currently Available on GitHub only)
 
