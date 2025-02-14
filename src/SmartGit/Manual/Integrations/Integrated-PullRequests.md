@@ -42,6 +42,8 @@ When SmartGit detects that you are involved in a PR, an Icon will be shown in th
   
 ![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
 
+Clicking on PR icon will allow you to open the PR in GitHub, and wil also allow you to Approve an incoming Pull Request, without providing further feedback (to leave feedback, use the advanced Commenting review features, in the **Log Window**)
+
 ## Additional PR features in the Working Tree window
 
 The Working tree window contains a light-weight GitHub integration at the top of the **Branches** view:
@@ -71,15 +73,16 @@ When integrated to a repository, *Log* window of your repository, you can intera
 
 ![Pull Requests under the Log Window Branches View](../images/Integrations-PullRequest-VirtualMergeCommit.png)
 
+  - Clicking on the *Virtual Merge Commit* in the *Graph View* of the **Log Window** will allow you to view the result of the PR in the *Files View* and the [*Compare View*](../GUI/Compare-View.md) as per any normal commit.
   - You can remove the local *Virtual Merge Commit* by using the *Drop Local* command by either clicking on the Pull Request in the *Branches View*, or clicking on the diamond icon in the *Graph View*.
 
 ### Reviewing a Pull Request from within the SmartGit Log Window
-In addition to using the Hosting Provider's standard Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests directly in SmartGit.
 
-Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking on the *Virtual Merge Commit* in the *Graph View* of the **Log Window** will allow you to view the result of the PR in the *Files View* and the [*Compare View*](../GUI/Compare-View.md) as normal.
+In addition to using the Hosting Provider's standard Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests directly in SmartGit, viewing, adding, and editing comments on the PR.
 
-In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show comments in the PR. Please refer to [integrated comments](Integrated-Comments.md) for information with viewing, adding or editing comments.
+In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show comments in the PR. 
 
+Please refer to [integrated comments](Integrated-Comments.md) for detailed information with viewing, adding or editing comments.
 
 # ** TODO - Discuss with Marc + Daniel **
 
