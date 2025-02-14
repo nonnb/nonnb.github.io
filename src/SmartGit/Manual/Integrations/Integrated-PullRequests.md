@@ -40,21 +40,18 @@ In addition, when the repository is integrated to the Hosting Provider, in the *
 
 ## Additional Functionality (Currently Available on GitHub only)
 
-Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created or assigned to you, or where a review has been requested of you.
+Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created by you, or assigned to you.
+When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the _Graph View:
 
-- *Incoming* pull requests are those which other users have assigned to you for review and/or merging.
-  These are displayed in a separate *Pull Requests* folder under the Branches view.
+- *Incoming* pull requests are those which other users have created and assigned to you.
   On the commit, an upward arrow icon is displayed, along side the hosting provider's PR reference identifier.
 
-![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
+![Incoming Pull Request in the Standard Window](../images/Integrations-StandardWindow-IncomingPullRequest.png)
 
 - *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to merge your changes.
-  These are displayed directly below the local (or if it does not exist), the remote branch in the *Branches View*.
+  
 
-#### Incoming Pull Requests
-When SmartGit detects an Incoming pull request assigned to you for merge or review
-
-When selecting this merge node in the Commits view, you can see the entire changes which a multi-commit pull request includes and you can comment on these changes, if necessary.
+![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
 
 
 
