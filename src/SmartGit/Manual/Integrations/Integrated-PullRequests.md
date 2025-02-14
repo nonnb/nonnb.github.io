@@ -1,15 +1,23 @@
 # Integrated Pull Requests
 
-If a repository has been cloned from, and integrated to an [integrated Hosting Provider](index.md), when SmartGit detects changes on the hosting service, 
+If a repository has been cloned from, and integrated to an [integrated Hosting Provider](index.md) such as GitHub, when SmartGit detects changes on the hosting service, 
 it will also refresh information on related Pull Requests (PRs) from the remote.
 
 ## Summary of Pull Requests features in SmartGit
-- In the **Standard Window** and **Log Window**, clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
-- In the **Standard Window**, if open PR's are present, a hyperlink will be shown taking you to the PR on the *Branches View* of the **Log Window**
-- On the **Log Window**, the *Branches View* will show available Pull Requests:
 
-![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
-  
+The following features summarize the integrated features available directly within SmartGit, without having to interact with the Pull Request on the Hosting Provider.
+
+- In the [**Standard Window**](#):
+  - Pull Requests which have been created by you, or assigned to you, will be displayed with an Outbound or Inbound icon, respectively.
+  - A *Virtual Merge Commit* representing the outcome of the PR will allow you to to view changed files in the **Files View** and **Changes View**.
+- In the [**Working Tree Window**]() and **Log Window**
+  - Clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
+- In the [**Log Window**]()
+  - The *Branches View* will show available Pull Requests.
+  - A *Virtual Merge Commit* representing the outcome of the PR will allow you to to view changed files in the **Files View** and **Changes View**.
+  - The ability to view, edit, and create comments on the Pull Request
+  - The ability to Merge or Reject the pull request
+
 ## Creating a Pull Request
 After pushing commits to a remote branch, you may want to create a Pull Request on the remote by using the Hosting Provider's custom web user interface.
 
@@ -18,7 +26,7 @@ With integration enabled, SmartGit provides linked shortcuts to create the Pull 
 - In the **My History View** of the **Standard Window**, by clicking on the pushed branch, and select *Create Pull Request*.
   If you have made commits subsequent to pushing the branch to the remote, SmartGit will prompt you to push the new commits before proceeding with creating the Pull Request.
 
-## Additional PR features in the Standard Window (Currently Available on GitHub only)
+## Additional PR features in the Standard Window (Currently Available for GitHub only)
 
 Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created by you, or assigned to you.
 When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the *Graph View*:
@@ -38,6 +46,7 @@ When SmartGit detects that you are involved in a PR, an Icon will be shown in th
 The Working tree window contains a light-weight GitHub integration at the top of the **Branches** view:
 - A *Pull Requests* link which will take you to the **Log Window**, where the PRs will be shown.
 - An icon showing the Hosting Provider connected to this repository. Clicking on the Icon will refresh the state of remote branches and pull requests.
+- In the **Working Tree Window**, if open PR's are present, a hyperlink will be shown taking you to the PR on the *Branches View* of the **Log Window**
 
 #### Note
 
@@ -45,6 +54,11 @@ The Working tree window contains a light-weight GitHub integration at the top of
 
 
 ## Additional PR features in the Log Window
+
+- On the **Log Window**, the *Branches View* will show available Pull Requests:
+
+![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
+
 
 When integrated to a repository, *Log* window of your repository, you can interact with Pull Requests in the following ways:
 
