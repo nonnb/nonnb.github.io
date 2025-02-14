@@ -32,24 +32,32 @@ When SmartGit detects comments, the following visual indicators are present in t
 Commenting implementation is specific to each Hosting Provider, and there may be different commenting options, depending on the provider.
 
 For example, on a Pull Request, GitHub allows comments to be added to:
-- individual line changes (*diffs*) in a Pull Request
-- a specific commit in the Pull Request
+- individual line changes (*diffs*) in a PR
+- a specific commit in the Pull Request (Plain Commit comment)
 - The Pull Request as a whole (PR Comment)
 
-Pull Request Comments will be refreshed together with those pull requests which are locally available (see **Fetch Pull Request** above).
-Plain Commit Comments will by default not be refreshed for performance reasons. 
+### Refreshing Comments 
+
+SmartGit has the following default behaviour:
+
+- Pull Request comments will be refreshed together with those pull requests which are locally available (see **Fetch Pull Request** above).
+- Plain Commit comments will by default not be refreshed for performance reasons. 
+
 To tell SmartGit to fetch plain commit comments, too, configure option `github.commitCommentPageLimit` in [**Preferences \| Low-Level Properties**](../GUI/AdvancedSettings/Low-Level-Properties.md)
 
-Both, Pull Request and Plain Commit Comments, can refer either to a commit itself or to a specific line in a file:
+Pull Request and Plain Commit comments can both refer either to a commit itself or to a specific line in a file:
 
 - Commit comments will show up in the **Commits** view.
-- Comments on individual lines will show up in the **Changes** view and the affected files will be highlighted in the **Files** and **Commits** view, too. This works the same way for line-comments of Pull Requests, provided that the pull request has been **Fetch**ed and the local pull request *merge* commit has been selected.
+- Comments on individual lines will show up in the **Changes** view and the affected files will be highlighted in the **Files** and **Commits** view, too.
+  This works the same way for line-comments of Pull Requests, provided that the pull request has been **Fetch**ed and the local pull request *merge* commit has been selected.
 
-Comments can be created, modified and removed using the corresponding actions from the **Comments** menu or context menu actions in the **Commits** and **Changes** view. If a pull request *merge* commit is selected, only line-comments of the pull request can be manipulated.
+If a pull request *merge* commit is selected, only line-comments of the pull request can be manipulated.
 
 Comments on individual lines will show up in the Changes view and the affected files will be highlighted in the Files and Commits view, too. 
 This works the same way for line-comments of Pull Requests, provided that the pull request has been Fetched and the local pull request merge commit has been selected.
 Comments can be created, modified and removed using the corresponding actions from the Comments menu or context menu actions in the Commits and Changes view. 
 If a pull request merge commit is selected, only line-comments of the pull request can be manipulated.
 
-After commenting changes, it’s probably a good idea to Reject the pull request to signal the initiator of the pull request, that modifications are required before you are willing to pull his changes. If you are fine with a pull request, you may Merge it. This will request the GitHub server to merge the pull request and then SmartGit will pull the corresponding branch, so you will have the merged changes locally available.
+After commenting changes, it’s probably a good idea to Reject the pull request to signal the initiator of the pull request, that modifications are required before you are willing to pull his changes. 
+If you are fine with a pull request, you may Merge it.
+This will request the Hosting Provider server to merge the pull request and then SmartGit will pull the corresponding branch, so you will have the merged changes locally available.
