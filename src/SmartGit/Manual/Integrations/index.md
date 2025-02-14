@@ -54,7 +54,7 @@ Once a repository is cloned from a linked hosting provider, SmartGit provides th
 - In the **Standard Window**
 
 ## Supported Continuous Integration / Continuous Deployment services:
-- [GitHub Actions](GitHub-Actions)
+- [GitHub Actions](GitHub-Actions.md)
 - [Jenkins](Jenkins.md)
 - [JetBrains TeamCity](TeamCity.md)
 
