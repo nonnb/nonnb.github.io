@@ -84,15 +84,18 @@ In addition, when the repository is integrated to the Hosting Provider, the **Fi
 
 Please refer to [integrated comments](Integrated-Comments.md) for detailed information with viewing, adding or editing comments.
 
-# ** TODO - Discuss with Marc + Daniel **
-
 #### Technical note on the Synchronization between SmartGit and Pull Requests on the remote Server
 
-When does SmartGit synchronize Pull Requests?
-- When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server:
-- ? Clicking on the GitHub/AzureDevOps/BitBucket icons 
+**When does SmartGit detect Pull Requests?**
+- When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server.
+- When a user performs a Fetch or Pull from the remote
+- When the user clicks on the GitHub/AzureDevOps/BitBucket icons 
 
-*Incoming* pull requests, in first place, are just present on the server. SmartGit learns about them only by calling a GitHub REST API and displays the retrieved information in the **Branches**. To work with these pull requests (e.g. to review their commits, or **Merge** or **Reject** them), you first have to fetch them by invoking **Fetch** from the context menu of the pull request. This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, virtual *merge* commit between the *base* commit from which the pull request has been forked and the latest (remote) pull request commit.
+**When does SmartGit synchronize Pull Requests?**
+*Incoming* pull requests, in first place, are just present on the server.
+SmartGit learns about them only by calling a GitHub REST API and displays the retrieved information in the **Branches**. 
+To work with these pull requests (e.g. to review their commits, or **Merge** or **Reject** them), you first have to fetch them by invoking **Fetch** from the context menu of the pull request. 
+This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, virtual *merge* commit between the *base* commit from which the pull request has been forked and the latest (remote) pull request commit.
 
 When selecting this *merge* node in the **Commits** view, you can see the entire changes which a multi-commit pull request includes and you can [comment](#comments) on these changes, if necessary. After commenting changes, it's probably a good idea to **Reject** the pull request to signal the initiator of the pull request, that modifications are required before you are willing to pull his changes. If you are fine with a pull request, you may **Merge** it. This will request the GitHub server to merge the pull request and then SmartGit will pull the corresponding branch, so you will have the merged changes locally available.
 
