@@ -40,27 +40,20 @@ Additional functionality is available in the **Standard Window** when a reposito
 When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the _Graph View:
 
 - *Incoming* pull requests are those which other users have created and assigned to you.
-  On the commit, an upward arrow icon is displayed, along side the hosting provider's PR reference identifier.
+  On the commit, the icon below displayed, along side the hosting provider's PR reference identifier.
 
 ![Incoming Pull Request in the Standard Window](../images/Integrations-StandardWindow-IncomingPullRequest.png)
 
 - *Outgoing* pull requests are those which you have initiated to other users/repositories, requesting them to merge your changes.
+  On the commit, the icon below is displayed alongside the hosting provider's PR reference identifier.
   
-
 ![Outgoing Pull Request in the Standard Window](../images/Integrations-StandardWindow-OutgoingPullRequest.png)
 
+## Additional features in the Working Tree window
 
-
-
-
-
-*** TODO - MERGED FROM GITHUB
-
-*** TODO MERGED FROM GITHUB
-
-## Working Tree window
-
-The Working tree window contains a light-weight GitHub integration which shows open incoming pull requests in the title of the **Branches** view.
+The Working tree window contains a light-weight GitHub integration at the top of the **Branches** view:
+- A *Pull Requests* link which will take you to the **Log Window**, where the PRs will be shown.
+- An icon showing the Hosting Provider connected to this repository. Clicking on the Icon will refresh the state of remote branches and pull requests.
 
 #### Note
 
