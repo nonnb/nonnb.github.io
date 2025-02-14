@@ -5,14 +5,12 @@ Depending on the Hosting Service, comments can either be added to a commit, or t
 
 ## Log Window
 
-In addition, when the repository is integrated to the Hosting Provider, in the Log Window:
+When the repository is integrated to the Hosting Provider, in the Log Window:
 
-A list of comments will be shown in the Files View. Selecting a comment allows you to:
-Jump To the comment, by showing the comment at the applicable location in the reviewed file in the Compare View.
-Edit or Delete a comment (if the comment was created by yourself)
-Reply To the comment. SmartGit will prompt you for a reply message.
-
-
+- A list of comments will be shown in the **Files View**. Selecting a comment allows you to:
+  - *Jump To* the comment, by showing the comment at the applicable location in the reviewed file in the **Compare View**.
+  - *Edit* or *Delete* a comment (if the comment was created by yourself)
+  - *Reply To* the comment. SmartGit will prompt you for a reply message.
 
 **TODO** - Comments can be applied to a commit or to a Pull Request.
 
