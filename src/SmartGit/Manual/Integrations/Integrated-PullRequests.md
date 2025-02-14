@@ -7,7 +7,7 @@ it will also refresh information on related Pull Requests (PRs) from the remote.
 
 The following features summarize the integrated features available directly within SmartGit, without having to interact with the Pull Request on the Hosting Provider.
 
-- In the [**Standard Window**](#):
+- In the [**Standard Window**](#additional-pr-features-in-the-standard-window-currently-available-for-github-only):
   - Pull Requests which have been created by you, or assigned to you, will be displayed with an Outbound or Inbound icon, respectively.
   - A *Virtual Merge Commit* representing the outcome of the PR will allow you to to view changed files in the **Files View** and **Changes View**.
   - The ability to Approve an incoming Pull Request, without providing further feedback (to leave feedback, use commenting, in the **Log Window**)
