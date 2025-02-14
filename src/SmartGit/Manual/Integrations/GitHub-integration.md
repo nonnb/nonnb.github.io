@@ -127,7 +127,11 @@ select **SmartGit** here and check for which organizations you may request acces
 
 ### Git-Flow Pull Requests will be closed on Finish Feature
 
-When using [Git-Flow](../DevelopmentProcesses/Git-Flow.md) or [Git-Flow Light](../DevelopmentProcesses/Git-Flow-Light.md) in combination with pull requests, pull requests may be marked as **Closed** instead of **Merged** after invoking **Finish Feature**. This happens when you have **Delete Feature Branch** selected for the **Finish Feature** dialog: with this option selected, the local and remote feature branch will be deleted immediately, however the resulting merge/rebase has not yet been pushed. If a branch will be deleted *before* it has been merged, GitHub will mark the pull request as **Closed**. If it's only deleted *after* the branch has been merged, it will be marked as **Merged**. If you don't want your pull requests to become **Closed**, unselect **Delete Feature Branch**, push the resulting merge/rebase first and only then **Delete** the feature branch from GitHub (e.g. from the **Branches** view).
+When using [Git-Flow](../DevelopmentProcesses/Git-Flow.md) or [Git-Flow Light](../DevelopmentProcesses/Git-Flow-Light.md) in combination with pull requests, they may be marked as **Closed** instead of **Merged** after invoking **Finish Feature**. This happens if **Delete Feature Branch** is selected for the **Finish Feature** dialog.
+
+**Solution**
+
+With this option selected, the local and remote feature branch will be deleted immediately, however the resulting merge/rebase has not yet been pushed. If a branch will be deleted *before* it has been merged, GitHub will mark the pull request as **Closed**. If it's only deleted *after* the branch has been merged, it will be marked as **Merged**. If you don't want your pull requests to become **Closed**, unselect **Delete Feature Branch**, push the resulting merge/rebase first and only then **Delete** the feature branch from GitHub (e.g. from the **Branches** view).
 
 ### Push fails with OAuth 'scope'-related warning
 
@@ -135,7 +139,7 @@ From time to time, GitHub may introduce new or change existing *OAuth permission
 
 #### Note
 
-> Be sure to always try with the [latest SmartGit release](https://www.syntevo.com/smartgit/download/) because we are regularly adjusting required *scopes* for the latest version.
+> Always use the [latest SmartGit release](https://www.syntevo.com/smartgit/download/), as it includes the most up-to-date required *scopes*.
 > If you suspect that not even the latest version is requesting the scopes which are required for your scenario, you may manually change the *scopes* in the **Preferences**, **Low-Level Properties**, property "github.oauth.scopes".
 
 Typical Git error messages hinting to this kind of problem:
@@ -148,10 +152,10 @@ Typical Git error messages hinting to this kind of problem:
 
 ### Distributed Reviews interference
 
-When using GitHub, be sure to have [Distributed Reviews](../AddOns/Distributed-Reviews-add-on-.md) disabled for your repository, 
-otherwise there may be confusion about GitHub vs. Distributed Reviews pull requests. 
-To be sure to have Distributed Reviews disabled, invoke **Review \| Configure**:
+When using GitHub, ensure that [Distributed Reviews](../AddOns/Distributed-Reviews-add-on-.md) is disabled for your repository to avoid conflicts between GitHub and Distributed Reviews pull requests. 
+To check:
 
-- if SmartGit asks you whether to initialize the Review database, Distributed Reviews are not enabled (as it should be). Select **Cancel** to keep it disabled.
-- if SmartGit asks you what to configure, Distributed Reviews are enabled. Select **Dispose Database** to disable it.
+- Invoke **Review \| Configure**
+- If SmartGit asks you whether to initialize the Review database, Distributed Reviews are not enabled (as it should be). Select **Cancel** to keep it disabled.
+- If SmartGit asks you what to configure, Distributed Reviews are enabled. Select **Dispose Database** to disable it.
 
