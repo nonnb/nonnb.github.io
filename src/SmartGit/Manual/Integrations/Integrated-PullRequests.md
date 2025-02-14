@@ -13,7 +13,7 @@ The following features summarize the integrated features available directly with
   - The ability to Approve an incoming Pull Request, without providing further feedback (to leave feedback, use commenting, in the **Log Window**)
 - In the [**Working Tree Window**](#additional-pr-features-in-the-working-tree-window) and **Log Window**
   - Clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
-- In the [**Log Window**]()
+- In the [**Log Window**](#additional-pr-features-in-the-log-window)
   - The *Branches View* will show available Pull Requests.
   - A *Virtual Merge Commit* representing the outcome of the PR will allow you to to view changed files in the **Files View** and **Changes View**.
   - The ability to view, edit, and create comments on the Pull Request
