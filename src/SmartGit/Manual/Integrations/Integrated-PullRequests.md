@@ -29,7 +29,7 @@ With integration enabled, SmartGit provides linked shortcuts to create the Pull 
 
 ## Additional PR features in the Standard Window (Currently Available for GitHub only)
 
-Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](../GitHub-integration.md), and where a PR has been created by you, or assigned to you.
+Additional functionality is available in the **Standard Window** when a repository is [integrated to GitHub](GitHub-integration.md), and where a PR has been created by you, or assigned to you.
 When SmartGit detects that you are involved in a PR, an Icon will be shown in the *My History* area, as well as in the *Graph View*:
 
 - *Incoming* pull requests are those which other users have created and assigned to you.
