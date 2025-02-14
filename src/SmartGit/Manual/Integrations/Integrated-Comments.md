@@ -37,7 +37,7 @@ For example, on a Pull Request, GitHub allows comments to be added to:
 - a specific commit in the Pull Request (Plain Commit comment)
 - The Pull Request as a whole (PR Comment)
 
-### Refreshing Comments 
+#### Technical Notes on Comments
 
 SmartGit has the following default behaviour:
 
