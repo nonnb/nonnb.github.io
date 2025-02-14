@@ -10,6 +10,7 @@ The following features summarize the integrated features available directly with
 - In the [**Standard Window**](#):
   - Pull Requests which have been created by you, or assigned to you, will be displayed with an Outbound or Inbound icon, respectively.
   - A *Virtual Merge Commit* representing the outcome of the PR will allow you to to view changed files in the **Files View** and **Changes View**.
+  - The ability to Approve an incoming Pull Request, without providing further feedback (to leave feedback, use commenting, in the **Log Window**)
 - In the [**Working Tree Window**]() and **Log Window**
   - Clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
 - In the [**Log Window**]()
@@ -72,7 +73,7 @@ When integrated to a repository, *Log* window of your repository, you can intera
 
   - You can remove the local *Virtual Merge Commit* by using the *Drop Local* command by either clicking on the Pull Request in the *Branches View*, or clicking on the diamond icon in the *Graph View*.
 
-## Reviewing a Pull Request within SmartGit
+### Reviewing a Pull Request from within the SmartGit Log Window
 In addition to using the Hosting Provider's standard Pull Request review features by using *Open in Web Browser*, it is also possible to review Pull Requests directly in SmartGit.
 
 Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking on the *Virtual Merge Commit* in the *Graph View* of the **Log Window** will allow you to view the result of the PR in the *Files View* and the [*Compare View*](../GUI/Compare-View.md) as normal.
@@ -80,12 +81,13 @@ Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking 
 In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show comments in the PR. Please refer to [integrated comments](Integrated-Comments.md) for information with viewing, adding or editing comments.
 
 
-
-### Pull Requests
-
-When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server:
+** TODO - Discuss with Marc + Daniel **
 
 #### Technical note on the Synchronization between SmartGit and Pull Requests on the remote Server
+
+When does SmartGit synchronize Pull Requests?
+- When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server:
+- ? Clicking on the GitHub/AzureDevOps/BitBucket icons 
 
 *Incoming* pull requests, in first place, are just present on the server. SmartGit learns about them only by calling a GitHub REST API and displays the retrieved information in the **Branches**. To work with these pull requests (e.g. to review their commits, or **Merge** or **Reject** them), you first have to fetch them by invoking **Fetch** from the context menu of the pull request. This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, virtual *merge* commit between the *base* commit from which the pull request has been forked and the latest (remote) pull request commit.
 
