@@ -81,7 +81,7 @@ Once a PR has been [fetched](#working-with-pull-requests-in-smartgit), clicking 
 In addition, when the repository is integrated to the Hosting Provider, the **Files View** of the **Log Window** will show comments in the PR. Please refer to [integrated comments](Integrated-Comments.md) for information with viewing, adding or editing comments.
 
 
-** TODO - Discuss with Marc + Daniel **
+# ** TODO - Discuss with Marc + Daniel **
 
 #### Technical note on the Synchronization between SmartGit and Pull Requests on the remote Server
 
