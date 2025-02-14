@@ -55,19 +55,16 @@ The Working tree window contains a light-weight GitHub integration at the top of
 
 ## Additional PR features in the Log Window
 
+When integrated to a repository, *Log* window of your repository, you can interact with Pull Requests in the following ways:
+
+- Above the **Branches View**, a hosting provider specific icon will appear. Clicking on the icon will force a refresh of PR and branch information from the server.
 - On the **Log Window**, the *Branches View* will show available Pull Requests:
 
 ![Pull Requests under the Log Window Branches View](../images/Integrations-Branches-PullRequests.png)
 
-
-When integrated to a repository, *Log* window of your repository, you can interact with Pull Requests in the following ways:
-
-- Above the **Branches View**, a hosting provider specific icon will appear. Clicking on the icon will force a refresh of PR and branch information from the server.
 - To create a pull request, click on a branch and use **Create Pull Request** from the context menu of the **Branches** view.
-- 
-
-  - To work with the PR on the Hosting Provider web site, click on the Pull Request to open the context menu, and select *Open in Web Browser*
-  - To work with these pull requests locally in SmartGit (e.g. to review their commits, or Merge or Reject them), the commits in the PR can be fetched by invoking *Fetch* from the context menu of the pull request. 
+- To work with the PR on the Hosting Provider web site, click on the Pull Request to open the context menu, and select *Open in Web Browser*
+- To work with these pull requests locally in SmartGit (e.g. to review their commits, or Merge or Reject them), the commits in the PR can be fetched by invoking *Fetch* from the context menu of the pull request. 
   This will fetch all commits from the remote repository to a special branch in your local repository and will create an additional, *Virtual Merge Commit* between the base commit from which the pull request has been forked and the latest (remote) pull request commit.
   The virtual merge commit is represented by a diamond icon in the *Graph View* of the **Log Window**.
 
