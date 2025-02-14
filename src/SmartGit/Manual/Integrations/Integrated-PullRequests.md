@@ -11,7 +11,7 @@ The following features summarize the integrated features available directly with
   - Pull Requests which have been created by you, or assigned to you, will be displayed with an Outbound or Inbound icon, respectively.
   - A *Virtual Merge Commit* representing the outcome of the PR will allow you to to view changed files in the **Files View** and **Changes View**.
   - The ability to Approve an incoming Pull Request, without providing further feedback (to leave feedback, use commenting, in the **Log Window**)
-- In the [**Working Tree Window**]() and **Log Window**
+- In the [**Working Tree Window**](#additional-pr-features-in-the-working-tree-window) and **Log Window**
   - Clicking on the Hosting Provider *Icon* will check for new branches and Pull Requests on the remote.
 - In the [**Log Window**]()
   - The *Branches View* will show available Pull Requests.
