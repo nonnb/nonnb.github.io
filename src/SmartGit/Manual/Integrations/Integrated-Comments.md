@@ -17,7 +17,7 @@ Select the [*Virtual Merge Commit*](Integrated-PullRequests.md#additional-pr-fea
 
 Selecting a file in the **Files View** will show the changes in the [**Changes View**](../GUI/Changes-View.md) as usual.
 
-In the **Changes View**, clicking on a change allows you to add a comment on the change (*Add 'Provider' Comment*, where `'Provider'` will be your repository host, e.g. GitHub).
+In the **Changes View**, clicking on a change allows you to add a comment on the change (*Add 'Provider' Comment*, where *'Provider'* will be your repository host, e.g. GitHub).
 
 - If you are the author of the comment, you can edit the comment by clicking on it (or clicking the comment and selecting *Edit*)
 - You may be able to delete the comment by clicking on it (or clicking the comment and selecting *Delete*), depending on your permissions on the server.
