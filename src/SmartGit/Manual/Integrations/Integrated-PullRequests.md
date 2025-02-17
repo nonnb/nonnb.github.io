@@ -1,6 +1,6 @@
 # Integrated Pull Requests
 
-If a repository has been cloned from, and integrated to an [integrated Hosting Provider](index.md) such as GitHub, when SmartGit detects changes on the hosting service, 
+If a repository has been cloned from, and integrated to an [Hosting Provider](index.md) such as GitHub, when SmartGit detects changes on the hosting service, 
 it will also refresh information on related Pull Requests (PRs) from the remote.
 
 ## Summary of Pull Requests features in SmartGit
@@ -92,6 +92,7 @@ Please refer to [integrated comments](Integrated-Comments.md) for detailed infor
 - When the user clicks on the GitHub/AzureDevOps/BitBucket icons 
 
 **When does SmartGit synchronize Pull Requests?**
+
 *Incoming* pull requests, in first place, are just present on the server.
 SmartGit learns about them only by calling a GitHub REST API and displays the retrieved information in the **Branches**. 
 To work with these pull requests (e.g. to review their commits, or **Merge** or **Reject** them), you first have to fetch them by invoking **Fetch** from the context menu of the pull request. 
