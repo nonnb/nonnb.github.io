@@ -88,7 +88,7 @@ Please refer to [integrated comments](Integrated-Comments.md) for detailed infor
 
 **When does SmartGit detect Pull Requests?**
 - When initially loading the Log, SmartGit will also refresh information on related *Pull Requests* from the GitHub server.
-- When a user performs a Fetch or Pull from the remote
+- When a user performs a Fetch or Pull from the remote in the **Standard Window**
 - When the user clicks on the GitHub/AzureDevOps/BitBucket icons 
 
 **When does SmartGit synchronize Pull Requests?**
