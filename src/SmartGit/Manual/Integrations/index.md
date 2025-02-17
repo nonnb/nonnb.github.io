@@ -38,7 +38,7 @@ Once integration is configured, the following features become available in Smart
 |                                       | GitHub | Azure DevOps | BitBucket | GitLab    |
 | ------------------------------------- | ------ | ------------ |---------- |---------- |
 | Repository Selection & Cloning        |   Yes  |     Yes      |     Yes   |     Yes   |
-| Inbound & Outbound PR Notifications |   Yes  |              |           |           |
+| Inbound & Outbound PR Notifications (Standard Window) |   Yes  |              |           |           |
 | Initiate Pull Request                 |   Yes  |     Yes      |     Yes   |     Yes   |
 | View, Add, Edit, and Delete Comments   |   Yes  |     Yes      |     Yes   |     Yes   |
 | Approve Pull Request                  |   Yes  |     Yes      |     Yes   |     Yes   |
