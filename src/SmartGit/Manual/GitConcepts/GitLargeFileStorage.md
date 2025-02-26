@@ -14,3 +14,10 @@ Notes:
 ## Associating File Types with Git LFS
  
  `git lfs track "*.png"`
+
+
+.gitattributes file
+
+It is recommended that the `.gitattributes` file be committed, as this will assist other contributors to the repository
+
+SmartGit does this by default (TBC)
