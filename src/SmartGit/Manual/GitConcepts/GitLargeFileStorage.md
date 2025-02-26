@@ -1,6 +1,6 @@
 # Git Large File Storage (LFS)
 
-Instead of committing large, or binary files directly into a repository, git can instead store these files in *Git Large File Storage*
+Instead of committing large, or binary files directly into a repository, git can instead store these files on a *Large File Storage* (LFS) server.
 This stores a pointer in the repository to the LFS file (CHECK)
 
 
