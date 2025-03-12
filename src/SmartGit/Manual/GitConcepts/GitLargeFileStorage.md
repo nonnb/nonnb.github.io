@@ -26,7 +26,7 @@ There are some other considerations when working with LFS, such as:
 
 As a result, it is advisable to set your Git LFS strategy when your repsitory is first created.
 
-SmartGit [automatically handles](../Integrations/GitLargeFileStorage) much of the complexity of installing and managing LFS interactions, when connecting to repositories with Git LFS servers.
+SmartGit [automatically handles](../Integrations/Git-LFS.md) much of the complexity of installing and managing LFS interactions, when connecting to repositories with Git LFS servers.
 
 .gitattributes
 
