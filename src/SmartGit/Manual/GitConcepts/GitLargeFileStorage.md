@@ -4,11 +4,16 @@
 
 Git Large File Storage (LFS) is an optional addition to the Git standard, to allow storage of specific types of files (typically large or binary files) on a designated LFS Server, instead of on a Git Server.
 Once a file has been marked for tracking by LFS, the committed file will be replaced by a 'pointer' file in the Git Repository.
-The file is stored using a Content Addressable S
+The file is stored using a Content Addressable Storage schema, which computes the SHA-256 hash of the uploaded file which is used to identify the file's identity.
 
-Git LFS works by applying smudge and clean filter commands on files identified for LFS tracking in a `.gitattributes` configuration file.
+Git LFS works by applying LFS's `smudge` and `clean` filter commands on files which have been marked for LFS tracking in the `.gitattributes` configuration file.
+- the `smudge` filter to retrieve the actual LFS file and replace the file pointer in your working directory.
+- conversely, when checking in a file which has been added to LFS tracking, Git will apply the `clean` filter which will substitute the file with a SHA file location.
 
-The `.gitattributes` should also be added into the repository, so that all collaborators can retrieve files using LFS.
+The `.gitattributes` should also be added into the repository, so that all collaborators can retrieve and work with files which have been tracked by LFS.
+
+Git LFS offers a `lock` option on files, which provides a pessimistic (or reserved) checkout mechanism so that a user can exclusively modify a LFS file.
+When a LFS tracked file is checked in, it will obtain a new SHA file location, and the pointer file will be updated to reflect the new file version's location.
 
 ## Benefits
 - The main Git repository will be leaner without large binary files, so operations such as cloning are greatly reduced.
