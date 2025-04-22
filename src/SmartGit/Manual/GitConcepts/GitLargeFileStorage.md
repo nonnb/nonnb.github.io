@@ -59,5 +59,5 @@ Remember to add `.gitattributes` to your repository:
 `git add .gitattributes`
 
 #### Note:
-> Is is recommended that you do not manually edit the `.gitattributes` file. 
-> Instead, either use SmartGit's File View shortcuts to add or remove
+> Is is recommended that you do not manually edit the `.gitattributes` file.
+> Instead, either use SmartGit's File View, or `git lfs track` shortcuts to add or remove files from LFS.
