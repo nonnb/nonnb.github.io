@@ -1,7 +1,5 @@
 # Git Large File Storage (LFS)
 
-# Git LFS
-
 Git Large File Storage (LFS) is an optional addition to the Git standard, to allow storage of specific types of files (typically large, or binary files) on a designated LFS Server, instead of within the Git Repository.
 Once a file has been marked for tracking by LFS, the committed file will be replaced by a 'pointer' file in the Git Repository.
 
