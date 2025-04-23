@@ -11,7 +11,7 @@ LFS files are stored using a Content-Addressable Storage schema, which computes 
 
 Git LFS works by applying LFS's `smudge` and `clean` filter commands on files which have been marked for LFS tracking in the `.gitattributes` configuration file.
 - when cloning or fetching, the `smudge` filter is used to retrieve the actual LFS file and replace the file pointer in your working directory with the file retrieved from LFS.
-- conversely, when checking in a file which has been added to LFS tracking, Git will apply the `clean` filter which will substitute the file with a SHA file location.
+- conversely, when checking in a file which has been added to LFS tracking, Git will apply the `clean` filter which will substitute the file with a SHA-computed file location.
 
 When working with LFS, a `.gitattributes` file is created, which tracks which files are being tracked in LFS.
 The `.gitattributes` file should also be added into the repository, so that all collaborators can retrieve and work with files which have been tracked by LFS in a consistent manner.
