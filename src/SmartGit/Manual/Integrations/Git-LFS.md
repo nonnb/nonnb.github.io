@@ -1,22 +1,56 @@
 # Git-LFS
 
-SmartGit provides support for common Git Large File Storage (Git-LFS) operations, provided that Git-LFS has been installed on your system and it's configured in your Git config files, so that Git-LFS is already configured and tested to be working from the command line.
+SmartGit provides support for common Git Large File Storage (Git-LFS) operations, allowing you to use LFS functionality such as LFS file tracking and locking, from the comfort of the SmartGit GUI.
+Please refer to [Git LFS concepts](../GitConcepts/GitLargeFileStorage.md) for background, and benefits of using Git-LFS on selected files in your repository.
 
-## Implementing low-level commands
+#### Tip
+> The Git LFS extension needs to be installed on your local computer, and LFS filters need to be enabled for a repository where LFS file storage will be used. 
+> It is recommended that you use the version of the Git executable that comes [bundled with SmartGit](../GUI/Preferences/Commands.md#git-executable), and use SmartGit to enable and configure LFS with your repositories for best compatability.
 
-SmartGit implements low-level Git-LFS commands and provides them in the **Local \| LFS** menu. 
-There is almost a 1-1 correspondence between SmartGit commands and Git-LFS command line.
+## Enabling Git-LFS on a Git Repository with SmartGit
 
-#### Example: setting up and adding files to Git-LFS
+After selecting the required repository from the **Repository View**, use **Local \| LFS \| Install** to enable LFS support for your repository. 
+SmartGit will prompt for confirmation. Select *OK* to confirm LFS support for the repository.
 
-> We are following the [Git-LFS tutorial](https://github.com/git-lfs/git-lfs/wiki/Tutorial) to add a file to Git-LFS:
->
-> - `git lfs install`: invoke **Local \| LFS \| Install**
-> - `git lfs track <file>`: select an *untracked* file in SmartGit's **Files** view and invoke **Local \| LFS \| Track**;
-    > SmartGit suggests a matching pattern for the selected file which you can adjust if necessary
-> - `git add .gitattributes`: right click `.gitattributes` and invoke **Add**
-> - `git add <file>`: right click the file and invoke **Add**
-> - `git commit`: invoke **Commit**
+(This runs the equivalent `git lfs install` command in the repository.)
+
+## Tracking a new file in LFS
+
+After adding a new file under the Working Tree of your local repository, select the untracked file in the **Files View** and use the **LFS \| Track** command to track this file in LFS.
+
+SmartGit will show a LFS Track dialog, prompting you to provide a tracking pattern:
+- The default pattern will track just the selected file
+- You can expand the pattern to include all files matching a pattern - use `*` as a wildcard, e.g. `*.png` will track all new files with a `.png` extension in LFS.
+
+This is equivalent to running `git lfs track *.png` from the Git command line.
+SmartGit will add the pattern into the `.gitattributes` file, which is used by identify files tracked by LFS.
+
+#### Note
+> Remember to add and commit the `.gitattributes` file into your Git repository!
+
+## Locking LFS Files for Exclusive Editing
+In order to prevent other users on a repository from concurrently editing a file tracked by LFS in your Git repository, 
+you can [lock](../GitConcepts/GitLargeFileStorage.md#git-lfs-file-locking) a file on the LFS server to obtain exclusive modify access to the file.
+
+#### Note
+> 1. The ability to perform LFS locking is disabled by default in SmartGit.
+>    To use LFS locking, you will need to toggle the [Low-Level Property](../GUI/AdvancedSettings/Low-Level-Properties.md) `status.lfs.locks` to `true` to enable the *Lock* command from SmartGit.
+> 2. LFS file locking only makes sense once a repository and associated LFS files have been pushed to the remote server, where other users will contend for LFS files.
+>    If no LFS server remote is detected by Git LFS, it will issue an error similar to `failed: missing protocol`
+
+Once enabled LFS Locking is available from the **Files View** in all SmartGit Views:
+- The **Working Tree Window**
+- The **Local Files** perspective of the **Standard Window**
+- The **Files View** of the **Log Window**, provided that the Working Tree node of the commit Graph has been selected.
+
+
+
+
+
+
+
+
+
 
 #### Note
 
