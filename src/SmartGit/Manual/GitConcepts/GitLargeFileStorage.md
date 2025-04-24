@@ -7,7 +7,7 @@ However, when working locally, if a Git-LFS aware client has been installed, fil
 
 LFS files are stored using a Content-Addressable Storage schema, which computes the SHA-256 hash of the uploaded file which is used to identify the file's identity.
 
-Git LFS works by applying LFS's `smudge` and `clean` filter commands on files which have been marked for LFS tracking in the `.gitattributes` configuration file.
+Git LFS works by applying Git's `smudge` and `clean` filter command hooks on files which have been marked for LFS tracking in the `.gitattributes` configuration file.
 - when cloning or fetching, the `smudge` filter is used to retrieve the actual LFS file and replace the file pointer in your working directory with the file retrieved from LFS.
 - conversely, when checking in a file which has been added to LFS tracking, Git will apply the `clean` filter which will substitute the file with a SHA-computed file location.
 
@@ -18,14 +18,14 @@ Git LFS offers a `lock` option on files, which provides a pessimistic (or reserv
 When a LFS tracked file is checked in, it will obtain a new SHA file location, and the pointer file will be updated to reflect the new file version's location.
 
 ## Benefits
-- The main Git repository will be leaner without large binary files, so operations such as cloning are greatly reduced.
+- The main Git repository will be leaner without large binary files, so operations such as cloning are faster and consume less disk space.
 - Collaborators can opt to ignore LFS files when cloning, if they do not need to work with LFS files, in which case they will see the pointer files in their local Working Tree.
 - Users or CI/CD pipelines which do not need files stored in LFS won't require the additional disk space otherwise required of the files stored in LFS.
 
 There are some other considerations when working with LFS, such as:
 - If your repository already has files that you wish to move from Git to LFS, you may need to use git tools such as `git-filter-repo` to permanently remove these files from a repository,
   by rewriting the commit history.
-- If a collaborator to your LFS-enabled repository does not have the Git LFS client installed, when cloning they will see the pointer files instead of the actual file.
+- If a collaborator to your LFS-enabled repository does not have the Git LFS client installed, when cloning they will see the small pointer files instead of the actual binary file.
 
 As a result, it is advisable to set your Git LFS strategy when your repsitory is first created, especially if you know that large binary files will be used in the project.
 
@@ -59,3 +59,28 @@ Remember to add `.gitattributes` to your repository:
 #### Note:
 > Is is recommended that you do not manually edit the `.gitattributes` file.
 > Instead, either use SmartGit's File View, or `git lfs track` shortcuts to add or remove files from LFS.
+
+## Git LFS File Locking
+LFS file locking allows a user exclusive modification rights for a file stored in LFS, preventing other users of the repo from updating the file while it is locked.
+
+### Enforcing reserved checkout on a file or pattern
+When adding files or file patterns to LFS tracking, specify the `--lockable` flag to require that LFS files matching pattern be locked by a user prior to modification:
+
+`git lfs track "*.png" --lockable`
+
+This will then mark all files in the repo matching the pattern as readonly until they are explicitly locked. Lockable flag information is stored in the `.gitattributes` file.
+
+### Locking a LFS file for exclusive access
+
+The `git-lfs lock` command attempts to acquire exclusive access to a file, e.g.
+
+`git lfs lock myfile.png`
+
+To release the lock on a file, use the `unlock` command.
+
+`git lfs unlock myfile.png`
+
+#### Tip
+
+> If a file has been locked by another user, a `--force` flag can be provided to request the LFS server attempt to override the lock:
+> `git lfs unlock myfile.png --force
