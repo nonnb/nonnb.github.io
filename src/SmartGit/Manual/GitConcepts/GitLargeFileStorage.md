@@ -85,5 +85,5 @@ To release the lock on a file, use the `unlock` command.
 
 #### Tip
 
-> If a file has been locked by another user, a `--force` flag can be provided to request the LFS server attempt to override the lock:
+> If a file has been locked by another user, a `--force` flag can be provided to unlock request the LFS server attempt to override the lock held by the other user:
 > `git lfs unlock myfile.png --force
