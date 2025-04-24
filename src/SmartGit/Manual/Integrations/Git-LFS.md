@@ -4,8 +4,9 @@ SmartGit provides support for common Git Large File Storage (Git-LFS) operations
 Please refer to [Git LFS concepts](../GitConcepts/GitLargeFileStorage.md) for background, and benefits of using Git-LFS on selected files in your repository.
 
 #### Tip
-> The Git LFS extension needs to be installed on your local computer, and LFS filters need to be enabled for a repository where LFS file storage will be used. 
-> It is recommended that you use the version of the Git executable that comes [bundled with SmartGit](../GUI/Preferences/Commands.md#git-executable), and use SmartGit to enable and configure LFS with your repositories for best compatability.
+> 1. The Git LFS extension needs to be installed on your local computer, and LFS filters need to be enabled for a repository where LFS file storage will be used. 
+> 2. It is recommended that you use the version of the Git executable that comes [bundled with SmartGit](../GUI/Preferences/Commands.md#git-executable), 
+     and use SmartGit to enable and configure LFS with your repositories for best compatability.
 
 ## Enabling Git-LFS on a Git Repository with SmartGit
 
