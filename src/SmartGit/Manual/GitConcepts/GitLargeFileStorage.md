@@ -33,7 +33,9 @@ As a result, it is advisable to set your Git LFS strategy when your repsitory is
 
 ## Common LFS commands
 
-SmartGit [automatically handles](../Integrations/Git-LFS.md) much of the complexity of installing and managing LFS interactions, when connecting to repositories with Git LFS servers.
+#### Tip 
+> If you are new to Git-LFS, there's a tutorial on how to use Git LFS from the command line on [GitHub](https://github.com/git-lfs/git-lfs/wiki/Tutorial)
+> However, [SmartGit's LFS features ](../Integrations/Git-LFS.md) automatically handle much of the complexity of installing and managing LFS interactions.
 
 The below command line options may be useful if you prefer manual interaction or want to see the equivalent SmartGit behaviour:
 
