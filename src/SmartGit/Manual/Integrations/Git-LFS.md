@@ -1,4 +1,4 @@
-# Git-LFS
+# Git-LFS support in SmartGit
 
 SmartGit provides support for common Git Large File Storage (Git-LFS) operations, allowing you to use LFS functionality such as LFS file tracking and locking, from the comfort of the SmartGit GUI.
 Please refer to [Git LFS concepts](../GitConcepts/GitLargeFileStorage.md) for background, and benefits of using Git-LFS on selected files in your repository.
