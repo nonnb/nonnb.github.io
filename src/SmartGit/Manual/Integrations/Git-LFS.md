@@ -42,24 +42,22 @@ you can [lock](../GitConcepts/GitLargeFileStorage.md#git-lfs-file-locking) a fil
 > 2. LFS file locking only makes sense once a repository and associated LFS files have been pushed to the remote server, where other users will contend for LFS files.
 >    If no LFS server remote is detected by Git LFS, it will issue an error similar to `failed: missing protocol`
 
-## Locking an LFS File
-
 Once enabled, LFS Locking is available through the **LFS \| Lock** command from the **Files View** in all SmartGit Views:
 - The **Files View** of the **Working Tree Window**
 - The **Local Files** perspective of the **Standard Window**
 - The **Files View** of the **Log Window**, provided that the Working Tree node of the commit Graph has been selected.
 
-
-
 ## Displaying locks
 
-To see Git-LFS lock states in the **Files** views (both Log and Working tree window), Git-LFS locks verification must be enabled for your repositories. 
+To see Git-LFS lock states in the **Files** views (both Log and Working tree window), *Git-LFS locks verification* must be enabled for your repositories. 
 
 `git config 'lfs.https://github.com/<my_repo>.git/info/lfs.locksverify' true`
 
-This configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"]
 
-A corresponding `.git/config` might look like:
+
+#### Technical Note on LFS Locks Verification
+
+The locks verification configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"], e.g.
 
 ```
 [lfs "https://github.com/repo.git/info/lfs"]
@@ -67,7 +65,7 @@ A corresponding `.git/config` might look like:
     locksVerify = true
 ```
 
-SmartGit will invoke the invoke additional commands:
+When locks verification is enabled, SmartGit will invoke the invoke additional commands:
 
 - `git lfs locks --local`
 - `git lfs locks --remote`
@@ -99,9 +97,9 @@ The following screenshot shows how this display will look like:
 ## Troubleshooting
 
 > 1. If the 'LFS \| Lock'  enable property `status.lfs.locks` in the **Preferences**, section **Low-level Properties**.
-> 1. If your `git-lfs` executable is not found by SmartGit, try using absolute paths for the `git-lfs` executable configuration in the `gitconfig` file containing the Git-LFS filter definition.
+> 2. If your `git-lfs` executable is not found by SmartGit, try using absolute paths for the `git-lfs` executable configuration in the `gitconfig` file containing the Git-LFS filter definition.
 >    Alternately, change your SmartGit Git executable configuration to to the bundled Git under the [Command Preferences](../GUI/Preferences/Commands#git-executable) options.
-> 2. If you are encountering unexpected errors when invoking **Lock** or **Unlock** commands on files,
+> 3. If you are encountering unexpected errors when invoking **Lock** or **Unlock** commands on files,
 >    this may be caused by a strange behavior of current Git-LFS versions (2.5) which will fail when invoked with a working directory with an incorrect case.
 >    To workaround the problem, make sure that the path in `repositories.xml` has correct case, especially the drive letter must be uppercase, for example:
 >
