@@ -1,9 +1,11 @@
 # Git Large File Storage (LFS)
 
-[Git Large File Storage (LFS)](https://git-lfs.com/) is an optional addition to the Git standard, to allow storage of specific types of files (typically large, or binary files) on a designated LFS Server, instead of within the Git Repository.
+[Git Large File Storage (LFS)](https://git-lfs.com/) is an optional addition to the Git standard, to allow storage of specific types of files (typically large, or binary files) 
+on a designated LFS Server, instead of within the Git Repository.
 Once a file has been marked for tracking by LFS, the committed file will be replaced by a 'pointer' file in the Git Repository.
 
-However, when working locally, if a Git-LFS aware client has been installed, files stored in LFS will be downloaded and will replace the pointer files in the [Working Tree](), providing a seamless user experience.
+However, when working locally, if a Git-LFS aware client has been installed, files stored in LFS will be downloaded and will replace the pointer files 
+in the [Working Tree](), providing a seamless user experience.
 
 LFS files are stored using a Content-Addressable Storage schema, which computes the SHA-256 hash of the uploaded file which is used to identify the file's identity.
 
@@ -47,7 +49,8 @@ The below will automatically replace existing, and store new `.png` files in LFS
  
  `git lfs track "*.png"`
 
- *SmartGit command*: Select an untracked file in the **Files View** and invoke **Local \| LFS \| Track**. SmartGit will detect and suggest a matching pattern for the selected file, which you can adjust if necessary.
+ *SmartGit command*: Select an untracked file in the **Files View** and invoke **Local \| LFS \| Track**. SmartGit will detect and suggest a matching pattern for the selected file, 
+ which you can adjust if necessary.
 
 ### The .gitattributes File
 
