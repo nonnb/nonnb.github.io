@@ -75,7 +75,7 @@ This will then mark all files in the repo matching the pattern as readonly until
 
 ### Locking a LFS file for exclusive access
 
-The `git-lfs lock` command attempts to acquire exclusive access to a file, e.g.
+The `git-lfs lock` command attempts to acquire exclusive access to a file, to allow it to be edited in the local Working Tree, e.g.
 
 `git lfs lock myfile.png`
 
