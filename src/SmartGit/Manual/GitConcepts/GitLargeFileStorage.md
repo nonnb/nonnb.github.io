@@ -1,23 +1,23 @@
 # Git Large File Storage (LFS)
 
-[Git Large File Storage (LFS)](https://git-lfs.com/) is an optional addition to the Git standard, to allow storage of specific types of files (typically large, or binary files) 
-on a designated LFS Server, instead of within the Git Repository.
-Once a file has been marked for tracking by LFS, the committed file will be replaced by a 'pointer' file in the Git Repository.
+[Git Large File Storage (LFS)](https://git-lfs.com/) is an optional extension to standard Git, allowing specific types of files (typically large or binary files) 
+to be stored on a designated LFS Server, instead of within the Git repository. 
+Once a file has been marked for LFS tracking, the committed file will be replaced by a 'pointer' file in the repository.
 
-However, when working locally, if a Git-LFS aware client has been installed, files stored in LFS will be downloaded and will replace the pointer files 
+When working locally, if a Git-LFS aware client has been installed, files stored in LFS will be downloaded and will replace the pointer files 
 in the [Working Tree](), providing a seamless user experience.
 
-LFS files are stored using a Content-Addressable Storage schema, which computes the SHA-256 hash of the uploaded file which is used to identify the file's identity.
+LFS files are stored using a **Content-Addressable Storage** schema, which computes the SHA-256 hash of the uploaded file to identify the file's content uniquely.
 
-Git LFS works by applying Git's `smudge` and `clean` filter command hooks on files which have been marked for LFS tracking in the `.gitattributes` configuration file.
-- when cloning or fetching, the `smudge` filter is used to retrieve the actual LFS file and replace the file pointer in your working directory with the file retrieved from LFS.
-- conversely, when checking in a file which has been added to LFS tracking, Git will apply the `clean` filter which will substitute the file with a SHA-computed file location.
+Git LFS functions by applying Git's `smudge` and `clean` filter command hooks on files that have been marked for LFS tracking in the `.gitattributes` configuration file.
+- when cloning or fetching, the `smudge` filter retrieves the actual LFS file and replaces the file pointer in your working directory.
+- conversely, when committing a file that is tracked by LFS, Git applies the `clean` filter, which replaces the file with a SHA-based pointer file.
 
-When working with LFS, a `.gitattributes` file is created, which tracks which files are being tracked in LFS.
-The `.gitattributes` file should also be added into the repository, so that all collaborators can retrieve and work with files which have been tracked by LFS in a consistent manner.
+When working with LFS, a `.gitattributes` file is created to track which files are managed by LFS.
+This file should also be added to the repository so that all collaborators can work with LFS-tracked files consistently.
 
-Git LFS offers a `lock` option on files, which provides a pessimistic (or reserved) checkout mechanism so that a user can exclusively modify a LFS file.
-When a LFS tracked file is checked in, it will obtain a new SHA file location, and the pointer file will be updated to reflect the new file version's location.
+Git LFS also offers a `lock` option on files, which provides a pessimistic (or reserved) checkout mechanism.  This allows a user to exclusively modify an LFS-tracked file.
+When such a file is committed, it receives a new SHA-based file location, and the pointer file is updated accordingly.
 
 ## Benefits
 - The main Git repository will be leaner without large binary files, so operations such as cloning are faster and consume less disk space.
