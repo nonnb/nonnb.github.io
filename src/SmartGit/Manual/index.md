@@ -85,6 +85,7 @@ Alternatively, you can follow one of the below topics:
   - [GitHub](Integrations/GitHub-integration.md), [GitHub Actions](Integrations/GitHub-Actions.md) and [GitHub Enterprise On Premises](Integrations/GitHub-Enterprise-Integration.md)
   - [GitLab](Integrations/GitLab.md)
   - [Gerrit](Integrations/Gerrit.md)
+  - [Git LFS Features in SmartGit](Integrations/Git-LFS.md)
   - [JIRA](Integrations/JIRA.md)
   - [Jenkins](Integrations/Jenkins.md)
   - [TeamCity](Integrations/TeamCity.md)
