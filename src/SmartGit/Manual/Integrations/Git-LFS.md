@@ -22,8 +22,9 @@ SmartGit will prompt for confirmation. Select **OK** to confirm LFS support for 
 After adding a new file under the Working Tree of your local repository, select the untracked file in the **Files View** and use the **LFS \| Track** command to track this file in LFS.
 
 SmartGit will display a **LFS Track** dialog, prompting you to provide a tracking pattern:
-- The default pattern will track only the selected file.
-- You can expand the pattern to include all files matching a pattern. Use `*` as a wildcard, e.g., `*.png` will track all new files with a `.png` extension in LFS. *(This is equivalent to running `git lfs track *.png` from the Git command line.)*
+- SmartGit will provide options to track only the selected file (e.g. `MyFile.png`), or to track any file with the same extension (`*.png`)
+- You can edit the pattern to customize which files are tracked in LFS, e.g., `File-*.png`.
+  (This is equivalent to running `git lfs track MyFile*.png` from the Git command line.)
 
 SmartGit will add the pattern into the `.gitattributes` file, which identifies files tracked by LFS.
 
@@ -42,6 +43,8 @@ Once enabled, LFS Locking is available via the **LFS \| Lock** command from the 
 - The **Files View** of the **Working Tree Window**
 - The **Local Files** perspective of the **Standard Window**
 - The **Files View** of the **Log Window** (provided that the Working Tree node of the commit graph is selected)
+
+Similarly the **LFS \| Unlock** command will unlock the file on the LFS server, allowing others to modify it.
 
 ## Displaying locks
 
