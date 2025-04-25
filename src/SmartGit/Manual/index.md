@@ -12,6 +12,7 @@ Alternatively, you can follow one of the below topics:
   - [Cherry-Picking](GitConcepts/Cherry-Picking.md)
   - [Commits](GitConcepts/Commits.md)
   - [Git for SVN users](GitConcepts/Git-for-SVN-users.md)
+  - [Git LFS (Large File Storage)](GitConcepts/GitLargeFileStorage.md)
   - [Merging](GitConcepts/Merging.md)
   - [Rebasing](GitConcepts/Rebasing.md)
   - [Reverting](GitConcepts/Reverting.md)
