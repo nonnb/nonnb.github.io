@@ -57,10 +57,10 @@ To see Git-LFS lock states in the **Files** views (both Log and Working tree win
 
 #### Technical Note on LFS Locks Verification
 
-The locks verification configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"], e.g.
+The locks verification configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"]`, e.g.
 
 ```
-[lfs "https://github.com/repo.git/info/lfs"]
+[lfs "https://github.com/myrepo.git/info/lfs"]
     ...
     locksVerify = true
 ```
