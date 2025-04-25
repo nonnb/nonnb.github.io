@@ -71,7 +71,9 @@ The output of these `git lfs locks` commands is written to:
 - `./git/smartgit/lfs-locks-local`
 - `./git/smartgit/lfs-locks-remote`
 
-Once these files are present, the **Name** column icon will indicate the lock state of LFS files.
+Once these files are present, additional information is shown when viewing files in the **Files View**:
+- The icon under the **Name** column will indicate the lock state of LFS files.
+- in the **Standard Window**, when viewing **Local Files** , the LFS status will be shown on the right of the file name.
 
 #### Example
 
@@ -82,7 +84,7 @@ The following screenshot shows how this display appears:
 - `huge2` - locked by you
 - `huge3` - lockable (configured in` .gitattributes`)
 
-![](../images/LfsSmartGitLockIcons.png)
+![SmartGit LFS Icons](../images/LfsSmartGitLockIcons.png)
 
 #### Note
 
