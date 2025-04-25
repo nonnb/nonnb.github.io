@@ -2,54 +2,50 @@
 
 SmartGit provides support for common Git Large File Storage (Git-LFS) operations, allowing you to use LFS functionality such as LFS file tracking and locking, from the comfort of the SmartGit GUI.
 
-Please refer to [Git LFS concepts](../GitConcepts/GitLargeFileStorage.md) for background, and benefits of using Git-LFS on selected files in your repository.
+Please refer to [Git LFS concepts](../GitConcepts/GitLargeFileStorage.md) for background information and benefits of using Git-LFS on selected files in your repository.
 
 #### Tip
-> 1. The Git LFS extension needs to be installed on your local computer, and LFS filters need to be enabled for a repository where LFS file storage will be used. 
-> 2. It is recommended that you use the version of the Git executable that comes [bundled with SmartGit](../GUI/Preferences/Commands.md#git-executable), 
-     and use SmartGit to enable and configure LFS with your repositories for best compatability.
+> The Git LFS extension must be installed on your local computer, and LFS filters must be enabled for any repository where LFS file storage will be used.
+> 
+> It is recommended that you use the version of the Git executable [bundled with SmartGit](../GUI/Preferences/Commands.md#git-executable) and use SmartGit to enable and configure LFS in your repositories for best compatability.
 
 ## Enabling Git-LFS on a Git Repository with SmartGit
 
-After selecting the required repository from the **Repository View**, use **Local \| LFS \| Install** to enable LFS support for your repository. 
+After selecting the desired repository from the **Repository View**, go to **Local \| LFS \| Install** to enable LFS support for your repository. 
 
-SmartGit will prompt for confirmation. Select *OK* to confirm LFS support for the repository.
+SmartGit will prompt for confirmation. Select **OK** to confirm LFS support for the repository.
 
-(This runs the equivalent `git lfs install` command in the repository.)
+*(This runs the equivalent `git lfs install` command in the repository.)*
 
 ## Tracking a new file in LFS
 
 After adding a new file under the Working Tree of your local repository, select the untracked file in the **Files View** and use the **LFS \| Track** command to track this file in LFS.
 
-SmartGit will show a LFS Track dialog, prompting you to provide a tracking pattern:
-- The default pattern will track just the selected file
-- You can expand the pattern to include all files matching a pattern - use `*` as a wildcard, e.g. `*.png` will track all new files with a `.png` extension in LFS.
+SmartGit will display a **LFS Track** dialog, prompting you to provide a tracking pattern:
+- The default pattern will track only the selected file.
+- You can expand the pattern to include all files matching a pattern. Use `*` as a wildcard, e.g., `*.png` will track all new files with a `.png` extension in LFS. *(This is equivalent to running `git lfs track *.png` from the Git command line.)*
 
-This is equivalent to running `git lfs track *.png` from the Git command line.
-
-SmartGit will add the pattern into the `.gitattributes` file, which is used by identify files tracked by LFS.
+SmartGit will add the pattern into the `.gitattributes` file, which identifies files tracked by LFS.
 
 #### Note
 > Remember to add and commit the `.gitattributes` file into your Git repository!
 
 ## Locking LFS Files for Exclusive Editing
-In order to prevent other users on a repository from concurrently editing a file tracked by LFS in your Git repository, 
-you can [lock](../GitConcepts/GitLargeFileStorage.md#git-lfs-file-locking) a file on the LFS server to obtain exclusive modify access to the file.
+To prevent other users from concurrently editing a file tracked by LFS in your Git repository, you can **[lock](../GitConcepts/GitLargeFileStorage.md#git-lfs-file-locking)** the file on the LFS server to obtain exclusive modification access.
 
 #### Note
-> 1. The ability to perform LFS locking is disabled by default in SmartGit.
->    To use LFS locking, you will need to toggle the [Low-Level Property](../GUI/AdvancedSettings/Low-Level-Properties.md) `status.lfs.locks` to `true` to enable the *Lock* command from SmartGit.
-> 2. LFS file locking only makes sense once a repository and associated LFS files have been pushed to the remote server, where other users will contend for LFS files.
->    If no LFS server remote is detected by Git LFS, it will issue an error similar to `failed: missing protocol`
+> The ability to perform LFS locking is disabled by default in SmartGit. To use LFS locking, toggle the **[Low-Level Property](../GUI/AdvancedSettings/Low-Level-Properties.md)** `status.lfs.locks` to `true` to enable the **Lock** command in SmartGit.
+> 
+> LFS file locking is only relevant after a repository and associated LFS files have been pushed to a remote server. If no LFS server remote is detected, Git LFS will issue an error similar to `failed: missing protocol`.
 
-Once enabled, LFS Locking is available through the **LFS \| Lock** command from the **Files View** in all SmartGit Views:
+Once enabled, LFS Locking is available via the **LFS \| Lock** command from the **Files View** in all SmartGit Views:
 - The **Files View** of the **Working Tree Window**
 - The **Local Files** perspective of the **Standard Window**
-- The **Files View** of the **Log Window**, provided that the Working Tree node of the commit Graph has been selected.
+- The **Files View** of the **Log Window** (provided that the Working Tree node of the commit graph is selected)
 
 ## Displaying locks
 
-To see Git-LFS lock states in the **Files** views (both Log and Working tree window), *Git-LFS locks verification* must be enabled for your repositories. 
+To view Git-LFS lock states in the **Files** views (both Log and Working Tree Windows), *Git-LFS locks verification* must be enabled for your repositories. 
 
 `git config 'lfs.https://github.com/<my_repo>.git/info/lfs.locksverify' true`
 
@@ -57,7 +53,7 @@ To see Git-LFS lock states in the **Files** views (both Log and Working tree win
 
 #### Technical Note on LFS Locks Verification
 
-The locks verification configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"]`, e.g.
+The lock verification configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"]`:
 
 ```
 [lfs "https://github.com/myrepo.git/info/lfs"]
@@ -65,43 +61,44 @@ The locks verification configuration is stored in `git.config` with the section 
     locksVerify = true
 ```
 
-When locks verification is enabled, SmartGit will invoke the invoke additional commands:
+When lock verification is enabled, SmartGit will invoke the following additional commands:
 
 - `git lfs locks --local`
 - `git lfs locks --remote`
 
-after every **Pull**, **Fetch** and after every background **Fetch** (if enabled in the **Preferences**, section **Background Commands**).
+These commands will run after every **Pull**, **Fetch**, and after every **background Fetch** (if enabled under Preferences > Background Commands).
 
-The output of these `git lfs locks` commands will be written to:
+The output of these `git lfs locks` commands is written to:
 
 - `./git/smartgit/lfs-locks-local`
 - `./git/smartgit/lfs-locks-remote`
 
-Once these files are present, the **Name** column icon will start denoting the locking state for LFS files.
+Once these files are present, the **Name** column icon will indicate the lock state of LFS files.
 
 #### Example
 
-The following screenshot shows how this display will look like:
+The following screenshot shows how this display appears:
 
-- `file` is normal file to which no LFS lock information applies
-- `huge` is *locked by someone else*
-- `huge2` is *locked by yourself*
-- `huge3` is *lockable* (configured in` .gitattributes`)
+- `file` - a normal file to which no LFS lock information applies
+- `huge` - locked by someone else
+- `huge2` - locked by you
+- `huge3` - lockable (configured in` .gitattributes`)
 
 ![](../attachments/53215476/53215477.png)
 
 #### Note
 
-> In the **Log** window, lock states will only be displayed for the **Working Tree** node.
+> In the **Log** window, lock states are only displayed for the **Working Tree node**.
 
 ## Troubleshooting
-
-> 1. If the 'LFS \| Lock'  enable property `status.lfs.locks` in the **Preferences**, section **Low-level Properties**.
-> 2. If your `git-lfs` executable is not found by SmartGit, try using absolute paths for the `git-lfs` executable configuration in the `gitconfig` file containing the Git-LFS filter definition.
->    Alternately, change your SmartGit Git executable configuration to to the bundled Git under the [Command Preferences](../GUI/Preferences/Commands#git-executable) options.
-> 3. If you are encountering unexpected errors when invoking **Lock** or **Unlock** commands on files,
->    this may be caused by a strange behavior of current Git-LFS versions (2.5) which will fail when invoked with a working directory with an incorrect case.
->    To workaround the problem, make sure that the path in `repositories.xml` has correct case, especially the drive letter must be uppercase, for example:
+- To enable the **LFS | Lock** command, set the property status.lfs.locks under Preferences > Low-Level Properties.
+>
+- If your git-lfs executable is not detected by SmartGit, try using absolute paths for the `Git-LFS` executable in your gitconfig file (where the Git-LFS filter is defined).
+Alternatively, configure SmartGit to use the bundled Git under the [Command Preferences](../GUI/Preferences/Commands#git-executable) options.
+>
+- If you experience unexpected errors when using the **Lock** or **Unlock** commands, this may be due to a known behavior in Git-LFS v2.5. It may fail if the working directory path has incorrect case sensitivity.
+To work around this issue, ensure that the path in `repositories.xml` has the correct case. The drive letter must be uppercase. Example:
+`
 >
 > ``` java
 > <obj type="@Repository" id="...">
