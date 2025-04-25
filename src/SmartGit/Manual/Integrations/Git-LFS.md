@@ -15,7 +15,7 @@ After selecting the desired repository from the **Repository View**, go to **Loc
 
 SmartGit will prompt for confirmation. Select **OK** to confirm LFS support for the repository.
 
-*(This runs the equivalent `git lfs install` command in the repository.)*
+(This runs the equivalent `git lfs install` command in the repository.)
 
 ## Tracking a new file in LFS
 
