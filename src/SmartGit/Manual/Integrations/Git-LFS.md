@@ -49,8 +49,6 @@ To view Git-LFS lock states in the **Files** views (both Log and Working Tree Wi
 
 `git config 'lfs.https://github.com/<my_repo>.git/info/lfs.locksverify' true`
 
-
-
 #### Technical Note on LFS Locks Verification
 
 The lock verification configuration is stored in `git.config` with the section `[lfs "https://server/repo.git/info/lfs"]`:
@@ -61,7 +59,7 @@ The lock verification configuration is stored in `git.config` with the section `
     locksVerify = true
 ```
 
-When lock verification is enabled, SmartGit will invoke the following additional commands:
+When lock verification is enabled, SmartGit will invoke the following additional commands in the background:
 
 - `git lfs locks --local`
 - `git lfs locks --remote`
@@ -84,7 +82,7 @@ The following screenshot shows how this display appears:
 - `huge2` - locked by you
 - `huge3` - lockable (configured in` .gitattributes`)
 
-![](../attachments/53215476/53215477.png)
+![](../images/LfsSmartGitLockIcons.png)
 
 #### Note
 
