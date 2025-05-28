@@ -45,11 +45,62 @@ echo "The sum is: $sum"
    As this is the first time using SmartGit's AI features, select the *Use GitHub models for this repository* setting,
    so that the AI selection is only applied to our 'Hello World' repository. SmartGit will ask you for confirmation.
 
-5. Click on the **AI** button again. Within a few seconds, a commit message describing the changes in the new diff will be added to the commit message in the **Commit View**. The message should look similar to:
+5. Click on the **AI** button again. Within a few seconds, a commit message describing the changes in the new diff will be added to the commit message in the **Commit View**. The generated message should look similar to:
 
 > Add Bash script to read two numbers and output their sum
 
-You can now choose to accept the AI-generated commit message, or you can tailor the message as needed.
+6. You can now choose to accept the AI-generated commit message, or you can tailor the message as needed, and then **Commit** the changes to your repository.
+
+## Using the @ai and WIP Tokens in your Commit Messages
+
+You can use `@ai` as a placeholder in your commit messages to mix user generated and AI generated commenting.
+This is useful if you need to provide context which is external to the changes made in the repository, such as a bug tracking ID.
+
+1. Continuing from the above example, edit the `AddNumbers.sh` file in your Working Tree folder and edit the names of the variables as follows:
+
+```
+#!/bin/bash
+
+read -p "Enter first number: " number1
+read -p "Enter second number: " number2
+
+sum=$((number1 + number2))
+echo "The sum is: $sum"
+```
+
+2. Stage the change in SmartGit, and then add the following commit message
+
+```
+#PRO-1234. AI commit message: @ai
+```
+
+3. Click on Commit
+
+#### Note
+> - The `@ai` and `WIP` tokens are only substituted when you attempt to add a commit.
+>   Substitution of  does not happen interactively, nor when the **AI** button is pushed.
+> - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
+>   to change the token that SmartGit uses for  `@ai` substitution, by editing the RegEx expression.
+> - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.wipRegex`
+>   to change the token that SmartGit uses for `WIP` substitution, by editing the RegEx expression,
+>   and you can change the WIP prefix inserted by SmartGit by editing the `ai.commitMessageRewording.wipPrefix` setting.
+
+## Selecting between AI Models
+If you have configured multiple AI Models, use the **Down** arrow next to the **AI** button
+
+
+
+
+
+``` bash
+#!/bin/bash
+
+read -p "Enter the divisor: " num1
+read -p "Enter the dividend: " num2
+
+#TODO - Work out the quotient
+```
+
 
 
 # Move to reference
