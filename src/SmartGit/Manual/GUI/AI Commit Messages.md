@@ -18,9 +18,13 @@ This feature can be used to enhance productivity and accuracy when adding new co
 ## Getting Started with AI Generated Commenting
 SmartGit can use a default configuration to connect to a free LLM (currently, the OpenAI gpt-4.1 model hosted on the Azure AI Model Inference services).
 
-For the purpose of this example, we'll assume you have a 
+For the purpose of this example, we'll use the default AI Model.
+However, please refer to [AI Configurations](../Integrations/AI.md) for instructions on how to customize the LLM, including the provider, model and prompting.
 
-- Create a new Repository called 'Hello World'
+1. Create a new Repository called 'Hello World', by using **Repository \| Add or Create** on the SmartGit menu, 
+  and selecting a suitable folder on your local drive for the repository. 
+  Click *Initialize* to create the new repo.
+2. In the folder that SmartGit has created for you, add a file `AddNumbers.sh` with the following contents:
 
 ``` bash
 #!/bin/bash
@@ -32,7 +36,8 @@ sum=$((num1 + num2))
 echo "The sum is: $sum"
 ```
 
-however, you can configure the LLM provider, model, prompting
+3. [Stage](Stage-Unstage-IndexEditor.md) `AddNumbers.sh` in the next commit (skip this step if you use the auto-staging in the **Standard Window**)
 
+4. Click on the 
 
 
