@@ -107,14 +107,13 @@ If you have [configured](../Integration/AI.md) multiple AI Models, use the **Dow
 
 # Move to reference
 
-   - Use GitHub models globally
-     This will add configuration to use the default LLM to your global `git.config` file. 
+   - _Use GitHub models globally_
+     SmartGit will add configuration to use the default LLM to your global `git.config` file. 
      This will apply to all repositories on your local computer.
 
-   - Use GitHub models for this repository
-     This will add configuration to use the default LLM to the `git/config` file in the current repository only.
+   - _Use GitHub models for this repository_ - SmartGit will add configuration to use the default LLM to the `git/config` file in the current repository only.
 
-   - Configure manually. This will take you to the [AI Configuration](../Integration/AI.md) page showing you how to add `ai-llm` and `ai-commit-message`
+   - _Configure manually_ - This will take you to the [AI Configuration](../Integration/AI.md) page showing you how to add `ai-llm` and `ai-commit-message`
      sections to your git configuration files.
 
    - Disable AI configuration (selected by default) - this setting disables SmartGit AI integration.
