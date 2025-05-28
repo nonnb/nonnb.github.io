@@ -51,9 +51,10 @@ echo "The sum is: $sum"
 
 6. You can now choose to accept the AI-generated commit message, or you can tailor the message as needed, and then **Commit** the changes to your repository.
 
-## Using the @ai and WIP Tokens in your Commit Messages
+## Using the @ai Tokens to Reword Commit Messages
 
-You can use `@ai` as a placeholder in your commit messages to mix user generated and AI generated commenting.
+You can use `@ai` as a placeholder token in your commit messages to mix user generated and AI generated commenting.
+SmartGit will reword the `@ai` token with an AI generated commit message, similar to the message generated when clicking on the **AI** button.
 This is useful if you need to provide context which is external to the changes made in the repository, such as a bug tracking ID.
 
 1. Continuing from the above example, edit the `AddNumbers.sh` file in your Working Tree folder and edit the names of the variables as follows:
@@ -71,12 +72,27 @@ echo "The sum is: $sum"
 2. Stage the change in SmartGit, and then add the following commit message
 
 ```
-#PRO-1234. AI commit message: @ai
+PRO-1234. AI commit message: @ai
 ```
 
-3. Click on Commit
+3. Click on **Commit**. SmartGit should detect the presence of the `@ai` token in the commit message,
+   and ask whether you wish to enable `@ai` and `WIP` token substitution.
+   Click Yes. (SmartGit will only prompt you for confirmation the first time)
 
-#### Note
+   You should now see that the commit message (e.g. in the [Graph View](Graph-View.md)) has been updated to reword the commit message similar to the below.
+
+> PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2
+  
+## Using the WIP token to 
+
+Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` with an AI generated comment, prefixed with `WIP:`.
+
+
+
+#### Notes
+> - If SmartGit does NOT substitute the `@ai` or `WIP` tokens in your commit message, you can re-enable token subtitution
+>   by clicking on the drop down arrow between the **AI** icon and the Hamburger menu above the **Commit View**, and selecting the 
+>   **Reword '@ai' and 'WIP' commits** option.
 > - The `@ai` and `WIP` tokens are only substituted when you attempt to add a commit.
 >   Substitution of  does not happen interactively, nor when the **AI** button is pushed.
 > - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
