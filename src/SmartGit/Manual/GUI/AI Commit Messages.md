@@ -83,41 +83,27 @@ PRO-1234. AI commit message: @ai
 
 > PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2
   
-## Using the WIP token to 
+## Using the WIP token to insert an AI generated commit message, with a 'WIP:' prefix
 
 Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` with an AI generated comment, prefixed with `WIP:`.
 
 
 
 #### Notes
-> - If SmartGit does NOT substitute the `@ai` or `WIP` tokens in your commit message, you can re-enable token subtitution
->   by clicking on the drop down arrow between the **AI** icon and the Hamburger menu above the **Commit View**, and selecting the 
->   **Reword '@ai' and 'WIP' commits** option.
 > - The `@ai` and `WIP` tokens are only substituted when you attempt to add a commit.
 >   Substitution of  does not happen interactively, nor when the **AI** button is pushed.
+> - The `WIP` token must be the only text in the commit message - no additional text or whitespace should be entered.
+> - If SmartGit does NOT substitute the `@ai` or `WIP` tokens in your commit messages, you can re-enable token substitution
+>   by clicking on the drop down arrow between the **AI** icon and the Hamburger menu above the **Commit View**, and selecting the 
+>   **Reword '@ai' and 'WIP' commits** option.
 > - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
->   to change the token that SmartGit uses for  `@ai` substitution, by editing the RegEx expression.
+>   to change the token that SmartGit uses for `@ai` rewording, by editing the RegEx expression.
 > - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.wipRegex`
->   to change the token that SmartGit uses for `WIP` substitution, by editing the RegEx expression,
+>   to change the token that SmartGit uses for `WIP` rewording, by editing the RegEx expression,
 >   and you can change the WIP prefix inserted by SmartGit by editing the `ai.commitMessageRewording.wipPrefix` setting.
 
 ## Selecting between AI Models
-If you have configured multiple AI Models, use the **Down** arrow next to the **AI** button
-
-
-
-
-
-``` bash
-#!/bin/bash
-
-read -p "Enter the divisor: " num1
-read -p "Enter the dividend: " num2
-
-#TODO - Work out the quotient
-```
-
-
+If you have [configured](../Integration/AI.md) multiple AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu on the **Commit View**, to select which LLM that SmartGit will use for AI features.
 
 # Move to reference
 
