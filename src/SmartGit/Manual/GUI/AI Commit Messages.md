@@ -53,7 +53,7 @@ echo "The sum is: $sum"
 
 ## Using the @ai Tokens to Reword Commit Messages
 
-You can use `@ai` as a placeholder token in your commit messages to mix user generated and AI generated commenting.
+You can use `@ai` as a placeholder token in your commit messages to mix user-generated and AI-generated commenting.
 SmartGit will reword the `@ai` token with an AI generated commit message, similar to the message generated when clicking on the **AI** button.
 This is useful if you need to provide context which is external to the changes made in the repository, such as a bug tracking ID.
 
