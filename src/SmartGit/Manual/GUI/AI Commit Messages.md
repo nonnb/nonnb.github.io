@@ -1,6 +1,6 @@
 # Using AI-Generated Commit Messages
 
-SmartGit versions 25 and later support AI-assistance when adding commit messages.
+SmartGit versions 25 and later support AI-generated assistance when adding commit messages.
 This feature can be used to enhance productivity and accuracy when adding new commits, by enabling capabilities such as:
 - Evaluating the diff for your next commit, and creating a AI-generated commit message
 - Rewording or correcting typographical errors in a user-entered commit message
