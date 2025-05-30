@@ -30,10 +30,13 @@ If you would like to configure SmartGit to use different or custom LLMs, or need
 
 #### Warning
 > SmartGit will submit the contents of the staged diff as part of a prompt to the configured Large Language Model (LLM) in order to obtain AI-generated output.
+> 
 > It is recommended that you determine the level of trust and confidentiality applicable to your repository,
-> before deciding whether to use SmartGit's AI features on a repository.
-> This may depending on whether the LLM is self-hosted or cloud-hosted, what security and privacy guarantees are provided by the LLM service, 
+>  before deciding whether to use SmartGit's AI features on a repository.
+> 
+> This may depend on whether the LLM is self-hosted or cloud-hosted, what security and privacy guarantees are provided by the LLM service, 
 > and whether your repository is private is open-source.
+> 
 > As a result, SmartGit's AI commenting feature is disabled by default.
 
 ## Selecting between AI Models
