@@ -1,11 +1,20 @@
 # AI-Generated Commit Messages
 
-SmartGit versions 25 and later support AI-generated assistance when adding commit messages.
+SmartGit versions 25 and later offer optional AI-generated assistance when adding commit messages.
+
 This feature can be used to enhance productivity and accuracy when adding new commits, by enabling capabilities such as:
 - Evaluating the diff for your next commit, and creating a AI-generated commit message
 - Rewording or correcting typographical errors in a user-entered commit message
 - Ensuring that a commit message is relevant to the changes in the commit
 - Enforcing standards for commit messages that your team or organization has for a repository
+
+All AI-based features are disabled by default, ensuring no data is shared without user consent.
+Users must **opt-in** and configure these services explicitly.
+
+> A key objective of this initiative is to empower users with full control over how large language
+> models (LLMs) interact with their code versioning. You have the freedom to make informed 
+> decisions about which parts of your codebase can be used alongside specific LLM or AI services 
+> that you trust and have access to.
 
 For first time users, please  consult these quick-start tutorials on how to use SmartGit's AI features:
 
@@ -13,7 +22,11 @@ For first time users, please  consult these quick-start tutorials on how to use 
 - [Using the '@ai' placeholder to Reword Commit Messages](AI-Commenting-Tutorial.md#tutorial--using-the-ai-placeholder-to-reword-commit-messages)
 - [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](AI-Commenting-Tutorial.md#tutorial--using-the-wip-placeholder-to-insert-an-ai-generated-wip-commit-message)
 
-If you would like to configure SmartGit to use a different or custom LLM, or need to customize LLM prompting and other options, please consult the [AI Integration](..Integration/AI.md) reference documentation.
+AI features in SmartGit do not operate through an AI Assistant like ChatGPT.
+Instead, SmartGit directly interacts with AI models using their APIs.
+When using a custom or commercial LLM, an account with an API integration key will be required to use these services.
+
+If you would like to configure SmartGit to use different or custom LLMs, or need to customize LLM prompting and other options, please consult the [AI Integration](../Integrations/AI.md) reference documentation.
 
 #### Warning
 > SmartGit will submit the contents of the staged diff as part of a prompt to the configured Large Language Model (LLM) in order to obtain AI-generated output.
@@ -24,20 +37,9 @@ If you would like to configure SmartGit to use a different or custom LLM, or nee
 > As a result, SmartGit's AI commenting feature is disabled by default.
 
 ## Selecting between AI Models
-If you have [configured](../Integration/AI.md) multiple AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu on the **Commit View**, to select which LLM that SmartGit will use for AI features.
+By default, SmartGit will use the public GitHub LLM when AI commenting is enabled.
+If you have [configured](../Integrations/AI.md) addititional AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu (☰) on the **Commit View**, to select the LLM that SmartGit will use for AI features.
 
-SmartGit offers optional integration with AI services to enhance its functionality.
-All AI-based features are disabled by default, ensuring no data is shared without user consent.
-Users must **opt-in** and configure these services explicitly. 
-
-> A key objective of this initiative is to empower users with full control over how large language
-> models (LLMs) interact with their code versioning. You have the freedom to make informed 
-> decisions about which parts of your codebase can be used alongside specific LLM or AI services 
-> that you trust and have access to.
-
-The AI features in SmartGit do not operate through an AI Assistant like ChatGPT.
-Instead, SmartGit directly interacts with AI models using their APIs.
-An API account will be required to use these services.
 
 ## Commit Message Generation
 
