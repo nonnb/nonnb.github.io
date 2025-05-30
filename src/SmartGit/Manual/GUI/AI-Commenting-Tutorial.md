@@ -1,7 +1,7 @@
 # SmartGit AI Feature Tutorials
 
 The following tutorials demonstrate how to use the Generative AI features in SmartGit:
-- [Getting Started with AI Generated Commenting](Tutorial : Getting Started with AI Generated Commenting)
+- [Getting Started with AI Generated Commenting](#tutorial--getting-started-with-ai-generated-commenting)
 - [Using the '@ai' placeholder to Reword Commit Messages](## Tutorial : Using the '@ai' placeholder to Reword Commit Messages)
 - [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](Tutorial : Using the 'WIP' placeholder to insert an AI-generated WIP commit message)
 
