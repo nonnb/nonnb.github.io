@@ -3,7 +3,7 @@
 The following tutorials demonstrate how to use the Generative AI features in SmartGit:
 - [Getting Started with AI Generated Commenting](#tutorial--getting-started-with-ai-generated-commenting)
 - [Using the '@ai' placeholder to Reword Commit Messages](#tutorial--using-the-ai-placeholder-to-reword-commit-messages)
-- [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](Tutorial : Using the 'WIP' placeholder to insert an AI-generated WIP commit message)
+- [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](#tutorial--using-the-wip-placeholder-to-insert-an-ai-generated-wip-commit-message)
 
 ## Tutorial : Getting Started with AI Generated Commenting
 SmartGit can use a default configuration to connect to a free LLM (currently, the OpenAI gpt-4.1 model hosted on the Azure AI Model Inference services), 
