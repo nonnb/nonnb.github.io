@@ -39,10 +39,24 @@ If you would like to configure SmartGit to use different or custom LLMs, or need
 > 
 > As a result, SmartGit's AI commenting feature is disabled by default.
 
+## Enabling AI Commenting Features
+SmartGit's AI features are disabled by default, and can be enabled the first time the AI button is clicked.
+The following options are 
+
+ - _Use GitHub models globally_
+   SmartGit will add configuration to use the default LLM to your global `git.config` file. 
+   This will apply to all repositories on your local computer.
+
+ - _Use GitHub models for this repository_ - SmartGit will add configuration to use the default LLM to the `git/config` file in the current repository only.
+
+ - _Configure manually_ - This will take you to the [AI Configuration](../Integration/AI.md) page showing you how to add `ai-llm` and `ai-commit-message`
+   sections to your git configuration files.
+
+ - Disable AI configuration (selected by default) - this setting disables SmartGit AI integration.
+
 ## Selecting between AI Models
 By default, SmartGit will use the public GitHub LLM when AI commenting is enabled.
 If you have [configured](../Integrations/AI.md) addititional AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu (☰) on the **Commit View**, to select the LLM that SmartGit will use for AI features.
-
 
 ## Commit Message Generation
 
@@ -54,15 +68,16 @@ Pressing the button or selecting a different AI will send the Git diff to the ch
 
 ### Staged and Untracked Files
 
-- If there are staged files, only these files will be included in the Git diff.
-- Otherwise:
+- As with staging of any commit, in general, only files which have been staged will be included in the Git diff submitted to the AI as context.
+- However, the diff will also depend on which **Main Window** is being used, and which staging preferences have been set:
   - If you are using the [Standard Window](../GUI/Standard-Window.md), the Git diff will automatically include all your untracked files.
   - If you are using the [Log Window](../GUI/Log-Window.md) or [Working Tree Window](../GUI/Working-Tree-Window.md),
-    it depends on the [Preferences](../GUI/Preferences/index.md) option: Commands -> Log and Working Tree window -> Commit View -> If nothing is staged.
+    the diff will depends on the [Preferences](../GUI/Preferences/index.md) option: **Commands \| Log and Working Tree window \| Commit View**, if nothing has been staged.
 
 ### Options
 
-By default, the generated commit message will be inserted at the current cursor location. However, the interaction between the existing commit message, any modifications you make, and the AI-generated message depends on various options:
+By default, the AI-generated commit message will be inserted at the current cursor location in the commit message of the **Commit View**.
+However, the interaction between the existing commit message, any modifications you make, and the AI-generated message depends on various options:
 
 #### On Manual Intervention
 
@@ -96,19 +111,6 @@ There are two different operational modes here:
 
 [Low-level properties](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.*` can be used to customize this process.
 
-
-# Move to reference
-
-   - _Use GitHub models globally_
-     SmartGit will add configuration to use the default LLM to your global `git.config` file. 
-     This will apply to all repositories on your local computer.
-
-   - _Use GitHub models for this repository_ - SmartGit will add configuration to use the default LLM to the `git/config` file in the current repository only.
-
-   - _Configure manually_ - This will take you to the [AI Configuration](../Integration/AI.md) page showing you how to add `ai-llm` and `ai-commit-message`
-     sections to your git configuration files.
-
-   - Disable AI configuration (selected by default) - this setting disables SmartGit AI integration.
 
 #### Note
 > You can reset SmartGit's AI configuration by removing all `ai-llm` and `ai-commit-message` from your git config files (global, personal and / or repository)
