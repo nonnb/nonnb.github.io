@@ -7,7 +7,7 @@ This feature can be used to enhance productivity and accuracy when adding new co
 - Ensuring that a commit message is relevant to the changes in the commit
 - Enforcing standards for commit messages that your team or organization has for a repository
 
-For first time users, please  consult these quick start tutorials on how to use SmartGit's AI features:
+For first time users, please  consult these quick-start tutorials on how to use SmartGit's AI features:
 
 - [Getting Started with AI Generated Commenting](AI-Commenting-Tutorial.md#tutorial--getting-started-with-ai-generated-commenting)
 - [Using the '@ai' placeholder to Reword Commit Messages](AI-Commenting-Tutorial.md#tutorial--using-the-ai-placeholder-to-reword-commit-messages)
