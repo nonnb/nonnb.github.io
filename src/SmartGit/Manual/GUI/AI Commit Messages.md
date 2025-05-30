@@ -41,7 +41,7 @@ If you would like to configure SmartGit to use different or custom LLMs, or need
 
 ## Enabling AI Commenting Features
 SmartGit's AI features are disabled by default, and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) button is clicked.
-The following options are 
+The following options are shown:
 
  - _Use GitHub models globally_
    SmartGit will add configuration to use the default LLM to your global `git.config` file. 
@@ -55,15 +55,19 @@ The following options are
  - Disable AI configuration (selected by default) - this setting disables SmartGit AI integration.
 
 ## Selecting between AI Models
-By default, SmartGit will use the public GitHub LLM when AI commenting is enabled.
-If you have [configured](../Integrations/AI.md) addititional AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu (☰) on the **Commit View**, to select the LLM that SmartGit will use for AI features.
+By default, SmartGit will use the public GitHub LLM once AI commenting is enabled.
+
+However, if you have [configured](../Integrations/AI.md) addititional AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu (☰) on the **Commit View**, to select the LLM that SmartGit will use for AI features.
 
 ## Commit Message Generation
-
 SmartGit utilizes AI-powered Large Language Models (LLMs) to generate or analyze commit messages based on your working tree modifications or staged changes.
+
 This involves transmitting the complete `git diff` (or `git diff --cached`) to an AI service.
+
 Once enabled, you'll find an AI button with a drop-down menu in the [Commit View](../GUI/Commit-View.md).
+
 This menu lists all configured AI services, indicating the currently active one.
+
 Pressing the button or selecting a different AI will send the Git diff to the chosen service, which then generates a commit message and streams it back to SmartGit.
 
 ### Staged and Untracked Files
@@ -90,15 +94,11 @@ However, the interaction between the existing commit message, any modifications 
 The following options require the `autoTransferOptions` Git config to be configured (see below).
 These options aim to improve concurrency between you and the AI working together and reduce delays where you would have to wait for the AI to complete its operation.
 
-- **Submit on Stage** will (re-) submit the currently staged Git diff as soon as files (or parts of files) are staged or unstaged.
+- **Submit on Stage** will (re-)submit the currently staged Git diff as soon as files (or parts of files) are staged or unstaged.
 - **Submit on Focus** will submit the current Git diff once the Commit Message text area receives the focus and is empty (in the case of staged changes, these will have precedence).
 
 By default, the commit message description is wrapped at 72 characters.
 Wrapping can be disabled using the [Low-level property](../GUI/AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageGeneration.wrapDescription`.
-
-### Error Handling
-
-If errors occur during the interaction with the AI, the icon will display a red cross, and additional error details will be provided in a tooltip.
 
 ## Commit Message Rewording
 
@@ -110,7 +110,6 @@ There are two different operational modes here:
 - Rewording `WIP` messages: For commits with the message exactly as `WIP` (or `wip`), the message will be replaced by an AI-generated message and prefixed with `WIP: `.
 
 [Low-level properties](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.*` can be used to customize this process.
-
 
 #### Note
 > You can reset SmartGit's AI configuration by removing all `ai-llm` and `ai-commit-message` from your git config files (global, personal and / or repository)
@@ -127,3 +126,17 @@ There are two different operational modes here:
 > - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.wipRegex`
 >   to change the token that SmartGit uses for `WIP` rewording, by editing the RegEx expression,
 >   and you can change the WIP prefix inserted by SmartGit by editing the `ai.commitMessageRewording.wipPrefix` setting.
+
+
+## Errors and Troubleshooting
+
+If errors occur during the interaction with the AI, SmartGit will show that an error has occurred, with details about the error.
+
+Common errors include:
+
+- 404 / Resource Not Found - This usually means that the `url` setting in the `[ai-llm]` section as set in the git config file configuration has not been configured correctly. Please consult LLM provider's instructions for connecting via their API, and ensure that the [integration config setting](../Integrations/AI.md) has been set correctly for the LLM.
+- The Git diff is too large - This means that the diff is larger than the configured `maxDiffSize` setting in the respective `[ai-commit-message]` configuration section of the git configuration file. Increase this setting if necessary, but also consider that adding unfocused commits with a large number of files and changes will be difficult to describe in a commit message, whether AI or human generated!
+- AI generation of the commit message failed - Request body too large for xxx model - This means that the LLM's maximum token input limit threshold has been exceeded. The number of tokens for free to use / public LLMs can be limited (e.g. 8000 tokens), whereas 
+
+(but note that most LLMs support a maximum number of tokens per query, and that 
+
