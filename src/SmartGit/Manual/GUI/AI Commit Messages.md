@@ -101,7 +101,7 @@ Similar to the `@ai` token, SmartGit will replace a commit message which is exac
 
 3. Complete the commit by clicking the **Commit** button.
 
-   The commit message (e.g. in the [Graph View](Graph-View.md)) will be updated to reword the `WIP` placeholder with a message similar to the below.
+   The commit message (e.g. in the [Graph View](Graph-View.md)) will be updated to reword the `WIP` placeholder with an AI-generated message similar to the below.
 
 > WIP: Add placeholder script DivideNumbers.sh with TODO comment
 
