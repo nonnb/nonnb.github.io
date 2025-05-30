@@ -83,9 +83,9 @@ echo "The sum is: $sum"
 
 > PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2
   
-## Tutorial : Using the 'WIP' placeholder to insert an AI generated commit message, with a 'WIP:' prefix
+## Tutorial : Using the 'WIP' placeholder to insert an AI-generated WIP commit message
 
-Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` with an AI generated comment, prefixed with `WIP:`.
+Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` (meaning "Work in Progress") with an AI generated comment, prefixed with `WIP:`.
 
 1. Continuing in our 'AISample' repository, add a new file `DivideNumbers.sh` into our 'AISample' repository.
 
