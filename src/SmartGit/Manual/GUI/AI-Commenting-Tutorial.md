@@ -28,7 +28,7 @@ echo "The sum is: $sum"
 
 3. [Stage](Stage-Unstage-IndexEditor.md) `AddNumbers.sh` in the next commit (you can skip this step if you use auto-staging in the **Standard Window**)
 
-4. Instead of typing a commit message, click on the ![AI commit](../images/AI-Commit-Button.png) button above the **Commit View**.
+4. Instead of typing a commit message, click on the ![AI](../images/AI-Commit-Button.png) button above the **Commit View**.
    As this is the first time using SmartGit's AI features in this repository, SmartGit will ask you to select from several AI options.
    Select the *Use GitHub models for this repository* setting, so that the AI selection is only applied to our 'AISample' repository.
    SmartGit will ask you for confirmation.
