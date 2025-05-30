@@ -40,7 +40,7 @@ If you would like to configure SmartGit to use different or custom LLMs, or need
 > As a result, SmartGit's AI commenting feature is disabled by default.
 
 ## Enabling AI Commenting Features
-SmartGit's AI features are disabled by default, and can be enabled the first time the AI button is clicked.
+SmartGit's AI features are disabled by default, and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) button is clicked.
 The following options are 
 
  - _Use GitHub models globally_
