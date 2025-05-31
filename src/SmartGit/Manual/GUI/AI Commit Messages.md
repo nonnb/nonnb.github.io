@@ -134,9 +134,29 @@ If errors occur during the interaction with the AI, SmartGit will show that an e
 
 Common errors include:
 
-- 404 / Resource Not Found - This usually means that the `url` setting in the `[ai-llm]` section as set in the git config file configuration has not been configured correctly. Please consult LLM provider's instructions for connecting via their API, and ensure that the [integration config setting](../Integrations/AI.md) has been set correctly for the LLM.
-- The Git diff is too large - This means that the diff is larger than the configured `maxDiffSize` setting in the respective `[ai-commit-message]` configuration section of the git configuration file. Increase this setting if necessary, but also consider that adding unfocused commits with a large number of files and changes will be difficult to describe in a commit message, whether AI or human generated!
-- AI generation of the commit message failed - Request body too large for xxx model - This means that the LLM's maximum token input limit threshold has been exceeded. The number of tokens for free to use / public LLMs can be limited (e.g. 8000 tokens), whereas 
+- **404 / Resource Not Found** - The `url` setting in the `[ai-llm]` section as set in the git config file configuration may not been configured correctly, 
+   or possibly the LLM API is down.
 
-(but note that most LLMs support a maximum number of tokens per query, and that 
+   Please consult LLM provider's instructions for connecting API, and ensure that the [integration config setting](../Integrations/AI.md) has been set correctly for the LLM.
+
+   Note that some API providers require a provider prefix in the model setting, e.g. `openai/gpt-4.1` would be an example model configuration for [github.ai](https://github.com/marketplace/models/).
+
+- **The Git diff is too large** - This means that the diff is larger than the configured `maxDiffSize` setting in the respective 
+  `[ai-commit-message]` configuration section of the git configuration file. 
+
+  Increase this setting if necessary, however, adding unfocused commits with a large number of edits will be difficult to describe in a brief commit message, whether AI or human generated!
+
+- **AI generation of the commit message failed - Request body too large for <model>** - This means that the LLM's maximum token input limit threshold has been exceeded.
+  The number of Tokens for input context for free to use / public LLMs can be restrictive (e.g. approx 8000 tokens), whereas many commercial LLM  can accept over 100k input tokens.
+
+#### Tips + Notes
+> - It is recommended that you align the `maxDiffSize` setting to align to your team's normal diff sizes per commit,
+>   and within the input context token limitations of your [chosen LLM provider](https://github.com/taylorwilsdon/llm-context-limits).
+>
+> - Token density for code is generally higher than for natural language, and will depend on the language used.
+>
+>   A tool such as [tiktoken](https://github.com/openai/tiktoken) can assist determining approximate token counts per line of code or per file for your code bases.
+> - Although commercial providers generally bill for usage as a function of input and output token counts, unless your team makes very high frequency 
+    and/or commits with very large diffs, using SmartGit to assist with commit messages is unlikely to incur more than a few US$ per month.
+
 
