@@ -145,7 +145,7 @@ Please refer to the official [Git config pages](https://git-scm.com/docs/git-con
 >   and then select the **User** or **Repository** option respectively.
 
 #### Tips
-> - SmartGit shows the physical file location of each of the User, System, and Super git configuration files at the bottom of the **Git Config** tab.
+> - SmartGit shows the physical file location of each of the User and System git configuration files at the bottom of the **Git Config** tab.
 > - **Feature Branch Prefixing** - For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md),
 >   it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/index.md) through the following `.gitconfig` setting:
 
