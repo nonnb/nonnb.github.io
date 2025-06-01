@@ -34,8 +34,7 @@ echo "The sum is: $sum"
    
 5. Click the **AI** button again. Within a few seconds, a commit message describing the changes in the new diff will be added to the Commit View. 
    The generated message should resemble the following:
-
->   **Add Bash script to read two numbers and output their sum**
+    >**Add Bash script to read two numbers and output their sum**
 
 6. You can now accept the AI-generated commit message or tailor it as needed, then comit the changes to your repository.
 
