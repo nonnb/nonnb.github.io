@@ -1,16 +1,9 @@
 # AI Integration
 
-> #### Note
->
-> The AI integration is experimental in version 25.1 and may change in future updates.
->
-> - Version 25.1.024: Dedicated error dialog in case of problems and some fixes
-> - Version 25.1.021: Commit Message Rewording and some Generation fixes
-> - Version 25.1.019: Mistral support and some fixes
-> - Version 25.1.015: Support for `promptFile` and some bugfixes
-> - Version 25.1.013: Revised Git configuration, additional interaction modes and options.
-> - Version 25.1.012: GitHub LLM support, Root URLs changed(!), improved error processing, improved default prompt (mainly for `gpt-4o-mini`).
-> - Version 25.1.010: Initial versions
+This article describes how to configure SmartGit to integrate to supported AI Services, and to tailor tokenization and prompting to suit the needs of your organization and repository.
+
+#### Note
+> AI integration in SmartGit is experimental in version 25.1 and may change in future updates.
 
 ## Supported Services
 
@@ -27,6 +20,7 @@ SmartGit supports integration with the following AI services:
 ## Configuration
 
 You can configure AI settings in your repository's `.git/config` or your global `.gitconfig`.
+
 A minimal setup looks like this:
 
 ```
@@ -48,7 +42,7 @@ Each `ai-llm` entry has an _id_ that will be linked from other configuration sec
 
 #### type (mandatory)
 
-Defines the service type. Available options:
+This identifies the service type, which allows SmartGit to integrate via API with the correct protocol. Available options:
 - `github`
 - `openai`
 - `anthropic`
@@ -56,22 +50,36 @@ Defines the service type. Available options:
 
 #### url (mandatory)
 
-Indicates the API's root URL.
+The `url` setting indicates the AI service's API's root URL.
 They are pre-defined for cloud services; verify with your administrator for self-hosted services.
+
+- **GitHub** -  https://models.github.ai/inference
+- **Anthropic** - https://api.anthropic.com/v1
+- **OpenAI** - https://api.openai.com/v1
+- **Azure** - https://models.inference.ai.azure.com
 
 #### model (mandatory)
 
-Specifies the model name as recognized by the service, e.g., `o3-mini` for OpenAI's corresponding model.
+Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4.1 or `o3-mini` to select between these OpenAI corresponding models.
+Please consult a list of, 
 
-#### apiKey (partially mandatory, depending on the type)
+#### Note
+> - Pricing for commercial AI services will differ depending on the model type chosen.
+> - Some hosting services may require a LLM vendor prefix, e.g. `openai/gpt-4.1` would be an example of a GitHub model selection.
 
-The API key required to authenticate with the service's API. API keys are typically necessary for cloud services:
+#### apiKey (Not required for free-to-use AI services)
+
+API keys are typically required for API authentication when using commercial, on-premises, or cloud services which require user registration prior to to use.
+
+Please consult your LLM service provider's instructions on how to obtain an API key for their API, for example:
 
 - [Generate OpenAI API Key](https://platform.openai.com/settings/organization/api-keys)
 - [Generate Anthropic API Key](https://console.anthropic.com/settings/keys)
 
 For the _GitHub Models_, GitHub provides [free, rate-limited access to certain models](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits).
+
 Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below).
+
 If you have a paid GitHub Copilot subscription, you’ll have access to more models.
 Check the available [GitHub Models](https://github.com/marketplace/models).
 
@@ -81,7 +89,7 @@ Allows additional model-specific parameters defined in JSON format (see examples
 
 #### enabled
 
-Can be used to forcefully disable the usage of this configuration; this is especially useful when defining LLMs in your global `~/.gitconfig`.
+Can be used to forcefully disable the usage of this LLM configuration; this is especially useful when defining LLMs in your global `~/.gitconfig`.
 
 ### `ai-commit-message` Configuration Options
 
@@ -416,3 +424,15 @@ ${commitMessage}
 ${gitDiff}
 ```
 ~~~
+
+## Release History
+> #### Note
+> 
+> - Version 25.1.024: Dedicated error dialog in case of problems and some fixes
+> - Version 25.1.021: Commit Message Rewording and some Generation fixes
+> - Version 25.1.019: Mistral support and some fixes
+> - Version 25.1.015: Support for `promptFile` and some bugfixes
+> - Version 25.1.013: Revised Git configuration, additional interaction modes and options.
+> - Version 25.1.012: GitHub LLM support, Root URLs changed(!), improved error processing, improved default prompt (mainly for `gpt-4o-mini`).
+> - Version 25.1.010: Initial versions
+
