@@ -46,7 +46,7 @@ The following options are shown:
  
  - **Use GitHub models for this repository** - Adds configuration to use the default LLM in the current repository's `git/config` file only.
 
- - **Configure manually** - Opens the [AI Configuration](../Integration/AI.md) page with instructions on how to add `ai-llm` and `ai-commit-message`
+ - **Configure manually** - Opens the [AI Configuration](../Integrations/AI.md) page with instructions on how to add `ai-llm` and `ai-commit-message`
    sections to your Git configuration files.
 
  - **Disable AI configuration (selected by default)** - Disables SmartGit AI integration.
