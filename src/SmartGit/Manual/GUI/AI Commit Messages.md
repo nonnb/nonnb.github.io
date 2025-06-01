@@ -2,18 +2,18 @@
 
 SmartGit versions 25 and later offer optional AI-generated assistance when adding commit messages.
 
-This feature can be used to enhance productivity and accuracy when adding new commits, by enabling capabilities such as:
-- Evaluating the diff for your next commit, and creating a AI-generated commit message
+This feature can enhance productivity and accuracy when creating new commits by enabling capabilities such as:
+- Evaluating the diff for your next commit and creating an AI-generated commit message
 - Rewording or correcting typographical errors in a user-entered commit message
-- Ensuring that a commit message is relevant to the changes in the commit
-- Enforcing standards for commit messages that your team or organization has for a repository
+- Ensuring that a commit message accurately reflects the changes in the commit
+- Enforcing commit message standards defined by your team or organization
 
 All AI-based features are disabled by default, ensuring no data is shared without user consent.
-Users must **opt-in** and configure these services explicitly.
+Users must **opt-in** and configure these services.
 
 > A key objective of this initiative is to empower users with full control over how large language
-> models (LLMs) interact with their code versioning. You have the freedom to make informed 
-> decisions about which parts of your codebase can be used alongside specific LLM or AI services 
+> models (LLMs) interact with their version control workflows. You have the freedom to make informed 
+> decisions about which parts of your codebase can be used with specific LLM or AI services 
 > that you trust and have access to.
 
 For first time users, please  consult these quick-start tutorials on how to use SmartGit's AI features:
@@ -22,76 +22,72 @@ For first time users, please  consult these quick-start tutorials on how to use 
 - [Using the '@ai' placeholder to Reword Commit Messages](AI-Commenting-Tutorial.md#tutorial--using-the-ai-placeholder-to-reword-commit-messages)
 - [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](AI-Commenting-Tutorial.md#tutorial--using-the-wip-placeholder-to-insert-an-ai-generated-wip-commit-message)
 
-AI features in SmartGit do not operate through an AI Assistant like ChatGPT.
-Instead, SmartGit directly interacts with AI models using their APIs.
-When using a custom or commercial LLM, an account with an API integration key will be required to use these services.
+SmartGit's AI features do not operate through an assistant like ChatGPT.
+Instead, SmartGit interacts directly with AI models via their APIs.
+When using a custom or commercial Large Language Model (LLM), an account with an API integration key will be required.
 
-If you would like to configure SmartGit to use different or custom LLMs, or need to customize LLM prompting and other options, please consult the [AI Integration](../Integrations/AI.md) reference documentation.
+If you wish to configure SmartGit to use different or custom LLMs, or need to customize LLM prompting and other options, please consult the [AI Integration](../Integrations/AI.md) reference documentation.
 
 #### Warning
-> SmartGit will submit the contents of the staged diff as part of a prompt to the configured Large Language Model (LLM) in order to obtain AI-generated output.
+> SmartGit will submit the contents of the staged diff as part of a prompt to the configured Large Language Model (LLM) to obtain AI-generated output.
 > 
-> It is recommended that you determine the level of trust and confidentiality applicable to your repository,
->  before deciding whether to use SmartGit's AI features on a repository.
+> It is recommended that you evaluate the level of trust and confidentiality appropriate for your repository before enabling SmartGit's AI features.
 > 
-> This may depend on whether the LLM is self-hosted or cloud-hosted, what security and privacy guarantees are provided by the LLM service, 
-> and whether your repository is private is open-source.
+> This consideration may depend on whether the LLM is self-hosted or cloud-hosted, the security and privacy guarantees provided by the LLM service, 
+> and whether your repository is private or open-source.
 > 
 > As a result, SmartGit's AI commenting feature is disabled by default.
 
 ## Enabling AI Commenting Features
-SmartGit's AI features are disabled by default, and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) button is clicked.
+SmartGit's AI features are disabled by default and can be enabled the first time the ![AI](../images/AI-Commit-Button.png) button is clicked.
 The following options are shown:
 
- - _Use GitHub models globally_
-   SmartGit will add configuration to use the default LLM to your global `git.config` file. 
-   This will apply to all repositories on your local computer.
+ - **Use GitHub models globally** - Adds configuration to use the default LLM in your global `git.config` file, applyingto all repositories on your computer. 
+ 
+ - **Use GitHub models for this repository** - Adds configuration to use the default LLM in the current repository's `git/config` file only.
 
- - _Use GitHub models for this repository_ - SmartGit will add configuration to use the default LLM to the `git/config` file in the current repository only.
+ - **Configure manually** - Opens the [AI Configuration](../Integration/AI.md) page with instructions on how to add `ai-llm` and `ai-commit-message`
+   sections to your Git configuration files.
 
- - _Configure manually_ - This will take you to the [AI Configuration](../Integration/AI.md) page showing you how to add `ai-llm` and `ai-commit-message`
-   sections to your git configuration files.
-
- - Disable AI configuration (selected by default) - this setting disables SmartGit AI integration.
+ - **Disable AI configuration (selected by default)** - Disables SmartGit AI integration.
 
 ## Selecting between AI Models
-By default, SmartGit will use the public GitHub LLM once AI commenting is enabled.
+By default SmartGit uses the public GitHub Large Language Model (LLM) once AI commenting is enabled.
 
-However, if you have [configured](../Integrations/AI.md) addititional AI Models, use the **Down** arrow between the **AI** button and the Hamburger Menu (☰) on the **Commit View**, to select the LLM that SmartGit will use for AI features.
+However, if additional AI models are [configured](../Integrations/AI.md), you can use the **down arrow** between the AI button and the **Hamburger Menu (☰)** in the **Commit View** to select the LLM that SmartGit will use for AI features.
 
 ## Commit Message Generation
 SmartGit utilizes AI-powered Large Language Models (LLMs) to generate or analyze commit messages based on your working tree modifications or staged changes.
 
 This involves transmitting the complete `git diff` (or `git diff --cached`) to an AI service.
 
-Once enabled, you'll find an AI button with a drop-down menu in the [Commit View](../GUI/Commit-View.md).
+Once enabled, an AI button with a drop-down menu appears in the [Commit View](../GUI/Commit-View.md).
 
-This menu lists all configured AI services, indicating the currently active one.
+This menu lists all configured AI services and indicates the currently active ones.
 
-Pressing the button or selecting a different AI will send the Git diff to the chosen service, which then generates a commit message and streams it back to SmartGit.
+Clicking the button or selecting a different AI service sends the Git diff to the chosen provider, which generates a commit message and streams it back to SmartGit.
 
 ### Staged and Untracked Files
 
-- As with staging of any commit, in general, only files which have been staged will be included in the Git diff submitted to the AI as context.
-- However, the diff will also depend on which **Main Window** is being used, and which staging preferences have been set:
-  - If you are using the [Standard Window](../GUI/Standard-Window.md), the Git diff will automatically include all your untracked files.
-  - If you are using the [Log Window](../GUI/Log-Window.md) or [Working Tree Window](../GUI/Working-Tree-Window.md),
-    the diff will depends on the [Preferences](../GUI/Preferences/index.md) option: **Commands \| Log and Working Tree window \| Commit View**, if nothing has been staged.
+As with any commit staging, generally, only staged files are included in the Git diff submitted to the AI.
+However, the diff also depends on which Main Window is being used and the staging preferences:
+  - **[Standard Window](../GUI/Standard-Window.md)** - The Git diff automatically includes all untracked files.
+  - **[Log Window](../GUI/Log-Window.md) or [Working Tree Window](../GUI/Working-Tree-Window.md)** - The diff will depends on the [Preferences](../GUI/Preferences/index.md) option: `Commands | Log and Working Tree window | Commit View` if nothing is staged.
 
 ### Options
 
-By default, the AI-generated commit message will be inserted at the current cursor location in the commit message of the **Commit View**.
-However, the interaction between the existing commit message, any modifications you make, and the AI-generated message depends on various options:
+By default, the AI-generated commit message is inserted at the current cursor location in the commit message of the **Commit View**.
+Interaction between the existing commit message, any manual modifications, and the AI-generated message depends on several options:
 
 #### On Manual Intervention
 
-- **Stop** will stop an active commit message generation upon any manual intervention (typing text or changing the cursor location)
-- **Continue in Background** will allow the commit message generation to continue and store the AI message in a buffer instead of displaying it immediately. A buffered message will cause the AI button icon to blink green, providing options when clicked to proceed with the message.
-- **Continue with Description** will continue writing the commit description as long as you are only writing the subject line (first line). This allows concurrent editing of the subject and description. This mode is especially efficient when used with `Submit on Focus`. 
+- **Stop** - Stops commit message generation upon any manual change (e.g., typing text or moving the cursor).
+- **Continue in Background** - Allows generation to continue and stores the message in a buffer. instead of displaying it immediately. The AI button will blink green to indicate that buffered content is available.
+- **Continue with Description** - Continue generating the description while you edit the subject line (first line). This allows concurrent editing of the subject and description. This mode is particularly useful when used in conjunctio with **`Submit on Focus`**. 
 
-#### Automatic Triggers
+#### Automatic Triggers ***TODO - move to Integration Settings
 
-The following options require the `autoTransferOptions` Git config to be configured (see below).
+These require the `autoTransferOptions` Git config setting. 
 These options aim to improve concurrency between you and the AI working together and reduce delays where you would have to wait for the AI to complete its operation.
 
 - **Submit on Stage** will (re-)submit the currently staged Git diff as soon as files (or parts of files) are staged or unstaged.
@@ -107,25 +103,21 @@ SmartGit can optionally reword messages for commits that have not yet been pushe
 There are two different operational modes here:
 
 - Rewording `@ai` messages: For commits containing `@ai` in their message, the `@ai` marker will be replaced by an AI-generated message.
-- Rewording `WIP` messages: For commits with the message exactly as `WIP` (or `wip`), the message will be replaced by an AI-generated message and prefixed with `WIP: `.
+- Rewording `WIP` messages: For commits with the exact message as `WIP` (or `wip`, case-sensitive), the message will be replaced by an AI-generated message and prefixed with `WIP:`, i.e. `WIP: <ai generated message>`.
 
 [Low-level properties](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.*` can be used to customize this process.
 
 #### Note
-> You can reset SmartGit's AI configuration by removing all `ai-llm` and `ai-commit-message` from your git config files (global, personal and / or repository)
+> You can reset SmartGit's AI configuration by removing all `ai-llm` and `ai-commit-message` sections from your Git configuration files (global, personal and/or repository).
 
 #### Notes
-> - The `@ai` and `WIP` placeholders are only substituted when you attempt to add a commit.
->   Substitution of these tokens does not happen interactively, nor when the **AI** button is pushed.
-> - The `WIP` token must be the only text in the commit message - no additional text or whitespace should be entered.
-> - If SmartGit does NOT substitute the `@ai` or `WIP` tokens in your commit messages, you can re-enable token substitution
->   by clicking on the drop down arrow between the **AI** icon and the Hamburger menu above the **Commit View**, and selecting the 
->   **Reword '@ai' and 'WIP' commits** option.
-> - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
->   to change the token that SmartGit uses for `@ai` rewording, by editing the RegEx expression.
-> - You can use the [Low-Level Property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.wipRegex`
->   to change the token that SmartGit uses for `WIP` rewording, by editing the RegEx expression,
->   and you can change the WIP prefix inserted by SmartGit by editing the `ai.commitMessageRewording.wipPrefix` setting.
+> - `@ai` and `WIP` placeholders are only substituted when you add a commit - not interactively and not by clicking the AI button.
+> - The `WIP` token must be the only text in the commit message - no additional text or whitespace.
+> - If SmartGit does not substitute the `@ai` or `WIP` tokens, re-enable token substitution by clicking the drop down arrow next to the AI icon and the Hamburger menu above the Commit View, and selecting the **Reword '@ai'** and **'WIP' commits** options.
+> - Use the [low-level property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
+>   to change the `@ai` token.
+> - Use the [low-level property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.wipRegex`
+>   to to modify the `WIP` token and `ai.commitMessageRewording.wipPrefix` to change the prefix used.
 
 
 ## Errors and Troubleshooting
@@ -134,28 +126,25 @@ If errors occur during the interaction with the AI, SmartGit will show that an e
 
 Common errors include:
 
-- **404 / Resource Not Found** - The `url` setting in the `[ai-llm]` section as set in the git config file configuration may not been configured correctly, 
-   or possibly the LLM API is down.
+- **404 / Resource Not Found** - Indicates that the `url` setting in the `[ai-llm]` git config section may be incorrect, or possibly the LLM API is unavailable.
 
-   Please consult LLM provider's instructions for connecting API, and ensure that the [integration config setting](../Integrations/AI.md) has been set correctly for the LLM.
+   Check the LLM provider's API instructions and verify the [integration config setting](../Integrations/AI.md).
 
-   Note that some API providers require a provider prefix in the model setting, e.g. `openai/gpt-4.1` would be an example model configuration for [github.ai](https://github.com/marketplace/models/).
+   Some APIs require a prefix, e.g., `openai/gpt-4.1` would be an example model configuration for [github.ai](https://github.com/marketplace/models/).
 
-- **The Git diff is too large** - This means that the diff is larger than the configured `maxDiffSize` setting in the respective 
-  `[ai-commit-message]` configuration section of the git configuration file. 
+- **The Git diff is too large** - the diff exceeds the `maxDiffSize` setting in `[ai-commit-message]`. 
 
-  Increase this setting if necessary, however, adding unfocused commits with a large number of edits will be difficult to describe in a brief commit message, whether AI or human generated!
+  Increase the setting if needed. However, large diffs can be challenging to describe in a concise commit message, whether AI or Human generated.
 
-- **AI generation of the commit message failed - Request body too large for <model>** - This means that the LLM's maximum token input limit threshold has been exceeded.
-  The number of Tokens for input context for free to use / public LLMs can be restrictive (e.g. approx 8000 tokens), whereas many commercial LLM  can accept over 100k input tokens.
+- **AI generation of the commit message failed - Request body too large for <model>** - The LLM's token limit was exceeded.
+  Free/public LLMs may allow ~8,000 tokens; commercial LLMs may allow 100,000+.
 
 #### Tips + Notes
-> - It is recommended that you align the `maxDiffSize` setting to align to your team's normal diff sizes per commit,
->   and within the input context token limitations of your [chosen LLM provider](https://github.com/taylorwilsdon/llm-context-limits).
+> - Align the `maxDiffSize` with typical commit sizes for your team and within the token limits of your [chosen LLM provider](https://github.com/taylorwilsdon/llm-context-limits).
 >
-> - Token density for code is generally higher than for natural language, and will depend on the language used.
+> - Code has a higher token density than natural language, depending on the programming language.
 >
->   A tool such as [tiktoken](https://github.com/openai/tiktoken) can assist determining approximate token counts per line of code or per file for your code bases.
+> - Tools like [tiktoken](https://github.com/openai/tiktoken) can help estimate token counts per line or file.
 > - Although commercial providers generally bill for usage as a function of input and output token counts, unless your team makes very high frequency 
     and/or commits with very large diffs, using SmartGit to assist with commit messages is unlikely to incur more than a few US$ per month.
 
