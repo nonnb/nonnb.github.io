@@ -106,9 +106,11 @@ Options on this page define which operations SmartGit can perform automatically 
 
 #### Note
 
-> Selecting **Detect Remote Changes** without also selecting either of the **Fetch** options, will enable SmartGit to poll the favorited remote Git repositories for changes at regular intervals. To avoid excessive overhead, only the lightweight `git ls-remote` command is invoked, so you only get a *notification*
-about changes. The lightweight option does not detect all remote activities, for example, whether a currently checked out feature branch has been merged and removed.
-> However, if  **Fetch closed 'favorite' repositories** or **Fetch open repositories when idle** is selected, SmartGit also will perform fetch-operations which actually will *fetch* the changes from the remote repositories, which is more comprehensive in detecting changes, but is also more resource-hungry.
+> Selecting **Detect Remote Changes** without also selecting either of the **Fetch** options, will enable SmartGit to poll the favorited remote Git repositories for changes at regular intervals. 
+> To avoid excessive overhead, only the lightweight `git ls-remote` command is invoked, so you only get a *notification* about changes.
+> The lightweight option does not detect all remote activities, for example, whether a currently checked out feature branch has been merged and removed.
+> However, if  **Fetch closed 'favorite' repositories** or **Fetch open repositories when idle** is selected, SmartGit also will perform fetch-operations which actually will *fetch*
+> the changes from the remote repositories, which is more comprehensive in detecting changes, but is also more resource-hungry.
 
 #### Garbage Collector
 
@@ -126,15 +128,14 @@ You can specify which **Git Executable** should be used by SmartGit.
 
 #### Note
 
-> Git version requirements - SmartGit uses the selected Git executable for performing both local and remote activities. If the bundled Git executable is NOT used, some features in SmartGit may not function correctly.
+> Git version requirements - SmartGit uses the selected Git executable for performing both local and remote activities.
+> If the bundled Git executable is NOT used, some features in SmartGit may not function correctly.
 > It is recommended that you keep your git executable version up to date to maximize your SmartGit experience.
 
 ## Git Config
 
 This tab-set allows you to edit your user `.gitconfig` file, which controls a number of standard git settings.
-
 These settings will be applied as a default across all repositories that you work in.
-
 Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting. 
 
 
