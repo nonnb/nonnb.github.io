@@ -134,18 +134,18 @@ You can specify which **Git Executable** should be used by SmartGit.
 
 ## Git Config
 
-This tab-set allows you to edit your User `.gitconfig` file, which controls a number of standard git settings.
+This tab-set allows you to edit your Global (User) `.gitconfig` file, which controls a number of standard git settings.
 These settings will be applied as a default across all repositories that you work in.
 Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting. 
 
 #### Note
-> - This tab customizes User Git configuration. You can also customize or override these settings at a System, and at a per-repository level.
+> - This tab customizes User Git configuration. You can also customize or override these settings at a per-repository, System (affecting all users on the local system), and Super (Portable) level.
 >   Please refer to [Repository Settings](../Repository/Repository-Settings.md) for further details about repository-specific git configuration.
 > - Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository \| Edit Git Config** menu Option
 >   and then select the **User** or **Repository** option respectively.
 
 #### Tips
-> - SmartGit shows the physical file location of each of the User and System git configuration files at the bottom of the **Git Config** tab.
+> - SmartGit shows the physical file location of each of the User (Global), System, and Super (Portable) git configuration files at the bottom of the **Git Config** tab.
 > - **Feature Branch Prefixing** - For users who use a combination of [**Feature-Flow**](../../DevelopmentProcesses/Feature-Flow.md), [**Git-Flow**](../../DevelopmentProcesses/Git-Flow.md) or [**Git-Flow-Light**](../../DevelopmentProcesses/Git-Flow-Light.md),
 >   it is possible to provide a standard branch prefix across all 3 [Development Processes](../../DevelopmentProcesses/index.md) through the following `.gitconfig` setting:
 
