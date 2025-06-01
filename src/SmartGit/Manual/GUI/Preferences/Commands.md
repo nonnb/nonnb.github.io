@@ -134,14 +134,13 @@ You can specify which **Git Executable** should be used by SmartGit.
 
 ## Git Config
 
-This tab-set allows you to edit your user `.gitconfig` file, which controls a number of standard git settings.
+This tab-set allows you to edit your User `.gitconfig` file, which controls a number of standard git settings.
 These settings will be applied as a default across all repositories that you work in.
 Please refer to the official [Git config pages](https://git-scm.com/docs/git-config#_configuration_file) for details about each setting. 
 
-
 #### Note
-> - You can also customize or override these settings at a System, and at a per-repository level (`git/config`).
->   Please refer to [Repository Settings](../Repository/Repository-Settings.md) for further details.
+> - This tab customizes User Git configuration. You can also customize or override these settings at a System, and at a per-repository level.
+>   Please refer to [Repository Settings](../Repository/Repository-Settings.md) for further details about repository-specific git configuration.
 > - Advanced Users can also edit the Global and Repository-specific git configuration files directly using the **Repository \| Edit Git Config** menu Option
 >   and then select the **User** or **Repository** option respectively.
 
