@@ -6,15 +6,15 @@ The following tutorials demonstrate how to use the Generative AI features in Sma
 - [Using the 'WIP' placeholder to insert an AI-generated WIP commit message](#tutorial--using-the-wip-placeholder-to-insert-an-ai-generated-wip-commit-message)
 
 ## Tutorial : Getting Started with AI Generated Commenting
-SmartGit can use a default configuration to connect to a free LLM (currently, the OpenAI gpt-4.1 model hosted on the Azure AI Model Inference services), 
-or, you can provide your own configuration to any supported LLM provider and model.
+SmartGit can use a default configuration to connect to a free LLM (currently, the OpenAI gpt-4.1 model is hosted on the Azure AI Model Inference services), 
+or you can provide your own configuration for any supported LLM provider and model.
 
-For the purpose of this example, we'll use the default AI Model.
+For this example, we'll use the default AI Model.
 
-1. In SmartGit, create a new Repository called 'AISample', by using **Repository \| Add or Create** on the SmartGit menu, 
-  and selecting a suitable folder on your local drive for the repository. 
-  Click *Initialize* to create the new repo.
-2. In the folder that SmartGit has created for you, add a file `AddNumbers.sh` with the following contents:
+1. In SmartGit, create a new Repository called 'AISample' by using **Repository | Add or Create** from the SmartGit menu 
+  and choosing a suitable folder on your local drive. 
+  Click *Initialize* to create the new repository.
+2. In the folder SmartGit has created, add a file named `AddNumbers.sh` with the following contents:
 
 ``` bash
 #!/bin/bash
@@ -26,30 +26,31 @@ sum=$((num1 + num2))
 echo "The sum is: $sum"
 ```
 
-3. [Stage](Stage-Unstage-IndexEditor.md) `AddNumbers.sh` in the next commit (you can skip this step if you use auto-staging in the **Standard Window**)
+3. [Stage](Stage-Unstage-IndexEditor.md) `AddNumbers.sh` for the next commit (you can skip this step if you're using auto-staging in the Standard Window)
 
-4. Instead of typing a commit message, click on the ![AI](../images/AI-Commit-Button.png) button above the **Commit View**.
-   As this is the first time using SmartGit's AI features in this repository, SmartGit will ask you to select from several AI options.
-   Select the *Use GitHub models for this repository* setting, so that the AI selection is only applied to our 'AISample' repository.
-   SmartGit will ask you for confirmation.
+4. Instead of typing a commit message, click the ![AI](../images/AI-Commit-Button.png) button above the Commit View.
+   As this is your first time using SmartGit's AI features in this repository, SmartGit will prompt you to select from several AI options.
+   Select **Use GitHub models for this repository** so that the AI selection is only applied to 'AISample'. Confirm when prompted.
+   
+5. Click the **AI** button again. Within a few seconds, a commit message describing the changes in the new diff will be added to the Commit View. 
+   The generated message should resemble the following:
 
-5. Click on the **AI** button again. Within a few seconds, a commit message describing the changes in the new diff will be added to the commit message in the **Commit View**. 
-   The generated message should look similar to:
+>   **Add Bash script to read two numbers and output their sum**
 
-> Add Bash script to read two numbers and output their sum
-
-6. You can now choose to accept the AI-generated commit message, or you can tailor the message as needed, and then **Commit** the changes to your repository.
+6. You can now accept the AI-generated commit message or tailor it as needed, then comit the changes to your repository.
 
 #### Tip
-> Clicking the **AI** button when there is an existing commit message will insert the AI generated message at the current cursor.
+> Clicking the **AI** button when a commit message already exists will insert the AI-generated message at the current cursor position.
 
 ## Tutorial : Using the '@ai' placeholder to Reword Commit Messages
 
-When committing, you can use `@ai` as a placeholder in your messages to mix user-generated and AI-generated commenting.
-SmartGit will reword the `@ai` placeholder with an AI-generated commit message, similar to the message generated when clicking on the **AI** button.
-This is useful if you need to provide additional, non-AI generated information in the commit message which is external to the changes made in the repository, such as a bug tracking ID.
+When committing, you can use `@ai` as a placeholder to combine user-generated and AI-generated comments. 
+SmartGit will replace the `@ai` placeholder with an AI-generated commit message, similar to the message produced by clicking the AI button.
+This is useful when you need to include additional context, non-AI generated information in the commit message, such as a bug tracking ID, that is not related to the code changes.
 
-1. Continuing from the above example, edit the `AddNumbers.sh` file in your Working Tree folder and edit the names of the variables as follows:
+Continuing from the example above:
+
+1.  Edit the `AddNumbers.sh` file in your Working Tree folder as follows:
 
 ```
 #!/bin/bash
@@ -61,23 +62,24 @@ sum=$((number1 + number2))
 echo "The sum is: $sum"
 ```
 
-2. Stage the change in SmartGit, and then add the following commit message in the **Commit View**:
+2. Stage the change in SmartGit.
 
-> TUT-1234. AI commit message: @ai
+3. In the Commit View, add the following commit message: 
+   >**TUT-1234. AI commit message: @ai**
+   
+4. Click **Commit**. SmartGit will detect the `@ai` token and ask if you want to enable `@ai` and `WIP` placeholder substitution.
+   Click **Yes** (you'll only be prompted once).
 
-3. Click on **Commit**. SmartGit should detect the presence of the `@ai` token in the commit message,
-   and ask whether you wish to enable `@ai` and `WIP` placeholder substitution.
-   Click **Yes**. (SmartGit will only prompt you for confirmation the first time)
-
-   You should now see that the commit message (e.g. in the [Graph View](Graph-View.md)) has been updated to reword the commit message similar to the below.
-
-> PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2
+5. The commit message (e.g., in the [Graph View](Graph-View.md)) should now resemble:
+   >**PRO-1234. AI commit message: Rename variable num1 to number1 and variable num2 to number2**
   
 ## Tutorial : Using the 'WIP' placeholder to insert an AI-generated WIP commit message
 
-Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` (meaning "Work in Progress") with an AI generated comment, prefixed with `WIP:`.
+Similar to the `@ai` token, SmartGit will replace a commit message which is exactly `WIP` or `wip` (meaning "Work in Progress") with an AI generated comment prefixed with `WIP:`.
 
-1. Continuing in our 'AISample' repository, add a new file `DivideNumbers.sh` into our 'AISample' repository.
+Continuing in our 'AISample' repository:
+
+1.  Add a new file `DivideNumbers.sh` to the 'AISample' repository.
 
 ```
 #!/bin/bash
@@ -85,12 +87,14 @@ Similar to the `@ai` token, SmartGit will replace a commit message which is exac
 #TODO!
 ```
 
-2. Stage the new `DivideNumbers.sh` file in SmartGit, and then add the following commit message in the **Commit View**:
+2. Stage the new `DivideNumbers.sh` file in SmartGit.
 
-> WIP
+3. In the Commit View, enter the following message:
+   
+   >**WIP**
 
-3. Complete the commit by clicking the **Commit** button.
+4. Complete the commit by clicking the Commit button.
 
-   The commit message (e.g. in the [Graph View](Graph-View.md)) will be updated to reword the `WIP` placeholder with an AI-generated message similar to the below.
+The commit message (e.g. in the [Graph View](Graph-View.md)) will be updated to reword the `WIP` placeholder with an AI-generated message similar to the below.
 
-> WIP: Add placeholder script DivideNumbers.sh with TODO comment
+>**WIP: Add placeholder script DivideNumbers.sh with TODO comment**
