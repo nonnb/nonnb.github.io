@@ -4,7 +4,7 @@ This article describes how to configure SmartGit to integrate to supported AI Se
 
 - [Supported Services](#supported-services)
 - [Git configuration settings](#configuration)
-- [Configuration Best Practives](#configuration-best-practices)
+- [Configuration Best Practices](#configuration-best-practices)
 - [Example LLM Model Configurations](#example-configurations)
 - [Advanced Example Configurations](#advanced-example-configurations)
 
