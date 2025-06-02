@@ -85,9 +85,9 @@ Interaction between the existing commit message, any manual modifications, and t
 - **Continue in Background** - Allows generation to continue and stores the message in a buffer. instead of displaying it immediately. The AI button will blink green to indicate that buffered content is available.
 - **Continue with Description** - Continue generating the description while you edit the subject line (first line). This allows concurrent editing of the subject and description. This mode is particularly useful when used in conjunctio with **`Submit on Focus`**. 
 
-#### Automatic Triggers ***TODO - move to Integration Settings
+#### Automatic Triggers
 
-These require the `autoTransferOptions` Git config setting. 
+Automatic triggers are enabled via the `autoTransferOptions` [Git config setting](../Integrations/AI.md). 
 These options aim to improve concurrency between you and the AI working together and reduce delays where you would have to wait for the AI to complete its operation.
 
 - **Submit on Stage** will (re-)submit the currently staged Git diff as soon as files (or parts of files) are staged or unstaged.
@@ -134,13 +134,13 @@ Common errors include:
 
 - **The Git diff is too large** - the diff exceeds the `maxDiffSize` setting in `[ai-commit-message]`. 
 
-  Increase the setting if needed. However, large diffs can be challenging to describe in a concise commit message, whether AI or Human generated.
+  Increase the `maxDiffSize` setting if needed. However, large diffs can be challenging to describe in a concise commit message, whether AI or Human generated.
 
 - **AI generation of the commit message failed - Request body too large for <model>** - The LLM's token limit was exceeded.
   Free/public LLMs may allow ~8,000 tokens; commercial LLMs may allow 100,000+.
 
 #### Tips + Notes
-> - Align the `maxDiffSize` with typical commit sizes for your team and within the token limits of your [chosen LLM provider](https://github.com/taylorwilsdon/llm-context-limits).
+> - Align the `maxDiffSize` setting with typical commit sizes for your team and within the token limits of your [chosen LLM provider](https://github.com/taylorwilsdon/llm-context-limits).
 >
 > - Code has a higher token density than natural language, depending on the programming language.
 >
