@@ -24,6 +24,7 @@ SmartGit supports integration with the following AI services:
 - [GitHub Models](https://github.com/marketplace/models)
 - [OpenAI](https://platform.openai.com/docs/overview)
 - [Anthropic](https://www.anthropic.com/)
+- [Mistral](https://mistral.ai/)
 
 **On-premise/Self-hosted Services:**
 - [Ollama](https://ollama.com/)
@@ -72,6 +73,7 @@ This identifies the service type, which allows SmartGit to integrate via API wit
 - `openai`
 - `anthropic`
 - `ollama`
+- `mistral`
 
 #### url (mandatory)
 
@@ -82,6 +84,7 @@ They are pre-defined for cloud services; verify with your administrator for self
 - **Anthropic** - `https://api.anthropic.com/v1`
 - **OpenAI** - `https://api.openai.com/v1`
 - **Azure** - `https://models.inference.ai.azure.com`
+- **Mistral** - `https://api.mistral.ai/v1`
 
 #### model (mandatory)
 
@@ -260,6 +263,8 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 ```
 
 ### Mistral codestral
+
+The list of available Mistral models can be [found here](https://docs.mistral.ai/getting-started/models/models_overview/).
 
 ```
 [ai-llm "codestral"]
