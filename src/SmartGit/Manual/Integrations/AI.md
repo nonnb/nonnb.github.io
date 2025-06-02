@@ -2,6 +2,12 @@
 
 This article describes how to configure SmartGit to integrate to supported AI Services, and to tailor tokenization and prompting to suit the needs of your organization and repository.
 
+- [Supported Services](#supported-services)
+- [Git configuration settings](#configuration)
+- [Configuration Best Practives](#configuration-best-practices)
+- [Example LLM Model Configurations](#example-configurations)
+- [Advanced Example Configurations](#advanced-example-configurations)
+
 #### Note
 > AI integration in SmartGit is experimental in version 25.1 and may change in future updates.
 
@@ -175,9 +181,7 @@ The following settings can be placed in the global _ai-commit-message_ section:
 - `enabled`
 - `debug`
 
-### Configuration Best Practices
-
-
+## Configuration Best Practices
 
 - If you wish to enable the AI integration for multiple repositories, it's advisable to include a common, core configuration in your user `~/.gitconfig`.
 
@@ -219,7 +223,8 @@ Then, for each repository where the integration should be enabled, add the follo
 
 ## Example Configurations
 
-Below configurations will work out-of-the-box once you have entered your `apiKey`.
+The below configurations should work out-of-the-box.
+Where indicated, you will need to provide your `apiKey` to use this LLM provider model.
 
 ### GitHub gpt-4o-mini
 
@@ -345,7 +350,9 @@ They require specific adjustments to get working configurations.
   llm = gpt-4o
   mode = replace
   prompt = \
-    Correct typos and grammar in the markdown following AND stay as close as possible to the original AND do not change the markdown structure AND preserve the detected language AND do not include additional comments in the response, but purely the correction:\n\
+    Correct typos and grammar in the markdown following AND stay as close as possible to the original \n\
+    AND do not change the markdown structure AND preserve the detected language AND do not include additional comments in the response, \n\
+    but purely the correction:\n\
     \n\
     ${commitMessage}
 
@@ -357,6 +364,8 @@ They require specific adjustments to get working configurations.
 ```
 
 ### Verification using o3-mini
+
+This example will attempt to determine whether the user has provided a commit message which corresponds to the actual diff being committed.
 
 ```
 [ai-commit-message "o3-mini verify"]
