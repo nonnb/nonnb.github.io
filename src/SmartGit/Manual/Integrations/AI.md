@@ -1,6 +1,6 @@
 # AI Integration
 
-This article describes how to configure SmartGit to integrate to supported AI Services, and to tailor tokenization and prompting to suit the needs of your organization and repository.
+This article describes how to configure SmartGit to integrate with supported AI services and tailor tokenization and prompting to suit the needs of your organization and repository.
 
 - [Supported Services](#supported-services)
 - [Git configuration settings](#configuration)
@@ -9,7 +9,7 @@ This article describes how to configure SmartGit to integrate to supported AI Se
 - [Advanced Example Configurations](#advanced-example-configurations)
 
 #### Note
-> AI integration in SmartGit is experimental in version 25.1 and may change in future updates.
+> AI integration in SmartGit is experimental in version 25.1 and may be subject to change in future updates.
 
 ## Supported Services
 
@@ -25,14 +25,14 @@ SmartGit supports integration with the following AI services:
 
 ## Configuration
 
-AI settings can be configured in a repository's local `.git/config`, user (global) `.gitconfig`, or your system-wide `.gitconfig` files.
+AI settings can be configured in a repository's local `.git/config`file, user (global) `.gitconfig` file, or your system-wide `.gitconfig` files.
 
 #### Tip
 > SmartGit shows the location of the user and system git config files on your file system in the **Edit \| Preferences \| Commands \| Git Config** [preferences settings](../GUI/Preferences/Commands/).
 
 #### Note
-> SmartGit will automatically detect and reload changes made in the local repository `.git/config`.
-> However you may need to restart SmartGit for changes in the user or system git configuration files.
+> SmartGit will automatically detect and reload changes made to the local repository's `.git/config` file.
+> However, you may need to restart SmartGit for changes to take effect in the user or system git configuration files.
 
 A minimal setup in a git configuration file contains an `ai-llm` section like this:
 
@@ -43,7 +43,7 @@ A minimal setup in a git configuration file contains an `ai-llm` section like th
     model = <model>
 ```
 
-Optionally, a commit-message section allows customization of SmartGit's commit message ai features
+Optionally, a commit message section allows customization of SmartGit's commit message ai features.
 
 ```
 [ai-commit-message "<name>"]
@@ -54,7 +54,7 @@ Where:
 - `ai-llm` configuration is a general-purpose configuration used across all SmartGit AI features.
 - `ai-commit-message` links to a specific `llm` section (via the _id_ key) and contains configuration specifically for SmartGit's AI-generated commit message features.
 
-If you don't provide any _ai-commit-message_ sections, SmartGit will show the available _ai-llm_ and will assume default settings such as prompts when invoking the LLM for commit message generation.
+Suppose you don't provide any _ai-commit-message_ sections. In that case, SmartGit will display the available _ai-llm_ and assume default settings, such as prompts, when invoking the LLM for commit message generation.
 
 ### `ai-llm` Configuration Options
 
@@ -81,16 +81,16 @@ They are pre-defined for cloud services; verify with your administrator for self
 
 #### model (mandatory)
 
-Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4.1 or `o3-mini` to select between these OpenAI corresponding models.
+Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4.1 or `o3-mini` to select between the corresponding models.
 Please consult your LLM service provider for a list of models offered.
 
 #### Note
-> - Pricing for commercial AI services will differ depending on factors such as the model type chosen, the size of the prompt, the size of the diff submitted, and the amount of output generated.
-> - Some hosting services may require a LLM vendor prefix, e.g. `openai/gpt-4.1` would be an example of a GitHub model selection.
+> - Pricing for commercial AI services varies depending on factors such as the model type selected, the size of the prompt, the size of the diff submitted, and the volume of output generated.
+> - Some hosting services may require an LLM vendor prefix, e.g., `openai/gpt-4.1`, which would be an example of a GitHub model selection.
 
 #### apiKey (Not required for free-to-use AI services)
 
-API keys are typically required for API authentication when using commercial, secured on-premises, or cloud services which enforce access control.
+API keys are typically required for API authentication when using commercial, secured on-premises, or cloud services that enforce access control.
 
 Please consult your LLM service provider's instructions on how to obtain an API key for their API, for example:
 
@@ -102,15 +102,15 @@ For the _GitHub Models_, GitHub provides [free, rate-limited access to certain m
 Once you have set up SmartGit's [GitHub Integration](./GitHub-integration.md), you can begin using these models with minimal configuration (see below).
 
 If you have a paid GitHub Copilot subscription, you’ll have access to additional models.
-Please refer here for available [GitHub Models](https://github.com/marketplace/models).
+Please refer to this link for available [GitHub Models](https://github.com/marketplace/models).
 
 #### parameters
 
-The _parameters_ setting allows additional model-specific parameters defined in JSON format (see examples below).
+The _parameters_ setting allows for additional model-specific parameters defined in JSON format (see examples below).
 
 #### enabled
 
-Can be used to forcefully disable the usage of this LLM configuration; this is especially useful when defining LLMs in your global `~/.gitconfig`.
+Can be used to disable the usage of this LLM configuration forcefully; this is especially useful when defining LLMs in your global `~/.gitconfig`.
 
 ### `ai-commit-message` Configuration Options
 
@@ -119,7 +119,7 @@ Each entry has an _id_ that will be used for display on the GUI and can have the
 
 > #### Note
 >
-> `ai-commit-message` can be configured explicitly to allow further customization. For convenience, you can omit their configuration. If there is no `ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `ai-llm` entry.
+> The `ai-commit-message` can be configured to allow further customization. For convenience, you can omit their configuration. If there is no `ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `ai-llm` entry.
 
 #### llm (mandatory)
 
@@ -129,7 +129,7 @@ Link to the LLM to be used.
 
 Defines the mode of how the generated commit message will be applied to an existing user-supplied commit message (if present):
 
-- `merge` will _merge_ both messages. How this is done depends on the above _On Manual Intervention_ options.
+- `merge` will _merge_ both messages. This is done depending on the opetions mentioned above under _On Manual Intervention_.
 - `replace` will forcefully replace the existing message with the generated message. The old message will be stored in the commit message history (see hamburger menu).
 - `prefix-selection` will prefix the existing commit message with the generated message. This is especially useful if your prompt is not exactly about commit message generation, but possibly about a specific part of the message (see examples below).
 
@@ -139,8 +139,8 @@ Sets the maximum permitted Git diff size for AI submission, defaulting to a cons
 
 #### prompt and promptFile
 
-By default, SmartGit sends a predefined prompt for the commit message generation, which may evolve over time based on user feedback.
-The `prompt` option allows you to customize the default AI prompt used for generating commit messages for experimentation or tailored message styles.
+By default, SmartGit sends a predefined prompt for the commit message generation, which may evolve based on user feedback.
+The `prompt` option allows you to customize the default AI prompt used for generating commit messages, enabling experimentation or tailoring message styles.
 The prompt may include one or more of the following placeholder variables:
 
 - `${gitDiff}` - this variable will be substituted with the actual Git diff
@@ -148,25 +148,25 @@ The prompt may include one or more of the following placeholder variables:
 
 For large prompts, writing them in a Git config file may be cumbersome due to the syntax.
 In such cases, you may consider placing the prompt into a separate file using `promptFile`.
-Resolution of paths follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
+The resolution of paths follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
 
 #### debug
 
 Enable logging of communication with the AI by setting `debug = true`.
-Logs will be saved to [SmartGit's settings directory](../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory) following a specific naming pattern beginning with `ai-`.
+Logs will be saved to [SmartGit's settings directory](../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory), following a specific naming pattern beginning with `ai-`.
 
 #### enabled
 
-This setting can be used to forcefully disable the usage of this configuration; this is especially useful when defining LLMs in your user `~/.gitconfig`.
+This setting can be used to disable the use of this configuration forcibly; this is especially useful when defining LLMs in your user `~/.gitconfig` file.
 If all _ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
 
 #### autoTransferOptions
 
-Set `autoTransferOptions = true` to enable additional, potentially resource-intensive options in the Commit Message button popup, see above.
+Set `autoTransferOptions = true` to enable additional, potentially resource-intensive options in the Commit Message button popup. See above.
 
 ### Global Configuration Options
 
-If you provide an _ai-commit-message_ section with no _<name>_ value, any settings beneath it will be regarded as global settings,
+Suppose you provide an _ai-commit-message_ section with no _<name>_ value. In that case, any settings beneath it will be regarded as global settings
 and will be applied to all other _ai-commit-message_ configurations.
 
 ```
@@ -183,10 +183,10 @@ The following settings can be placed in the global _ai-commit-message_ section:
 
 ## Configuration Best Practices
 
-- If you wish to enable the AI integration for multiple repositories, it's advisable to include a common, core configuration in your user `~/.gitconfig`.
+- If you wish to enable AI integration for multiple repositories, it's advisable to include a common core configuration in your user `~/.gitconfig` file.
 
-- However, you may find it better to leave the [ai-commit-message] configurations in your local repository .git/config files,
-  as this will allow you to fine tune prompts and other settings specific to each repository.
+- However, you may find it better to leave the [ai-commit-message] configurations in your repository's .git/config files,
+  as this will allow you to fine-tune prompts and other settings specific to each repository.
 
 - As more elaborate configurations may consist of multiple sections and values, it is good practice to place this core configuration into a dedicated file, like `~/.gitai`, and include this file from your `~/.gitconfig`:
 
@@ -195,7 +195,7 @@ The following settings can be placed in the global _ai-commit-message_ section:
     path = ~/.gitai
 ```
 
-Custom _prompt_ files should also be located in your Git HOME directory, for example, your Git home directory may contain:
+Custom _prompt_ files should also be located in your Git HOME directory. For example, your Git home directory may contain:
 
 ```
 .gitconfig        # includes .gitai
@@ -205,7 +205,7 @@ Custom _prompt_ files should also be located in your Git HOME directory, for exa
 ...
 ```
 
-If the AI integration should be applicable to every local clone, the above configuration is sufficient.
+If the AI integration should apply to every local clone, the above configuration is sufficient.
 If you prefer to enable the integration selectively for certain repositories, extend your core configuration in `~/.gitai` by setting the integration to be disabled by default:
 
 ```
@@ -223,7 +223,7 @@ Then, for each repository where the integration should be enabled, add the follo
 
 ## Example Configurations
 
-The below configurations should work out-of-the-box.
+The below configurations should work out of the box.
 Where indicated, you will need to provide your `apiKey` to use this LLM provider model.
 
 ### GitHub gpt-4o-mini
@@ -239,7 +239,7 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 
 > #### Note
 >
-> As of February 2025, advanced models such as `o3-mini` will require a GitHub Copilot Business Account.
+> As of February 2025, advanced models such as `o3-mini`, will require a GitHub Copilot Business Account.
 
 ```
 [ai-llm "gh-o3-mini"]
@@ -300,7 +300,7 @@ Where indicated, you will need to provide your `apiKey` to use this LLM provider
 
 ## Advanced Example Configurations
 
-Below configurations provide examples for custom AI services and/or illustration of advanced options.
+The configurations below provide examples of custom AI services and/or illustrations of advanced options.
 They require specific adjustments to get working configurations.
 
 ### DeepSeek on Ollama with Debugging
@@ -365,7 +365,7 @@ They require specific adjustments to get working configurations.
 
 ### Verification using o3-mini
 
-This example will attempt to determine whether the user has provided a commit message which corresponds to the actual diff being committed.
+This example will attempt to determine whether the user has provided a commit message that corresponds to the actual diff being committed.
 
 ```
 [ai-commit-message "o3-mini verify"]
