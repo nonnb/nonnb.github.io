@@ -28,7 +28,7 @@ SmartGit supports integration with the following AI services:
 AI settings can be configured in a repository's local `.git/config`file, user (global) `.gitconfig` file, or your system-wide `.gitconfig` files.
 
 #### Tip
-> SmartGit shows the location of the user and system git config files on your file system in the **Edit \| Preferences \| Commands \| Git Config** [preferences settings](../GUI/Preferences/Commands/).
+> SmartGit shows the location of the user and system git config files on your file system in the **Edit \| Preferences \| Commands \| Git Config** [preferences settings](../GUI/Preferences/Commands.md).
 
 #### Note
 > SmartGit will automatically detect and reload changes made to the local repository's `.git/config` file.
@@ -74,10 +74,10 @@ This identifies the service type, which allows SmartGit to integrate via API wit
 The `url` setting indicates the AI service's API's root URL.
 They are pre-defined for cloud services; verify with your administrator for self-hosted services.
 
-- **GitHub** -  https://models.github.ai/inference
-- **Anthropic** - https://api.anthropic.com/v1
-- **OpenAI** - https://api.openai.com/v1
-- **Azure** - https://models.inference.ai.azure.com
+- **GitHub** -  `https://models.github.ai/inference`
+- **Anthropic** - `https://api.anthropic.com/v1`
+- **OpenAI** - `https://api.openai.com/v1`
+- **Azure** - `https://models.inference.ai.azure.com`
 
 #### model (mandatory)
 
