@@ -128,7 +128,7 @@ e.g.
 
 > Please refer to one of the below links
 > - [Topic 1]()
->   - [Topic 1 Subtpoic 1]()
+>   - [Topic 1 Subtopic 1]()
 >   - [Topic 1 Subtopic 2]()
 > - [Topic 2]()
 >   - [Topic 2 Subtopic 1]()
