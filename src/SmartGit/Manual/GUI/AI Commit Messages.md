@@ -16,7 +16,7 @@ Users must **opt-in** and configure these services.
 > decisions about which parts of your codebase can be used with specific LLM or AI services 
 > that you trust and have access to.
 
-For first time users, please  consult these quick-start tutorials on how to use SmartGit's AI features:
+For first time users, please  consult these [quick-start tutorials](AI-Commenting-Tutorial.md) on how to use SmartGit's AI features:
 
 - [Getting Started with AI Generated Commenting](AI-Commenting-Tutorial.md#tutorial--getting-started-with-ai-generated-commenting)
 - [Using the '@ai' placeholder to Reword Commit Messages](AI-Commenting-Tutorial.md#tutorial--using-the-ai-placeholder-to-reword-commit-messages)
