@@ -116,8 +116,8 @@ There are two different operational modes here:
 > - If SmartGit does not substitute the `@ai` or `WIP` tokens, re-enable token substitution by clicking the drop down arrow next to the AI icon and the Hamburger menu above the Commit View, and selecting the **Reword '@ai'** and **'WIP' commits** options.
 > - Use the [low-level property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.aiRegex`
 >   to change the `@ai` token.
-> - Use the [low-level property](AdvancedSettings/Low-Level-Properties.md) `ai.commitMessageRewording.wipRegex`
->   to to modify the `WIP` token and `ai.commitMessageRewording.wipPrefix` to change the prefix used.
+> - Use the low-level property `ai.commitMessageRewording.wipRegex` to to modify the `WIP` token
+>   and `ai.commitMessageRewording.wipPrefix` setting to change the prefix used.
 
 
 ## Errors and Troubleshooting
