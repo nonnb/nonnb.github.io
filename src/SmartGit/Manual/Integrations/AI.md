@@ -85,7 +85,8 @@ Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4
 Please consult your LLM service provider for a list of models offered.
 
 #### Note
-> - Pricing for commercial AI services varies depending on factors such as the model type selected, the size of the prompt, the size of the diff submitted, and the volume of output generated.
+> - Pricing for commercial AI services varies depending on factors such as the model type selected, the size of the prompt, 
+>   the size of the diff submitted, and the volume of output generated.
 > - Some hosting services may require an LLM vendor prefix, e.g., `openai/gpt-4.1`, which would be an example of a GitHub model selection.
 
 #### apiKey (Not required for free-to-use AI services)
@@ -130,12 +131,15 @@ Link to the LLM to be used.
 Defines the mode of how the generated commit message will be applied to an existing user-supplied commit message (if present):
 
 - `merge` will _merge_ both messages. This is done depending on the opetions mentioned above under _On Manual Intervention_.
-- `replace` will forcefully replace the existing message with the generated message. The old message will be stored in the commit message history (see hamburger menu).
-- `prefix-selection` will prefix the existing commit message with the generated message. This is especially useful if your prompt is not exactly about commit message generation, but possibly about a specific part of the message (see examples below).
+- `replace` will forcefully replace the existing message with the generated message. 
+   The old message will be stored in the commit message history (see hamburger menu).
+- `prefix-selection` will prefix the existing commit message with the generated message. 
+   This is especially useful if your prompt is not exactly about commit message generation, but possibly about a specific part of the message (see examples below).
 
 #### maxDiffSize
 
-Sets the maximum permitted Git diff size for AI submission, defaulting to a conservative value to avoid inadvertently sharing large parts of your codebase. Ensure it remains within the model's context window size; otherwise, parts of your diff won't be processed, and/or the model may return confusing results.
+Sets the maximum permitted Git diff size for AI submission, defaulting to a conservative value to avoid inadvertently sharing large parts of your codebase. 
+Ensure it remains within the model's context window size; otherwise, parts of your diff won't be processed, and/or the model may return confusing results.
 
 #### prompt and promptFile
 
@@ -153,7 +157,8 @@ The resolution of paths follows the same logic as the [Git Config Includes](http
 #### debug
 
 Enable logging of communication with the AI by setting `debug = true`.
-Logs will be saved to [SmartGit's settings directory](../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory), following a specific naming pattern beginning with `ai-`.
+Logs will be saved to [SmartGit's settings directory](../Installation/Installation-and-Files.md#default-path-of-smartgits-settings-directory), 
+following a specific naming pattern beginning with `ai-`.
 
 #### enabled
 
@@ -185,10 +190,11 @@ The following settings can be placed in the global _ai-commit-message_ section:
 
 - If you wish to enable AI integration for multiple repositories, it's advisable to include a common core configuration in your user `~/.gitconfig` file.
 
-- However, you may find it better to leave the [ai-commit-message] configurations in your repository's .git/config files,
+- However, you may find it better to leave the [ai-commit-message] configurations in your repository's `.git/config` files,
   as this will allow you to fine-tune prompts and other settings specific to each repository.
 
-- As more elaborate configurations may consist of multiple sections and values, it is good practice to place this core configuration into a dedicated file, like `~/.gitai`, and include this file from your `~/.gitconfig`:
+- As more elaborate configurations may consist of multiple sections and values, it is good practice to place this core configuration into a dedicated file, 
+  such as `~/.gitai`, and include this file from your `~/.gitconfig`:
 
 ```
 [include]
