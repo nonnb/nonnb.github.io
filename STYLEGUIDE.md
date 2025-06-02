@@ -134,6 +134,14 @@ e.g.
 >   - [Topic 2 Subtopic 1]()
 >   - [Topic 2 Subtopic 2]()
 
+## Folder Structure
+If an article or topic expands to such an extent that multiple article pages are required, consider creating a folder and moving the articles into a new subfolder (Rationale - this will be easier to maintain the documentation, and also will introduce navigation on BreadCrumb for the folder).
+
+#### Note
+> Changing the folder structure and file names of existing articles will impact on SEO and redirection, so needs to be done with extreme care and collaboration.
+> Where an existing article will be subdivided, the original article name / link should remain as the 'landing' page with the topic, with links to the new subtopic article pages. A redirect from the old page to the new landing article inside the new folder will need to be established to maintain external navigation compatability.
+> However, once a page has been moved into a subfolder, the current documentation should be scanned and updated to the new relative URL (i.e. internal navigation should NOT rely on redirection).
+
 ## Images
 
 ### Screenshots
