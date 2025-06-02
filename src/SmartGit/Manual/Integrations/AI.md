@@ -9,9 +9,8 @@ This article describes how to configure SmartGit to integrate with supported AI 
 - [Advanced Example Configurations](#advanced-example-configurations)
 
 Once AI integration has been configured correctly, please refer to 
-  - [AI Assisted Commit Messages](GUI/AI-Commit-Messages.md) for usage within SmartGit.
-  - [AI Commit Message Tutorial](GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
-
+  - [AI Assisted Commit Messages](../GUI/AI-Commit-Messages.md) for usage within SmartGit.
+  - [AI Commit Message Tutorial](../GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
 
 #### Note
 > AI integration in SmartGit is experimental in version 25.1 and may be subject to change in future updates.
