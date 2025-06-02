@@ -13,6 +13,7 @@ Once AI integration has been configured correctly, please refer to
   - [AI Commit Message Tutorial](../GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
 
 #### Note
+>
 > AI integration in SmartGit is experimental in version 25.1 and may be subject to change in future updates.
 
 ## Supported Services
@@ -124,7 +125,8 @@ Each entry has an _id_ that will be used for display on the GUI and can have the
 
 > #### Note
 >
-> The `ai-commit-message` can be configured to allow further customization. For convenience, you can omit their configuration. If there is no `ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `ai-llm` entry.
+> The `ai-commit-message` can be configured to allow further customization. For convenience, you can omit their configuration. 
+> If there is no `ai-commit-message` entry present, SmartGit will automatically create default configurations for every configured `ai-llm` entry.
 
 #### llm (mandatory)
 
