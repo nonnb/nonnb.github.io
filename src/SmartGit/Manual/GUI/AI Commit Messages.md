@@ -132,7 +132,7 @@ Common errors include:
 
    Some APIs require a prefix, e.g., `openai/gpt-4.1` would be an example model configuration for [github.ai](https://github.com/marketplace/models/).
 
-- **The Git diff is too large** - the diff exceeds the `maxDiffSize` setting in `[ai-commit-message]`. 
+- **The Git diff is too large** - the diff exceeds the [maxDiffSize](../Integrations/AI.md#maxDiffSize) setting in `[ai-commit-message]`. 
 
   Increase the `maxDiffSize` setting if needed. However, large diffs can be challenging to describe in a concise commit message, whether AI or Human generated.
 
