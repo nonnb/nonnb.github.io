@@ -121,7 +121,7 @@ Generally as soon as there are more than 2 points to be made in a paragraph, the
 ## Topic Summaries
 
 - If an article consists of more than 2 second level (i.e. H2) topics, then consider adding a brief summary introduction at the top of the article (under the H1)
-- Use relative anchor links to each of the 2nd level topics
+- Use relative anchor links to each of the 2nd level topics (note that the link casing must be lower case and spaces are hyphenated, e.g. a link to heading 2 "This is a topic" becomes `[This is a topic](#this-is-a-topic)`
 - If felt appropriate, the 3rd level topics can be indented beneath the H2 headings
 
 e.g.
