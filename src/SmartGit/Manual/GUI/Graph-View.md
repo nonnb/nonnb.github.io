@@ -40,11 +40,15 @@ Using the **Filter** field above the **Graph**, you can restrict the displayed c
 
 ## Icons used in the Graph View
 
-A _Branch Label_ consists of
+The icons in the **Graph View** have the following meanings:
+
+- ![Working Tree](../images/Graph-View-WorkingTree-Icon.png) - This is the position of the current Working Tree in the commit history. 
+  The color of the icon will depend on the state of the Working Tree - e.g. Green if the Working Tree is clean (i.e. no changes since the last commit), Red if there are changes, merge conflicts.
+- ![Commit Node](../images/Graph-View-Node-Icon.png) - A node icon is shown for each commit displayed in the graph.
+- ![Expandable Node](../images/Graph-View-NodeExpand-Icon.png) - Clicking on an expandable Node will show any collapsed commits (typically commits from a second parent branch in a merge commit)
+
+The _Branch Label_ consists of:
 - remote name (if applicable)
 - branch name
 - ahead/behind indicators
-
-
-
 
