@@ -17,6 +17,19 @@ The checkboxes in front of refs (only in the Branches view of the Log window) ar
 
 If "Recyclable Commits" is selected, all commits not reachable by refs are shown in the Graph. That is useful to, e.g., access a previous commit after amending a commit, or after a ref has been deleted.
 
+## Upstream Tracked Branch
+Git allows a branch to track an upstream branch on the remote.
+The tracked branch will be used as the default reference point for any fetch, or push activity to / from the remote.
+Additionally, the [Graph View](Graph-View.md) will display additional information, such as the relative number of commits ahead / behind the tracked branch.
+
+You can change the tracked upstream branch for a local branch by clicking on the local branch in the Branches View and selecting **Set Tracking Branch**.
+
+![Set Tracked Remote Upstream](../images/Branch-View-Set-Remote-Upstream.png)
+
+#### Note:
+> You may need to refresh the remote refs to get the latest status of the tracked branch, e.g. by using the _Fetch_ or _Pull_ commands
+
+
 ## Tag-Grouping
 
 The **Tags**-part of the **Branches** view will be grouped according to a *tag-grouping configuration*. This configuration is stored in your repository's `.git/config` and can be edited in **Repository \| Settings**, under the [**Tag-Grouping**](Repository/Repository-Settings.md#tag-grouping) section. To disable this grouping feature for the current repository, set both **Pattern** fields empty.
