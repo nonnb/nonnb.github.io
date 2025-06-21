@@ -43,9 +43,17 @@ Using the **Filter** field above the **Graph**, you can restrict the displayed c
 The icons in the **Graph View** have the following meanings:
 
 - ![Working Tree](../images/Graph-View-WorkingTree-Icon.png) - This is the position of the current Working Tree in the commit history. 
-  The color of the icon will depend on the state of the Working Tree - e.g. Green if the Working Tree is clean (i.e. no changes since the last commit), Red if there are changes, merge conflicts.
+  The color of the icon will depend on the state of the Working Tree - e.g. Green if the Working Tree is clean (i.e. no changes since the last commit), Red if there are changes or merge conflicts.
 - ![Commit Node](../images/Graph-View-Node-Icon.png) - A node icon is shown for each commit displayed in the graph.
 - ![Expandable Node](../images/Graph-View-NodeExpand-Icon.png) - Clicking on an expandable Node will show any collapsed commits (typically commits from a second parent branch in a merge commit)
+- ![Branch Split](../images/Graph-View-BranchFork-Icon.png) - Indicates where a new branch has been created from the node indicated (i.e. the node is a parent to 2 or more separate commits)
+- ![Branch Merge](../images/Graph-View-BranchMerge-Icon.png) - Indicates where 2 or more branches have been merged.
+  The 'converging' node IS the merge commit.
+- ![Same Commit](../images/Graph-View-SameCommit-Icon.png) - Indicates that the branch is equal to the tracked upstream branch on the remote (i.e. both branches are at the same commit).
+- ![Commits Ahead or Behind](../images/Graph-View-CommitsAhead-Icon.png) - Indicates that the branch is commits ahead (+) or commits behind (-) of the tracked upstream branch on the remote.
+- ![Broken Puzzle Upstream](../images/Graph-View-BasePuzzle-Icon.png) - Indicates the current position of the tracked upstream branch, when the current branch is commits ahead or behind of it.
+  The icons on the current branch position, and the tracked upstream branch on the remote appear as _Broken Puzzle Pieces_. 
+- ![Selected Branch Head](../images/.png) - Shows the position of the HEAD commit in the graph.
 
 The _Branch Label_ consists of:
 - remote name (if applicable)
