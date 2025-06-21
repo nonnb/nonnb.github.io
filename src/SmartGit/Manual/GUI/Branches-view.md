@@ -6,8 +6,8 @@ The **Branches** view shows *local* and *remote* branches, tags, and other *refs
 
 ![branches-view](../attachments/branches-view.png)
 
-The current branch is shown in bold text next to a solid filled triangle ▶.
-Any other tag or branch that points to the same commit as HEAD (the current branch) is shown with a un-filled triangle (▷).
+The current branch is shown in bold text next to a solid filled triangle `▶`.
+Any other tag or branch that points to the same commit as HEAD (the current branch) is shown with a un-filled triangle (`▷`).
 Branches below a remote displayed in a lighter color indicate branches that are tracked by local branches (i.e. are already locally available).
 
 Behind a tracked branch you can find symbols to indicate the the tracking state.
