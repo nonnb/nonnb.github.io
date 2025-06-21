@@ -20,7 +20,7 @@ If "Recyclable Commits" is selected, all commits not reachable by refs are shown
 ## Upstream Tracked Branch
 Git allows a branch to track an upstream branch on the remote.
 The tracked branch will be used as the default reference point for any fetch, or push activity to / from the remote.
-Additionally, the [Graph View](Graph-View.md) will display additional information, such as the relative number of commits ahead / behind the tracked branch.
+Additionally, the [Graph View](Graph-View.md#icons-used-in-the-graph-view) will display additional information, such as the relative number of commits ahead / behind the tracked branch.
 
 You can change the tracked upstream branch for a local branch by clicking on the local branch in the Branches View and selecting **Set Tracked Branch**.
 
