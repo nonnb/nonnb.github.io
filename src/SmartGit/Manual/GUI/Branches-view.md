@@ -16,9 +16,15 @@ Behind a tracked branch you can find symbols to indicate the the tracking state.
 - '>' indicates "outgoing" commits
 - '<' indicates "incoming" commits.
 
-The checkboxes in front of refs (only in the Branches view of the Log window) are used to select which branches are shown in the Graph. The used color inside the checkbox is the color used in the Graph for the ref symbol. Clicking a checkbox of a category (e.g. "Features" or "\<remote\>") selects/unselects all refs of this category.
+## Additional Log Window Features
+These features are only available in the **Branches View** of the [Log window](Log-Window.md).
 
-If "Recyclable Commits" is selected, all commits not reachable by refs are shown in the Graph. That is useful to, e.g., access a previous commit after amending a commit, or after a ref has been deleted.
+- The checkboxes in front of refs (e.g. branches or commits on local or remote repostories) are used to select which branches are shown in the Graph. 
+- The used color inside the checkbox is the color used in the Graph for the ref symbol. 
+- Clicking a checkbox of a category (e.g. "Features" or "\<remote\>") selects/unselects all refs of this category.
+- If "Recyclable Commits" is selected, all commits in the local repository which are not reachable by refs are shown in the Graph.
+  e.g., this can be useful to access a previous commit after amending a commit, or after a ref has been deleted.
+  Note that unreachable commits are eventually garbage collected (permanently deleted) after the configured retention period (default 90 days).
 
 ## Upstream Tracked Branch
 Git allows a branch to track an upstream branch on a remote.
