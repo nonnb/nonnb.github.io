@@ -22,13 +22,13 @@ Git allows a branch to track an upstream branch on the remote.
 The tracked branch will be used as the default reference point for any fetch, or push activity to / from the remote.
 Additionally, the [Graph View](Graph-View.md#icons-used-in-the-graph-view) will display additional information, such as the relative number of commits ahead / behind the tracked branch.
 
-You can change the tracked upstream branch for a local branch by clicking on the local branch in the Branches View and selecting **Set Tracked Branch**.
+When you checkout and branch a local branch off a remote branch, git will automatically use the remote branch as the tracked upstream branch.
+However, you can change the tracked upstream branch for a local branch by clicking on the local branch in the Branches View and selecting **Set Tracked Branch**.
 
 ![Set Tracked Remote Upstream](../images/Branch-View-Set-Remote-Upstream.png)
 
 #### Note:
 > You may need to refresh the remote refs to get the latest status of the tracked branch, e.g. by using the _Fetch_ or _Pull_ commands
-
 
 ## Tag-Grouping
 
