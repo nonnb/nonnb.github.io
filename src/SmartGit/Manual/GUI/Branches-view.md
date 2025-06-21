@@ -13,7 +13,8 @@ Branches below a remote displayed in a lighter color indicate branches that are 
 Behind a tracked branch you can find symbols to indicate the the tracking state.
 
 - '=' indicates that the tracking branch is equal to its tracked branch.
-- '>' indicates "outgoing" commits, an '<' "incoming" commits.
+- '>' indicates "outgoing" commits
+- '<' indicates "incoming" commits.
 
 The checkboxes in front of refs (only in the Branches view of the Log window) are used to select which branches are shown in the Graph. The used color inside the checkbox is the color used in the Graph for the ref symbol. Clicking a checkbox of a category (e.g. "Features" or "\<remote\>") selects/unselects all refs of this category.
 
