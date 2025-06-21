@@ -24,7 +24,7 @@ Please note that not all options are available in every view.
   Options include avatar only, initials, full name, and name with email.
 - _Show Auxilliary Branch_ (**Working Tree Journal View** only) - Allows selection of one additional branch to view in the Journal graph.
 - _Show More Commits_ (**Working Tree Journal View** only) - Extends the number of commits shown at the bottom of the Journal graph.
-  This is temporary; refreshing the Working Tree Windowwill revert to the original number.
+  This is temporary; when the view is refreshed the the commits shown will revert to the original number.
 - _Show Common Commits_ (**Working Tree Journal View** only) - Hides commits not common to both the Working Tree and the selected Auxilliary branch.
   Use this option only when an Auxilliary branch has been selected.
 - _Show Branch Labels_ (**Working Tree Journal View** only) - Toggles visibility of branch labels.
@@ -48,10 +48,10 @@ The icons in the **Graph View** represent the following:
 - ![Expandable Node](../images/Graph-View-NodeExpand-Icon.png) - Click to reveal collapsed commits, typically from a second parent in a merge commit.
 - ![Branch Split](../images/Graph-View-BranchFork-Icon.png) - Indicates a new branch created from the node (i.e., the node is a parent of two or more separate commits).
 - ![Branch Merge](../images/Graph-View-BranchMerge-Icon.png) - Indicates that two or more branches have been merged.
-The converging node is the merge commit.
+  The converging node is the merge commit.
 - ![Same Commit](../images/Graph-View-SameCommit-Icon.png) - Indicates that the branch is equal to the tracked upstream branch on the remote (both branches are at the same commit).
-- ![Commits Ahead or Behind](../images/Graph-View-CommitsAhead-Icon.png) - Indicates that the branch is ahead (+) or behind (-) the tracked upstream branch on the remote.
-- ![Broken Puzzle Upstream](../images/Graph-View-BasePuzzle-Icon.png) - Indicates the position of the tracked upstream branch when the current branch is ahead or behind.
+- ![Commits Ahead or Behind](../images/Graph-View-CommitsAhead-Icon.png) - Indicates that the branch has commits ahead (+) or behind (-) the tracked upstream branch on the remote.
+- ![Broken Puzzle Upstream](../images/Graph-View-BasePuzzle-Icon.png) - Indicates the position of the tracked upstream branch when the current branch has commits ahead or behind.
   Icons for both the current and tracked branches appear as _Broken Puzzle Pieces_. 
 - ![Selected Branch Head](../images/Graph-View-SelectedHead-Icon.png) - Shows the position of the HEAD commit in the graph.
 
