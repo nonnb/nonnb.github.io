@@ -53,7 +53,7 @@ The icons in the **Graph View** have the following meanings:
 - ![Commits Ahead or Behind](../images/Graph-View-CommitsAhead-Icon.png) - Indicates that the branch is commits ahead (+) or commits behind (-) of the tracked upstream branch on the remote.
 - ![Broken Puzzle Upstream](../images/Graph-View-BasePuzzle-Icon.png) - Indicates the current position of the tracked upstream branch, when the current branch is commits ahead or behind of it.
   The icons on the current branch position, and the tracked upstream branch on the remote appear as _Broken Puzzle Pieces_. 
-- ![Selected Branch Head](../images/.png) - Shows the position of the HEAD commit in the graph.
+- ![Selected Branch Head](../images/Graph-View-SelectedHead-Icon.png) - Shows the position of the HEAD commit in the graph.
 
 The _Branch Label_ consists of:
 - remote name (if applicable)
