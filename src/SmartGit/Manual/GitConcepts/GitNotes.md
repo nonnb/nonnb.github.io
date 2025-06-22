@@ -10,9 +10,11 @@ As git notes are linked to an existing commit, rather than part of the commit, i
 - Performing distributed code reviews without requiring additional persistence in a git hosting service such as GitHub or Bitbucket, e.g. [git-appraise](https://github.com/google/git-appraise)
 
 ## Implementation
-Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository.
+Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository, where `<category>` is the customizable 'type' of note that is to be added.
 
-Each time a note is added or removed from `<category>`, a commit is added into `/refs/notes/<category>`
+If no refs category is specified, git will default `<category>` to **commits**.
+
+Each time a note is added or removed from `<category>`, a commit is added into `/refs/notes/<category>`.
 
 For example:
 
@@ -30,6 +32,8 @@ will do the following:
 > - As notes are not part of the HEAD / branch commit history, notes are not pushed or fetched by default unless configured to to do.
 >   Git refs containing notes will need to be pushed separately, e.g.
 >   `git push origin refs/notes/commits`
+> - As with any file under version control, conflicts can occur when two or more independent notes have been made to the the same commit.
+>   Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
 
 ### Removing Git Notes support from a repository
 Deleting all git notes in a category from a repository does not by itself remove the `refs/notes/<category>` ref from the repository.
