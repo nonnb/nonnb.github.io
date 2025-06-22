@@ -39,7 +39,7 @@ Notes will appear via the **TODO-Icon icon in the color configured for the notes
 - Add a new Note by selecting the target commit in the Graph View, and clicking the **Add Note...** command.
   You can then type in your note, and choose the category of note from one of the configured categories.
 - Hover the mouse over the note icon to see the contents of the note.
-- A Note can be removed by clicking on the note and selecting `Remove category note`
+- A Note can be removed by clicking on the note and selecting `Remove <category> note`
 
 
 **TODO - Confirm with Marc no intention to add Notes to the Journal view in the Working Tree window.
