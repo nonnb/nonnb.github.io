@@ -7,7 +7,7 @@ As git notes are linked to an existing commit, rather than part of the commit, i
 
 - References to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
 - Linking peer or AI code review comments to a commit
-- Performing distributed code reviews without requiring additional persistence in a git hosting service such as GitHub or Bitbucket.
+- Performing distributed code reviews without requiring additional persistence in a git hosting service such as GitHub or Bitbucket, e.g. [git-appraise](https://github.com/google/git-appraise)
 
 ## Implementation
 Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository.
