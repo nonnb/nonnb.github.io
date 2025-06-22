@@ -32,12 +32,12 @@ will do the following:
 > - As notes are not part of the HEAD / branch commit history, notes are not pushed or fetched by default unless configured to to do.
 >   Git refs containing notes will need to be pushed separately, e.g.
 >   `git push origin refs/notes/commits`
-> - As with any file under version control, conflicts can occur when two or more independent notes have been made to the the same commit.
+> - As with any file under version control, conflicts can occur when two or more independent note changes or additions  have been made to the the same commit and refs category.
 >   Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
 
 ### Removing Git Notes support from a repository
 Deleting all git notes in a category from a repository does not by itself remove the `refs/notes/<category>` ref from the repository.
-As a result, SmartGit will still enable git notes functionality if the `refs/notes/commits` ref is still present in the repository.
+As a result, SmartGit will still enable git notes functionality if the `refs/notes/commits` ref is still present in the repository, even if no notes are present.
 
 To completely remove notes support, run the following `git update-ref -d` command in the repo, e.g. to remove the default `commits` category:
 
