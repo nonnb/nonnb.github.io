@@ -1,9 +1,10 @@
 # Working with Git Notes
-Smart Git supports the [git notes](../GitConcepts/GitNotes.md) feature available in Git.
+Smart Git supports the [git notes](../GitConcepts/GitNotes.md) feature available in Git, which allows metadata to be associated with a commit.
+Multiple notes can be associated with a commit by creating separate categories for each type of note.
 
-Benefits of using SmartGit's Git notes features
-- Provides UI to allow notes to be added and viewed 
-- Allows
+SmartGit's Git supports the following notes features:
+- The ability to add and remove notes through the UI
+- The ability to add new categories of note [through configuration](../Integrations/Notes.md)
 
 #### Note
 - Notes are not automatically pushed to the remote
