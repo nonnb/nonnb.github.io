@@ -8,6 +8,7 @@ This article explains how to configure and enable **SmartGit’s Git-Notes featu
 - [Enabling Notes features in SmartGit on a repository]
 - [A minimal [smartgit-notes] configuration]()
 - [Example configurations](#example-configurations)
+- [Advanced Configurations]()
 - [Configuration best practices](#configuration-best-practices)
 
 ---
