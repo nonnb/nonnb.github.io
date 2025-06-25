@@ -17,8 +17,7 @@ SmartGit's git notes support includes the following features:
 
 #### Note
 > - Git notes are not automatically pushed or fetched from the remote by default.
->   However, it is possible to configure your local repository to automatically synchronize note refs any time push and fetch activity is performed 
->    - please [consult this reference](../GitConcepts/GitNotes.md#configuring-automatic-remote-note-synchronization).
+>   However, it is possible to [configure your local repository]() to automatically synchronize note refs any time push and fetch activity is performed.
 > - Not all Git hosting services will show notes on their web portal UI. 
 >   However, all major hosting services will retain the notes refs where they can be synchronized with other repositories.
 > - SmartGit refers to the default `commits` notes category ref as `Notes` on the UI
@@ -33,7 +32,7 @@ Notes can be enabled for a repository through one of the following methods:
 - Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (e.g. to the repository `.git/config` file), e.g.
 - Or, if SmartGit detects an entry under the default `refs/notes/commits` path of the repository refs, it will automatically enable notes features for the repository.
 
-Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Integration.md#) on how to set up SmartGit notes categories.
+Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Integration.md#enabling-notes-features-in-smartgit-on-a-repository) on how to set up SmartGit notes categories.
 
 ## Using Notes in SmartGit
 Notes will appear via the **TODO-Icon icon in the color configured for the notes category, in the **Graph View** of the **Log Window** and the **Standard Window**.
