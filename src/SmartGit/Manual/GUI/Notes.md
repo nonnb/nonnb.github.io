@@ -34,16 +34,17 @@ https://github.com/syntevo/docs/blob/feature/marc/ai-and-notes/src/SmartGit/Manu
 Unless notes have been enabled for a repository via one of the below methods, SmartGit's Notes features will not be enabled.
 
 Notes can be enabled for a repository through one of the following methods:
-- Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (Repository `.git/config` is recommended)
+- Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (e.g. to the repository `.git/config` file)
+** TODO REF
+
 ```ini
 [smartgit-notes "Reviews"]
    ref              = review
    color            = 0000FF
 ```
 
-  ** TODO REF
-- If SmartGit detects an entry under the `refs/notes/commits` path of the repository refs, it will automatically enable notes features for the repository.
-  e.g. if a `git notes add ...` command has been applied to the repository.
+- Or, if SmartGit detects an entry under the `refs/notes/commits` path of the repository refs, it will automatically enable notes features for the repository.
+  e.g. if `git notes add ...` has previously been applied to the repository.
 
 ## Using Notes in SmartGit
 Notes will appear via the **TODO-Icon icon in the color configured for the notes category, in the **Graph View** of the **Log Window** and the **Standard Window**.
@@ -53,26 +54,27 @@ Notes will appear via the **TODO-Icon icon in the color configured for the notes
 - Hover the mouse over the note icon to see the contents of the note.
 - A Note can be removed by clicking on the note and selecting `Remove <category> note`
 
-**TODO - Confirm with Marc no intention to add Notes to the Journal view in the Working Tree window.
 **TODO - Screenshot of multiple color icons, Add Note, and the Dialog in one screen?
 
 ## Troubleshooting
 
 - The **Add Note** command does not appear when I click on a commit in the **Graph View**?
 
-  This is because the notes feature has not been [enabled in SmartGit](#enabling-notes-for-a-repository).
+> This is because the notes feature has not been [enabled in SmartGit](#enabling-notes-for-a-repository).
 
 - When I attempt to add a note to a commit, I receive the warning _Do you want to overwrite the existing note?_
 
-  By design, git notes only allows a single note per commit, per category to be added.
+> By design, git notes only allows a single note per commit, per category to be added.
   You can either append to the existing note and overwrite it, or you can add a new note in a different notes category.
   
 - I've pushed a branch containing notes in my repository to a remote, however when others clone the repository, they do not see the notes?
 
-  Git notes are not stored on the current branch, and must be pushed and fetched separately.
+> Git notes are not stored on the current branch, and must be pushed and fetched separately.
   In the **Log Window**, under the **Branches View**, open the *Other Refs* section and push the `notes/<category>` ref to the remote.
   Similarly, other users need to fetch *Other Refs* in order to obtain all notes for the repository
 
-- I've rebased several commits containing notes using the squash option, and now I don't see my notes
+- I've rebased several commits containing notes using the squash option, and now I don't see my notes!
 
-  **TODO - I guess SmartGit could assist by merging all notes on the squashed commits and appending it to the rewritten commit as a note in the same category?
+> As notes are linked to a specific commit id, rewriting commands such as rebase will create new commits.
+  You can use the [notes rewriteRef configuration](GitNotes.md#rebasing-and-git-notes) to instruct git to copy (or append) notes on squashed commits across to the newly rewritten commit.
+  
