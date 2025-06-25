@@ -1,7 +1,7 @@
 # Git Notes
 
 An often overlooked feature in Git is `git notes`, which allows text or binary meta-data to be attached to a commit.
-As git notes are linked to an existing commit, and does not affect the commit history of the working branch, git notes can be added and removed after the commit is created without modify the branch's commit history.
+As Notes are linked to an existing commit, and do not affect the commit history of the working branch, Notes can be added and removed after the commit is created without modify the branch's commit history.
 
 ## Example uses for git notes
 Sample usages of git notes:
