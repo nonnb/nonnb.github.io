@@ -74,8 +74,8 @@ A restart is only needed when you edit user or system-wide configs.
 ```ini
 [smartgit-notes "reviews"]
     ref               = code-reviews        # stored at refs/notes/code-reviews
-    graphMessageRegex = ^Review[ed]?:        # show only when the commit
-                                             # message starts with “Review:”
+    graphMessageRegex = ^Review[ed]?:       # show only when the commit
+                                            # message starts with “Review:”
     color             = FF8800              # orange
 ```
 
