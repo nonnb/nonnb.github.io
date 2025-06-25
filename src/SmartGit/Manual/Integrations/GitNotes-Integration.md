@@ -5,10 +5,17 @@ This article explains how to configure and enable **SmartGit’s Git-Notes featu
 ---
 
 ## Contents
-- [Enabling Notes features in SmartGit on a repository]
-- [A minimal [smartgit-notes] configuration]()
+- [Enabling Notes features in SmartGit on a repository](#enabling-notes-features-in-smartgit-on-a-repository)
+- [A minimal [smartgit-notes] configuration](#a-minimal-smartgit-notes-configuration)
+- [`smartgit-notes` section reference](#smartgit-notes-section-reference)
 - [Example configurations](#example-configurations)
-- [Advanced Configurations]()
+  - [1 – Override Classic *commits* notes](#1--override-classic-commits-notes)
+  - [2 – Separate *code-reviews* category with filtering](#2--separate-code-reviews-category-with-filtering)
+  - [3 – Multiple categories side-by-side](#3--multiple-categories-side-by-side)
+- [Advanced Configurations](#advanced-configurations)
+  - [Configuring automatic note synchronization with remotes](#configuring-automatic-note-synchronization-with-remotes)
+  - [Copying Git notes during rewriting activity (e.g. rebase)](#copying-git-notes-during-rewriting-activity-eg-rebase)
+  - [Removing Git Notes support from a repository](#removing-git-notes-support-from-a-repository)
 - [Configuration best practices](#configuration-best-practices)
 
 ---
