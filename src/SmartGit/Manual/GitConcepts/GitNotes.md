@@ -36,7 +36,10 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 >   Notes will require manual synchronization with the remote, OR configuration changes need to be made to automatically synchronize notes with the remote.
 >   e.g. Manually push notes in the default _commits_ category to the _origin_ remote:
 >  `git push origin refs/notes/commits`
->  Simularly all note category refs can be fetched from the remote
+>
+>  In general, it may be simpler to [configure the repo to automatically push and fetch all notes](#configuring-automatic-remote-note-synchronization)
+>
+>  Similarly all note category refs can be fetched from the remote:
 >  `git fetch origin 'refs/notes/*:refs/notes/*'`
 >
 > - There are certain limitations with the git notes design which should be understood:
@@ -46,10 +49,9 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 >     Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
 >   - As commits are rewritten during rebasing operations such as squash, notes associated with rewritten commits will become orphaned and will not be associated with the rebased commit.
 
+### Configuring automatic remote note synchronization
 
-### Configuring git to automatically push and fetch
-
-
+By amending the configuration for a remote's `fetch` and `push` settings, it is possible to ensure notes remain synchronized with the remote whenever a push or fetch is performed.
 
 ```ini
 [remote "origin"]
@@ -58,6 +60,22 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
   fetch = refs/notes/*:refs/notes/*
   push = refs/notes/*:refs/notes/*
 ```
+
+Using the _<category>_ name, or the `*` wildcard to specify which categories of note are to be synchronized.
+
+### Rebasing and Git Notes
+As notes are attached to specific commit ids, any time the commit history is rewritten, e.g. to squash or other rebase activity, 
+any notes attached to rewritten commits will become orphaned from the resulting commit.
+
+This orphan note behavior can be changed by adding a _rewriteRef_ configuration for the repository, e.g.:
+
+```ini
+[notes]
+	rewriteRef = refs/notes/*
+```
+
+Will cause any notes on rewritten commits to be copied to the rewritten commit after a rebase.
+If there is more than one note in the same category to be copied to the rewritten commit, the contents of the notes will be appended in sequence and attached to the new commit.
 
 ### Removing Git Notes support from a repository
 Deleting all git notes in a category from a repository does not by itself remove the `refs/notes/<category>` ref from the repository.
