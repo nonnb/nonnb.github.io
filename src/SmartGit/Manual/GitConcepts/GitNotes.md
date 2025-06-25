@@ -1,17 +1,19 @@
 # Git Notes
 
 An often overlooked feature in Git is `git notes`, which allows text or binary meta-data to be attached to a commit.
-As Notes are linked to an existing commit, and do not affect the commit history of the working branch, Notes can be added and removed after the commit is created without modify the branch's commit history.
+As notes are linked to an existing commit, and do not affect the commit history of the working branch, 
+notes can be added and removed after the commit is created without modify the branch's commit history.
 
 ## Example uses for git notes
 Sample usages of git notes:
 - For storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
-- Linking peer or AI code review comments to a commit e.g. [git-appraise](https://github.com/google/git-appraise) without requiring additional persistence in a git hosting service such as GitHub or Bitbucket.
+- Linking peer or AI code review comments to a commit e.g. [git-appraise](https://github.com/google/git-appraise) without requiring additional persistence in a git hosting service 
+  such as GitHub or Bitbucket.
 
 ## Implementation
 Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository, where `<category>` is the customizable 'type' of note that is to be added.
 
-If no refs category is specified, git will default `<category>` to **commits** (this default can be overridden with the `GIT_NOTES_REF` environment variable or by setting the `core.notesRef` config value).
+If no refs category is specified, git will default `<category>` to **commits** (the category default can be overridden with the `GIT_NOTES_REF` environment variable or by setting the `core.notesRef` config value).
 
 Each time a note is added or removed from `<category>`, a commit is added into `/refs/notes/<category>`.
 
@@ -47,6 +49,15 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 
 ### Configuring git to automatically push and fetch
 
+
+
+```ini
+[remote "origin"]
+	url = ...
+	...
+  fetch = refs/notes/*:refs/notes/*
+  push = refs/notes/*:refs/notes/*
+```
 
 ### Removing Git Notes support from a repository
 Deleting all git notes in a category from a repository does not by itself remove the `refs/notes/<category>` ref from the repository.
