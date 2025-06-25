@@ -1,10 +1,17 @@
 # Git Notes
 
+This article explains the how Git implements the notes feature.
+
+See also :
+- [SmartGit Notes features](../GUI/Notes.md)
+- [Setting up and Configuring Git Notes in SmartGit](../Integrations/GitNotes-Integration.md)
+
+## Background
+
 An often overlooked feature in Git is `git notes`, which allows text or binary meta-data to be attached to a commit.
 As notes are linked to an existing commit, and do not affect the commit history of the working branch, 
 notes can be added and removed after the commit is created without modify the branch's commit history.
 
-## Implementation
 Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository, where `<category>` is the customizable 'type' of note that is to be added.
 
 If no refs category is specified, git will default `<category>` to **commits** (the category default can be overridden with the `GIT_NOTES_REF` environment variable or by setting the `core.notesRef` config value).
@@ -43,7 +50,8 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 >     Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
 >   - As commits are rewritten during rebasing operations such as squash, notes associated with rewritten commits will become orphaned and will not be associated with the rebased commit.
 
-Please refer to the SmartGit's configuration guide for the following advanced settings:
-- Configuring automatic note synchronization with remotes
-- Rebasing and Git Notes
-- Removing notes support from Git Notes
+Please refer to SmartGit's configuration guide for any of the following advanced settings:
+- [Advanced Configurations](#advanced-configurations)
+  - [Configuring automatic note synchronization with remotes](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes)
+  - [Copying Git notes during rewriting activity (e.g. rebase)](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase)
+  - [Removing Git Notes support from a repository](../Integrations/GitNotes-Integration.md#removing-git-notes-support-from-a-repository)
