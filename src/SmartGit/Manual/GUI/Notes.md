@@ -64,5 +64,5 @@ Notes will appear via the **TODO-Icon icon in the color configured for the notes
 - I've rebased several commits containing notes using the squash option, and now I don't see my notes!
 
 > As notes are linked to a specific commit id, rewriting commands such as rebase will create new commits.
-  You can use the [notes rewriteRef configuration](GitNotes.md#rebasing-and-git-notes) to instruct git to copy (or append) notes on squashed commits across to the newly rewritten commit.
+  You can use the [notes rewriteRef configuration](../Integrations/GitNotes-Integration.md#copying-git-notes-during-rewriting-activity-eg-rebase) to instruct git to copy (or append) notes on squashed commits across to the newly rewritten commit.
   
