@@ -38,7 +38,7 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 >   e.g. Manually push notes in the default _commits_ category to the _origin_ remote:
 >  `git push origin refs/notes/commits`
 >
->  In general, it may be simpler to [configure the repo to automatically push and fetch all notes](#configuring-automatic-remote-note-synchronization)
+>  It is often simpler to [configure the repo to automatically push and fetch all notes](../Integrations/GitNotes-Integration.md#configuring-automatic-note-synchronization-with-remotes)
 >
 >  Similarly all note category refs can be fetched from the remote:
 >  `git fetch origin 'refs/notes/*:refs/notes/*'`
