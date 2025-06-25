@@ -2,7 +2,7 @@
 Smart Git supports the [git notes](../GitConcepts/GitNotes.md) feature available in Git, which allows additional information such as metadata to be associated with a commit.
 
 Notes can be used for many different purposes, such as:
-- For storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
+- Storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
 - Linking peer or AI code review comments to a commit e.g. [git-appraise](https://github.com/google/git-appraise) without requiring additional persistence in a git hosting service 
   such as GitHub or Bitbucket.
 - SmartGit's AI commit annotation **TODO LINK** feature makes use of notes to store AI-generated annotation markers.
