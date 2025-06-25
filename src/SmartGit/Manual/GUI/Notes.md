@@ -1,8 +1,16 @@
 # Working with Git Notes
-Smart Git supports the [git notes](../GitConcepts/GitNotes.md) feature available in Git, which allows metadata to be associated with a commit.
+Smart Git supports the [git notes](../GitConcepts/GitNotes.md) feature available in Git, which allows additional information such as metadata to be associated with a commit.
 
-If required, Multiple notes can be associated with a commit by creating separate categories for each type of note.
-SmartGit's Git supports the following notes features:
+Notes can be used for many different purposes, such as:
+- For storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
+- Linking peer or AI code review comments to a commit e.g. [git-appraise](https://github.com/google/git-appraise) without requiring additional persistence in a git hosting service 
+  such as GitHub or Bitbucket.
+- SmartGit's AI commit annotation **TODO LINK** feature makes use of notes to store AI-generated annotation markers.
+
+Although git's notes feature only allows one note per commit per category, if required, additional categories can be to allow multiple notes can be associated with the same commit.
+**TODO LINK TO Marc's Integrations/Notes config*
+
+SmartGit's git notes support includes the following features:
 - The ability to add and remove notes through the UI
 - The ability to add new categories of note [through configuration](../Integrations/Notes.md)
 - The ability to synchronize notes with a remove using the **Other Refs** section of the **Branches View**
@@ -11,24 +19,29 @@ SmartGit's Git supports the following notes features:
 Current Location is here
 https://github.com/syntevo/docs/blob/feature/marc/ai-and-notes/src/SmartGit/Manual/Integrations/Notes.md
 
-**TODO Potentially, this isn't really an 'integration' as this is core capability of git - possibly move these configurations under the **Advanced Settings** section?
-
 #### Note
-- Notes are not automatically pushed or fetched from the remote by default.
-  However, it is possible to configure your local repository to automatically synchronize note refs any time push and fetch activity is performed - please [consult this reference](../GitConcepts/GitNotes.md#configuring-automatic-remote-note-synchronization).
-- Not all Git hosting services will show notes on their web portal UI. However, all major hosting services will retain the notes refs where they can be synchronized with other repositories.
-- **TODO - Confirm with Marc that the default 'commits' note category has been renamed to `Notes` on the UI (makes sense)
-
-**TODO - As far as I know, GitHub removed UI support for Notes on their portal several years ago, and Azure DevOps doesn't seem to show notes when `/refs/notes/*` has been pushed to the remote.
-Both hosts do however retain the refs albeit invisibly.
+> - Git notes are not automatically pushed or fetched from the remote by default.
+>   However, it is possible to configure your local repository to automatically synchronize note refs any time push and fetch activity is performed 
+>    - please [consult this reference](../GitConcepts/GitNotes.md#configuring-automatic-remote-note-synchronization).
+> - Not all Git hosting services will show notes on their web portal UI. 
+>   However, all major hosting services will retain the notes refs where they can be synchronized with other repositories.
+> - SmartGit refers to the default `commits` notes category ref as `Notes` on the UI
+> - Not all git hosting providers provide visual support for notes pushed to their repos. 
+>   However, any data you store in notes which are pushed to these remotes will still be available when fetched.
 
 ## Enabling Notes for a Repository
 
-Unless notes have been enabled for a repository, SmartGit's Notes features will not be enabled.
+Unless notes have been enabled for a repository via one of the below methods, SmartGit's Notes features will not be enabled.
 
-Enable notes for a repository through one of the following methods:
-- Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (Repository `.git/config` is recommended)
-- SmartGit will automatically enable notes features for the repository when it detects an entry under the `refs/notes/commits` path of the repository refs, 
+Notes can be enabled for a repository through one of the following methods:
+> - Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (Repository `.git/config` is recommended)
+> `[smartgit-notes "Reviews"]           `
+> `   ref              = review `
+> `   color            = 0000FF     `
+>
+
+  ** TODO REF
+- If SmartGit detects an entry under the `refs/notes/commits` path of the repository refs, it will automatically enable notes features for the repository.
   e.g. if a `git notes add ...` command has been applied to the repository.
 
 ## Using Notes in SmartGit
