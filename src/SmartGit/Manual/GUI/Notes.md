@@ -1,10 +1,7 @@
 # Working with Git Notes
 Smart Git supports the [git notes](../GitConcepts/GitNotes.md) feature available in Git, which allows metadata to be associated with a commit.
-Multiple notes can be associated with a commit by creating separate categories for each type of note.
 
-**TODO - Check naming with Marc - I've used the terminology Category vs 'Authorship' on the SG UI? Is there a reason why SG would call the notes refs categories 'Authorships'?
-**TODO - Confirm with Marc that the default 'commits' note category has been renamed to `Notes` on the UI (makes sense)
-
+If required, Multiple notes can be associated with a commit by creating separate categories for each type of note.
 SmartGit's Git supports the following notes features:
 - The ability to add and remove notes through the UI
 - The ability to add new categories of note [through configuration](../Integrations/Notes.md)
@@ -17,9 +14,10 @@ https://github.com/syntevo/docs/blob/feature/marc/ai-and-notes/src/SmartGit/Manu
 **TODO Potentially, this isn't really an 'integration' as this is core capability of git - possibly move these configurations under the **Advanced Settings** section?
 
 #### Note
-- Notes are not automatically pushed or fetched from the remote.
-  
-- Not all Git hosting services will show notes on their web portal UI
+- Notes are not automatically pushed or fetched from the remote by default.
+  However, it is possible to configure your local repository to automatically synchronize note refs any time push and fetch activity is performed - please [consult this reference](../GitConcepts/GitNotes/).
+- Not all Git hosting services will show notes on their web portal UI. However, all major hosting services will retain the notes refs where they can be synchronized with other repositories.
+- **TODO - Confirm with Marc that the default 'commits' note category has been renamed to `Notes` on the UI (makes sense)
 
 **TODO - As far as I know, GitHub removed UI support for Notes on their portal several years ago, and Azure DevOps doesn't seem to show notes when `/refs/notes/*` has been pushed to the remote.
 Both hosts do however retain the refs albeit invisibly.
