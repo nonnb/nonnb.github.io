@@ -37,16 +37,16 @@ Add one or more subsections under `smartgit-notes` to describe the *categories* 
 SmartGit reads these directives from the repository’s local `.git/config`, the user-wide `~/.gitconfig`, or the system config – and reloads changes automatically for the local repo.
 A restart is only needed when you edit user or system-wide configs.
 
-
 ## `smartgit-notes` section reference
 
-[smartgit-notes "<category-id>"]
+Each notes category configured in SmartGit requires the following configuration:
 
-The following configuration keys can be added to the 
+- A `[smartgit-notes "<category-id>"]` configuration section, where `<category-id>` is the user-friendly name for the category which will appear in the SmartGit UI.
+- One or more of the below keys, customizing the appearance in SmartGit
 
 | Key | Required | Purpose |
 |-----|----------|---------|
-| **`ref`** | no (defaults to the subsection’s name) | Path **relative to `refs/notes/`** that stores the notes for this category. You may also specify the full ref (`refs/notes/xyz`); the leading prefix will be stripped automatically. |
+| **`ref`** | no (defaults to the `<category-id>` of the containing `[smartgit-notes]` section ) | Path **relative to `refs/notes/`** that stores the notes for this category. You may also specify the full ref (`refs/notes/xyz`); the leading prefix will be stripped automatically. |
 | **`graphMessageRegex`** | no | Java regular expression; if present, SmartGit shows the extracted text instead of the generic notes icon. |
 | **`color`** | no | Hex RGB triplet (e.g. `FFCC00`), rendered in the log graph for this category. The value is parsed as a 24-bit integer, so **omit the leading `#`**. |
 
