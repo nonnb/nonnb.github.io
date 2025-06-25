@@ -62,7 +62,7 @@ Notes will appear via the **TODO-Icon icon in the color configured for the notes
 
 > This is because the notes feature has not been [enabled in SmartGit](#enabling-notes-for-a-repository).
 
-- When I attempt to add a note to a commit, I receive the warning _Do you want to overwrite the existing note?_
+- **TODO REVISIT MARC HAS CHANGES** When I attempt to add a note to a commit, I receive the warning _Do you want to overwrite the existing note?_
 
 > By design, git notes only allows a single note per commit, per category to be added.
   You can either append to the existing note and overwrite it, or you can add a new note in a different notes category.
