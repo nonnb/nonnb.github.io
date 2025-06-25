@@ -15,7 +15,7 @@ https://github.com/syntevo/docs/blob/feature/marc/ai-and-notes/src/SmartGit/Manu
 
 #### Note
 - Notes are not automatically pushed or fetched from the remote by default.
-  However, it is possible to configure your local repository to automatically synchronize note refs any time push and fetch activity is performed - please [consult this reference](../GitConcepts/GitNotes/).
+  However, it is possible to configure your local repository to automatically synchronize note refs any time push and fetch activity is performed - please [consult this reference](../GitConcepts/GitNotes.md#configuring-automatic-remote-note-synchronization).
 - Not all Git hosting services will show notes on their web portal UI. However, all major hosting services will retain the notes refs where they can be synchronized with other repositories.
 - **TODO - Confirm with Marc that the default 'commits' note category has been renamed to `Notes` on the UI (makes sense)
 
@@ -38,7 +38,6 @@ Notes will appear via the **TODO-Icon icon in the color configured for the notes
   You can then type in your note, and choose the category of note from one of the configured categories.
 - Hover the mouse over the note icon to see the contents of the note.
 - A Note can be removed by clicking on the note and selecting `Remove <category> note`
-
 
 **TODO - Confirm with Marc no intention to add Notes to the Journal view in the Working Tree window.
 **TODO - Screenshot of multiple color icons, Add Note, and the Dialog in one screen?
