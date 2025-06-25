@@ -34,11 +34,12 @@ https://github.com/syntevo/docs/blob/feature/marc/ai-and-notes/src/SmartGit/Manu
 Unless notes have been enabled for a repository via one of the below methods, SmartGit's Notes features will not be enabled.
 
 Notes can be enabled for a repository through one of the following methods:
-> - Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (Repository `.git/config` is recommended)
-> `[smartgit-notes "Reviews"]           `
-> `   ref              = review `
-> `   color            = 0000FF     `
->
+- Add one or more `[smartgit-notes "<category-id>"]` sections in the git configuration file hierarchy (Repository `.git/config` is recommended)
+```ini
+[smartgit-notes "Reviews"]
+   ref              = review
+   color            = 0000FF
+```
 
   ** TODO REF
 - If SmartGit detects an entry under the `refs/notes/commits` path of the repository refs, it will automatically enable notes features for the repository.
