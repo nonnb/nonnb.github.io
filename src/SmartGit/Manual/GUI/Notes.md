@@ -38,14 +38,26 @@ Please consult the [Git Notes configuration guide](../Integrations/GitNotes-Inte
 
 
 ## Using Notes in SmartGit
-Notes will appear via the **TODO-Icon icon in the color configured for the notes category, in the **Graph View** of the **Log Window** and the **Standard Window**.
+Once enabled, notes will appear via an icon in the color configured for the notes category, in the **Graph View** of the **Log Window** and the **Standard Window**.
 
-- Add a new Note by selecting the target commit in the Graph View, and clicking the **Add Note...** command.
-  You can then type in your note, and choose the category of note from one of the configured categories.
-- Hover the mouse over the note icon to see the contents of the note.
-- A Note can be removed by clicking on the note and selecting `Remove <category> note`
+![Standard window](../images/GitNotes-GraphView.png)
 
-**TODO - Screenshot of multiple color icons, Add Note, and the Dialog in one screen?
+The following UI options are available:
+
+- **Add** a new Note by selecting the target commit in the Graph View, and right clicking the **Add Note...** command.
+  SmartGit will prompt you for the note contents, and the category of note can be selected from one of the configured categories.
+  
+- **Hover** the mouse over the note icon to see the contents of the note.
+
+- A Note can be **Removed** by right clicking on the note and selecting `Remove <category> note`.
+
+  If there is more than one category of note on the same commit, be sure to select the correct note category!
+
+- If the commit already contains a note of the same category, when you **Add** a note of the same category, 
+   SmartGit will prompt you to either **Append** additional note content to the existing note, or, 
+   you can choose to replace the existing note with the new content by choosing **Overwrite**.
+
+- When a commit is selected, the (**Commit View**)[Commit-View.md] will also show all _Note_ data beneath the commit message.
 
 ## Troubleshooting
 
@@ -53,10 +65,11 @@ Notes will appear via the **TODO-Icon icon in the color configured for the notes
 
 > This is because the notes feature has not been [enabled in SmartGit](#enabling-notes-for-a-repository).
 
-- **TODO REVISIT MARC HAS CHANGES** When I attempt to add a note to a commit, I receive the warning _Do you want to overwrite the existing note?_
+- Why do I receive the warning _Do you want to replace the existing note?_ when I attempt to add a note to a commit?
 
-> By design, git notes only allows a single note per commit, per category to be added.
-  You can either append to the existing note and overwrite it, or you can add a new note in a different notes category.
+> By design, Git notes only allows a single note per commit, per category to be added.
+>
+> However, SmartGit has the ability to merge new Note content with existing and replace the previous note of the same category on this commit.
   
 - I've pushed a branch containing notes in my repository to a remote, however when others clone the repository, they do not see the notes?
 
