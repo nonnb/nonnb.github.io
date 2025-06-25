@@ -1,6 +1,6 @@
 # Git Notes
 
-This article explains the how Git implements the notes feature.
+This article explains the how Git implements the _notes_ feature.
 
 See also :
 - [SmartGit Notes features](../GUI/Notes.md)
