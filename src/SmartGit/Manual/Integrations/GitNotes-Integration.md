@@ -50,17 +50,13 @@ Each notes category configured in SmartGit requires the following configuration:
 | **`graphMessageRegex`** | no | Java regular expression; if present, SmartGit shows the extracted text instead of the generic notes icon. |
 | **`color`** | no | Hex RGB triplet (e.g. `FFCC00`), rendered in the log graph for this category. The value is parsed as a 24-bit integer, so **omit the leading `#`**. |
 
-#### Tip
-> 
-> The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
-> See [below](#1--override-classic-commits-notes) for details
->
-
 ---
 
 ## Example configurations
 
 ### 1 – Override Classic *commits* notes
+
+The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
 
 ```ini
 [smartgit-notes "Personal Notes"]
