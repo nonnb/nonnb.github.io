@@ -42,6 +42,8 @@ Using the `--ref <category>` option allows you to add a note to the specified ca
 >     Additional notes metadata can be attached to a different commit, or different category, OR, the existing note will need to be amended to include the new metadata.
 >   - As with any file under version control, conflicts can occur when two or more independent note changes or additions  have been made to the the same commit and refs category.
 >     Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
+>   - As commits are rewritten during rebasing operations such as squash, notes associated with rewritten commits will become orphaned and will not be associated with the rebased commit.
+
 
 ### Configuring git to automatically push and fetch
 
