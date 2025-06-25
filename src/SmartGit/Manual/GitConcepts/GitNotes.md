@@ -4,12 +4,6 @@ An often overlooked feature in Git is `git notes`, which allows text or binary m
 As notes are linked to an existing commit, and do not affect the commit history of the working branch, 
 notes can be added and removed after the commit is created without modify the branch's commit history.
 
-## Example uses for git notes
-Sample usages of git notes:
-- For storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
-- Linking peer or AI code review comments to a commit e.g. [git-appraise](https://github.com/google/git-appraise) without requiring additional persistence in a git hosting service 
-  such as GitHub or Bitbucket.
-
 ## Implementation
 Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository, where `<category>` is the customizable 'type' of note that is to be added.
 
