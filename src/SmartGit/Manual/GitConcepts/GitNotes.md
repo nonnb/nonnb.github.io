@@ -1,40 +1,50 @@
 # Git Notes
 
 An often overlooked feature in Git is `git notes`, which allows text or binary meta-data to be attached to a commit.
-As git notes are linked to an existing commit, rather than part of the commit, it means notes can be added and removed after the commit is created, and does not modify the commit history of the target commit.
+As git notes are linked to an existing commit, and does not affect the commit history of the working branch, git notes can be added and removed after the commit is created without modify the branch's commit history.
 
 ## Example uses for git notes
-
-- References to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
-- Linking peer or AI code review comments to a commit
-- **TODO confirm with Marc - This might be contracdictory to the new AI commit review feature in SG
-Performing distributed code reviews without requiring additional persistence in a git hosting service such as GitHub or Bitbucket, e.g. [git-appraise](https://github.com/google/git-appraise)
+Sample usages of git notes:
+- For storing reference information to requirements (as an alternative to using [BugTraq](../Integrations/Bugtraq-links-to-issue-trackers.md) to link to a ticketing in a commit message)
+- Linking peer or AI code review comments to a commit e.g. [git-appraise](https://github.com/google/git-appraise) without requiring additional persistence in a git hosting service such as GitHub or Bitbucket.
 
 ## Implementation
 Git notes works by creating a parallel `/refs/notes/<category>` reference in the repository, where `<category>` is the customizable 'type' of note that is to be added.
 
-If no refs category is specified, git will default `<category>` to **commits**.
+If no refs category is specified, git will default `<category>` to **commits** (this default can be overridden with the `GIT_NOTES_REF` environment variable or by setting the `core.notesRef` config value).
 
 Each time a note is added or removed from `<category>`, a commit is added into `/refs/notes/<category>`.
 
 For example:
 
-`git notes add -m "Commit released on 2025-03-22"`
+`git notes add -m "Build released on 2025-03-22"`
 
 will do the following:
 
-- Create a new refs in the repository for the default 'commits' category `refs/notes/commits`
-- Create a new commit on this ref `refs/notes/commits`
+- Create a new refs in the repository for the default 'commits' category `refs/notes/commits` (if it does not already exist)
+- Create a new commit on this ref `refs/notes/commits`.
+  Commits on the notes refs are orphaned from your usual code base branch refs.
 
-#### Notes
-> There are certain limitations with the git notes design which should be understood:
-> - Only one note can be attached per refs Category per commit.
->   Additional notes metadata can be attached to a different commit, or different category, OR, the existing note will need to be amended to include the new metadata.
-> - As notes are not part of the HEAD / branch commit history, notes are not pushed or fetched by default unless configured to to do.
->   Git refs containing notes will need to be pushed separately, e.g.
->   `git push origin refs/notes/commits`
-> - As with any file under version control, conflicts can occur when two or more independent note changes or additions  have been made to the the same commit and refs category.
->   Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
+Using the `--ref <category>` option allows you to add a note to the specified category ref, e.g.
+
+`git notes --ref reviews add -m "Please remove unused imports on MyFile.java"`
+
+#### Note
+> - Like tags, by default, notes are not pushed or fetched by default when you synchronize your branches to a remote.
+>   Notes will require manual synchronization with the remote, OR configuration changes need to be made to automatically synchronize notes with the remote.
+>   e.g. Manually push notes in the default _commits_ category to the _origin_ remote:
+>  `git push origin refs/notes/commits`
+>  Simularly all note category refs can be fetched from the remote
+>  `git fetch origin 'refs/notes/*:refs/notes/*'`
+>
+> - There are certain limitations with the git notes design which should be understood:
+>   - Only one note can be attached per refs Category per commit.
+>     Additional notes metadata can be attached to a different commit, or different category, OR, the existing note will need to be amended to include the new metadata.
+>   - As with any file under version control, conflicts can occur when two or more independent note changes or additions  have been made to the the same commit and refs category.
+>     Please consult the available [notes merge strategies](https://git-scm.com/docs/git-notes#Documentation/git-notes.txt-merge) to choose an appropriate resolution strategy in your repository.
+
+### Configuring git to automatically push and fetch
+
 
 ### Removing Git Notes support from a repository
 Deleting all git notes in a category from a repository does not by itself remove the `refs/notes/<category>` ref from the repository.
