@@ -63,9 +63,6 @@ A restart is only needed when you edit user or system-wide configs.
 
 ---
 
-
-
-
 ---
 
 ## Example configurations
