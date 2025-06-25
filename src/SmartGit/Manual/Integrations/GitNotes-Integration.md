@@ -97,7 +97,7 @@ A restart is only needed when you edit user or system-wide configs.
 
 1. **Global vs. local** – You can keep common categories (e.g. *commits*) in `~/.gitconfig` but declare project-specific ones in each repo’s `.git/config`.
 2. **Ref naming** – Use short, descriptive subsection names; if you omit `ref`, SmartGit will fall back to that name, keeping your config concise.
-3. **Colour palette** – Pick sufficiently different colours so each category is recognisable in the log graph.
+3. **Color palette** – Pick sufficiently different colours so each category is recognisable in the log graph.
 4. **Regular expressions** – Keep `graphMessageRegex` simple and anchored (`^…`) to avoid accidental matches that hide or show unexpected commits.
 
 With these settings in place you can toggle Git-Notes columns in SmartGit’s **Log Window** and enjoy a colour-coded, filtered view of your notes alongside normal commit data.
