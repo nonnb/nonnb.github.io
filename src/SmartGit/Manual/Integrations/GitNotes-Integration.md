@@ -42,13 +42,8 @@ A restart is only needed when you edit user or system-wide configs.
 #### Tip
 > 
 > The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
+> See [below](#1-–-override-classic-commits-notes) for details
 >
-```
-[smartgit-notes "Personal Notes"]
-    ref              = commits
-    color            = EA00FF
-```
-
 ---
 
 ## `smartgit-notes` section
@@ -63,15 +58,14 @@ A restart is only needed when you edit user or system-wide configs.
 
 ---
 
----
-
 ## Example configurations
 
-### 1 – Classic *commits* notes (explicit)
+### 1 – Override Classic *commits* notes
 
 ```ini
-[smartgit-notes "commits"]
+[smartgit-notes "Personal Notes"]
     # same as the default, but defined explicitly
+    ref              = commits
     color = 5DADEC   # light-blue in the graph
 ```
 
