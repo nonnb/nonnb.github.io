@@ -5,11 +5,8 @@ This article explains how to configure and enable **SmartGit’s Git-Notes featu
 ---
 
 ## Contents
-- [Minimal setup](#minimal-setup)
-- [`smartgit-notes` section](#smartgit-notes-section)
-  - [Keys](#keys)
-  - [Colour format](#colour-format)
-- [Default behaviour when no section is present](#default-behaviour)
+- [Enabling Notes features in SmartGit on a repository]
+- [A minimal [smartgit-notes] configuration]()
 - [Example configurations](#example-configurations)
 - [Configuration best practices](#configuration-best-practices)
 
@@ -24,13 +21,13 @@ In order for SmartGit notes to be enabled, SmartGit needs to find either:
 
 If `refs/notes/commits` is found, SmartGit automatically creates an implicit notes category called **“Notes”** that tracks `refs/notes/commits`.
 
-## Minimal [smartgit-notes] configuration
+## A minimal [smartgit-notes] configuration
 
 Add one or more subsections under `smartgit-notes` to describe the *categories* of notes you want SmartGit to show:
 
 ```ini
 [smartgit-notes "<category-id>"]
-    # all keys are optional – see below
+    # all keys are optional – see reference below
     ref              = <notes-ref>
     graphMessageRegex= <regex>
     color            = <RRGGBB>
@@ -39,22 +36,24 @@ Add one or more subsections under `smartgit-notes` to describe the *categories* 
 SmartGit reads these directives from the repository’s local `.git/config`, the user-wide `~/.gitconfig`, or the system config – and reloads changes automatically for the local repo.
 A restart is only needed when you edit user or system-wide configs.
 
-#### Tip
-> 
-> The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
-> See [below](#1--override-classic-commits-notes) for details
->
----
 
-## `smartgit-notes` section
+## `smartgit-notes` section reference
 
-### Keys
+[smartgit-notes "<category-id>"]
+
+The following configuration keys can be added to the 
 
 | Key | Required | Purpose |
 |-----|----------|---------|
 | **`ref`** | no (defaults to the subsection’s name) | Path **relative to `refs/notes/`** that stores the notes for this category. You may also specify the full ref (`refs/notes/xyz`); the leading prefix will be stripped automatically. |
 | **`graphMessageRegex`** | no | Java regular expression; if present, SmartGit shows the extracted text instead of the generic notes icon. |
 | **`color`** | no | Hex RGB triplet (e.g. `FFCC00`), rendered in the log graph for this category. The value is parsed as a 24-bit integer, so **omit the leading `#`**. |
+
+#### Tip
+> 
+> The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
+> See [below](#1--override-classic-commits-notes) for details
+>
 
 ---
 
@@ -90,6 +89,46 @@ A restart is only needed when you edit user or system-wide configs.
     ref   = ux-design   # refs/notes/ux-design
     color = CC66CC      # purple
 ```
+
+---
+
+## Advanced Configurations
+
+### Configuring automatic note synchronization with remotes
+
+By amending the configuration for a remote's `fetch` and `push` settings, it is possible to ensure notes remain synchronized with the remote whenever a push or fetch is performed.
+
+```ini
+[remote "origin"]
+  url = ...
+  ...
+  fetch = refs/notes/*:refs/notes/*
+  push = refs/notes/*:refs/notes/*
+```
+
+Using the _<category>_ name, or the `*` wildcard to specify which categories of note are to be synchronized.
+
+### Copying Git notes during rewriting activity (e.g. rebase)
+As notes are attached to specific commit ids, any time the commit history is rewritten, e.g. to squash or other rebase activity, 
+any notes attached to rewritten commits will become orphaned from the resulting commit.
+
+This orphan note behavior can be changed by adding a _rewriteRef_ configuration for the repository, e.g.:
+
+```ini
+[notes]
+  rewriteRef = refs/notes/*
+```
+
+Will cause any notes on rewritten commits to be copied to the rewritten commit after a rebase.
+If there is more than one note in the same category to be copied to the rewritten commit, the contents of the notes will be appended in sequence and attached to the new commit.
+
+### Removing Git Notes support from a repository
+Deleting all git notes in a category from a repository does not by itself remove the `refs/notes/<category>` ref from the repository.
+As a result, SmartGit will still enable git notes functionality if the `refs/notes/commits` ref is still present in the repository, even if no notes are present.
+
+To completely remove notes support, run the following `git update-ref -d` command in the repo, e.g. to remove the default `commits` category:
+
+`git update-ref -d refs/notes/commits`
 
 ---
 
