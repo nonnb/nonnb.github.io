@@ -1,6 +1,6 @@
 # Git-Notes Integration *(experimental in 25.1)*
 
-This document explains how to enable **SmartGit’s Git-Notes features** through ordinary Git configuration files.
+This article explains how to configure and enable **SmartGit’s Git-Notes features** through ordinary Git configuration files.
 
 ---
 
@@ -15,7 +15,16 @@ This document explains how to enable **SmartGit’s Git-Notes features** through
 
 ---
 
-## Minimal setup
+## Enabling Notes features in SmartGit on a repository
+
+In order for SmartGit notes to be enabled, SmartGit needs to find either:
+
+- The presence of `refs/notes/commits`, which is the default Git notes category ref (e.g. as created by a `git notes add -m '..'` command).
+- One or more `[smartgit-notes]` subsections defined in the Git configuration.
+
+If `refs/notes/commits` is found, SmartGit automatically creates an implicit notes category called **“Notes”** that tracks `refs/notes/commits`.
+
+## Minimal [smartgit-notes] configuration
 
 Add one or more subsections under `smartgit-notes` to describe the *categories* of notes you want SmartGit to show:
 
@@ -27,7 +36,18 @@ Add one or more subsections under `smartgit-notes` to describe the *categories* 
     color            = <RRGGBB>
 ```
 
-SmartGit reads these directives from the repository’s local `.git/config`, the user-wide `~/.gitconfig`, or the system config – and reloads changes automatically for the local repo. A restart is only needed when you edit user or system-wide configs.
+SmartGit reads these directives from the repository’s local `.git/config`, the user-wide `~/.gitconfig`, or the system config – and reloads changes automatically for the local repo.
+A restart is only needed when you edit user or system-wide configs.
+
+#### Tip
+> 
+> The name and colour of the default `commits` ref category can be overridden in the SmartGit UI by adding a `smartgit-notes` section for the default `ref = commits` category.
+>
+```
+[smartgit-notes "Personal Notes"]
+    ref              = commits
+    color            = EA00FF
+```
 
 ---
 
@@ -41,15 +61,10 @@ SmartGit reads these directives from the repository’s local `.git/config`, the
 | **`graphMessageRegex`** | no | Java regular expression; if present, SmartGit shows the extracted text instead of the generic notes icon. |
 | **`color`** | no | Hex RGB triplet (e.g. `FFCC00`), rendered in the log graph for this category. The value is parsed as a 24-bit integer, so **omit the leading `#`**. |
 
-#### Colour format
-
-The value is interpreted as hexadecimal *RRGGBB* and converted to a 24-bit integer (e.g. `FF0000` → red) — anything else will be ignored.
-
 ---
 
-## Default behaviour
 
-When *no* `[smartgit-notes]` subsection is configured, SmartGit still tries to be helpful: if it finds a commit on `refs/notes/commits`, it automatically creates an implicit category called **“Notes”** that tracks `refs/notes/commits`. If that ref does not exist, the Git-Notes feature remains disabled.
+
 
 ---
 
