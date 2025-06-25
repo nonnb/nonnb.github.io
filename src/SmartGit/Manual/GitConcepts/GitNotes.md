@@ -55,8 +55,8 @@ By amending the configuration for a remote's `fetch` and `push` settings, it is 
 
 ```ini
 [remote "origin"]
-	url = ...
-	...
+  url = ...
+  ...
   fetch = refs/notes/*:refs/notes/*
   push = refs/notes/*:refs/notes/*
 ```
@@ -71,7 +71,7 @@ This orphan note behavior can be changed by adding a _rewriteRef_ configuration 
 
 ```ini
 [notes]
-	rewriteRef = refs/notes/*
+  rewriteRef = refs/notes/*
 ```
 
 Will cause any notes on rewritten commits to be copied to the rewritten commit after a rebase.
