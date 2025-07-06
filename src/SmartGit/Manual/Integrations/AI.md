@@ -495,7 +495,7 @@ Each subsection’s *id* becomes the category name that is shown in the **Graph 
 
 | Key | Required | Purpose |
 |-----|----------|---------|
-| **`llm`** | **yes** | Links to one of the `[ai-llm]` entries, determining the model and endpoint to use. |
+| **`llm`** | **yes** | Selects the [_id_ of the `[ai-llm]`](#ai-llm-configuration-options) entry which is to be used by this annotation, determining the model and endpoint to use. |
 | **`prompt`** / **`promptFile`** | **yes** | Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**), as per the [*ai‑commit‑message*](#-prompt-and-promptFile) configuration keys. The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
 | **`notesRef`** | **yes** | Indicates that AI annotations are to be stored beneath `refs/notes/notesRef` in the repository. `refs/notes` can be omitted, in which case SmartGit will assume `refs/notes/notesRef`. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information. |
 | **`notesColor`** | no | Hex *RRGGBB* colour used for this category in the commit graph. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
