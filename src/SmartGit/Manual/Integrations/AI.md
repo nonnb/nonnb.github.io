@@ -112,7 +112,9 @@ The _parameters_ setting allows for additional model-specific parameters defined
 
 #### enabled
 
-Can be used to disable the usage of this LLM configuration forcefully; this is especially useful when defining LLMs in your global `~/.gitconfig`.
+If set to `false`, can be used to disable the usage of this LLM configuration forcefully; this is especially useful when defining LLMs in your global `~/.gitconfig`.
+Any `[ai-commit-message]` or `[ai-commit-annotation]` sections referencing this LLM will also be disabled.
+Default is `true`.
 
 ### `ai-commit-message` Configuration Options
 
@@ -168,9 +170,8 @@ following a specific naming pattern beginning with `ai-`.
 
 #### enabled
 
-This setting can be used to disable the use of this configuration forcibly; this is especially useful when defining LLMs in your user `~/.gitconfig` file.
+This setting can be used to disable the use of this `ai-commit-message` configuration forcibly; this is especially useful when defining global LLMs in your user `~/.gitconfig` file.
 If all _ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
-
 
 ### Global Configuration Options
 
@@ -504,8 +505,9 @@ Each subsection’s *id* becomes the category name that is shown in the **Graph 
 | **`mode`** | no | Please consult [`mode` below](#note-on-mode) |
 | **`diff`** | no | Please consult [`diff` below](#note-on-diff) |
 | **`timeout`** | no | An optional timeout (defaults to 60 seconds). When running mutliple prompts (e.g. in background by `autoStart`), the maximum timeout of all prompts will apply for the entire set of AI invocations. |
-| **`maxDiffSize`**, **`debug`**, **`enabled`** | no | Sets an upper limit on the size of the diff submitted to the LLM. See [`maxDiffSize](#maxdiffsize) for further information.|
-
+| **`maxDiffSize`** | no | Sets an upper limit on the size of the diff submitted to the LLM. See [`maxDiffSize](#maxdiffsize) for further information.|
+| **`debug`** | no | This provides additional debugging information when accessing the AI LLM, and behaves in the same way as the [`ai-commit-message` debug](#debug) setting.|
+| **`enabled`** | no | Can be used to disable this `ai-commit-annotation`, and behaves in the same way as the [`ai-commit-message` enabled](#enabled) setting.|
 
 #### Global settings
 
@@ -515,9 +517,12 @@ If you add an `[ai-commit-annotation]` section **without a name**, the keys unde
 
 #### Note on `mode`
 > The `mode` option controls how SmartGit applies the AI Annotation, and how it presents or persists the output.
-> - interactive
+> - `interactive` - Upon completion, the response from the AI will be displayed in an interactive message dialog in Smartgit.
+> - `background` - Upon completion, the response(s) from the AI will be annotated on the respective selected commits.
 > - `autoStart`, SmartGit starts the annotator automatically for "annotatable" as soon as you open a repository.
-> - In the Std, the annotatable commits are exactly all commits of your current feature branch, regardless whether pushed or not. In the Log window, it's only the unpushed commits of the current branch. If `commitDiff`, for a selection of two commits, SmartGit will create the diff between these commits instead of doing two independent analysis for each commit vs. its parent commit.
+> - In **Standard Window**, the annotatable commits are exactly all commits of your current feature branch, regardless whether pushed or not.
+>   In the **Log Window**, it's only the unpushed commits of the current branch.
+>   If `commitDiff`, for a selection of two commits, SmartGit will create the diff between these commits instead of doing two independent analysis for each commit vs. its parent commit.
 
 #### Note on `diff`
 The `diff` setting controls 
