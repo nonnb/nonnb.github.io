@@ -29,7 +29,7 @@ SmartGit supports integration with the following AI services:
 **On-premise/Self-hosted Services:**
 - [Ollama](https://ollama.com/)
 
-## Configuration
+## Configuration Summary
 
 AI settings can be configured in a repository's local `.git/config`file, user (global) `.gitconfig` file, or your system-wide `.gitconfig` files.
 
@@ -62,7 +62,7 @@ Where:
 
 Suppose you don't provide any _ai-commit-message_ sections. In that case, SmartGit will display the available _ai-llm_ and assume default settings, such as prompts, when invoking the LLM for commit message generation.
 
-### `ai-llm` Configuration Options
+## `ai-llm` Configuration Options
 
 Each `ai-llm` configuration section has an _id_ that can be linked from other configuration sections using the `llm` key, and can have the following specific settings:
 
@@ -116,7 +116,7 @@ If set to `false`, can be used to disable the usage of this LLM configuration fo
 Any `[ai-commit-message]` or `[ai-commit-annotation]` sections referencing this LLM will also be disabled.
 Default is `true`.
 
-### `ai-commit-message` Configuration Options
+## `ai-commit-message` Configuration Options
 
 An `ai-commit-message` corresponds to a _commit message generation_ option as available on the GUI.
 Each entry has an _id_ that will be used for display on the GUI and can have the following specific settings:
