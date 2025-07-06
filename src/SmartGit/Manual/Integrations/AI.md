@@ -481,3 +481,35 @@ ${commitMessage}
 ${gitDiff}
 ```
 ~~~
+
+
+
+### `ai-commit-annotation` Configuration Options
+
+Each **`ai-commit-annotation`** entry tells SmartGit to let an LLM generate a response to the configured prompt, using the diff between chosen commit(s) as the input.
+The AI response can then be automatically written to *Git‑Notes* in the local repository, or be displayed interactively to the user in SmartGit.
+Annotations stored in Git Notes will be present in the Graph popup menu for commits.
+
+Each subsection’s *id* becomes the category name that is shown in the **Graph View** of the **Log Window** and **Standard Window** and can have the following keys:
+
+| Key | Required | Purpose |
+|-----|----------|---------|
+| **`llm`** | **yes** | Links to one of the `[ai-llm]` entries, determining the model and endpoint to use. |
+| **`prompt`** / **`promptFile`** | **yes** | Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**) just like for *ai‑commit‑message*. 
+                                              The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
+| **`notesRef`** | **yes** | Target ref below `refs/notes/` that stores the generated notes; omit the prefix or give the full ref. |
+| **`notesColor`** | no | Hex *RRGGBB* colour used for this category in the commit graph. |
+| **`matchCommitMessage`** | no | Java RegEx; run this annotator **only** when the commit message matches. |
+| **`notesGraphMessageRegex`** | no | see Notes |
+| **`notesResolveRegex`** | no | Java RegEx which, if matching the AI response, will mark the Notes as *resolved*. |
+| **`mode`** | no | If `autoStart`, SmartGit starts the annotator automatically for "annotatable" as soon as you open a repository. In the Std, the annotatable commits are exactly all commits of your current feature branch, regardless whether pushed or not. In the Log window, it's only the unpushed commits of the current branch. If `commitDiff`, for a selection of two commits, SmartGit will create the diff between these commits instead of doing two independent analysis for each commit vs. its parent commit. |
+| **`timeout`** | no | An optional timeout (defaults to 60 seconds). When running mutliple prompts (e.g. ibn background by `autoStart`), the maximum timeout of all prompts will apply for the entire set of AI invocations. |
+| **`maxDiffSize`**, **`debug`**, **`enabled`** | no | Same meaning as in `ai‑commit‑message` sections. |
+
+
+#### Global settings
+
+If you add an `[ai-commit-annotation]` section **without a name**, the keys under it act as **defaults** for every other annotator, just like the global options for commit‑message prompts.
+
+---
+
