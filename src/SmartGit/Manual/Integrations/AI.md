@@ -495,8 +495,7 @@ Each subsection’s *id* becomes the category name that is shown in the **Graph 
 | Key | Required | Purpose |
 |-----|----------|---------|
 | **`llm`** | **yes** | Links to one of the `[ai-llm]` entries, determining the model and endpoint to use. |
-| **`prompt`** / **`promptFile`** | **yes** | Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**) just like for *ai‑commit‑message*. 
-                                              The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
+| **`prompt`** / **`promptFile`** | **yes** | Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**), as per the [*ai‑commit‑message*](#-prompt-and-promptFile) configuration keys. The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
 | **`notesRef`** | **yes** | Target ref below `refs/notes/` that stores the generated notes; omit the prefix or give the full ref. |
 | **`notesColor`** | no | Hex *RRGGBB* colour used for this category in the commit graph. |
 | **`matchCommitMessage`** | no | Java RegEx; run this annotator **only** when the commit message matches. |
