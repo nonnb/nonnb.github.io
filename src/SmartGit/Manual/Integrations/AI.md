@@ -156,9 +156,9 @@ The prompt may include one or more of the following placeholder variables:
 - `${gitDiff}` - this variable will be substituted with the actual Git diff
 - `${commitMessage}` - this variable will be substituted with the current commit message
 
-For large prompts, writing them in a Git config file may be cumbersome due to the syntax.
-In such cases, you may consider placing the prompt into a separate file using `promptFile`.
-The resolution of paths follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
+Writing large, multi-line prompts into a Git config file may be cumbersome and may be prone to cause configuration errors.
+As a result, it is recommended that you place AI prompts into a separate file using the `promptFile` config.
+The resolution of file paths for `promptFile` files follows the same logic as the [Git Config Includes](https://git-scm.com/docs/git-config#_includes).
 
 #### debug
 
