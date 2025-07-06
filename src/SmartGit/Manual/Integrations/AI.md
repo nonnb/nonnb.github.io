@@ -86,6 +86,12 @@ They are pre-defined for cloud services; verify with your administrator for self
 - **Azure** - `https://models.inference.ai.azure.com`
 - **Mistral** - `https://api.mistral.ai/v1`
 
+#### apiKey
+
+If your service provider requires an API key to authenticate its AI services, you will need to [obtain an API Key](#api-keys) from your chosen service provider.
+If SmartGit detects that an API key is required but has not been provided in the `ai-llm` configuration, SmartGit will prompt you for the [API Key](#api-keys) and save it in its password store.
+Alternatively, you can configure the API key in plain text here.
+
 #### model (mandatory)
 
 Specifies the model name as recognized by the service, e.g., `gpt-4.1` for GPT 4.1 or `o3-mini` to select between the corresponding models.
@@ -165,9 +171,6 @@ following a specific naming pattern beginning with `ai-`.
 This setting can be used to disable the use of this configuration forcibly; this is especially useful when defining LLMs in your user `~/.gitconfig` file.
 If all _ai-commit-message_ configurations are disabled, the AI button above the **Commit View** in SmartGit will be hidden.
 
-#### apiKey
-
-By default, SmartGit will prompt you for the [API Key](#api-keys) and save it in its password store. Alternatively, you can configure the API key in plain text here.
 
 ### Global Configuration Options
 
@@ -188,7 +191,7 @@ The following settings can be placed in the global _ai-commit-message_ section:
 
 #### API keys
 
-API keys are typically required for API authentication when using commercial, secured on-premises, or cloud services that enforce access control.
+Your AI service may require an API key to authenticate against their LLM API, especially when using commercial, secured on-premises, or cloud services that enforce access control.
 
 Please consult your LLM service provider's instructions on how to obtain an API key for their API, for example:
 
