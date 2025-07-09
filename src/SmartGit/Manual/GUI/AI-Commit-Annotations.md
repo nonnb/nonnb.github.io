@@ -1,42 +1,42 @@
 # AI Commit Annotations
 
-SmartGit's AI Annotations are a powerful feature allowing custom extension of the SmartGit's functionality.
+SmartGit's AI Annotations are a powerful feature that allows custom extension of SmartGit's functionality.
 
-Each AI Annotation instructs SmartGit to run a custom AI action, either interactively, or in the background, 
+Each AI Annotation instructs SmartGit to run a custom AI action, either interactively or in the background, 
 using one or more selected (or inferred) _diffs_ in the commit history as input.
 
-The output of the AI generated annotations can either be displayed interactively on the UI, or linked to the relevant commit(s) using [SmartGit's Notes](Notes.md) capabilities.
+The output of the AI generated annotations can be displayed interactively in the UI or linked to the relevant commit(s) using [SmartGit's Notes](Notes.md) capabilities.
 
 Some examples of what AI Commit Annotations can do:
-- Describe the contents of a diff, e.g. latest commit on a branch, or the diff between 2 commits.
-- Analyze a commit and provide feedback or descriptive metadata about quality factors with the code introduced in the commit.
-- Instruct the LLM to generate icons which can be used to augment visualization of Notes.
-- As AI annotations can be configured to run in the background, SmartGit can automate checking while you work,
-  and the outcome of the AI's response will be added to Git Notes which can be viewed in the **Graph View** of the **Log and Standard Windows**.
+- Describe the contents of a diff (e.g., the latest commit on a branch or the diff between 2 commits).
+- Analyze a commit and provide feedback or descriptive metadata about quality factors introduced in the code.
+- Instruct the LLM to generate icons to augment the visualization of Notes.
+  
+Because AI annotations can run in the background, SmartGit can automate checks while you work. The AI's responses are added to Git Notes, which can be viewed in the **Graph View** of the **Log and Standard Windows**.
 
 ## Getting Started
 
-The AI Annotations feature leverages both SmartGit Notes, and the common AI configurations used by all SmartGit features.
-It is recommended that you familiarize yourself with these features:
+The AI Annotations feature leverages both SmartGit Notes and the common AI configurations used by all SmartGit AI features.
+Before using AI Annotations, it's recommended to familiarize yourself with:
 
 - Please [refer here](../Integrations/AI.md#ai-llm-configuration-options) for instructions on how to connect SmartGit to a LLM.
 - [Refer here](Notes.md) for background on SmartGit's Git Notes features.
 
-You add new AI Commit Annotation commands in SmartGit by adding a new [configuration](../Integrations/AI.md#ai-commit-annotation-configuration-options) section for each AI-Annotation command that you wish to set up.
+To add a new AI Commit Annotation command in SmartGit, define a new [configuration](../Integrations/AI.md#ai-commit-annotation-configuration-options) section for each AI-Annotation you want to set up.
 
 Configuration Options include:
 - Standard LLM configuration settings.
 - The `mode` in which the AI Annotation should run - either _interactively_, showing the output on the UI, or in the _background_, by appending the results to Git notes.
-- The prompt that should be executed by the AI when the annotation command is invoked, along with additional context such as the contents of the _diff_ and _commit message_.
+- The prompt to be executed by the AI when the annotation command is invoked, along with additional context such as the contents of the _diff_ and _commit message_.
 - For background annotations:
-  - The Notes refs where annotation outputs are to be stored.
-  - Any additional Notes processing, such as title, options, and result visualization on SmartGit's **Graph View**.
+  - The Notes refs where the annotation outputs should be stored.
+  - Any additional Notes processing (title, options, visual representation in SmartGit's **Graph View**).
 
 ### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
-Adding the below `[ai-commit-annotations]` section to your git config will add a new 'Describe Diff' command to the menu when exactly two commits are selected in **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the `[ai-commit-annotations]` section below to your git config creates a new 'Describe Diff' command in the menu when exactly two commits are selected in **Graph View** of the **Log Window** or the **Standard Window**.
 
-The command leverages an existing LLM configuration called `openai` (tested on `gpt-4.1` on Open AI)
+This command uses an existing LLM configuration called `openai` (tested on `gpt-4.1` on Open AI)
 
 ```
 [smartgit-ai-llm "openai"]
@@ -58,9 +58,7 @@ The command leverages an existing LLM configuration called `openai` (tested on `
 ```
 
 #### Note
-> - With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs.
->   You can swap the order if necessary.
-> - A Git diff must be possible between the two commits, e.g. the two commits should have a common ancestor.
+> With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs. You can swap the order if needed. A Git diff must be possible between the two commits, i.e., they must share a common ancestor.
 
 ### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
@@ -69,7 +67,7 @@ Adding the following `[ai-commit-annotations]` section to your git config will a
 The same LLM configuration is used as in the previous example.
 
 After saving the configuration, If you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
-An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in lieu of the usual 'Note' icon), and a Git note will be added to the commit describing the file location(s) of any todo comments found in the commit.
+An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in place of the standard 'Note' icon), and a Git note will be added to the commit, showing the file location(s) of any TODO comments found.
 
 ![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
 
@@ -94,11 +92,9 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
 ```
 
 #### Tips
-> - Add a prefix such as `ai/` to the `notesRef` setting to keep a clear distinction between notes generated by AI Annotations and 'standard' [Git Notes](Notes.md).
-> - As with other SmartGit AI features, move any common configuration to your global `~/.gitconfig` that you wish to share across all your local repositories,
->   including `smartgit-ai-llm` definitions and reusable `smartgit-ai-commit-annotation` commands.
-> - By default, SmartGit sets a small `maxDiffSize` to prevent large commits being sent to LLMs and potentially incurring unwanted expnenses.
->   You may need to increase this setting to suit your needs.
-> - Running the same background AI Annotation again on a commit will cause the previous note to be replaced by the new output.
-> - Notes added by AI Annotations can be removed in the same way as any other notes
-> - It is not recommended that you reuse thes same notes `ref` for storing different AI annotation categories, nor should you mix AI generated notes refs and manual [Git Notes](Notes.md).
+> - Add a prefix such as `ai/` to the `notesRef` setting to distinguish AI-generated notes from 'standard' [Git Notes](Notes.md) clearly.
+> - As with other SmartGit AI features, move any shared configuration (like `smartgit-ai-llm` definitions or reusable `smartgit-ai-commit-annotation` commands) to your global `~/.gitconfig` file for use across multiple repositories.
+> - By default, SmartGit sets a small `maxDiffSize` to avoid sending large commits to LLMs, which may result in unexpected expnenses. Adjust this value as needed.
+> - Rerunning the same background AI Annotation on a commit will replace the previous note.
+> - AI Notes can be removed just like standard GIT notes.
+> - Avoide using the same notes `ref` for different annotation categories, and do not mix AI-generated Notes refs with manually created [Git Notes](Notes.md).
