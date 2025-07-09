@@ -31,7 +31,7 @@ Adding the following [ai-commit-annotations] section to your git config will add
 If you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
 An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in lieu of the usual 'Note' icon), and a Git note will be added to the commit describing the file location(s) of any todo comments found in the commit.
 
-![AI Annotations in Standard Window](../images/GitNotes-GraphView.png)
+![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
 
 ```
 [smartgit-ai-commit-annotation "Check For Todos"]
