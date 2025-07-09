@@ -13,16 +13,16 @@ Some examples of what AI Commit Annotations can do:
 
 ## Getting Started
 
-This feature leverages both [SmartGit Notes](), and the common [AI configuration]()
+This feature leverages both SmartGit Notes, and the common AI configurations used by all SmartGit features:
 
-For instructions on how to connect SmartGit to a LLM see []()
-For a background on SmartGit's Notes 
+- Please [refer here](../Integrations/AI.md#ai-llm-configuration-options) for instructions on how to connect SmartGit to a LLM.
+- [Refer here](Notes.md) for background on SmartGit's Git Notes features.
 
+SmartGit AI Commit Annotations require [configuration]() to be set up for each AI-Annotation command that you wish to set up.
 
-SmartGit AI Commit Annotations require [configuration]() to be set up for each use-case
-
+Configuration Options include:
 - Standard LLM configuration settings
-- The `mode` in which
+- The `mode` in which the AI Annotation should run
 - 
 
 
