@@ -15,16 +15,21 @@ Some examples of what AI Commit Annotations can do:
 
 ## Getting Started
 
-This feature leverages both SmartGit Notes, and the common AI configurations used by all SmartGit features:
+The AI Annotations feature leverages both SmartGit Notes, and the common AI configurations used by all SmartGit features.
+It is recommended that you familiarize yourself with these features:
 
 - Please [refer here](../Integrations/AI.md#ai-llm-configuration-options) for instructions on how to connect SmartGit to a LLM.
 - [Refer here](Notes.md) for background on SmartGit's Git Notes features.
 
-SmartGit AI Commit Annotations require [configuration]() to be set up for each AI-Annotation command that you wish to set up.
+You add new AI Commit Annotation commands in SmartGit by adding a new [configuration](../Integrations/AI.md) section for each AI-Annotation command that you wish to set up.
 
 Configuration Options include:
-- Standard LLM configuration settings
-- The `mode` in which the AI Annotation should run
+- Standard LLM configuration settings.
+- The `mode` in which the AI Annotation should run - either _interactively_, showing the output on the UI, or in the _background_, by appending the results to Git notes.
+- The prompt that should be executed by the AI when the annotation command is invoked, along with additional context such as the contents of the _diff_ and _commit message_.
+- For background annotations:
+  - The Notes refs where annotation outputs are to be stored.
+  - Any additional Notes processing, such as title, options, and result visualization on SmartGit's **Graph View**.
 
 ### Example - Analyzing the difference between two selected Diffs and
 
