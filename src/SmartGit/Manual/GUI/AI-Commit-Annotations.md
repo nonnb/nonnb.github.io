@@ -33,7 +33,7 @@ Configuration Options include:
 
 ### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
-Adding the below [ai-commit-annotations] section to your git config will add a new 'Describe Diff' command to the menu when exactly two commits are selected in **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the below `[ai-commit-annotations]` section to your git config will add a new 'Describe Diff' command to the menu when exactly two commits are selected in **Graph View** of the **Log Window** or the **Standard Window**.
 
 The command leverages an existing LLM configuration called `openai` (tested on `gpt-4.1` on Open AI)
 
