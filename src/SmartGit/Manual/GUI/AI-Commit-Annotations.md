@@ -22,18 +22,12 @@ SmartGit AI Commit Annotations require [configuration]() to be set up for each A
 Configuration Options include:
 - Standard LLM configuration settings
 - The `mode` in which the AI Annotation should run
-- 
 
-#### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
+### Example - Analyzing the difference between two selected Diffs and
 
-Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' command to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the below [ai-commit-annotations] section to your git config will add a new 'Describe Diff' command to the menu when exactly two commits are selected in **Graph View** of the **Log Window** or the **Standard Window**.
 
-The command leverages an existing LLM configuration called `openai` (tested on `gpt-4.1` on Open AI).
-
-After saving the configuration, If you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
-An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in lieu of the usual 'Note' icon), and a Git note will be added to the commit describing the file location(s) of any todo comments found in the commit.
-
-![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
+The command leverages an existing LLM configuration called `openai` (tested on `gpt-4.1` on Open AI)
 
 ```
 [smartgit-ai-llm "openai"]
@@ -42,6 +36,35 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
 	url = https://api.openai.com/v1
         apiKey = <ApiKey>
 
+[smartgit-ai-commit-annotation "Describe Diff"]
+	llm = openai
+	maxDiffSize = 131072
+	mode = interactive
+	diff = pair
+	title = Describe Diff
+	prompt = Analyze the following Git diff between two commits and summarize the major changes between the commits.\n\
+                Do not include the original diff or any reasoning in the response.\n\
+                \n\
+                ${gitDiff}\n\
+```
+
+#### Note
+> - With `diff = pair`, if the selected diffs have both diverged from the common ancestor commit, SmartGit will prompt you to select the order of comparison of the diffs.
+>   You can swap the order if necessary.
+> - A Git diff must be possible between the two commits, e.g. the two commits should have a common ancestor.
+
+### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
+
+Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' command to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
+
+The same LLM configuration is used as in the previous example.
+
+After saving the configuration, If you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
+An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in lieu of the usual 'Note' icon), and a Git note will be added to the commit describing the file location(s) of any todo comments found in the commit.
+
+![AI Annotations in Standard Window](../images/AI-Annotations-StandardWindow.png)
+
+```
 [smartgit-ai-commit-annotation "Check For Todos"]
 	llm = openai
 	notesGraphMessageRegex = ^(.)
