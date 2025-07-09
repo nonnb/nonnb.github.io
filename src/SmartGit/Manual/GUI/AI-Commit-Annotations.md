@@ -99,3 +99,6 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
 >   including `smartgit-ai-llm` definitions and reusable `smartgit-ai-commit-annotation` commands.
 > - By default, SmartGit sets a small `maxDiffSize` to prevent large commits being sent to LLMs and potentially incurring unwanted expnenses.
 >   You may need to increase this setting to suit your needs.
+> - Running the same background AI Annotation again on a commit will cause the previous note to be replaced by the new output.
+> - Notes added by AI Annotations can be removed in the same way as any other notes
+> - It is not recommended that you reuse thes same notes `ref` for storing different AI annotation categories, nor should you mix AI generated notes refs and manual [Git Notes](Notes.md).
