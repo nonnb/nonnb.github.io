@@ -50,7 +50,7 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
 	diff = perCommit
 	title = Check Todos
 	notesTitle = Todos
-	notesRef = smartgit/ai/todocheck
+	notesRef = todocheck
 	prompt = Analyze the following Git diff, and if any TODO comments are found,  \n\
                 respond with the the the unicode character U+1F44E. \n\
                 List the filename and line number of each todo found. \n\
