@@ -22,7 +22,7 @@ It is recommended that you familiarize yourself with these features:
 - Please [refer here](../Integrations/AI.md#ai-llm-configuration-options) for instructions on how to connect SmartGit to a LLM.
 - [Refer here](Notes.md) for background on SmartGit's Git Notes features.
 
-You add new AI Commit Annotation commands in SmartGit by adding a new [configuration](../Integrations/AI.md) section for each AI-Annotation command that you wish to set up.
+You add new AI Commit Annotation commands in SmartGit by adding a new [configuration](../Integrations/AI.md#ai-commit-annotation-configuration-options) section for each AI-Annotation command that you wish to set up.
 
 Configuration Options include:
 - Standard LLM configuration settings.
