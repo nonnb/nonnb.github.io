@@ -25,8 +25,14 @@ SmartGit AI Commit Annotations require [configuration]() to be set up for each u
 
 
 #### Example
-> Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' option to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
-> 
+
+Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' option to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
+
+If you run the `Check Todos` AI annotation command, SmartGit will instruct the configured LLM to scan the selected commit for `todo` comments.
+An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed (in lieu of the usual 'Note' icon), and a Git note will be added to the commit describing the file location(s) of any todo comments found in the commit.
+
+![AI Annotations in Standard Window](../images/GitNotes-GraphView.png)
+
 ```
 [smartgit-ai-commit-annotation "Check For Todos"]
 	llm = openai
