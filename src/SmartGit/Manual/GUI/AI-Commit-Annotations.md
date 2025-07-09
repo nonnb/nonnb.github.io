@@ -42,9 +42,11 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
 	title = Check Todos
 	notesTitle = Todos
 	notesRef = smartgit/ai/todocheck
-	prompt = Analyze the following Git diff if any TODO comments are found, respond with the the the unicode character U+1F44E. \n\
+	prompt = Analyze the following Git diff, and if any TODO comments are found,  \n\
+                respond with the the the unicode character U+1F44E. \n\
                 List the filename and line number of each todo found. \n\
-                If no TODO comments are found, respond with the the the unicode character U+1F44D, and the description "No todos found". \n\
+                If no TODO comments are found, respond with the the the unicode character U+1F44D,  \n\
+                and the description "No todos found". \n\
                 Do not include the original diff or any reasoning in the response.\n\
                 \n\
                 ${gitDiff}\n\
