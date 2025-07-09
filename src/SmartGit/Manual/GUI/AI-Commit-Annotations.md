@@ -63,7 +63,7 @@ The command leverages an existing LLM configuration called `openai` (tested on `
 
 ### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
-Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' command to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
+Adding the following `[ai-commit-annotations]` section to your git config will add a new 'Check Todos' command to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
 
 The same LLM configuration is used as in the previous example.
 
