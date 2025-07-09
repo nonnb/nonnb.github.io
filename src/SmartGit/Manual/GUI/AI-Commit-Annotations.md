@@ -31,7 +31,7 @@ Configuration Options include:
   - The Notes refs where annotation outputs are to be stored.
   - Any additional Notes processing, such as title, options, and result visualization on SmartGit's **Graph View**.
 
-### Example - Analyzing the difference between two selected Diffs and
+### Example - Analyzing the difference between two selected diffs and displaying the difference interactively
 
 Adding the below [ai-commit-annotations] section to your git config will add a new 'Describe Diff' command to the menu when exactly two commits are selected in **Graph View** of the **Log Window** or the **Standard Window**.
 
