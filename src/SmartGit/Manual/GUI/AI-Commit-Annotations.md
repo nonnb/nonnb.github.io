@@ -10,12 +10,14 @@ Some examples of what AI Commit Annotations can do:
 - Analyse a commit and provide feedback or descriptive metadata about quality factors with the code introduced in the commit.
 - Instruct the LLM to generate icons which can be used to augment visualization of Notes.
 
+
+## Getting Started
+
 This feature leverages both [SmartGit Notes](), and the common [AI configuration]()
 
 For instructions on how to connect SmartGit to a LLM see []()
 For a background on SmartGit's Notes 
 
-## Getting Started
 
 SmartGit AI Commit Annotations require [configuration]() to be set up for each use-case
 
@@ -24,7 +26,7 @@ SmartGit AI Commit Annotations require [configuration]() to be set up for each u
 - 
 
 
-#### Example
+#### Example - Scanning commits for TODO comments and annotating the commit with a note and an icon
 
 Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' option to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
 
