@@ -1,7 +1,9 @@
 # AI Commit Annotations
 
-SmartGit's AI Annotation feature is a flexible feature which instructs SmartGit to run custom AI actions, either interactively, or in the background, 
+SmartGit's AI Annotations instruct SmartGit to run custom AI actions, either interactively, or in the background, 
 using one or more selected diffs in the commit history as input.
+
+The output of the AI generated annotations can either be displayed interactively on the UI, or appended to the relevant commit(s) using [SmartGit's Notes](Notes.md) capabilities.
 
 Some examples of what AI Commit Annotations can do:
 - Describe the contents of a diff, e.g. latest commit on a branch, or the diff between 2 commits.
@@ -9,8 +11,8 @@ Some examples of what AI Commit Annotations can do:
 
 This feature leverages both [SmartGit Notes](), and the common [AI configuration]()
 
-For instructions on how to connect SmartGit to a LLM see xx
-For instructions on SmartGit's Notes 
+For instructions on how to connect SmartGit to a LLM see []()
+For a background on SmartGit's Notes 
 
 ## Getting Started
 
