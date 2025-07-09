@@ -24,7 +24,24 @@ SmartGit AI Commit Annotations require [configuration]() to be set up for each u
 - 
 
 
-
+#### Example
+> Adding the following [ai-commit-annotations] section to your git config will add a new 'Check Todos' option to the menu when a commit is selected in **Graph View** of the **Log Window** or the **Standard Window**.
+> 
+```
+[smartgit-ai-commit-annotation "Check For Todos"]
+	llm = openai
+	notesGraphMessageRegex = ^(.)
+	mode = background
+	diff = perCommit
+	title = Check Todos
+	notesTitle = Todos
+	notesRef = smartgit/ai/todocheck
+	prompt = Analyze the following Git diff if any TODO comments are found, respond with the the the unicode character U+1F44E. List the filename and line number of each todo found. \n\
+                If no TODO comments are found, respond with the the the unicode character U+1F44D, and the description "No todos found". \n\
+                Do not include the original diff or any reasoning in the response.\n\
+                \n\
+                ${gitDiff}\n\
+```
 
 
 - 
