@@ -496,14 +496,15 @@ Each subsection’s *id* becomes the category name that is shown in the **Graph 
 | Key | Required | Purpose |
 |-----|----------|---------|
 | **`llm`** | **yes** | Selects the [_id_ of the `[ai-llm]`](#ai-llm-configuration-options) entry which is to be used by this annotation, determining the model and endpoint to use. |
-| **`prompt`** / **`promptFile`** | **yes** | Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**), as per the [*ai‑commit‑message*](#-prompt-and-promptFile) configuration keys. The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
+| **`prompt`** / **`promptFile`** | **yes** | This is the same as the [*ai‑commit‑message*](#-prompt-and-promptFile) configuration keys. Either supply the prompt inline (**`prompt`**) or reference a text file (**`promptFile`**). The prompt may contain `${gitDiff}` and/or `${commitMessage}` placeholders that SmartGit will replace before sending the request. |
 | **`notesRef`** | **yes** | Indicates that AI annotations are to be stored beneath `refs/notes/notesRef` in the repository. `refs/notes` can be omitted, in which case SmartGit will assume `refs/notes/notesRef`. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information. |
 | **`notesColor`** | no | Hex *RRGGBB* colour used for this category in the commit graph. See the [Git Notes refs](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
 | **`matchCommitMessage`** | no | Java RegEx; run this annotator **only** when the commit message matches. |
-| **`notesGraphMessageRegex`** | no | Allows the default _Note_ icon to be substituted with the provided RegEx expression. See `graphMessageRegex` in the [Git Notes](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
+| **`notesGraphMessageRegex`** | no | Allows the default _Note_ (🗏) icon to be substituted with the provided RegEx expression. See `graphMessageRegex` in the [Git Notes](GitNotes-Integration.md#smartgit-notes-section-reference) configuration for further information.|
 | **`notesResolveRegex`** | no | If the AI response matches this RegEx expression, any corresponding Note in this ref will will be marked as *resolved*.|
-| **`mode`** | no | Please consult [`mode` below](#note-on-mode) |
-| **`diff`** | no | Please consult [`diff` below](#note-on-diff) |
+| **`mode`** | no | Either `interactive` or `background`. Please consult [`mode` below](#note-on-mode) |
+| **`diff`** | no | Either `perCommit` or `pair`. Please consult [`diff` below](#note-on-diff) |
+| **`autoStart`** | no | Either `true` or `false`. Please consult [`autostart` below](#note-on-autoStart) |
 | **`timeout`** | no | An optional timeout (defaults to 60 seconds). When running mutliple prompts (e.g. in background by `autoStart`), the maximum timeout of all prompts will apply for the entire set of AI invocations. |
 | **`maxDiffSize`** | no | Sets an upper limit on the size of the diff submitted to the LLM. See [`maxDiffSize](#maxdiffsize) for further information.|
 | **`debug`** | no | This provides additional debugging information when accessing the AI LLM, and behaves in the same way as the [`ai-commit-message` debug](#debug) setting.|
@@ -512,19 +513,24 @@ Each subsection’s *id* becomes the category name that is shown in the **Graph 
 #### Global settings
 
 If you add an `[ai-commit-annotation]` section **without a name**, the keys under it act as **defaults** for every other annotator, just like the global options for commit‑message prompts.
-
 ---
 
 #### Note on `mode`
 > The `mode` option controls how SmartGit applies the AI Annotation, and how it presents or persists the output.
 > - `interactive` - Upon completion, the response from the AI will be displayed in an interactive message dialog in Smartgit.
 > - `background` - Upon completion, the response(s) from the AI will be annotated on the respective selected commits.
-> - `autoStart`, SmartGit starts the annotator automatically for "annotatable" as soon as you open a repository.
-> - In **Standard Window**, the annotatable commits are exactly all commits of your current feature branch, regardless whether pushed or not.
->   In the **Log Window**, it's only the unpushed commits of the current branch.
->   If `commitDiff`, for a selection of two commits, SmartGit will create the diff between these commits instead of doing two independent analysis for each commit vs. its parent commit.
+
+#### Note on `autoStart`
+> If the `autoStart` option is enabled, SmartGit starts the annotator automatically for "annotatable" commits as soon as you open a repository.
+> - In the **Standard Window**,  all commits of your current feature branch are regarded as "annotatable", regardless whether pushed or not.
+> - In the **Log Window**, unpushed commits of the current branch are regarded as "annotatable".
 
 #### Note on `diff`
-The `diff` setting controls 
-> - `perCommit` - This applies the AI Annotation command to each diff selected, independently. The diff submitted is the diff between the commit and it's immediate parent commit(s).
+The `diff` setting controls whether this ai-annotation is applied to the diff(s) which are selected, or whether to compare the diff between two selected commits.
+> - `perCommit` - This applies the AI Annotation command to each diff selected, independently. The diff submitted is the diff between each selected commit and its immediate parent commit(s).
 > - `pair` - This applies the AI annotation to the diff between any two commits in the commit graph. Exactly 2 commits must be selected for this option to be available to the user, and both commits must have a common ancestor.
+
+#### Warning
+> Using bulk options such as `autostart = true`, or selecting a large number of commits and issuing a `perCommit` AI annotation command can place considerable load on your configured LLM,
+> which might also incur undesirable costs.
+> LLMs such as OpenAI often have a throttling rate
