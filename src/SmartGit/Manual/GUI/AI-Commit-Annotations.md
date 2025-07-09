@@ -54,7 +54,7 @@ The command leverages an existing LLM configuration called `openai` (tested on `
 	prompt = Analyze the following Git diff between two commits and summarize the major changes between the commits.\n\
                 Do not include the original diff or any reasoning in the response.\n\
                 \n\
-                ${gitDiff}\n\
+                ${gitDiff}
 ```
 
 #### Note
@@ -90,8 +90,7 @@ An appropriate thumbs up (`👍`) or thumbs down (`👎`) icon will be displayed
                 and the description "No todos found". \n\
                 Do not include the original diff or any reasoning in the response.\n\
                 \n\
-                ${gitDiff}\n\
-
+                ${gitDiff}
 ```
 
 #### Tips
