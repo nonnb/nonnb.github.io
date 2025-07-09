@@ -9,9 +9,10 @@ The output of the AI generated annotations can either be displayed interactively
 
 Some examples of what AI Commit Annotations can do:
 - Describe the contents of a diff, e.g. latest commit on a branch, or the diff between 2 commits.
-- Analyse a commit and provide feedback or descriptive metadata about quality factors with the code introduced in the commit.
+- Analyze a commit and provide feedback or descriptive metadata about quality factors with the code introduced in the commit.
 - Instruct the LLM to generate icons which can be used to augment visualization of Notes.
-- As AI annotations can be configured to run in the background, SmartGit can automate checking while you work, and the outcome of the AI's response will be added to Git Notes which can be viewed in the **Graph View** of the **Log and Standard Windows**.
+- As AI annotations can be configured to run in the background, SmartGit can automate checking while you work,
+  and the outcome of the AI's response will be added to Git Notes which can be viewed in the **Graph View** of the **Log and Standard Windows**.
 
 ## Getting Started
 
