@@ -7,10 +7,12 @@ This article describes how to configure SmartGit to integrate with supported AI 
 - [Configuration Best Practices](#configuration-best-practices)
 - [Example LLM Model Configurations](#example-configurations)
 - [Advanced Example Configurations](#advanced-example-configurations)
+- [AI Commit Annotation settings](#ai-commit-annotation-configuration-options)
 
 Once AI integration has been configured correctly, please refer to 
   - [AI Assisted Commit Messages](../GUI/AI-Commit-Messages.md) for usage within SmartGit.
   - [AI Commit Message Tutorial](../GUI/AI-Commenting-Tutorial.md) for quickstart tutorials on using SmartGit's AI Commenting features.
+  - [AI Commit Annotations](../GUI/AI-Commit-Annotations.md) for an overview and starter examples of SmartGit's AI Annotation features.
 
 #### Note
 >
