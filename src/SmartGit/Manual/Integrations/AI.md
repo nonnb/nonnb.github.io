@@ -489,11 +489,11 @@ ${gitDiff}
 
 ### `ai-commit-annotation` Configuration Options
 
-Each **`ai-commit-annotation`** entry tells SmartGit to let an LLM generate a response to the configured prompt, submitting diffs for the commit(s) chosen as the input for each invocation.
-The AI response can then be automatically written to *Git‑Notes* in the local repository, or be displayed interactively to the user in SmartGit.
-Annotations stored in Git Notes will be present in the Graph popup menu for commits.
+Each **`ai-commit-annotation`** entry tells SmartGit to let an LLM generate a response to the configured prompt, submitting diffs for the commit(s) as the input for each invocation.
+The AI response can then be either automatically written to *Git‑Notes* in the local repository or displayed interactively to the user in SmartGit.
+Annotations stored in Git Notes will appear in the Graph popup menu for commits.
 
-Each subsection’s *id* becomes the category name that is shown in the **Graph View** of the **Log Window** and **Standard Window** and can have the following keys:
+Each subsection’s *id* becomes the category name shown in the **Graph View** of the **Log Window** and **Standard Window**. It can include the following keys:
 
 | Key | Required | Purpose |
 |-----|----------|---------|
@@ -514,25 +514,23 @@ Each subsection’s *id* becomes the category name that is shown in the **Graph 
 
 #### Global settings
 
-If you add an `[ai-commit-annotation]` section **without a name**, the keys under it act as **defaults** for every other annotator, just like the global options for commit‑message prompts.
+Suppose you add an `[ai-commit-annotation]` section **without a name**. In that case, the keys under it act as **defaults** for every other annotator, similar to how global options work for commit message prompts.
 
 #### Note on `mode`
-> The `mode` option controls how SmartGit applies the AI Annotation, and how it presents or persists the output.
-> - `interactive` - Upon completion, the response from the AI will be displayed in an interactive message dialog in Smartgit.
-> - `background` - Upon completion, the response(s) from the AI will be annotated on the respective selected commits.
+> The `mode` option controls how SmartGit applies the AI Annotation and how it presents or stores the output.
+> - `interactive` - After completion, the AI's response will be displayed in an interactive message dialog in Smartgit.
+> - `background` - After completion, the AI's response(s) will be automatically annotated on the selected commits.
 
 #### Note on `autoStart`
-> If the `autoStart` option is enabled, SmartGit starts the annotator automatically for "annotatable" commits as soon as you open a repository.
-> - In the **Standard Window**,  all commits of your current feature branch are regarded as "annotatable", regardless whether pushed or not.
-> - In the **Log Window**, unpushed commits of the current branch are regarded as "annotatable".
+> If `autoStart` is enabled, SmartGit starts the annotator automatically for "annotatable" commits as soon as you open a repository.
+> - In the **Standard Window**,  all commits in your current feature branch are considered "annotatable", regardless of whether they've been pushed.
+> - In the **Log Window**, only unpushed commits of the current branch are regarded as "annotatable".
 
 #### Note on `diff`
-The `diff` setting controls whether this ai-annotation is applied to the diff(s) which are selected, or whether to compare the diff between two selected commits.
-> - `perCommit` - This applies the AI Annotation command to each diff selected, independently. The diff submitted is the diff between each selected commit and its immediate parent commit(s).
-> - `pair` - This applies the AI annotation to the diff between any two commits in the commit graph. Exactly 2 commits must be selected for this option to be available to the user, and both commits must have a common ancestor.
+The `diff` setting controls whether this AI annotation is applied per selected diff or compares the diff between two selected commits:
+> - `perCommit` - Applies the AI Annotation command independently to each diff selected. The submitted diff compares each selected commit with its immediate parent(s).
+> - `pair` - Applies the AI annotation to the diff between exactly two selected commits in the commit graph. Both commits must share a common ancestor for this option to be available.
 
 #### Warning
-> - Using bulk options such as `autostart = true`, or selecting a large number of commits and issuing a `perCommit` AI annotation command can place considerable load on your configured LLM,
->   which might also incur undesirable costs.
-> - LLMs such as OpenAI often have a throttling rate such as the maximum number of tokens which can be submitted or generated in a short time period.
->   As a result, you may need to break bulk AI processing of `diff = perCommit` processing into smaller batches at a time.
+> - Using bulk options such as `autostart = true` or selecting a large number of commits and issuing a `perCommit` AI annotation can place considerable load on your configured LLM, and potentially incur unexpected costs.
+> - LLMs like OpenAI often impose rate limits (e.g., on tokens per time window). As a result, you may need to breakup bulk the AI processing of `diff = perCommit` processing into smaller batches.
