@@ -8,7 +8,7 @@ Please also refer to [Working with Repositories](Repository/index.md) for genera
 
 SmartGit remembers repositories you've previously opened, along with any GUI-related settings applied to each one.
 To open a repository, double-click it.
-If the repository is already open in another window, SmartGit will bring that windo into focus.
+If the repository is already open in another window, SmartGit will bring that window into focus.
 
 If the current window is executing commands, or if **Open in New Window** was selected from the repository's context menu, the repository will open in a new window.
 To open multiple repositories simultaneously, select each one (e.g., using **`Ctrl/Cmd` + click**) and choose **Open** from the context menu.
