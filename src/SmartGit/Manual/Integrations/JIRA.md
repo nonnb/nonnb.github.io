@@ -76,13 +76,13 @@ A Jira issue is considered as *affected*, if:
 ### Custom workflows
 
 For the detection of *resolvable* issues, SmartGit supports the common default Jira workflows. 
-If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [low-level properties](../GUI/AdvancedSettings/System-Properties.md).
+If you are using a custom workflow, you probably have to tell SmartGit about *resolvable* states, using [**Low-Level Properties**](../GUI/AdvancedSettings/Low-Level-Properties.md).
 
 #### Note
 
 > SmartGit will only offer resolution of issues if your Jira credentials are properly configured.
 > To ensure this, invoke **Select from Jira** and enter your credentials these.  
-> You can completely disable this functionality using [low-level properties](../GUI/AdvancedSettings/Low-Level-Properties.md).
+> You can completely disable this functionality using [**Low-Level Properties**](../GUI/AdvancedSettings/Low-Level-Properties.md).
 
 ## Support for 'commit.template'
 
