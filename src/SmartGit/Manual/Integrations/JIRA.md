@@ -44,7 +44,7 @@ You should now be able to authenticate to Jira from within SmartGit by using you
 
 Commit message selection from Jira is available in the **Commit** and **Edit Last Commit Message** commands in the [**Commit View**](../GUI/Commit-View.md), as well in some interactive rebase commands of the **Journal** view.
 
-![Select commit message from Jira](../images/Integrtions-Jira-SelectFromIssue.png)
+![Select commit message from Jira](../images/Integrations-Jira-SelectFromIssue.png)
 
 ## Resolving on Push
 
