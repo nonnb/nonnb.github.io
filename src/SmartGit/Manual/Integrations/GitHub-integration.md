@@ -8,6 +8,10 @@ Once integration with GitHub has been [set up](#Setup), SmartGit provides the fo
 
 In addition to integrating with GitHub's repository features, it is possible to set up [Bugtraq](Bugtraq-links-to-issue-trackers.md) integration.
 
+This enables further functionality:
+- [Bugtraq hyperlinks](Bugtraq-links-to-issue-trackers.md#githubcom-issues) in commit messages can be linked back to to an Issue in Github.
+- [Issue selection](#github-issue-selection) from GitHub projects.
+
 ## Setup
 
 To set up GitHub integration in SmartGit, go to **Edit \| Preferences**, navigate to the **Hosting Providers** section, and click the **Add** button.
@@ -89,6 +93,23 @@ If this does not solve your problem, take following steps to rerun the *OAuth* s
 3. In SmartGit, rerun through the *OAuth* setup again:
     1. open **Preferences**, section **Hosting Providers**
     2. **Add** a new **GitHub** hosting provider, as described above
+
+## GitHub Issue Selection
+
+If both of the below have been configured:
+- A GitHub [access token](#setup), providing authentication into GitHub;
+- and [Bugtraq configuration](Bugtraq-links-to-issue-trackers.md) linking to the associated GitHub repository
+
+Then SmartGit will allow you to choose an issue from the configured GitHub project at the following points:
+- On the hamburger **(≡)** menu above the **Commit View**, during **Commit** and **Amend last Commit** operations.
+- On the **Select** drop down during interactive rebase operations such as **Squash** in the **Journal** and **Graph Views**.
+
+#### Notes
+> - Draft items will not be available for selection in SmartGit
+> - Issues which have been closed on GitHub will not be available for selection.
+>   You may need to reopen an issue in order to select it in SmartGit.
+> - In GitHub, issues are owned by a repository, although after associating a repository to one or more projects, issues can be viewed in various views on a project.
+>   SmartGit integrates issues only at repository level.
 
 ## Troubleshooting Possible Problems & Solutions
 
