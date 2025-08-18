@@ -38,7 +38,7 @@ You can now authenticate SmartGit with Jira using your email address as the **Us
 ![Authenticating to Jira from SmartGit with email and API token](../images/Integrations-Jira-SmartGit-Authenticate.png)
 
 #### Note
-> It is recommended to store the API token in the [SmartGit Password Store](../GUI/Preferences/Commands#the-smartgit-password-store) by selecting **Store token/password**.
+> It is recommended to store the API token in the [SmartGit Password Store](../GUI/Preferences/Commands.md#the-smartgit-password-store) by selecting **Store token/password**.
 
 ## Commit Message Selection
 
