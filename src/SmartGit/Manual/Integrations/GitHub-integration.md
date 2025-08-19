@@ -96,19 +96,19 @@ If this does not solve your problem, take following steps to rerun the *OAuth* s
 
 ## GitHub Issue Selection
 
-If both of the below have been configured:
-- A GitHub [access token](#setup), providing authentication into GitHub;
-- and [Bugtraq configuration](Bugtraq-links-to-issue-trackers.md) linking to the associated GitHub repository
+If both of the following have been configured:
+- A GitHub [access token](#setup) that provides authentication to GitHub.
+- [Bugtraq configuration](Bugtraq-links-to-issue-trackers.md) linking to the associated GitHub repository.
 
-Then SmartGit will allow you to choose an issue from the configured GitHub project at the following points:
-- On the hamburger **(≡)** menu above the **Commit View**, during **Commit** and **Amend last Commit** operations.
-- On the **Select** drop down during interactive rebase operations such as **Squash** in the **Journal** and **Graph Views**.
+Then SmartGit will allow you to select an issue from the configured GitHub project at the following points:
+- From the hamburger **(≡)** menu above the **Commit View**, during **Commit** and **Amend last Commit** operations.
+- From the **Select** dropdown during interactive rebase operations, such as **Squash** in the **Journal** and **Graph Views**.
 
 #### Notes
-> - Draft items will not be available for selection in SmartGit
-> - Issues which have been closed on GitHub will not be available for selection.
->   You may need to reopen an issue in order to select it in SmartGit.
-> - In GitHub, issues are owned by a repository, although after associating a repository to one or more projects, issues can be viewed in various views on a project.
+> - Draft items will not be available for selection in SmartGit.
+> - Issues that have been closed on GitHub will not be available for selection.
+>   You may need to reopen an issue to select it in SmartGit.
+> - In GitHub, issues are owned by a repository. After associating a repository with one or more projects, issues can be displayed in different project views.
 >   SmartGit integrates issues only at repository level.
 
 ## Troubleshooting Possible Problems & Solutions
