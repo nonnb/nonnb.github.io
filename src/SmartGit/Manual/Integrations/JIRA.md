@@ -50,14 +50,15 @@ Commit message selection from Jira is available in the **Commit** and **Edit Las
 
 For all **Push** operations (except *Push To*), SmartGit checks the pushed commits for *affected* Jira issues and offers to mark them as resolved, provided a suitable transition exists (see the [Example](#example) below).
 
-A Jira issue is considered*affected* if:
+A Jira issue is considered *affected* if:
 
-1. It is mentioned in at least one commit message of the *local* branch commits being pushed, and
-
-2. It is not mentioned in any commit message of the *remote* branch commits being replaced, and
-
-3. When using Git-Flow, you are not pushing into a *feature* or a *hotfix* branch (SmartGit will instead ask whether to resolve such commits when *finishing* the feature or hotfix, i.e., integrating into `develop` or `master`), and
-
+1. It is mentioned in at least one commit message of the *local* branch commits being pushed, 
+   and
+2. It is not mentioned in any commit message of the *remote* branch commits being replaced, 
+   and
+3. When using Git-Flow, you are not pushing into a *feature* or a *hotfix* branch (SmartGit will instead ask whether to resolve such commits when *finishing* the feature or hotfix, 
+   i.e., integrating into `develop` or `master`), 
+   and
 4. The issue is *resolvable* (i.e., there is at least one *transition* available that moves the issue into a *resolved* state.
    
 **Note:** Not all issues are resolvable—for Example, issues that are already resolved or closed.
