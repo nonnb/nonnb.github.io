@@ -1,22 +1,30 @@
-# Git Remotes
+# Git Remote Repositories (Remotes)
 
 Although much of Git's functionality is designed to work within a local repository, you will need to synchronize your commits with 
-remote repositories ('remotes') in order to collaborate with other developers. 
+remote repositories in order to collaborate with other developers.
 
-Common Commands for Working with Remotes:
+## Common Commands for Working with Remotes:
 
-- Git Clone - used to create a local copy of a remote repository
-- `git remote add` will create a link between your local repository and a remote repository.
-- [`git fetch`](GitFetch.md) with [`git merge`](Merging.md) or [`git rebase`](Rebasing.md)
-  OR [`git pull`](GitPull.md) can be used used to retrieve changes from a remote repository and then integrate these into a branch in your local repository.
-Git Push is used to send your local commits to a remote repository.
+### Clone
 
-  - [git clone](GitClone.md)
-  - [git fetch](GitFetch.md)
-  - [git pull](GitPull.md)
-  - [git push](GitPush.md)
+`git clone <url>` will create a local copy of a remote.
 
-Remote repositories are versions of your project that are hosted on the internet or network somewhere. They allow multiple developers to collaborate on the same project by sharing changes.
+By default, the repository will be created in a local folder with the same name as the repository.
+Use `git clone <url> <folder>` to override the folder name.
+
+### Add a new remote
+
+`git remote add <remote> <url> `
+
+By convention, the default remote name alias is `origin`, however, you can provide a different name if required
+
+- - will create a link between your local repository and a remote.
+- [`git fetch`](GitFetch.md) with [`git merge`](Merging.md) or [`git rebase`](Rebasing.md), 
+
+  OR [`git pull`](GitPull.md) can be used used to retrieve changes from a remote and then integrate these into a branch in your local repository.
+
+- [`git push`](GitPush.md) is used to synchronize new commits in your local repository to a remote.
+
 
 `git remote -vv`
 
