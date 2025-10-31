@@ -2,7 +2,12 @@
 
 Although much of Git's functionality is designed to work within a local repository, you will need to synchronize your commits with 
 Remote Repositories (remotes) in order to collaborate with other developers.
+
 This will allow others to receive work done in the commits that you've added, and similarly, your local repository can be updated with new commits added by others.
+
+Commonly, remote repositories are:
+- Open source or public repositories hosted on a Git hosting service such as GitHub, GitLab, Bitbucket, or Azure DevOps.
+- Private, self-hosted repositories on your organizations server infrastructure or hosted privately on the cloud
 
 ## Common Commands for Working with Remotes:
 
