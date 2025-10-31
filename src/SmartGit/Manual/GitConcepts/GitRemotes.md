@@ -63,4 +63,4 @@ The original repository contributors can then review your PR and integrate your 
 
 `git remote set-url <remote> <url>`
 
-- Changes the URL for a remote. This may be useful, if you change the location of your existing remote repositories, e.g.if moving from GitHub to BitBucket.
+- Changes the URL for a remote. This may be useful if you change the location of your existing remote repositories, e.g.if moving from GitHub to BitBucket.
