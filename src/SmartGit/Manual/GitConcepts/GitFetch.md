@@ -22,4 +22,11 @@ The fetched data is stored in your local repository's remote-tracking branches (
 
 - Fetches new commits from the specified remote and branch only.
 
-**TODO - Links to GUI articles once written**
+`git fetch --tags`
+
+- By default, only tags that are reachable from branches in your local repository are fetched.
+  However, the `--tags` option allows you to fetch all tags from the remote repository.
+
+#### Note:
+
+> It is possible to adapt default behavior of `git fetch` by modifying the [`fetch` setting](https://git-scm.com/docs/git-fetch#_named_remote_in_configuration_file) for a specific remote in your Git configuration, beneath the `[remote "<remote>"]` section.
