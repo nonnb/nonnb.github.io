@@ -15,7 +15,7 @@ will be determined by whether your local branch is commits ahead of the remote, 
 
 `git pull --ff-only` will fail if the branches have diverged.
 
-`git pull --no-rebase` will perform a merge if the branches have diverged.
+`git pull --no-rebase` will perform a merge if the branches have diverged (this is the default).
 
 `git pull --rebase` will perform a rebase if the branches have diverged.
 
