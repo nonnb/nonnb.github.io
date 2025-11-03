@@ -21,6 +21,8 @@ By default, the local repository will be created in a subfolder with the same na
 
 Use `git clone <url> <folder>` to specifiy a different folder name.
 
+Git will default the name of the remote to `origin`, however, you can override the name by providing the option `--origin <name>`.
+
 ### Add a new remote
 
 `git remote add <remote> <url> `
