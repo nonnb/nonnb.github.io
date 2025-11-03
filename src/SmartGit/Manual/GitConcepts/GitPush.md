@@ -2,7 +2,7 @@
 
 The `git push` command is used to upload new commits from a local repository to a branch on a remote repository (or to multiple remotes).
 
-**##Common Usages##**
+## Common Usages
 
 `git push <remote> <branch>`
 
