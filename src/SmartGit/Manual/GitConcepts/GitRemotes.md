@@ -43,13 +43,17 @@ Either of the following approaches retrieves changes from a remote and integrate
 ### Forking
 
 In many private repositories, authorized developers have sufficient access to create new feature branches and push new commits directly to the remote.
-Some Git hosting providers (like GitHub) will allow the repository owner to protect important branches (such as `main` or `master`) from direct pushes.
-In these cases, after pushing changes to a feature branch, a pull request can be created between the two branches. CHanges can then be reviewed and merged (or fast- forwarded) once approved.
 
-However, on many public and open-source repositories, only authorized contributors can create branches or push commits.
-Developers can still clone the repository, but they must **fork** it to contribute. 
-Any new commits are pushed to the forked repository, and a pull request (PR) can be created between branches in the fork.
+Git hosting providers (like GitHub) can allow the important branches (such as `main` or `master`) to be protected from direct pushes.
+In these cases, after pushing changes to a feature branch, a pull request can be created between the two branches. 
+Changes can then be reviewed and merged (or fast-forwarded) once approved.
+
+However, on many public and open-source repositories, only authorized collaborators can create branches or push commits.
+Other developers will be able to clone the repository, but they must create a **fork** of the repository on the remote server to be able to contribute to it.
+Any new commits are pushed to the forked repository, and a pull request (PR) can be created between the forked and original repository.
 The maintainers of the original repository can then review and accept the changes.
+
+With forking, your local repository will be linked to multiple remotes - commonly, the original repository is referred to as `upstream`, and the forked repository as `origin`.
 
 ### Other useful commands when working with remotes
 
