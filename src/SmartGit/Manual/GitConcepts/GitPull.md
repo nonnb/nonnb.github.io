@@ -11,9 +11,7 @@ Followed by either:
 `git merge` or `git rebase`
 
 The decision whether Git will fast-forward, [merge](Merging.md), or [rebase](Rebasing.md) new commits in your current branch 
-will be determined by whether your local branch is commits ahead of the remote, and which options have been set.
-
-For instance, by specifying the `--rebase` option:
+will be determined by whether your local branch is commits ahead of the remote, and which options have been set:
 
 `git pull --ff-only` will fail if the branches have diverged.
 
